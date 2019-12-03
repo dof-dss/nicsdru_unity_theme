@@ -1,0 +1,33 @@
+# These libraries provide common css styling shared across all nics Drupal sites
+unity-global-styling:
+  version: 1.x
+  js:
+    js/empty-tags-script.js: { minified: true }
+    js/ext-win-script.js: { minified: true }
+  dependencies:
+    - core/drupal
+    - core/jquery
+    - core/jquery.once
+
+# This library provides styling for common admin interface components - the library is only loaded for
+# authenticated users and on the user login form - @see nicsdru_origins_theme.theme for processing functions
+nicsdru-authenticated-styles:
+  version: VERSION
+  css:
+    theme:
+      css/drupal-admin.css: { minified: true, weight: -5 }
+
+# Provide a custom modernizer script
+nicsdru-modernizr:
+  # Block the page from being loaded until Modernizr is initialized.
+  header: true
+  remote: https://github.com/Modernizr/Modernizr
+  license:
+    name: MIT
+    url: http://modernizr.com/license/
+    gpl-compatible: true
+  version: "v3.6.0"
+  js:
+    js/modernizr.min.js: { preprocess: 0, weight: -21, minified: true }
+  dependencies:
+    - core/modernizr
