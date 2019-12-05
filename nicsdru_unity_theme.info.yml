@@ -25,6 +25,7 @@ regions:
   top_first: 'First top'
   top_second: 'Second top'
   top_third: 'Third top'
+  breadcrumb: 'Breadcrumb'
   sidebar_first: 'First sidebar'
   sidebar_second: 'Sidebar second'
   content: 'Content'
@@ -35,4 +36,4 @@ regions:
   footer_second: 'Second Bottom'
   footer_third: 'Third Bottom'
   footer_fourth: 'Fourth Bottom'
-  footer_bottom: 'Footer Bottom'
+  footer: 'Footer Bottom'
