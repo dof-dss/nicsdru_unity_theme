@@ -1,0 +1,78 @@
+<?php
+
+/**
+ * @file
+ *
+ * Functions to support theming in the nicsdru_unity_theme.
+ */
+
+use Drupal\Core\Template\Attribute;
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Link;
+use Drupal\Core\Url;
+use Drupal\Component\Utility\Html;
+
+/**
+ * Implements hook_preprocess().
+ */
+function nicsdru_unity_theme_preprocess(&$variables) {
+  // Set a variable based on the path.matcher.
+  if (!isset($variables['is_front'])) {
+    try {
+      $variables['is_front'] = \Drupal::service('path.matcher')->isFrontPage();
+    }
+    catch (\Exception $e) {
+      $variables['is_front'] = FALSE;
+    }
+  }
+
+  // Ensure the cache varies correctly.
+  $variables['#cache']['contexts'][] = 'url.path.is_front';
+}
+
+/**
+ * Implements hook_preprocess page_attachments_alter().
+ */
+function nicsdru_unity_theme_page_attachments_alter(array &$page) {
+  /*
+   * Tell IE to use latest rendering engine (not to use compatibility mode).
+   * /*$ie_edge = [
+   *  '#type' => 'html_tag',
+   *  '#tag' => 'meta',
+   *  '#attributes' => [
+   *    'http-equiv' => 'X-UA-Compatible',
+   *    'content' => 'IE=edge',
+   *  ],
+   * ];
+   * $page['#attached']['html_head'][] = [$ie_edge, 'ie_edge'];
+   */
+
+  // Remove Drupal default favicon link in <head>, if present.
+  if (isset($page['#attached']['html_head_link'][0])) {
+    unset($page['#attached']['html_head_link'][0]);
+  }
+
+  // Attach our drupal components library for authenticated users.
+  $userCurrent = \Drupal::currentUser();
+
+  if ($userCurrent->isAuthenticated()) {
+    $page['#attached']['library'][] = 'nicsdru_unity_theme/nicsdru-authenticated-styles';
+  }
+
+  return $page;
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function nicsdru_unity_theme_form_user_login_form_alter(&$form, FormStateInterface $form_state, $form_id = NULL) {
+  $form['#attached']['library'][] = 'nicsdru_unity_theme/nicsdru-authenticated-styles';
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function nicsdru_unity_theme_form_user_pass_alter(&$form, FormStateInterface $form_state, $form_id = NULL) {
+  $form['#attached']['library'][] = 'nicsdru_unity_theme/nicsdru-authenticated-styles';
+}
+

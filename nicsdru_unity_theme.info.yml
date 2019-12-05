@@ -7,12 +7,12 @@ core: 8.x
 libraries:
   - nicsdru_unity_theme/unity-global-styling
 
-libraries-override:
-  core/modernizr: nicsdru_unity_theme/nicsdru-modernizr
-  system/base:
-    css:
-      component:
-        css/components/sticky-header.module.css: false
+#libraries-override:
+#  core/modernizr: nicsdru_unity_theme/nicsdru-modernizr
+#  system/base:
+#    css:
+#      component:
+#        css/components/sticky-header.module.css: false
 
 base theme: stable
 
