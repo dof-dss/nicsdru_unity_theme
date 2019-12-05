@@ -1,42 +1,35 @@
-nicsdru_unity_theme.min:
-  label: minimal
-  mediaQuery: '(min-width: 0px)'
+nicsdru_unity_theme.mobile:
+  label: mobile
+  mediaQuery: 'all and (min-width: 0px)'
   weight: 0
   multipliers:
     - 1x
     - 2x
-nicsdru_unity_theme.mob:
-  label: mobile
-  mediaQuery: 'all and (min-width: 480px)'
+nicsdru_unity_theme.phab:
+  label: phab
+  mediaQuery: 'all and (min-width: 439px) and (max-width: 640px)'
   weight: 1
   multipliers:
     - 1x
     - 2x
-nicsdru_unity_theme.phab:
-  label: phablet
-  mediaQuery: 'all and (min-width: 600px)'
+nicsdru_unity_theme.tablet:
+  label: tablet
+  mediaQuery: 'all and (min-width: 641px) and (max-width: 960px)'
   weight: 2
   multipliers:
     - 1x
     - 2x
-nicsdru_unity_theme.tab:
-  label: tablet
-  mediaQuery: 'all and (min-width: 768px)'
+nicsdru_unity_theme.desk:
+  label: desk
+  mediaQuery: 'all and (min-width: 961px) and (max-width: 1152px)'
   weight: 3
   multipliers:
     - 1x
     - 2x
-nicsdru_unity_theme.lap:
-  label: laptop
-  mediaQuery: 'all and (min-width: 980px)'
+nicsdru_unity_theme.wide:
+  label: wide
+  mediaQuery: 'all and (min-width: 1153px)'
   weight: 4
-  multipliers:
-    - 1x
-    - 2x
-nicsdru_unity_theme.desk:
-  label: desktop
-  mediaQuery: 'all and (min-width: 1382px)'
-  weight: 5
   multipliers:
     - 1x
     - 2x
