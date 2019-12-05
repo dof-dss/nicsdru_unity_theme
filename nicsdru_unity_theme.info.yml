@@ -35,4 +35,5 @@ regions:
   footer_second: 'Second Bottom'
   footer_third: 'Third Bottom'
   footer_fourth: 'Fourth Bottom'
-  footer_bottom: 'Footer Bottom'
+  footer: 'Footer Bottom'
+  breadcrumb: 'Breadcrumb'
