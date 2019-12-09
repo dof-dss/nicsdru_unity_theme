@@ -82,15 +82,21 @@
 
   {% if page.top_first or page.top_second or page.top_third %}
     <div id="top-area" class="clearfix">
-      <div class="column">
-        {{ page.top_first }}
-      </div>
-      <div class="column">
-        {{ page.top_second }}
-      </div>
-      <div class="column">
-        {{ page.top_third }}
-      </div>
+      {% if page.top_first %}
+        <div class="column">
+          {{ page.top_first }}
+        </div>
+      {% endif %}
+      {% if page.top_second %}
+        <div class="column">
+          {{ page.top_second }}
+        </div>
+      {% endif %}
+      {% if page.top_third %}
+        <div class="column">
+          {{ page.top_third }}
+        </div>
+      {% endif %}
     </div>
   {% endif %}
 {% endif %}
@@ -121,15 +127,21 @@
         {% if page.bottom_widget_1 or page.bottom_widget_2 or page.bottom_widget_3 %}
           <div id="bottom_wrapper" class="footer_block bottom_widget">
             <div id="bottom-area" class="clearfix">
-              <div class="column">
-                {{ page.bottom_widget_1 }}
-              </div>
-              <div class="column">
-                {{ page.bottom_widget_2 }}
-              </div>
-              <div class="column">
-                {{ page.bottom_widget_2 }}
-              </div>
+              {% if page.bottom_widget_1 %}
+                <div class="column">
+                  {{ page.bottom_widget_1 }}
+                </div>
+              {% endif %}
+              {% if page.bottom_widget_2 %}
+                <div class="column">
+                  {{ page.bottom_widget_2 }}
+                </div>
+              {% endif %}
+              {% if page.bottom_widget_3 %}
+                <div class="column">
+                  {{ page.bottom_widget_3 }}
+                </div>
+              {% endif %}
             </div>
           </div>
         {% endif %}
@@ -142,18 +154,26 @@
   <div id="footer_wrapper">
     {% if page.footer_first or page.footer_second or page.footer_third or page.footer_fourth or page.footer %}
       <div id="footer-area" class="clearfix">
-        <div class="column">
-          {{ page.footer_first }}
-        </div>
-        <div class="column">
-          {{ page.footer_second }}
-        </div>
-        <div class="column">
-          {{ page.footer_third }}
-        </div>
-        <div class="column">
-          {{ page.footer_fourth }}
-        </div>
+        {% if page.footer_first %}
+          <div class="column">
+            {{ page.footer_first }}
+          </div>
+        {% endif %}
+        {% if page.footer_second %}
+          <div class="column">
+            {{ page.footer_second }}
+          </div>
+        {% endif %}
+        {% if page.footer_third %}
+          <div class="column">
+            {{ page.footer_third }}
+          </div>
+        {% endif %}
+        {% if page.footer_fourth %}
+          <div class="column">
+            {{ page.footer_fourth }}
+          </div>
+        {% endif %}
       </div>
 
       {% if page.footer %}
