@@ -118,8 +118,8 @@
       {% endif %}
 
       {% if is_front %}
-        <div id="bottom_wrapper" class="footer_block bottom_widget">
-          {% if page.bottom_widget_1 or page.bottom_widget_2 or page.bottom_widget_3 %}
+        {% if page.bottom_widget_1 or page.bottom_widget_2 or page.bottom_widget_3 %}
+          <div id="bottom_wrapper" class="footer_block bottom_widget">
             <div id="bottom-area" class="clearfix">
               <div class="column">
                 {{ page.bottom_widget_1 }}
@@ -131,8 +131,8 @@
                 {{ page.bottom_widget_2 }}
               </div>
             </div>
-          {% endif %}
-        </div>
+          </div>
+        {% endif %}
       {% endif %}
     </div>
   </div>
