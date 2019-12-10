@@ -2,8 +2,9 @@
 unity-global-styling:
   version: 1.x
   js:
-    js/empty-tags-script.js: { minified: true }
+    js/unity-menu-script.js: { minified: true }
     js/ext-win-script.js: { minified: true }
+    js/empty-tags-script.js: { minified: true }
   dependencies:
     - core/drupal
     - core/jquery
