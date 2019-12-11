@@ -1,0 +1,427 @@
+// remove silly background image on list items
+.region ul.menu li, .region ul.links li, .region .item-list ul li {
+    background: none;
+}
+
+// fix logo and site desc
+.top_left {
+    min-height: 110px;
+    padding-left: 150px;
+    position: relative;
+
+    #logo {
+        position: absolute;
+        left: 0;
+        top: 0;
+    }
+
+    #site-title {
+        #site-description {
+            line-height: 145%;
+
+            @include adjust-font-size-to(18px);
+        }
+    }
+}
+
+// styling for links output from media module in body field
+.field-name-body .inline-linkedfile {
+    @extend %p;
+}
+
+.call-to-action {
+    @extend %btn;
+
+    @extend %btn-large;
+
+    @extend %btn-arrow-right;
+
+    @extend %btn-action;
+}
+
+span.elink {
+    padding-right: 1em;
+    background: transparent inline-image("new-window.gif") right center no-repeat;
+}
+
+//styling for images being output via the picture module
+
+.field-name-body, .field-body {
+    picture[data-picture-mapping="page_images"] {
+        clear: right;
+        float: right;
+        width: 36.103%;
+        margin: 3px 0 0 27px;
+    }
+
+    picture[data-picture-mapping="page_image_nocrop"] {
+        width: auto;
+        margin: 10px 0;
+        display: block;
+
+        img {
+            width: auto;
+        }
+    }
+}
+
+.one-sidebar {
+    .sidebar-second, .sidebar-first {
+        picture[data-picture-mapping="sidebar_images"] {
+            width: 100%;
+        }
+    }
+}
+
+@media screen and (min-width: 440px) {
+    picture[data-picture-mapping="inline"],
+    picture[data-picture-mapping="inline_expandable"],
+    .thwooper {
+        clear: right;
+        float: right;
+        width: 48.3871%;
+        max-width: 300px;
+        margin: 21px 0 0 27px;
+        margin: rhythm(3.5) 0 0 rhythm(4.5);
+    }
+
+    .thwooper img.media-element,
+    .thwooper picture[data-picture-mapping*="inline"] {
+        margin: 0 !important;
+    }
+
+    picture[data-picture-mapping*="inline"] img {
+        width: 100%;
+        max-width: none;
+    }
+
+    div.field-file-image-caption-text {
+        width: 100%;
+        clear: both;
+        padding: 9px 0;
+        margin: 0 0 18px 0;
+        margin: 0 0 rhythm(3) 0;
+        @include adjust-font-size-to(16px,3);
+        color: $link;
+    }
+
+    picture[data-picture-mapping="inline"] + div.field-file-image-caption-text,
+    picture[data-picture-mapping="inline_expandable"] + div.field-file-image-caption-text,
+    .thwooper + div.field-file-image-caption-text {
+        clear: right;
+        float: right;
+        width: 48.3871%;
+        margin-left: 27px;
+        margin-left: 2.7rem;
+    }
+
+
+    picture[data-picture-mapping="inline"] img,
+    picture[data-picture-mapping="inline_expandable"] img{
+        float: right;
+        max-width: 670px;
+    }
+
+    /* thwoop and magnific popup image styles */
+    .thwooper {
+        display: block;
+        clear: right;
+        float: right;
+        outline: 0 solid !important;
+        position: relative;
+    }
+
+    .thwooped {
+        clear: both;
+        width: 100%;
+        max-width: 670px;
+        margin: 27px 0;
+        margin: rhythm(4.5) 0;
+        max-width: none;
+    }
+
+    .thwooped picture[data-picture-mapping*="inline"] {
+        max-width: 670px;
+
+    }
+
+    .thwooped + div.field-file-image-caption-text {
+        width: 100%;
+        max-width: 670px;
+        margin: -27px 0 27px 0;
+        margin: rhythm(-4.5) 0 rhythm(4.5) 0;
+    }
+
+    .thwooper picture {
+        width: 100%;
+        max-width: 670px;
+        margin: 0;
+        position: relative;
+        z-index: 0;
+        float: right;
+    }
+
+    .thwoop-icon {
+        display: block;
+        width: 33px;
+        height: 33px;
+        padding: 4px;
+        position: absolute;
+        right: 5px;
+        bottom: 5px;
+        z-index: 10;
+        background: rgba(0,0,0,.3) url("/sites/all/themes/nics_software/images/img-expand-icon-x1.png") 4px 4px no-repeat;
+        background-size: 25px 25px;
+        @include retina {
+            background-image: url("/sites/all/themes/nics_software/images/img-expand-icon-x2.png");
+            background-size: 25px 25px;
+        }
+    }
+
+    .thwoop-icon.shrink {
+        width: 60px;
+        height: 60px;
+        padding: 5px;
+        bottom: 27px;
+        left: calc(100% - 80px);
+        right: 10px;
+        background: rgba(0,0,0,.3) url("/sites/all/themes/nics_software/images/img-shrink-icon-x1.png") 5px 5px no-repeat;
+        background-size: 50px 50px;
+        @include retina {
+            background-image: url("/sites/all/themes/nics_software/images/img-shrink-icon-x2.png");
+            background-size: 50px 50px;
+        }
+    }
+
+    a:hover .thwoop-icon {
+        background-color: rgba(0,0,0,.6);
+    }
+
+    .inline-xl {
+        position: relative; // contain absolutely positioned children
+        display: block;
+        padding-top: 18px;
+        padding-top: rhythm(3);
+        font-size: 0.1px;
+        line-height: 0;
+        img {
+            float: none;
+            margin: 0;
+        }
+    }
+
+    .inline-xl img.media-element {
+        margin: 0;
+    }
+
+    .inline-xl .thwoop-icon {
+        display: none;
+        @media screen and (min-width: 768px) {
+            display: block;
+        }
+        width: 50px;
+        height: 50px;
+        padding: 0;
+        background-image: url("/sites/all/themes/nics_software/images/img-expand-icon-x2.png");
+        background-size: 40px 40px;
+        background-position: center center;
+    }
+} // close the breakpoint theming for images
+
+// Hide elements from front page
+
+.front .hide-front {
+    display: none !important;
+}
+
+// -*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*- //
+// ---- ---- --- Table of contents --- ---- ---- //
+// -*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*- //
+.toc {
+    display: block;
+    @media screen and (min-width: 960px) {
+        display: none;
+    }
+}
+
+#toc-aside {
+    display: none;
+    @media screen and (min-width: 960px) {
+        display: block;
+    }
+}
+.field-name-body .toc {
+    h2 {
+        margin-top: 0;
+    }
+}
+
+/*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*- //
+ * Accessibility features.
+ *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*/
+
+/* element-invisible as defined by http://snook.ca/archives/html_and_css/hiding-content-for-accessibility */
+.element-invisible,
+%element-invisible {
+  @include element-invisible;
+}
+
+/* Turns off the element-invisible effect. */
+%element-invisible-off {
+  @include element-invisible-off;
+}
+
+// -*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*- //
+// ---- ---- ---- book navigation ---- ---- ---- //
+// -*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*- //
+.book-navigation {
+    width: 100%;
+
+    .menu {
+        border-top: 1px solid #888;
+        border-bottom: 1px solid #888;
+        padding: 21px 10px 21px 27px;
+        padding: rhythm(3.5) 10px rhythm(3.5) 27px;
+        margin: 0 0 18px;
+        margin: 0 0 rhythm(3);
+        list-style: none;
+    }
+
+    .menu li {
+        position: relative;
+        list-style: none;
+        &:before {
+            content: "-";
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+    }
+
+    .page-links {
+        width: 100%;
+        background-color: #f2f2f2;
+        min-height: 33px;
+        padding: 0;
+        margin-top: 15px;
+        margin-top: 1.5rem;
+        border: 0 solid;
+
+        a, span {
+            display: block;
+            width: 100%;
+            min-height: 33px;
+            float: none;
+            color: #333;
+            line-height: 24px;
+            line-height: rhythm(4);
+            @include adjust-font-size-to(14px,3.5);
+        }
+
+        span {
+            background: none !important;
+            border: 0 solid !important;
+        }
+
+        span.parent-title {
+            display: inline;
+        }
+
+        .page-next {
+            padding: 7px 14px 7px 21px;
+            padding: .7rem 1.4rem .7rem 2.1rem;
+            background: #dfdfdf inline-image("collection-next.png") right center no-repeat;
+            background-size: 6px auto;
+            border-right: 7px solid #dfdfdf;
+            text-align: right;
+        }
+        .page-up {
+            margin: 0;
+            padding: 7px;
+            padding: 0.7rem;
+            &:hover {
+                background-color: #888;
+                color: #fff;
+            }
+        }
+        .page-previous {
+            padding: 7px 21px 7px 14px;
+            padding: .7rem 2.1rem .7rem 1.4rem;
+            background: #dfdfdf inline-image("collection-prev.png") left center no-repeat;
+            background-size: 6px auto;
+            border-left: 7px solid #dfdfdf;
+            text-align: left;
+        }
+    }
+    .page-links.clearfix::after {
+        content: "";
+    }
+
+    @media screen and (min-width: 440px) {
+        .page-links {
+            display: table;
+
+            a, span {
+                width: 42%;
+                display: table-cell;
+                vertical-align: middle;
+            }
+
+            .page-up {
+                width: 16%;
+                .parent-title {
+                    @include element-invisible;
+                }
+            }
+        }
+    } //close the media query for mob
+
+    @media screen and (min-width: 640px) {
+        .menu {
+            padding: 30px 18px 36px;
+            padding: 3rem 1.8rem 3.6rem;
+        }
+
+        .page-links {
+            min-height: 50px;
+
+            a, span {
+                min-height: 50px;
+                @include adjust-font-size-to(18px,4);
+            }
+
+            .page-next {
+                padding: 12px 24px 12px 50px;
+                padding: 1.2rem 2.4rem 1.2rem 5rem;
+                background-size: auto auto;
+                border-right: 21px solid #dfdfdf;
+            }
+
+            .page-up {
+                padding: 12px;
+                padding: 1.2rem;
+            }
+
+            .page-previous {
+                padding: 12px 50px 12px 24px;
+                padding: 1.2rem 5rem 1.2rem 2.4rem;
+                background-size: auto auto;
+                border-left: 21px solid #dfdfdf;
+            }
+        }
+    } //close the media query for phab
+
+    @media screen and (min-width: 768px) {
+        .menu {
+            padding-right: 0;
+        }
+    }
+} // close styling for book navigation
+
+iframe {
+    width: 100%;
+    min-height: 170px;
+    margin: 1.5em 0;
+}
+
+
