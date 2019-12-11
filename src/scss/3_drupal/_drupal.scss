@@ -1,0 +1,45 @@
+// Drupal specific styles
+//
+// Here we define sensible defaults for all common Drupal classes
+//
+// This works best if you use a reset and also turn off most core CSS
+// Check out http://drupal.org/project/disable_css
+
+
+// Import individual Drupal specific style sets
+// Comment out the one you don't need on your project
+
+//@import 'drupal-lists';
+//@import 'drupal-messages';
+@import 'drupal-tabs';
+@import 'drupal-forms';
+@import 'drupal-files';
+//@import 'drupal-misc';
+
+#admin-menu, #admin-menu div, #admin-menu li, #admin-menu p {
+    font-size: 12px !important;
+    line-height: 16px !important;
+}
+
+#admin-menu {
+    background-color: #000 !important;
+    background-image: none;
+}
+
+#admin-menu .dropdown li li {
+    width: 170px;
+}
+
+#admin-menu .dropdown li li.expandable {
+    background-position: 155px center;
+}
+
+#admin-menu .dropdown li li.expandable ul {
+    margin: -25px 0 0 170px;
+}
+
+#admin-menu .dropdown a, #admin-menu .dropdown li > span {
+    border-right: 1px solid #323232;
+    display: block;
+    padding: 0.5em 1em;
+}
