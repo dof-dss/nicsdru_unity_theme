@@ -1,0 +1,37 @@
+// Headings
+//
+// All HTML headings, `<h1>` through `<h6>`, are available. `%h1` through `%h6`
+// classes are also available, for when you want to match the font styling of a
+// heading but still want your text to be displayed inline.
+//
+// Markup: kss-templates/headings-h.twig
+//
+// Style guide: base.headings
+#{headings()} {
+  font-weight: bold;
+  color: $headings;
+}
+
+h1 {
+  @include responsive-typo-map($h1-text);
+}
+
+h2 {
+  @include responsive-typo-map($h2-text);
+}
+
+h3 {
+  @include responsive-typo-map($h3-text);
+}
+
+h4 {
+  @include responsive-typo-map($h4-text);
+}
+
+h5 {
+  @include responsive-typo-map($h5-text);
+}
+
+h6 {
+  @include responsive-typo-map($h6-text);
+}

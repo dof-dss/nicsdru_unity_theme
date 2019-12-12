@@ -1,0 +1,47 @@
+// Tables
+//
+// The `<table>` element displays tabular data in rows, columns, and cells.
+//
+// Markup: kss-templates/tables-table.twig
+//
+// Weight: 1
+//
+// Style guide: base.table
+
+table {
+  width: 100%;
+  margin-bottom: rhythm(3);
+  background: $table-background;
+  border-collapse: collapse;
+  border-spacing: 0;
+  border: 1px solid $table-border;
+}
+
+th,
+tr,
+td {
+  vertical-align: middle;
+}
+
+.sticky-header th,
+.sticky-table th {
+  border-bottom: 3px solid #ccc;
+  padding-right: 1em;
+  text-align: left;
+}
+
+th {
+  background: $table-th-cell;
+  border-right: 1px solid $table-th-cell-border;
+  color: #fff;
+  padding: 10px;
+  font-weight: bold;
+}
+
+td {
+  background: $table-background;
+  color: $table-cell-txt-color;
+  text-align: left;
+  padding: 10px;
+  border: 1px solid $table-td-cell-border;
+}
