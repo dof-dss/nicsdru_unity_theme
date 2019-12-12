@@ -24,7 +24,7 @@ time, mark, audio, video {
 body {
     font-family: $base-font-family;
     line-height: 160%;
-    color: $base-txt-color;
+    color: $text;
     max-width: 1024px;
     padding: 0 20px 20px 12px;
     -moz-osx-font-smoothing: grayscale;
@@ -61,7 +61,7 @@ ol, ul {
 h1, h2, h3, h4, h5, h6 {
     font-weight: bold;
     margin-bottom: 6px;
-    color: $heading-txt-color;
+    color: $headings;
 }
 
 h2 {
@@ -84,7 +84,7 @@ h4 {
 
 p {
     margin: 0 0 24px;
-    color: $base-txt-color;
+    color: $text;
 }
 
 em {
@@ -107,8 +107,8 @@ th, td {
 }
 
 th {
-    background: $table-th-cell;
-    border-right: 1px solid $table-th-cell-border;
+    background: $table-header-cell-background;
+    border-right: 1px solid $table-header-cell-border;
     color: #fff;
     padding: 12px;
     font-weight: bold;
@@ -116,10 +116,10 @@ th {
 
 td {
     background: $table-background;
-    color: $table-cell-txt-color;
+    color: $table-cell-text;
     text-align: left;
     padding: 12px;
-    border: 1px solid $table-td-cell-border;
+    border: 1px solid $table-cell-border;
 }
 
 hr {
@@ -305,14 +305,14 @@ a.btn {
     @include adjust-font-size-to($p-font-size);
 
     cursor: pointer;
-    background: $primary;
+    background: $brand-primary;
 
     @include border-radius(3px, 3px);
 }
 
 .info-notice {
     border: 1px solid #004695;
-    color: $base-txt-color;
+    color: $text;
     padding: 14px 14px 14px 60px;
     background: #fff url("/sites/all/themes/nics_software/images/i.png") no-repeat 11px 11px;
     background-size: 30px auto;

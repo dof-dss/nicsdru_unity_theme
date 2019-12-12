@@ -99,7 +99,7 @@
         padding: .5rem 0 .5rem 10rem;
         min-height: 54px;
         margin: 1rem 0 0 0;
-        background-color: $main-menu-bkground;
+        background-color: $menu-background;
         position: relative;
 
         &.nomenu {
@@ -227,7 +227,7 @@
         position: absolute;
         right: 5px;
         top: 5px;
-        background: lighten($main-menu-bkground, 10%);
+        background: lighten($menu-background, 10%);
         border: none;
         box-shadow: none;
         color: white;
@@ -290,15 +290,15 @@
     }
 
     #main-menu li:hover > a, #main-menu span.activelink {
-        background: lighten($main-menu-bkground, 10%);
+        background: lighten($menu-background, 10%);
     }
 
     #main-menu li li a {
-        background: lighten($main-menu-bkground, 10%);
+        background: lighten($menu-background, 10%);
     }
 
     #main-menu li li li a {
-        background: lighten($main-menu-bkground, 12%);
+        background: lighten($menu-background, 12%);
     }
 
     #main-menu li li a, #main-menu li li span.activelink {
@@ -325,7 +325,7 @@
         @include adjust-font-size-to(15px);
 
         font-weight: normal;
-        background: $main-menu-bkground;
+        background: $menu-background;
         color: $white;
         margin: 0;
         padding: 3%;

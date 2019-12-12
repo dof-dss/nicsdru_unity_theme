@@ -23,24 +23,13 @@ $rem-with-px-fallback: false;
 // Round the line height to the nearest half line height instead of the nearest integral line height.
 $round-to-nearest-half-line: true;
 
-/* Set the base images folder */
-// The relative path from the build directory, css/, to
-// the source directory, images/
-$image-url-path-to-source: '../' !default;
-// The relative path from the root sass directory to where your components usually lie.
-$image-url-subdirectory: 'images' !default;
-
-/* Layout ============================================================ */
-$max-grid-width: 940px;
-$grid-gap: 20px;
-$total-columns: 12;
 
 /* Breakpoints ======================================================== */
-$mob: 480px;
-$phab: 600px;
-$tab: 768px;
-$lap: 980px;
-$desk: 1382px;
+$mob: 440px;
+$phab: 641px;
+$tab: 766px;
+$lap: 961px;
+$desk: 1153px;
 
 $grid-breakpoints: (
   xs: 0,
@@ -53,8 +42,3 @@ $grid-breakpoints: (
 
 // The amount lists, blockquotes and comments are indented.
 $indent-amount: 1.8rem;
-
-// Set the width of child grid items in the .header
-// The first child will typically be the site branding wrapper, additional items (typically just the main search form)
-// can be controlled with this variable which only becomes applicable @breakpoint $tab (768px).
-$header-template-columns: auto 400px !default;

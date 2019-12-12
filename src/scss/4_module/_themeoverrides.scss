@@ -13,7 +13,7 @@ blockquote, q {
       }
     }
 }
-// styling for unordered list items 
+// styling for unordered list items
 #content {
     @extend %list-spacing;
 }
@@ -76,13 +76,13 @@ aside {
         font-weight: 600;
 
         a {
-            color: $primary;
+            color: $brand-primary;
         }
     }
 }
 
 .ui-state-active a, .ui-state-active a:link, .ui-state-active a:visited, .ui-state-default a, .ui-state-default a:link, .ui-state-default a:visited, .ui-widget-content a {
-    color: $primary;
+    color: $brand-primary;
 }
 
 .ui-widget {
@@ -101,11 +101,11 @@ aside {
 .ui-widget-content {
     border: none;
     background: none;
-    color: $base-txt-color;
+    color: $text;
     overflow: hidden !important;
 
     li {
-        color: $base-txt-color;
+        color: $text;
     }
 }
 .x-scroll {

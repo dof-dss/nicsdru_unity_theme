@@ -5,9 +5,7 @@
 // This file gets turned into style.css.
 
 // Variables, Mixins & Functions Import
-@import '0_global/global';
-@import '0_global/variables';
-@import '0_global/mixins';
+@import 'init';
 
 // Import Base styles. These appear first in the style.css file
 @import '1_base/base';

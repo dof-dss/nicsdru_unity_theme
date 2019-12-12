@@ -49,11 +49,11 @@ $base-font-family: 'Open Sans', sans-serif;
 //
 
 // base variables -----------------------------------
-$primary: #002e62; // used in the nav bar etc
-$base-txt-color: #373737; // txt color for normal p txt
-$heading-txt-color: #373737; // txt color for all headings
-$anchor: #16a085; // used for anchor links on the site
-$anchor-hover: #138d75;// used on the hover effect on links
+$brand-primary: #002e62; // used in the nav bar etc
+$text: #373737; // txt color for normal p txt
+$headings: #373737; // txt color for all headings
+$link: #16a085; // used for anchor links on the site
+$link-hover: #138d75;// used on the hover effect on links
 $grey: #333;
 $white: #fff;
 $black: #000;
@@ -64,25 +64,25 @@ $yellow: yellow;
 $orange: orange;
 
 // menu styling
-$main-menu-bkground: $primary; //background color for the main / nav menu
-$main-menu-li-hover: #3e1151; // changes the background color on top level menu items on hover
-$main-menu-separater: $white; // colors the border between menu items
-$main-menu-li-li-hover: lighten(#3e1151, 10);
-$main-menu-sub-item-hover: #1abc9c; // background color for sub menu items on hover
+$menu-background: $brand-primary; //background color for the main / nav menu
+$menu-item-hover: #3e1151; // changes the background color on top level menu items on hover
+$menu-separator: $white; // colors the border between menu items
+$menu-sub-item-background: lighten(#3e1151, 10);
+$menu-sub-item-hover: #1abc9c; // background color for sub menu items on hover
 
 //table styling
 $table-background: #fff; // background color for tables
 $table-border: #bbb; // border color of table
-$table-th-cell: #2e3d4a; //background color for table heading cells - font is colored white
-$table-th-cell-border: #c8c7c7; // border color for heading cells
-$table-cell-txt-color: #747474; //font color for table cells - background color is as per table above
-$table-td-cell-border: #dbdbdb; // border color for table cells
+$table-header-cell-background: #2e3d4a; //background color for table heading cells - font is colored white
+$table-header-cell-border: #c8c7c7; // border color for heading cells
+$table-cell-text: #747474; //font color for table cells - background color is as per table above
+$table-cell-border: #dbdbdb; // border color for table cells
 
 // footer styling
-$footer-background: $primary;
+$footer-background: $brand-primary;
 $footer-border: #00a583;
-$footer-p-txt-color: #fff;
-$footer-title-txt-color: #fff;
+$footer-text: #fff;
+$footer-headings: #fff;
 
 
 // Tab styling.
@@ -90,13 +90,13 @@ $tabs-container-bg: #fff;
 $tabs-border: #bbb;
 
 // Style Guide Colors
-$webform-btn: $anchor;
+$webform-btn: $link;
 $webform-btn-hover: darken($webform-btn,5);
 $btn-txt-color: $white;
 
-$btn-green: $anchor;
-$btn-green-hover: lighten($anchor,5);
-$btn-green-active: darken($anchor,5);
+$btn-green: $link;
+$btn-green-hover: lighten($link,5);
+$btn-green-active: darken($link,5);
 $btn-blue: #44AADD;
 $btn-blue-hover: #2DAFF7;
 $btn-blue-active: #1580BD;

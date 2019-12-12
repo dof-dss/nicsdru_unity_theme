@@ -102,7 +102,7 @@ span.elink {
         margin: 0 0 18px 0;
         margin: 0 0 rhythm(3) 0;
         @include adjust-font-size-to(16px,3);
-        color: $anchor;
+        color: $link;
     }
 
     picture[data-picture-mapping="inline"] + div.field-file-image-caption-text,
@@ -274,9 +274,9 @@ span.elink {
 // -*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*- //
 // ---- ---- ---- book navigation ---- ---- ---- //
 // -*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*- //
-.book-navigation {    
+.book-navigation {
     width: 100%;
-    
+
     .menu {
         border-top: 1px solid #888;
         border-bottom: 1px solid #888;
@@ -290,6 +290,7 @@ span.elink {
     .menu li {
         position: relative;
         list-style: none;        
+
         &:before {
             content: "-";
             position: absolute;
@@ -297,8 +298,8 @@ span.elink {
             top: 0;
         }
     }
-    
-    .page-links {        
+
+    .page-links {
         width: 100%;
         background-color: #f2f2f2;
         min-height: 33px;
@@ -317,16 +318,16 @@ span.elink {
             line-height: rhythm(4);
             @include adjust-font-size-to(14px,3.5);
         }
-        
+
         span {
             background: none !important;
             border: 0 solid !important;
         }
-        
+
         span.parent-title {
             display: inline;
         }
-        
+
         .page-next {
             padding: 7px 14px 7px 21px;
             padding: .7rem 1.4rem .7rem 2.1rem;
@@ -356,9 +357,9 @@ span.elink {
     .page-links.clearfix::after {
         content: "";
     }
-    
-    @media screen and (min-width: 440px) {        
-        .page-links {        
+
+    @media screen and (min-width: 440px) {
+        .page-links {
             display: table;
 
             a, span {
@@ -366,7 +367,7 @@ span.elink {
                 display: table-cell;
                 vertical-align: middle;
             }
-            
+
             .page-up {
                 width: 16%;
                 .parent-title {
@@ -375,13 +376,13 @@ span.elink {
             }
         }
     } //close the media query for mob
-    
+
     @media screen and (min-width: 640px) {
         .menu {
             padding: 30px 18px 36px;
             padding: 3rem 1.8rem 3.6rem;
         }
-        
+
         .page-links {
             min-height: 50px;
 
@@ -396,7 +397,7 @@ span.elink {
                 background-size: auto auto;
                 border-right: 21px solid #dfdfdf;
             }
-            
+
             .page-up {
                 padding: 12px;
                 padding: 1.2rem;
@@ -410,7 +411,7 @@ span.elink {
             }
         }
     } //close the media query for phab
-    
+
     @media screen and (min-width: 768px) {
         .menu {
             padding-right: 0;

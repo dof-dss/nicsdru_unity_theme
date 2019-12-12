@@ -1,10 +1,10 @@
 /////////////////////////
-// Base style 
+// Base style
 // - this partial takes the code from the parent software responsive theme and
 //   and converts px values into relative values etc
 ////////////////////////
 
-/* --------------------------------------------- 
+/* ---------------------------------------------
 
 * Filename:     style.css
 * Version:      1.0.0 (2015-03-21)
@@ -90,19 +90,19 @@ html {
 body {
     font-family: $base-font-family;
     line-height: 160%;
-    color: $base-txt-color;
+    color: $text;
 
     //font-size: 100% * ($base-font-size / 16px);
     @include adjust-font-size-to($p-font-size);
 }
 
 a {
-    color: $anchor;
+    color: $link;
     text-decoration: none;
 }
 
 a:hover {
-    color: $anchor-hover;
+    color: $link-hover;
     text-decoration: underline;
 }
 
@@ -130,7 +130,7 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: bold;
     margin-bottom: 6px;
     margin-bottom: .6rem;
-    color: $heading-txt-color;
+    color: $headings;
 }
 
 h1 {
@@ -169,7 +169,7 @@ h6 {
 %p, p {
     margin: 0 0 24px;
     margin: 0 0 rhythm(4);
-    color: $base-txt-color;
+    color: $text;
 }
 
 table {
@@ -196,8 +196,8 @@ table {
 }
 
 th {
-    background: $table-th-cell;
-    border-right: 1px solid $table-th-cell-border;
+    background: $table-header-cell-background;
+    border-right: 1px solid $table-header-cell-border;
     color: #fff;
     padding: 12px;
     padding: 1.2rem;
@@ -206,11 +206,11 @@ th {
 
 td {
     background: $table-background;
-    color: $table-cell-txt-color;
+    color: $table-cell-text;
     text-align: left;
     padding: 12px;
     padding: 1.2rem;
-    border: 1px solid $table-td-cell-border;
+    border: 1px solid $table-cell-border;
 }
 
 code {
@@ -446,7 +446,7 @@ b {
 
     // customisations
     font-style: italic;
-    color: $anchor;
+    color: $link;
 }
 
 .menu_wrapper {
@@ -457,7 +457,7 @@ b {
     max-width: 1024px;
     margin: 0 auto;
     position: relative;
-    background-color: $main-menu-bkground;
+    background-color: $menu-background;
 }
 
 #main-menu ul {
@@ -475,7 +475,7 @@ b {
     display: inline-block;
     zoom: 1;
     vertical-align: top;
-    border-right: 1px solid $main-menu-separater;
+    border-right: 1px solid $menu-separator;
 
     @include adjust-font-size-to(14px);
 
@@ -514,16 +514,16 @@ ul.menu {
 }
 
 #main-menu li:hover > a {
-    background: $main-menu-li-hover;
+    background: $menu-item-hover;
 }
 
 #main-menu li li:hover > a {
-    background: $main-menu-sub-item-hover;
-    border-top: 1px solid $main-menu-separater;
+    background: $menu-sub-item-hover;
+    border-top: 1px solid $menu-separator;
 }
 
 #main-menu span.activelink, #main-menu li.active-trail a {
-    background: $main-menu-li-hover;
+    background: $menu-item-hover;
     color: $white;
 }
 
@@ -565,13 +565,13 @@ ul.menu {
 }
 
 #main-menu li li a {
-    background: $main-menu-li-hover;
+    background: $menu-item-hover;
 }
 
 #main-menu li li a, #main-menu li li span.activelink {
     min-width: 150px;
     margin: 0;
-    border-top: 1px solid $main-menu-separater;
+    border-top: 1px solid $menu-separator;
 
     @include adjust-font-size-to(14px);
 
@@ -616,7 +616,7 @@ ul.menu {
 }
 
 #main-menu ul.menu li li:hover > a {
-    background: $main-menu-sub-item-hover;
+    background: $menu-sub-item-hover;
 }
 
 #main-menu li.expanded, #main-menu li.collapsed, #main-menu li.leaf {
@@ -751,12 +751,12 @@ ul.menu {
 }
 
 #sidebar-first {
-    color: $base-txt-color;
+    color: $text;
     float: left;
 }
 
 #sidebar-second {
-    color: $base-txt-color;
+    color: $text;
     float: right;
 }
 
@@ -1000,7 +1000,7 @@ input.form-checkbox, input.form-radio {
 }
 
 /*-------------------------------------------*
-/* Menus and item lists 
+/* Menus and item lists
 /*-------------------------------------------*/
 
 .item-list ul {
@@ -1048,7 +1048,7 @@ ul.primary li a {
 }
 
 ul.primary li a:hover, ul.primary li a.active {
-    background: $base-txt-color;
+    background: $text;
     border: none;
     color: #fff;
 }
@@ -1059,7 +1059,7 @@ ul.primary li a:hover {
 }
 
 ul.secondary {
-    background: $base-txt-color;
+    background: $text;
     border-bottom: none;
     clear: both;
     margin: 0;
@@ -1634,7 +1634,7 @@ a.read_more:hover {
     & input[type="text"], input[type="search"] {
         @media screen and (min-width: 320px) {
             border: 1px solid #ccc;
-            color: $base-txt-color;
+            color: $text;
             background-color: inherit;
             background: url("/sites/all/themes/nics_software/images/search-icon.png") no-repeat left top 3px;
             min-width: 200px;
@@ -1793,7 +1793,7 @@ ol.search-results {
 }
 
 #footer p {
-    color: $footer-p-txt-color;
+    color: $footer-text;
 }
 
 #footer-area .column:first-child {
@@ -1801,7 +1801,7 @@ ol.search-results {
 }
 
 #footer-area .column-title {
-    color: $footer-title-txt-color;
+    color: $footer-headings;
 }
 
 #copyright {
@@ -1939,7 +1939,7 @@ a.btn {
     @include adjust-font-size-to($p-font-size);
 
     cursor: pointer;
-    background: $primary;
+    background: $brand-primary;
     border-radius: 0;
 }
 
@@ -1971,7 +1971,7 @@ a.btn:hover {
 
 .info-notice {
     border: 1px solid #004695;
-    color: $base-txt-color;
+    color: $text;
     padding: 14px 14px 14px 60px;
     background: #fff url("/sites/all/themes/nics_software/images/i.png") no-repeat 11px 11px;
     background-size: 30px auto;
@@ -1983,7 +1983,7 @@ ul.info-notice {
 
 .user-menu-wrapper {
     width: 100%;
-    background: $primary;
+    background: $brand-primary;
 }
 
 .user-menu-wrapper ul.menu {
