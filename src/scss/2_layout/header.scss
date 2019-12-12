@@ -1,0 +1,155 @@
+#inner_header_wrapper {
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+}
+
+#header {
+  max-width: 1024px;
+  margin: 1% auto;
+
+  @media screen and (max-width: $tab) {
+    margin-bottom: 0;
+  }
+}
+
+#headerHero {
+  @media screen and (max-width: $tab) {
+    padding: .5rem 0 .5rem 10rem;
+    min-height: 54px;
+    margin: 1rem 0 0 0;
+    background-color: $menu-background;
+    position: relative;
+
+    &.nomenu {
+      .burger-toggle {
+        display: none !important;
+      }
+    }
+
+    &.nomenu.nosearch {
+      display: none;
+    }
+
+    .region-search {
+      input[type=text], input[type=search] {
+        width: 98%;
+        height: 35px;
+        padding: 0 1rem;
+        max-width: 100%;
+        border: none;
+        margin: 0;
+        float: none;
+        border-radius: 0;
+        background: #fff;
+      }
+
+      .form-submit {
+        height: 34px;
+        width: 65px;
+        position: absolute;
+        top: -1px;
+        right: 10px;
+        background-image: url(/sites/all/themes/nics_software/images/search-icon.png);
+        background-position: 30px center;
+        background-color: #fff;
+        text-indent: -999rem;
+      }
+    }
+  }
+}
+
+.top_left {
+  float: left;
+  width: 50%;
+}
+
+.top_right {
+  float: right;
+  width: 50%;
+
+  .region-user-menu {
+    ul.menu {
+      @media screen and (max-width: $tab) {
+        float: none;
+      }
+    }
+  }
+}
+
+#logo {
+  float: left;
+  margin: .8rem 1rem .8rem 0;
+
+  @media screen and (max-width: $tab) {
+    text-align: center;
+    width: 100%;
+    margin: .8rem 0 0 0;
+  }
+
+  img {
+   display: block;
+
+   @media screen and (max-width: $tab) {
+     text-align: center;
+     display: inline-block;
+   }
+  }
+}
+
+#site-title a,
+#site-description {
+  font-weight: normal;
+}
+
+#site-title,
+#site-description {
+  float: left;
+
+  @media screen and (max-width: $tab) {
+    margin: 0;
+    line-height: 1.62em;
+  }
+}
+
+#site-title {
+  margin: 1rem 0 0 0;
+  font-size: 3rem;
+  font-weight: bold;
+
+  @media screen and (max-width: $tab) {
+    padding: 0;
+    width: 100%;
+    display: inline-block;
+  }
+
+  a {
+    float: left;
+
+    @media screen and (max-width: $tab) {
+      width: 100%;
+      text-align: center;
+    }
+  }
+}
+
+#site-description {
+  margin: .4rem 0 0 0;
+  float: left;
+  clear: both;
+
+  @include responsive-typo-map($normal-text);
+
+  line-height: 100%;
+
+  // customisations
+  font-style: italic;
+  color: $link;
+
+  @media screen and (max-width: $tab) {
+    padding-top: 1.8rem;
+    padding-bottom: .5rem;
+    width: 100%;
+    text-align: center;
+  }
+}

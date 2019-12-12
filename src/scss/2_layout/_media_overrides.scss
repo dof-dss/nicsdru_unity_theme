@@ -86,58 +86,58 @@
 }
 
 @media screen and (max-width: 765px) {
-    #logo {
-        text-align: center;
-        width: 100%;
-    }
-
-    #header {
-        margin-bottom: 0;
-    }
-
-    #headerHero {
-        padding: .5rem 0 .5rem 10rem;
-        min-height: 54px;
-        margin: 1rem 0 0 0;
-        background-color: $menu-background;
-        position: relative;
-
-        &.nomenu {
-            .burger-toggle {
-                display: none !important;
-            }
-        }
-
-        &.nomenu.nosearch {
-            display: none;
-        }
-
-        .region-search {
-            input[type=text], input[type=search] {
-                width: 98%;
-                height: 35px;
-                padding: 0 1rem;
-                max-width: 100%;
-                border: none;
-                margin: 0;
-                float: none;
-                border-radius: 0;
-                background: #fff;
-            }
-
-            .form-submit {
-                height: 34px;
-                width: 65px;
-                position: absolute;
-                top: -1px;
-                right: 10px;
-                background-image: url(/sites/all/themes/nics_software/images/search-icon.png);
-                background-position: 30px center;
-                background-color: #fff;
-                text-indent: -999rem;
-            }
-        }
-    }
+    //#logo {
+    //    text-align: center;
+    //    width: 100%;
+    //}
+    //
+    //#header {
+    //    margin-bottom: 0;
+    //}
+    //
+    //#headerHero {
+    //    padding: .5rem 0 .5rem 10rem;
+    //    min-height: 54px;
+    //    margin: 1rem 0 0 0;
+    //    background-color: $menu-background;
+    //    position: relative;
+    //
+    //    &.nomenu {
+    //        .burger-toggle {
+    //            display: none !important;
+    //        }
+    //    }
+    //
+    //    &.nomenu.nosearch {
+    //        display: none;
+    //    }
+    //
+    //    .region-search {
+    //        input[type=text], input[type=search] {
+    //            width: 98%;
+    //            height: 35px;
+    //            padding: 0 1rem;
+    //            max-width: 100%;
+    //            border: none;
+    //            margin: 0;
+    //            float: none;
+    //            border-radius: 0;
+    //            background: #fff;
+    //        }
+    //
+    //        .form-submit {
+    //            height: 34px;
+    //            width: 65px;
+    //            position: absolute;
+    //            top: -1px;
+    //            right: 10px;
+    //            background-image: url(/sites/all/themes/nics_software/images/search-icon.png);
+    //            background-position: 30px center;
+    //            background-color: #fff;
+    //            text-indent: -999rem;
+    //        }
+    //    }
+    //}
 
     #copyright {
         padding: 0 12px;
@@ -188,21 +188,21 @@
         padding: 1rem;
     }
 
-    #site-title,
-    #site-description {
-        margin: 0;
-        line-height: 1.62em;
-    }
-
-    #site-title {
-        padding-top: 18px;
-        padding-top: 1.8rem;
-    }
-
-    #site-description {
-        padding-bottom: 18px;
-        padding-bottom: 1.8rem;
-    }
+    //#site-title,
+    //#site-description {
+    //    margin: 0;
+    //    line-height: 1.62em;
+    //}
+    //
+    //#site-title {
+    //    padding-top: 18px;
+    //    padding-top: 1.8rem;
+    //}
+    //
+    //#site-description {
+    //    padding-bottom: 18px;
+    //    padding-bottom: 1.8rem;
+    //}
 
     #main-menu ul {
         display: none;
@@ -387,34 +387,34 @@
         padding: 0;
     }
 
-    #site-title {
-        width: 100%;
-    }
-
-    #site-title a {
-        width: 100%;
-        text-align: center;
-    }
-
-    .top_right .region-user-menu ul.menu {
-        float: none;
-    }
-
-    #logo {
-        margin: 8px 0 0 0;
-        margin: .8rem 0 0 0;
-        text-align: center;
-    }
-
-    #logo img {
-        text-align: center;
-        display: inline-block;
-    }
-
-    #site-title {
-        display: inline-block;
-        padding: 0;
-    }
+    //#site-title {
+    //    width: 100%;
+    //}
+    //
+    //#site-title a {
+    //    width: 100%;
+    //    text-align: center;
+    //}
+    //
+    //.top_right .region-user-menu ul.menu {
+    //    float: none;
+    //}
+    //
+    //#logo {
+    //    margin: 8px 0 0 0;
+    //    margin: .8rem 0 0 0;
+    //    text-align: center;
+    //}
+    //
+    //#logo img {
+    //    text-align: center;
+    //    display: inline-block;
+    //}
+    //
+    //#site-title {
+    //    display: inline-block;
+    //    padding: 0;
+    //}
 
     #block-nivo-slider-nivo-slider .nivo-caption {
         width: 100%;
@@ -462,13 +462,13 @@
     #copyright p {
         text-align: center;
     }
-
-    #site-description {
-        padding-bottom: 5px;
-        padding-bottom: .5rem;
-        width: 100%;
-        text-align: center;
-    }
+    //
+    //#site-description {
+    //    padding-bottom: 5px;
+    //    padding-bottom: .5rem;
+    //    width: 100%;
+    //    text-align: center;
+    //}
 }
 
 @media screen and (max-width: 440px) {

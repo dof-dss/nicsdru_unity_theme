@@ -380,74 +380,74 @@ b {
     color: #333;
 }
 
-#inner_header_wrapper {
-    margin: 0 auto;
-    position: relative;
-    overflow: hidden;
-}
-
-#header {
-    max-width: 1024px;
-    margin: 1% auto;
-}
-
-.top_left {
-    float: left;
-    width: 50%;
-}
-
-.top_right {
-    float: right;
-    width: 50%;
-}
-
-#logo {
-    float: left;
-    margin: 8px 10px 8px 0px;
-    margin: .8rem 1rem .8rem 0;
-}
-
-#logo img {
-    display: block;
-}
-
-#site-title a,
-#site-description {
-    font-weight: normal;
-}
-
-#site-title,
-#site-description {
-    float: left;
-}
-
-#site-title {
-    margin: 10px 0 0 0;
-    margin: 1rem 0 0 0;
-
-    @include adjust-font-size-to(30px);
-
-    font-weight: bold;
-}
-
-#site-title a {
-    float: left;
-}
-
-#site-description {
-    margin: 4px 0 0 0;
-    margin: .4rem 0 0 0;
-    float: left;
-    clear: both;
-
-    @include adjust-font-size-to($p-font-size);
-
-    line-height: 100%;
-
-    // customisations
-    font-style: italic;
-    color: $link;
-}
+//#inner_header_wrapper {
+//    margin: 0 auto;
+//    position: relative;
+//    overflow: hidden;
+//}
+//
+//#header {
+//    max-width: 1024px;
+//    margin: 1% auto;
+//}
+//
+//.top_left {
+//    float: left;
+//    width: 50%;
+//}
+//
+//.top_right {
+//    float: right;
+//    width: 50%;
+//}
+//
+//#logo {
+//    float: left;
+//    margin: 8px 10px 8px 0px;
+//    margin: .8rem 1rem .8rem 0;
+//}
+//
+//#logo img {
+//    display: block;
+//}
+//
+//#site-title a,
+//#site-description {
+//    font-weight: normal;
+//}
+//
+//#site-title,
+//#site-description {
+//    float: left;
+//}
+//
+//#site-title {
+//    margin: 10px 0 0 0;
+//    margin: 1rem 0 0 0;
+//
+//    @include adjust-font-size-to(30px);
+//
+//    font-weight: bold;
+//}
+//
+//#site-title a {
+//    float: left;
+//}
+//
+//#site-description {
+//    margin: 4px 0 0 0;
+//    margin: .4rem 0 0 0;
+//    float: left;
+//    clear: both;
+//
+//    @include adjust-font-size-to($p-font-size);
+//
+//    line-height: 100%;
+//
+//    // customisations
+//    font-style: italic;
+//    color: $link;
+//}
 
 .menu_wrapper {
     width: 100%;
