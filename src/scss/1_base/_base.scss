@@ -449,184 +449,184 @@ b {
     color: $link;
 }
 
-.menu_wrapper {
-    width: 100%;
-}
-
-#main-menu {
-    max-width: 1024px;
-    margin: 0 auto;
-    position: relative;
-    background-color: $menu-background;
-}
-
-#main-menu ul {
-    float: left;
-    padding: 0;
-    margin: 0;
-    list-style: none;
-
-    //@include adjust-font-size-to($p-font-size);
-}
-
-#main-menu li {
-    position: relative;
-    display: -moz-inline-stack;
-    display: inline-block;
-    zoom: 1;
-    vertical-align: top;
-    border-right: 1px solid $menu-separator;
-
-    @include adjust-font-size-to(14px);
-
-    float: left;
-}
-
-#main-menu ul li:first-child {
-    padding-left: 0;
-}
-
-ul.menu {
-    padding: 0;
-    margin: 5px 0 5px 0;
-    margin: .5rem 0;
-}
-
-.region ul.menu li,
-.region ul.links li,
-.region .item-list ul li {
-    background: url("/sites/all/themes/nics_software/images/marker.png") no-repeat scroll 4px center rgba(0, 0, 0, 0);
-    list-style: none outside none;
-    margin: 0 0 2px;
-    margin: 0 0 .2rem;
-    padding: 0 0 0 15px;
-    padding: 0 0 0 1.5rem;
-    text-align: left;
-}
-
-#main-menu a, #main-menu span.activelink {
-    padding: 11px 20px;
-    padding: 1.1rem 2rem;
-    display: block;
-    text-decoration: none;
-    color: #fff;
-    font-weight: 500;
-}
-
-#main-menu li:hover > a {
-    background: $menu-item-hover;
-}
-
-#main-menu li li:hover > a {
-    background: $menu-sub-item-hover;
-    border-top: 1px solid $menu-separator;
-}
-
-#main-menu span.activelink, #main-menu li.active-trail a {
-    background: $menu-item-hover;
-    color: $white;
-}
-
-.drop-down-toggle {
-    position: absolute;
-    top: 7px;
-    right: 16px;
-    display: none;
-    width: 24px;
-    height: 24px;
-    border-radius: 15px;
-    background: rgb(73, 71, 71);
-    border: rgb(170, 170, 170) 2px solid;
-}
-
-.drop-down-arrow {
-    display: block;
-    width: 0;
-    height: 0;
-    margin: 8px 0 0 5px;
-    margin: .8rem 0 0 .5rem;
-    border-top: 5px solid #aaa;
-    border-left: transparent 5px solid;
-    border-right: transparent 5px solid;
-}
-
-#main-menu li li {
-    float: none;
-    min-width: 150px;
-    padding: 0;
-    margin: 0;
-    position: relative;
-    width: 100%;
-}
-
-#main-menu li ul ul {
-    left: 151px;
-    top: 0;
-}
-
-#main-menu li li a {
-    background: $menu-item-hover;
-}
-
-#main-menu li li a, #main-menu li li span.activelink {
-    min-width: 150px;
-    margin: 0;
-    border-top: 1px solid $menu-separator;
-
-    @include adjust-font-size-to(14px);
-
-    text-align: left;
-    overflow: hidden;
-    padding: 8px 11px;
-    padding: .8rem 1.1rem;
-    border-radius: 0;
-    color: $white;
-    border-width: 1px 0 0 0;
-}
-
-#main-menu li ul {
-    display: none;
-    position: absolute;
-    z-index: 9999;
-    padding: 0;
-    margin: 0;
-    background: #2E3D4A;
-    overflow: visible !important;
-}
-
-#main-menu li:hover > ul,
-#main-menu li li:hover > ul,
-#main-menu li li li:hover > ul {
-    display: block;
-}
-
-#main-menu .nav-toggle {
-    display: none;
-}
-
-#main-menu ul li.leaf,
-#main-menu ul li.expanded,
-#main-menu ul li.collapsed {
-    list-style: none;
-}
-
-#main-menu ul.menu li li {
-    border: 0;
-    margin: 0;
-}
-
-#main-menu ul.menu li li:hover > a {
-    background: $menu-sub-item-hover;
-}
-
-#main-menu li.expanded, #main-menu li.collapsed, #main-menu li.leaf {
-    margin: 0;
-    padding: 0;
-}
-
-#main-menu .ul-toggle {
-    display: none;
-}
+//.menu_wrapper {
+//    width: 100%;
+//}
+//
+//#main-menu {
+//    max-width: 1024px;
+//    margin: 0 auto;
+//    position: relative;
+//    background-color: $menu-background;
+//}
+//
+//#main-menu ul {
+//    float: left;
+//    padding: 0;
+//    margin: 0;
+//    list-style: none;
+//
+//    //@include adjust-font-size-to($p-font-size);
+//}
+//
+//#main-menu li {
+//    position: relative;
+//    display: -moz-inline-stack;
+//    display: inline-block;
+//    zoom: 1;
+//    vertical-align: top;
+//    border-right: 1px solid $menu-separator;
+//
+//    @include adjust-font-size-to(14px);
+//
+//    float: left;
+//}
+//
+//#main-menu ul li:first-child {
+//    padding-left: 0;
+//}
+//
+//ul.menu {
+//    padding: 0;
+//    margin: 5px 0 5px 0;
+//    margin: .5rem 0;
+//}
+//
+//.region ul.menu li,
+//.region ul.links li,
+//.region .item-list ul li {
+//    background: url("/sites/all/themes/nics_software/images/marker.png") no-repeat scroll 4px center rgba(0, 0, 0, 0);
+//    list-style: none outside none;
+//    margin: 0 0 2px;
+//    margin: 0 0 .2rem;
+//    padding: 0 0 0 15px;
+//    padding: 0 0 0 1.5rem;
+//    text-align: left;
+//}
+//
+//#main-menu a, #main-menu span.activelink {
+//    padding: 11px 20px;
+//    padding: 1.1rem 2rem;
+//    display: block;
+//    text-decoration: none;
+//    color: #fff;
+//    font-weight: 500;
+//}
+//
+//#main-menu li:hover > a {
+//    background: $menu-item-hover;
+//}
+//
+//#main-menu li li:hover > a {
+//    background: $menu-sub-item-hover;
+//    border-top: 1px solid $menu-separator;
+//}
+//
+//#main-menu span.activelink, #main-menu li.active-trail a {
+//    background: $menu-item-hover;
+//    color: $white;
+//}
+//
+//.drop-down-toggle {
+//    position: absolute;
+//    top: 7px;
+//    right: 16px;
+//    display: none;
+//    width: 24px;
+//    height: 24px;
+//    border-radius: 15px;
+//    background: rgb(73, 71, 71);
+//    border: rgb(170, 170, 170) 2px solid;
+//}
+//
+//.drop-down-arrow {
+//    display: block;
+//    width: 0;
+//    height: 0;
+//    margin: 8px 0 0 5px;
+//    margin: .8rem 0 0 .5rem;
+//    border-top: 5px solid #aaa;
+//    border-left: transparent 5px solid;
+//    border-right: transparent 5px solid;
+//}
+//
+//#main-menu li li {
+//    float: none;
+//    min-width: 150px;
+//    padding: 0;
+//    margin: 0;
+//    position: relative;
+//    width: 100%;
+//}
+//
+//#main-menu li ul ul {
+//    left: 151px;
+//    top: 0;
+//}
+//
+//#main-menu li li a {
+//    background: $menu-item-hover;
+//}
+//
+//#main-menu li li a, #main-menu li li span.activelink {
+//    min-width: 150px;
+//    margin: 0;
+//    border-top: 1px solid $menu-separator;
+//
+//    @include adjust-font-size-to(14px);
+//
+//    text-align: left;
+//    overflow: hidden;
+//    padding: 8px 11px;
+//    padding: .8rem 1.1rem;
+//    border-radius: 0;
+//    color: $white;
+//    border-width: 1px 0 0 0;
+//}
+//
+//#main-menu li ul {
+//    display: none;
+//    position: absolute;
+//    z-index: 9999;
+//    padding: 0;
+//    margin: 0;
+//    background: #2E3D4A;
+//    overflow: visible !important;
+//}
+//
+//#main-menu li:hover > ul,
+//#main-menu li li:hover > ul,
+//#main-menu li li li:hover > ul {
+//    display: block;
+//}
+//
+//#main-menu .nav-toggle {
+//    display: none;
+//}
+//
+//#main-menu ul li.leaf,
+//#main-menu ul li.expanded,
+//#main-menu ul li.collapsed {
+//    list-style: none;
+//}
+//
+//#main-menu ul.menu li li {
+//    border: 0;
+//    margin: 0;
+//}
+//
+//#main-menu ul.menu li li:hover > a {
+//    background: $menu-sub-item-hover;
+//}
+//
+//#main-menu li.expanded, #main-menu li.collapsed, #main-menu li.leaf {
+//    margin: 0;
+//    padding: 0;
+//}
+//
+//#main-menu .ul-toggle {
+//    display: none;
+//}
 
 #container {
     clear: both;
