@@ -1,0 +1,118 @@
+// @file
+// Custom sass mixins
+//
+// Define the custom mixins for your project here.
+// http://sass-lang.com/docs/yardoc/file.SASS_REFERENCE.html#defining_a_mixin
+
+// Makes an element visually hidden, but accessible.
+// @see http://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+
+@mixin retina {
+    @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2 / 1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
+        @content;
+    }
+}
+
+@mixin element-invisible {
+    position: absolute !important;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+
+    @if $legacy-support-for-ie6 or $legacy-support-for-ie7 {
+        clip: rect(1px 1px 1px 1px);
+
+        // IE6 and IE7 use the wrong syntax.
+    }
+
+    clip: rect(1px, 1px, 1px, 1px);
+}
+
+// Turns off the element-invisible effect.
+@mixin element-invisible-off {
+    position: static !important;
+    clip: auto;
+    height: auto;
+    width: auto;
+    overflow: auto;
+}
+
+// Makes an element visually hidden by default, but visible when focused.
+@mixin element-focusable {
+    @include element-invisible;
+
+    &:active,
+    &:focus {
+        @include element-invisible-off;
+    }
+}
+
+// We declare mixins for flexbox here as compass does not appear to pre-fix for all vendors
+// and in order for ensure the code works as widely as possible, best to add our own
+// read more here: https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+@mixin displayflex {
+    display: -webkit-box;  /* OLD - iOS 6-, Safari 3.1-6, BB7 */
+    display: -ms-flexbox;  /* TWEENER - IE 10 */
+    display: -webkit-flex; /* NEW - Safari 6.1+. iOS 7.1+, BB10 */
+    display: flex;         /* NEW, Spec - Firefox, Chrome, Opera */
+}
+
+
+
+/// extensionable code
+%btn {
+    text-decoration: none !important;
+    text-align: center;
+    display: inline-block;
+    box-sizing: border-box;
+    padding: 9px 40px;
+    padding: 0.9rem 4rem;
+    min-width: 130px;
+    border: 0 solid;
+    color: $white !important;
+    background-color: $btn-charcoal;
+    border-color: $btn-charcoal;
+    background-size: 17px auto;
+
+    &:hover {
+        background-color: $btn-charcoal-hover;
+        border-color: $btn-charcoal-hover;
+    }
+
+    &:active {
+        background-color: $btn-charcoal-active;
+        border-color: $btn-charcoal-active;
+    }
+}
+
+%btn-action {
+    background-color: $btn-green;
+    border-color: $btn-green;
+
+    &:hover {
+        background-color: $btn-green-hover;
+        border-color: $btn-green-hover;
+    }
+
+    &:active {
+        background-color: $btn-green-active;
+        border-color: $btn-green-active;
+    }
+}
+
+%btn-large {
+    padding: 11px 45px 13px;
+    padding: 1.1rem 4.5rem 1.3rem;
+
+    @include adjust-font-size-to(24px, 4);
+
+    background-size: auto auto;
+}
+
+%btn-arrow-right {
+    border-right-width: 21px;
+    border-style: solid;
+    background-image: inline-image("arrow-right.png");
+    background-position: right center;
+    background-repeat: no-repeat;
+}

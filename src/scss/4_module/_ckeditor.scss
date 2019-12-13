@@ -1,0 +1,50 @@
+img {
+    opacity: .25;
+
+    // images with no style applied should look faint
+    margin: 0 0 27px 0;
+}
+
+img[src*="ytimg.com"],
+img.media-element.file-video {
+    opacity: 1;
+
+    // youtube video placeholder images should not look faint
+}
+
+img[data-picture-mapping="inline"],
+img[data-picture-mapping="inline_expandable"] {
+    width: 300px;
+    height: auto;
+    float: right;
+    margin: 9px 0 0 27px;
+}
+
+img[data-picture-mapping="inline_xl"] {
+    width: 100%;
+    height: auto;
+    float: none;
+    margin: 0;
+}
+
+img[data-picture-mapping="inline"],
+img[data-picture-mapping="inline_expandable"],
+img[data-picture-mapping="inline_xl"],
+img[data-picture-mapping*="landing_"] {
+    opacity: 1;
+}
+.x-scroll {
+    width: 100%;
+    overflow-x: auto;
+    margin: rhythm(2) 0 rhythm(4) 0;
+
+    @media screen and (min-width: 765px) {
+        margin: 18px 0 27px 0;
+        margin: rhythm(3) 0 rhythm(4.5) 0;
+    }
+
+
+    table {
+        margin: 0;
+    }
+}
