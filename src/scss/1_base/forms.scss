@@ -1,0 +1,67 @@
+// Form defaults
+//
+// These are the default base styles applied to HTML form elements.
+//
+// Component classes can override these styles, but if no class applies a style
+// to an HTML form element, these styles will be the ones displayed.
+//
+// Weight: -1
+//
+// Style guide: forms.base
+
+// Fieldsets
+//
+// The `<fieldset>` element groups a set of form fields, optionally under a
+// common name given by the `<legend>` element.
+//
+// Markup: kss-templates/forms-fieldset.twig
+//
+// Style guide: forms.base.fieldset
+fieldset {
+  background: #fff;
+  border: 1px solid #ccc;
+  margin-top: 10px;
+  margin-bottom: 32px;
+  padding: 0 0 10px;
+  position: relative;
+  top: 12px;
+  border-radius: 4px;
+
+  &.collapsed {
+    background: transparent;
+    border-radius: 0;
+  }
+
+  legend {
+    background: #dbdbdb;
+    border: 1px solid #ccc;
+    border-bottom: none;
+    display: block;
+    height: 2em;
+    left: -1px;
+    line-height: 2;
+    padding: 0;
+    position: absolute;
+    text-indent: 10px;
+    text-shadow: 0 1px 0 #fff;
+    top: -12px;
+    width: 100%;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+  }
+
+  &.collapsed legend {
+    border-radius: 4px;
+  }
+
+  .fieldset-wrapper {
+    padding: 0 10px;
+  }
+
+  .fieldset-description {
+    margin-top: 5px;
+    margin-bottom: 1em;
+    line-height: 1.4;
+    font-style: italic;
+  }
+}

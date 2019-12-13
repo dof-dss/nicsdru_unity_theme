@@ -1,384 +1,384 @@
-/////////////////////////
-// Base style
-// - this partial takes the code from the parent software responsive theme and
-//   and converts px values into relative values etc
-////////////////////////
-
-/* ---------------------------------------------
-
-* Filename:     style.css
-* Version:      1.0.0 (2015-03-21)
-* Website:      http://www.zymphonies.com
-                http://www.freebiezz.com
-* Description:  System Styles
-* Author:       Zymphonies Team
-                info@zymphonies.com
-
------------------------------------------------*/
-
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed,
-figure, figcaption, footer, header, hgroup,
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    font-size: 100%;
-    font: inherit;
-    vertical-align: baseline;
-}
-
-/* HTML5 display-role reset for older browsers */
-
-article, aside, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section {
-    display: block;
-}
-
-ol, ul {
-    list-style: none;
-}
-
-table {
-    border-collapse: collapse;
-    border-spacing: 0;
-}
-
-.clear {
-    clear: both;
-    display: block;
-    overflow: hidden;
-    visibility: hidden;
-    width: 0;
-    height: 0;
-}
-
-.clear:after {
-    clear: both;
-    content: ' ';
-    display: block;
-    font-size: 0;
-    line-height: 0;
-    visibility: hidden;
-    width: 0;
-    height: 0;
-}
-
-* html .clear {
-    height: 1%;
-}
-
-* {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-}
-
-html {
-    font-size: 100% * $base-font-size / 16px;
-}
-
-body {
-    font-family: $base-font-family;
-    line-height: 160%;
-    color: $text;
-
-    //font-size: 100% * ($base-font-size / 16px);
-    @include adjust-font-size-to($p-font-size);
-}
-
-a {
-    color: $link;
-    text-decoration: none;
-}
-
-a:hover {
-    color: $link-hover;
-    text-decoration: underline;
-}
-
-.red {
-    color: $red;
-}
-
-.green {
-    color: $green;
-}
-
-.blue {
-    color: $blue;
-}
-
-.yellow {
-    color: $yellow;
-}
-
-.orange {
-    color: $orange;
-}
-
-h1, h2, h3, h4, h5, h6 {
-    font-weight: bold;
-    margin-bottom: 6px;
-    margin-bottom: .6rem;
-    color: $headings;
-}
-
-h1 {
-    @include adjust-font-size-to($h1-font-size);
-}
-
-h2 {
-    @include adjust-font-size-to($h2-font-size);
-
-    margin: 36px 0 12px;
-    margin: rhythm(6) 0 rhythm(2);
-}
-
-h3 {
-    @include adjust-font-size-to($h3-font-size);
-
-    margin: 24px 0 12px;
-    margin: rhythm(4) 0 rhythm(2);
-}
-
-h4 {
-    @include adjust-font-size-to($h4-font-size);
-
-    margin: 24px 0 0;
-    margin: rhythm(4) 0 0;
-}
-
-h5 {
-    @include adjust-font-size-to($h5-font-size);
-}
-
-h6 {
-    @include adjust-font-size-to($h6-font-size);
-}
-
-%p, p {
-    margin: 0 0 24px;
-    margin: 0 0 rhythm(4);
-    color: $text;
-}
-
-table {
-    border-collapse: collapse;
-    border-spacing: 0;
-    margin-bottom: 12px;
-    margin-bottom: 1.2rem;
-    width: 100%;
-}
-
-th, tr, td {
-    vertical-align: top;
-}
-
-.sticky-header th, .sticky-table th {
-    border-bottom: 3px solid #ccc;
-    padding-right: 1em;
-    text-align: left;
-}
-
-table {
-    background: $table-background;
-    border: 1px solid $table-border;
-}
-
-th {
-    background: $table-header-cell-background;
-    border-right: 1px solid $table-header-cell-border;
-    color: #fff;
-    padding: 12px;
-    padding: 1.2rem;
-    font-weight: bold;
-}
-
-td {
-    background: $table-background;
-    color: $table-cell-text;
-    text-align: left;
-    padding: 12px;
-    padding: 1.2rem;
-    border: 1px solid $table-cell-border;
-}
-
-code {
-    background: rgb(250, 250, 250);
-    text-shadow: 1px 1px #fff;
-    border: 1px solid #bbbbbb;
-    display: block;
-    padding: 7px;
-    padding: .7rem;
-    margin: 5px 0;
-    margin: .5rem 0;
-    border-radius: 7px;
-    border-radius: .7rem;
-}
-
-mark {
-    background-color: #fdfc9b;
-    font-style: italic;
-    font-weight: bold;
-}
-
-del {
-    text-decoration: line-through;
-}
-
-hr {
-    border: none;
-    border-top: #EEE 1px solid;
-}
-
-dt {
-    font-weight: bold;
-    margin-bottom: 24px;
-    margin-bottom: 2.4rem;
-}
-
-dd {
-    margin-left: 30px;
-    margin-left: 3rem;
-    margin-bottom: 24px;
-    margin-bottom: 2.4rem;
-}
-
-ul {
-    list-style-type: disc;
-    margin: 12px 0 24px 26px;
-    margin: rhythm(2) 0 rhythm(4) rhythm(4.33333);
-}
-
-ul ul {
-    list-style-type: square;
-    margin-bottom: 0;
-}
-
-ul ul ul {
-    list-style-type: circle;
-}
-
-ol {
-    list-style-type: decimal;
-    margin: 12px 0 24px 26px;
-    margin: rhythm(2) 0 rhythm(4) rhythm(4.33333);
-}
-
-ol ol {
-    list-style: upper-alpha;
-    margin-bottom: 0;
-}
-
-ol ol ol {
-    list-style: lower-roman;
-}
-
-ol ol ol ol {
-    list-style: lower-alpha;
-}
-
-abbr,
-acronym {
-    border-bottom: #999 1px dotted;
-    cursor: help;
-}
-
-big {
-    font-size: 1.3em;
-}
-
-cite,
-em {
-    font-style: italic;
-}
-
-ins {
-    background-color: #fdfc9b;
-    text-decoration: none;
-}
-
-pre {
-    background: #d8d8d8;
-    text-shadow: 1px 1px #fff;
-    border: 1px solid #bbbbbb;
-    padding: 7px;
-    padding: .7rem;
-    margin: 5px 0;
-    margin: .5rem 0;
-    border-radius: 7px;
-    border-radius: .7rem;
-}
-
-blockquote, q {
-    quotes: none;
-    border: 1px solid rgb(226, 220, 220);
-    background: rgb(250, 247, 247) url("/sites/all/themes/nics_software/images/quote.png") no-repeat;
-    padding: 10px 5px 5px 47px;
-    padding: 1rem .5rem .5rem 4.7rem;
-    text-shadow: 1px 1px #fff;
-    margin: 5px 0;
-    margin: .5rem 0;
-    border-radius: 7px;
-    border-radius: .7rem;
-}
-
-blockquote:before, blockquote:after,
-q:before, q:after {
-    content: '';
-    content: none;
-}
-
-strong {
-    font-weight: bold;
-}
-
-sup,
-sub {
-    height: 0;
-    line-height: 1;
-    vertical-align: baseline;
-    position: relative;
-
-    @include adjust-font-size-to(12px);
-}
-
-sup {
-    bottom: 1ex;
-}
-
-sub {
-    top: .5ex;
-}
-
-img,
-video {
-    max-width: 100%;
-    height: auto;
-}
-
-video {
-    display: block;
-}
-
-audio {
-    max-width: 100%;
-}
-
-b {
-    font-weight: bold;
-    color: #333;
-}
+///////////////////////////
+//// Base style
+//// - this partial takes the code from the parent software responsive theme and
+////   and converts px values into relative values etc
+//////////////////////////
+//
+///* ---------------------------------------------
+//
+//* Filename:     style.css
+//* Version:      1.0.0 (2015-03-21)
+//* Website:      http://www.zymphonies.com
+//                http://www.freebiezz.com
+//* Description:  System Styles
+//* Author:       Zymphonies Team
+//                info@zymphonies.com
+//
+//-----------------------------------------------*/
+//
+//html, body, div, span, applet, object, iframe,
+//h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+//a, abbr, acronym, address, big, cite, code,
+//del, dfn, em, img, ins, kbd, q, s, samp,
+//small, strike, strong, sub, sup, tt, var,
+//b, u, i, center,
+//dl, dt, dd, ol, ul, li,
+//fieldset, form, label, legend,
+//table, caption, tbody, tfoot, thead, tr, th, td,
+//article, aside, canvas, details, embed,
+//figure, figcaption, footer, header, hgroup,
+//menu, nav, output, ruby, section, summary,
+//time, mark, audio, video {
+//    margin: 0;
+//    padding: 0;
+//    border: 0;
+//    font-size: 100%;
+//    font: inherit;
+//    vertical-align: baseline;
+//}
+//
+///* HTML5 display-role reset for older browsers */
+//
+//article, aside, details, figcaption, figure,
+//footer, header, hgroup, menu, nav, section {
+//    display: block;
+//}
+//
+//ol, ul {
+//    list-style: none;
+//}
+//
+//table {
+//    border-collapse: collapse;
+//    border-spacing: 0;
+//}
+//
+//.clear {
+//    clear: both;
+//    display: block;
+//    overflow: hidden;
+//    visibility: hidden;
+//    width: 0;
+//    height: 0;
+//}
+//
+//.clear:after {
+//    clear: both;
+//    content: ' ';
+//    display: block;
+//    font-size: 0;
+//    line-height: 0;
+//    visibility: hidden;
+//    width: 0;
+//    height: 0;
+//}
+//
+//* html .clear {
+//    height: 1%;
+//}
+//
+//* {
+//    -webkit-box-sizing: border-box;
+//    -moz-box-sizing: border-box;
+//    box-sizing: border-box;
+//}
+//
+//html {
+//    font-size: 100% * $base-font-size / 16px;
+//}
+//
+//body {
+//    font-family: $base-font-family;
+//    line-height: 160%;
+//    color: base-txt-color$text;
+//
+//    //font-size: 100% * ($base-font-size / 16px);
+//    @include adjust-font-size-to($p-font-size);
+//}
+//
+//a {
+//    color: $link;
+//    text-decoration: none;
+//}
+//
+//a:hover {
+//    color: $link-hover;
+//    text-decoration: underline;
+//}
+//
+//.red {
+//    color: $red;
+//}
+//
+//.green {
+//    color: $green;
+//}
+//
+//.blue {
+//    color: $blue;
+//}
+//
+//.yellow {
+//    color: $yellow;
+//}
+//
+//.orange {
+//    color: $orange;
+//}
+//
+//h1, h2, h3, h4, h5, h6 {
+//    font-weight: bold;
+//    margin-bottom: 6px;
+//    margin-bottom: .6rem;
+//    color: $headings;
+//}
+//
+//h1 {
+//    @include adjust-font-size-to($h1-font-size);
+//}
+//
+//h2 {
+//    @include adjust-font-size-to($h2-font-size);
+//
+//    margin: 36px 0 12px;
+//    margin: rhythm(6) 0 rhythm(2);
+//}
+//
+//h3 {
+//    @include adjust-font-size-to($h3-font-size);
+//
+//    margin: 24px 0 12px;
+//    margin: rhythm(4) 0 rhythm(2);
+//}
+//
+//h4 {
+//    @include adjust-font-size-to($h4-font-size);
+//
+//    margin: 24px 0 0;
+//    margin: rhythm(4) 0 0;
+//}
+//
+//h5 {
+//    @include adjust-font-size-to($h5-font-size);
+//}
+//
+//h6 {
+//    @include adjust-font-size-to($h6-font-size);
+//}
+//
+//%p, p {
+//    margin: 0 0 24px;
+//    margin: 0 0 rhythm(4);
+//    color: $text;
+//}
+//
+//table {
+//    border-collapse: collapse;
+//    border-spacing: 0;
+//    margin-bottom: 12px;
+//    margin-bottom: 1.2rem;
+//    width: 100%;
+//}
+//
+//th, tr, td {
+//    vertical-align: top;
+//}
+//
+//.sticky-header th, .sticky-table th {
+//    border-bottom: 3px solid #ccc;
+//    padding-right: 1em;
+//    text-align: left;
+//}
+//
+//table {
+//    background: $table-background;
+//    border: 1px solid $table-border;
+//}
+//
+//th {
+//    background: $table-header-cell-background;
+//    border-right: 1px solid $table-header-cell-border;
+//    color: #fff;
+//    padding: 12px;
+//    padding: 1.2rem;
+//    font-weight: bold;
+//}
+//
+//td {
+//    background: $table-background;
+//    color: $table-cell-text;
+//    text-align: left;
+//    padding: 12px;
+//    padding: 1.2rem;
+//    border: 1px solid $table-cell-border;
+//}
+//
+//code {
+//    background: rgb(250, 250, 250);
+//    text-shadow: 1px 1px #fff;
+//    border: 1px solid #bbbbbb;
+//    display: block;
+//    padding: 7px;
+//    padding: .7rem;
+//    margin: 5px 0;
+//    margin: .5rem 0;
+//    border-radius: 7px;
+//    border-radius: .7rem;
+//}
+//
+//mark {
+//    background-color: #fdfc9b;
+//    font-style: italic;
+//    font-weight: bold;
+//}
+//
+//del {
+//    text-decoration: line-through;
+//}
+//
+//hr {
+//    border: none;
+//    border-top: #EEE 1px solid;
+//}
+//
+//dt {
+//    font-weight: bold;
+//    margin-bottom: 24px;
+//    margin-bottom: 2.4rem;
+//}
+//
+//dd {
+//    margin-left: 30px;
+//    margin-left: 3rem;
+//    margin-bottom: 24px;
+//    margin-bottom: 2.4rem;
+//}
+//
+//ul {
+//    list-style-type: disc;
+//    margin: 12px 0 24px 26px;
+//    margin: rhythm(2) 0 rhythm(4) rhythm(4.33333);
+//}
+//
+//ul ul {
+//    list-style-type: square;
+//    margin-bottom: 0;
+//}
+//
+//ul ul ul {
+//    list-style-type: circle;
+//}
+//
+//ol {
+//    list-style-type: decimal;
+//    margin: 12px 0 24px 26px;
+//    margin: rhythm(2) 0 rhythm(4) rhythm(4.33333);
+//}
+//
+//ol ol {
+//    list-style: upper-alpha;
+//    margin-bottom: 0;
+//}
+//
+//ol ol ol {
+//    list-style: lower-roman;
+//}
+//
+//ol ol ol ol {
+//    list-style: lower-alpha;
+//}
+//
+//abbr,
+//acronym {
+//    border-bottom: #999 1px dotted;
+//    cursor: help;
+//}
+//
+//big {
+//    font-size: 1.3em;
+//}
+//
+//cite,
+//em {
+//    font-style: italic;
+//}
+//
+//ins {
+//    background-color: #fdfc9b;
+//    text-decoration: none;
+//}
+//
+//pre {
+//    background: #d8d8d8;
+//    text-shadow: 1px 1px #fff;
+//    border: 1px solid #bbbbbb;
+//    padding: 7px;
+//    padding: .7rem;
+//    margin: 5px 0;
+//    margin: .5rem 0;
+//    border-radius: 7px;
+//    border-radius: .7rem;
+//}
+//
+//blockquote, q {
+//    quotes: none;
+//    border: 1px solid rgb(226, 220, 220);
+//    background: rgb(250, 247, 247) url("/sites/all/themes/nics_software/images/quote.png") no-repeat;
+//    padding: 10px 5px 5px 47px;
+//    padding: 1rem .5rem .5rem 4.7rem;
+//    text-shadow: 1px 1px #fff;
+//    margin: 5px 0;
+//    margin: .5rem 0;
+//    border-radius: 7px;
+//    border-radius: .7rem;
+//}
+//
+//blockquote:before, blockquote:after,
+//q:before, q:after {
+//    content: '';
+//    content: none;
+//}
+//
+//strong {
+//    font-weight: bold;
+//}
+//
+//sup,
+//sub {
+//    height: 0;
+//    line-height: 1;
+//    vertical-align: baseline;
+//    position: relative;
+//
+//    @include adjust-font-size-to(12px);
+//}
+//
+//sup {
+//    bottom: 1ex;
+//}
+//
+//sub {
+//    top: .5ex;
+//}
+//
+//img,
+//video {
+//    max-width: 100%;
+//    height: auto;
+//}
+//
+//video {
+//    display: block;
+//}
+//
+//audio {
+//    max-width: 100%;
+//}
+//
+//b {
+//    font-weight: bold;
+//    color: #333;
+//}
 
 #inner_header_wrapper {
     margin: 0 auto;
