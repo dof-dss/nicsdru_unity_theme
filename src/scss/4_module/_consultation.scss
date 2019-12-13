@@ -1,0 +1,39 @@
+// -*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*- //
+// --- styling for consultations --- //
+// -*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*- //
+
+// styles unique to a consultation node page
+.node-type-consultation {
+    .summary {
+        background-color: $lightgrey;
+        .consultation-dates {
+            @media screen and (min-width: 765px) {
+                width: 33.3333%;
+            }
+        }
+        .field-summary {
+            @media screen and (min-width: 765px) {
+                width: 66.6666%;
+            }
+            h2 {
+                margin-top: 0;
+            }
+        }
+        .consultation-dates, .field-summary {
+            float: left;
+            padding: 12px;
+            padding: rhythm(2);
+        }
+    }
+    .field-body {
+        margin-top: 24px;
+        margin-top: rhythm(4);
+        
+    }
+}
+
+// styles for the search index page
+.panel-nicspubsearch .metaListItem {
+    margin-left: 20px;
+    margin-left: 2rem;
+}

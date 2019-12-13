@@ -1,20 +1,27 @@
-nicsdru_unity_theme.mobile:
+nicsdru_unity_theme.base:
   label: mobile
   mediaQuery: 'all and (min-width: 0px)'
   weight: 0
   multipliers:
     - 1x
     - 2x
-nicsdru_unity_theme.phab:
+nicsdru_unity_theme.mobile:
   label: phab
-  mediaQuery: 'all and (min-width: 439px) and (max-width: 640px)'
+  mediaQuery: 'all and (min-width: 440px) and (max-width: 640px)'
   weight: 1
+  multipliers:
+    - 1x
+    - 2x
+nicsdru_unity_theme.phab:
+  label: tablet
+  mediaQuery: 'all and (min-width: 641px) and (max-width: 765px)'
+  weight: 2
   multipliers:
     - 1x
     - 2x
 nicsdru_unity_theme.tablet:
   label: tablet
-  mediaQuery: 'all and (min-width: 641px) and (max-width: 960px)'
+  mediaQuery: 'all and (min-width: 766px) and (max-width: 960px)'
   weight: 2
   multipliers:
     - 1x

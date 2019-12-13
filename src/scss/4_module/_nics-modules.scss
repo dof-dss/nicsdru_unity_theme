@@ -286,10 +286,11 @@ span.elink {
         margin: 0 0 rhythm(3);
         list-style: none;
     }
-
+    
     .menu li {
         position: relative;
-        list-style: none;
+        list-style: none;        
+
         &:before {
             content: "-";
             position: absolute;
@@ -306,7 +307,7 @@ span.elink {
         margin-top: 15px;
         margin-top: 1.5rem;
         border: 0 solid;
-
+        
         a, span {
             display: block;
             width: 100%;

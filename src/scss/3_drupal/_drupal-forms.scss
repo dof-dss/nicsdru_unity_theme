@@ -1,0 +1,14 @@
+#user-login input[type="submit"],
+#workbench-moderation-moderate-form input[type="submit"] {
+    @extend %btn;
+    padding: 0.6rem 0.9rem;
+    background-image: none;
+    text-shadow: none;
+}
+
+div.workbench-info-block {
+    background-color: #ebedee;
+    border: 0 solid;
+    padding: 0.9rem;
+    font-size: 18px;
+}
