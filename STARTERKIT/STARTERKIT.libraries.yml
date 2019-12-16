@@ -21,4 +21,3 @@ site-styling:
     # The SMACSS category, "component", is loaded after "base" and "layout" styles.
     component:
       css/3_components/navigation/main-nav.css: { minified: true }
-
