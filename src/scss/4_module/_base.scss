@@ -641,101 +641,101 @@
     overflow: hidden;
 }
 
-.region-slideshow {
-    max-width: 1024px;
-    margin: auto;
-    overflow: hidden;
-}
-
-#block-nivo-slider-nivo-slider {
-    max-width: 1024px;
-    margin: 0 auto;
-}
-
-#slider {
-    background: transparent;
-    position: relative;
-    box-shadow: none;
-    overflow: visible;
-}
-
-.nivo-caption {
-    background: rgba(0, 0, 0, 0.3);
-    margin: 0;
-    right: 0;
-    padding: 1rem 0;
-    color: white;
-
-    //width: 35%;
-    width: 355px;
-
-    @include adjust-font-size-to(14px);
-
-    height: auto;
-    top: 0;
-    left: auto;
-}
-
-.nivo-caption h2 {
-    padding: 2% 5% 1% 6%;
-
-    @include adjust-font-size-to(22px);
-
-    text-transform: uppercase;
-    text-shadow: 1px 1px 1px #414141;
-}
-
-.nivo-caption h2 {
-    padding: 1% 5% 1% 6%;
-
-    @include adjust-font-size-to(20px);
-
-    text-transform: uppercase;
-}
-
-.nivo-caption p {
-    padding: 0 6%;
-}
-
-.nivo-caption .btn {
-    display: inline-block !important;
-}
-
-.slider-wrapper #slider {
-    position: relative;
-    overflow: hidden;
-    margin: 0 auto;
-    overflow: hidden;
-    position: relative;
-    z-index: 1;
-    width: 100%;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-}
-
-.theme-default .nivo-controlNav {
-    text-align: right;
-}
-
-.theme-default .nivo-controlNav.nivo-thumbs-enabled img {
-    width: 100px;
-}
-
-.theme-default .nivo-controlNav {
-    padding: 5px 0 0 0;
-    padding: .5rem 0 0 0;
-    text-align: center;
-}
-
-.theme-default .nivo-controlNav a {
-    text-indent: 9999px;
-    font-size: 0;
-}
-
-.theme-default .nivo-controlNav a:hover img {
-    background: #999;
-}
+//.region-slideshow {
+//    max-width: 1024px;
+//    margin: auto;
+//    overflow: hidden;
+//}
+//
+//#block-nivo-slider-nivo-slider {
+//    max-width: 1024px;
+//    margin: 0 auto;
+//}
+//
+//#slider {
+//    background: transparent;
+//    position: relative;
+//    box-shadow: none;
+//    overflow: visible;
+//}
+//
+//.nivo-caption {
+//    background: rgba(0, 0, 0, 0.3);
+//    margin: 0;
+//    right: 0;
+//    padding: 1rem 0;
+//    color: white;
+//
+//    //width: 35%;
+//    width: 355px;
+//
+//    @include adjust-font-size-to(14px);
+//
+//    height: auto;
+//    top: 0;
+//    left: auto;
+//}
+//
+//.nivo-caption h2 {
+//    padding: 2% 5% 1% 6%;
+//
+//    @include adjust-font-size-to(22px);
+//
+//    text-transform: uppercase;
+//    text-shadow: 1px 1px 1px #414141;
+//}
+//
+//.nivo-caption h2 {
+//    padding: 1% 5% 1% 6%;
+//
+//    @include adjust-font-size-to(20px);
+//
+//    text-transform: uppercase;
+//}
+//
+//.nivo-caption p {
+//    padding: 0 6%;
+//}
+//
+//.nivo-caption .btn {
+//    display: inline-block !important;
+//}
+//
+//.slider-wrapper #slider {
+//    position: relative;
+//    overflow: hidden;
+//    margin: 0 auto;
+//    overflow: hidden;
+//    position: relative;
+//    z-index: 1;
+//    width: 100%;
+//    -webkit-box-sizing: border-box;
+//    -moz-box-sizing: border-box;
+//    box-sizing: border-box;
+//}
+//
+//.theme-default .nivo-controlNav {
+//    text-align: right;
+//}
+//
+//.theme-default .nivo-controlNav.nivo-thumbs-enabled img {
+//    width: 100px;
+//}
+//
+//.theme-default .nivo-controlNav {
+//    padding: 5px 0 0 0;
+//    padding: .5rem 0 0 0;
+//    text-align: center;
+//}
+//
+//.theme-default .nivo-controlNav a {
+//    text-indent: 9999px;
+//    font-size: 0;
+//}
+//
+//.theme-default .nivo-controlNav a:hover img {
+//    background: #999;
+//}
 
 .content-sidebar-wrap {
     float: left;
