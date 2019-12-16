@@ -1,5 +1,9 @@
 .menu_wrapper {
   width: 100%;
+
+  @media screen and (max-width: $tab) {
+    margin: 0;
+  }
 }
 
 #main-menu {
@@ -8,21 +12,28 @@
   position: relative;
   background-color: $menu-background;
 
+  @media screen and (max-width: $tab) {
+    border: 0;
+  }
+
   ul {
+    //@include adjust-font-size-to($p-font-size);
     float: left;
     padding: 0;
     margin: 0;
     list-style: none;
 
-    //@include adjust-font-size-to($p-font-size);
+    @media screen and (max-width: $tab) {
+      display: none;
+      float: none;
+      max-width: 100%;
+    }
 
-    &.menu {
-      li li {
-        border: 0;
-        margin: 0;
-
-        &:hover > a {
-          background: $menu-sub-item-hover;
+    ul {
+      @media screen and (max-width: $tab) {
+        .ul-toggle {
+          font-size: 17px;
+          top: 1px;
         }
       }
     }
@@ -38,6 +49,30 @@
         list-style: none;
       }
     }
+
+    &.collapse {
+      @media screen and (max-width: $tab) {
+        display: block !important;
+      }
+    }
+
+    &.menu li {
+      @media screen and (max-width: $tab) {
+        margin: 0;
+        width: 100%;
+        text-align: center;
+        border-right: 0;
+      }
+
+      li {
+        border: 0;
+        margin: 0;
+
+        &:hover > a {
+          background: $menu-sub-item-hover;
+        }
+      }
+    }
   }
 
   li {
@@ -50,15 +85,34 @@
     font-size: 1.4rem;
     float: left;
 
-    &:hover > a {
-      background: $menu-item-hover;
+    @media screen and (max-width: $tab) {
+      float: none;
+      max-width: 100%;
     }
 
-    .leaf,
-    .expanded,
-    .collapsed {
-      margin: 0;
+    ul {
+      display: none;
+      position: absolute;
+      z-index: 9999;
       padding: 0;
+      margin: 0;
+      background: #2e3d4a;
+      overflow: visible !important;
+
+      @media screen and (max-width: $tab) {
+        position: static;
+        border: 0;
+      }
+
+      ul {
+        left: 151px;
+        top: 0;
+
+        @media screen and (max-width: $tab) {
+          margin: 0 !important;
+          border: 0;
+        }
+      }
     }
 
     li {
@@ -69,13 +123,19 @@
       position: relative;
       width: 100%;
 
-      &:hover > a {
-        background: $menu-sub-item-hover;
-        border-top: 1px solid $menu-separator;
+      li a {
+        @media screen and (max-width: $tab) {
+          background: lighten($menu-background, 12%);
+        }
       }
 
       a {
         background: $menu-item-hover;
+
+        @media screen and (max-width: $tab) {
+          text-align: center;
+          background: lighten($menu-background, 10%);
+        }
       }
 
       a,
@@ -89,30 +149,57 @@
         padding: .8rem 1.1rem;
         border-radius: 0;
         color: $white;
+
+        @media screen and (max-width: $tab) {
+          border-top: 1px solid #fff;
+        }
       }
 
-      &:hover > ul,
-      li:hover > ul,
-      li li:hover > ul {
-        display: block;
+      &:hover > a {
+        background: $menu-sub-item-hover;
+        border-top: 1px solid $menu-separator;
+      }
+
+      .activelink {
+        @media screen and (max-width: $tab) {
+          text-align: center;
+        }
+      }
+
+      .drop-down-toggle {
+        @media screen and (max-width: $tab) {
+          top: 5px;
+        }
       }
     }
 
-    ul {
-      display: none;
-      position: absolute;
-      z-index: 9999;
-      padding: 0;
+    &:hover > a {
+      background: $menu-item-hover;
+
+      @media screen and (max-width: $tab) {
+        background: lighten($menu-background, 10%);
+      }
+    }
+
+    &:hover > ul,
+    li:hover > ul,
+    li li:hover > ul {
+      display: block;
+
+      @media screen and (max-width: $tab) {
+        display: none;
+      }
+    }
+
+    .leaf,
+    .expanded,
+    .collapsed {
       margin: 0;
-      background: #2E3D4A;
-      overflow: visible !important;
-
-      ul {
-        left: 151px;
-        top: 0;
-      }
+      padding: 0;
     }
+
   }
+
   a,
   span.activelink {
     padding: 1.1rem 2rem;
@@ -120,12 +207,79 @@
     text-decoration: none;
     color: #fff;
     font-weight: 500;
+
+    @media screen and (max-width: $tab) {
+      width: 100%;
+      padding: 13px 2%;
+      border-radius: 0;
+      border-bottom: 1px solid #fff;
+      border-right: 0;
+      text-align: center;
+    }
+  }
+
+  span.activelink {
+    @media screen and (max-width: $tab) {
+      padding: 1.3rem 2rem;
+      background: lighten($menu-background, 10%);
+    }
   }
 
   span.activelink,
   li.active-trail a {
     background: $menu-item-hover;
     color: $white;
+  }
+
+  .nav-toggle {
+    display: none;
+
+    @media screen and (max-width: $tab) {
+      font-size: 1.5rem;
+      font-weight: normal;
+      background: $menu-background;
+      color: $white;
+      margin: 0;
+      padding: 3%;
+      letter-spacing: 1px;
+      text-align: center;
+    }
+
+    &.open {
+      @media screen and (max-width: $tab) {
+        display: block;
+      }
+    }
+  }
+
+  .ul-toggle {
+    display: none;
+
+    @media screen and (max-width: $tab) {
+      display: block !important;
+      position: absolute;
+      right: 5px;
+      top: 5px;
+      background: lighten($menu-background, 10%);
+      border: 0;
+      box-shadow: none;
+      color: white;
+      text-shadow: none;
+      font-weight: normal;
+      font-size: 20px;
+    }
+  }
+
+  &.collapse .menu-navigation-container > ul.menu {
+    @media screen and (max-width: $tab) {
+        display: block !important;
+    }
+  }
+
+  &.expanded {
+    @media screen and (max-width: $tab) {
+      position: relative;
+    }
   }
 }
 
@@ -137,7 +291,7 @@ ul.menu {
 .region ul.menu li,
 .region ul.links li,
 .region .item-list ul li {
-  background: url("/sites/all/themes/nics_software/images/marker.png") no-repeat scroll 4px center rgba(0, 0, 0, 0);
+  background: url('/sites/all/themes/nics_software/images/marker.png') no-repeat scroll 4px center rgba(0, 0, 0, 0);
   list-style: none outside none;
   margin: 0 0 .2rem;
   padding: 0 0 0 1.5rem;
@@ -154,6 +308,10 @@ ul.menu {
   border-radius: 15px;
   background: rgb(73, 71, 71);
   border: rgb(170, 170, 170) 2px solid;
+
+  @media screen and (max-width: $tab) {
+    display: block;
+  }
 }
 
 .drop-down-arrow {
@@ -164,12 +322,4 @@ ul.menu {
   border-top: 5px solid #aaa;
   border-left: transparent 5px solid;
   border-right: transparent 5px solid;
-}
-
-#main-menu .nav-toggle {
-  display: none;
-}
-
-#main-menu .ul-toggle {
-  display: none;
 }
