@@ -63,26 +63,26 @@
         margin: 1rem;
     }
 
-    #block-nivo-slider-nivo-slider .nivo-caption {
-        background: #6A6A6A;
-        opacity: 1;
-
-        h2, h3 {
-            margin: 0;
-
-            @include adjust-font-size-to(18px);
-        }
-
-        p {
-            @include adjust-font-size-to(14px);
-        }
-
-        .btn {
-            margin-top: 10px;
-
-            @include adjust-font-size-to(14px);
-        }
-    }
+    //#block-nivo-slider-nivo-slider .nivo-caption {
+    //    background: #6A6A6A;
+    //    opacity: 1;
+    //
+    //    h2, h3 {
+    //        margin: 0;
+    //
+    //        @include adjust-font-size-to(18px);
+    //    }
+    //
+    //    p {
+    //        @include adjust-font-size-to(14px);
+    //    }
+    //
+    //    .btn {
+    //        margin-top: 10px;
+    //
+    //        @include adjust-font-size-to(14px);
+    //    }
+    //}
 }
 
 @media screen and (max-width: 765px) {
@@ -416,36 +416,36 @@
         padding: 0;
     }
 
-    #block-nivo-slider-nivo-slider .nivo-caption {
-        width: 100%;
-        position: relative;
-        padding: 1rem 0;
-        background: #6A6A6A;
-        opacity: 1;
-
-        h2 {
-            margin: 0;
-
-            @include adjust-font-size-to(16px);
-        }
-
-        h3 {
-            margin: 5px 0;
-        }
-
-        p {
-            padding: 6px 6%;
-
-            @include adjust-font-size-to(14px);
-        }
-
-        .btn {
-            margin: 5px 0;
-            display: block !important;
-
-            @include adjust-font-size-to(14px);
-        }
-    }
+    //#block-nivo-slider-nivo-slider .nivo-caption {
+    //    width: 100%;
+    //    position: relative;
+    //    padding: 1rem 0;
+    //    background: #6A6A6A;
+    //    opacity: 1;
+    //
+    //    h2 {
+    //        margin: 0;
+    //
+    //        @include adjust-font-size-to(16px);
+    //    }
+    //
+    //    h3 {
+    //        margin: 5px 0;
+    //    }
+    //
+    //    p {
+    //        padding: 6px 6%;
+    //
+    //        @include adjust-font-size-to(14px);
+    //    }
+    //
+    //    .btn {
+    //        margin: 5px 0;
+    //        display: block !important;
+    //
+    //        @include adjust-font-size-to(14px);
+    //    }
+    //}
 
     .region-clients {
         margin: 5%;

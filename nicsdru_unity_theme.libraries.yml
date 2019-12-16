@@ -56,3 +56,9 @@ unity-fonts:
   css:
     theme:
       'https://fonts.googleapis.com/css?family=Open+Sans&display=swap': { type: external, minified: true }
+
+# This library provides styling for an optional slider.
+unity-slider:
+  css:
+    components:
+      css/3_components/block/slider.css: { minified: true }
