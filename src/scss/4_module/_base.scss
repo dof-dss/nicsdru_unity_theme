@@ -628,18 +628,18 @@ ul.menu {
     display: none;
 }
 
-#container {
-    clear: both;
-    overflow: hidden;
-}
-
-.container-wrap {
-    max-width: 1024px;
-    margin: 0 auto 10px;
-    margin: 0 auto 1rem;
-    padding: 0;
-    overflow: hidden;
-}
+//#container {
+//    clear: both;
+//    overflow: hidden;
+//}
+//
+//.container-wrap {
+//    max-width: 1024px;
+//    margin: 0 auto 10px;
+//    margin: 0 auto 1rem;
+//    padding: 0;
+//    overflow: hidden;
+//}
 
 .region-slideshow {
     max-width: 1024px;
@@ -737,87 +737,87 @@ ul.menu {
     background: #999;
 }
 
-.content-sidebar-wrap {
-    float: left;
-    width: 100%;
-}
-
-.content-sidebar-wrap #content {
-    display: inline;
-    margin-bottom: 10px;
-    margin-bottom: 1rem;
-    float: right;
-    width: 100%;
-}
-
-#sidebar-first {
-    color: $text;
-    float: left;
-}
-
-#sidebar-second {
-    color: $text;
-    float: right;
-}
-
-aside .block .content {
-    padding: 0px 10px;
-    padding: 0 1rem;
-}
-
-aside #user-login-form input.form-text {
-    width: 90%;
-}
-
-aside #user-login-form .form-actions {
-    padding-top: 0;
-}
-
-/* 3 columns */
-
-body.two-sidebars .content-sidebar-wrap {
-    width: 80%;
-}
-
-body.two-sidebars #content {
-    width: 75%;
-}
-
-body.two-sidebars #sidebar-first {
-    width: 24%;
-}
-
-body.two-sidebars #sidebar-second {
-    width: 19%;
-}
-
-/* 2 columns: sidebar-first */
-
-body.sidebar-first .content-sidebar-wrap {
-    width: 100%;
-}
-
-body.sidebar-first #content {
-    width: 80%;
-}
-
-body.sidebar-first #sidebar-first {
-    width: 19%;
-}
-
-/* 2 columns: sidebar-second */
-
-body.sidebar-second .content-sidebar-wrap {
-    width: 75%;
-}
-
-body.sidebar-second #content {
-    width: 100%;
-}
-
-body.sidebar-second #sidebar-second {
-    width: 22%;
-}
+//.content-sidebar-wrap {
+//    float: left;
+//    width: 100%;
+//}
+//
+//.content-sidebar-wrap #content {
+//    display: inline;
+//    margin-bottom: 10px;
+//    margin-bottom: 1rem;
+//    float: right;
+//    width: 100%;
+//}
+//
+//#sidebar-first {
+//    color: $text;
+//    float: left;
+//}
+//
+//#sidebar-second {
+//    color: $text;
+//    float: right;
+//}
+//
+//aside .block .content {
+//    padding: 0px 10px;
+//    padding: 0 1rem;
+//}
+//
+//aside #user-login-form input.form-text {
+//    width: 90%;
+//}
+//
+//aside #user-login-form .form-actions {
+//    padding-top: 0;
+//}
+//
+///* 3 columns */
+//
+//body.two-sidebars .content-sidebar-wrap {
+//    width: 80%;
+//}
+//
+//body.two-sidebars #content {
+//    width: 75%;
+//}
+//
+//body.two-sidebars #sidebar-first {
+//    width: 24%;
+//}
+//
+//body.two-sidebars #sidebar-second {
+//    width: 19%;
+//}
+//
+///* 2 columns: sidebar-first */
+//
+//body.sidebar-first .content-sidebar-wrap {
+//    width: 100%;
+//}
+//
+//body.sidebar-first #content {
+//    width: 80%;
+//}
+//
+//body.sidebar-first #sidebar-first {
+//    width: 19%;
+//}
+//
+///* 2 columns: sidebar-second */
+//
+//body.sidebar-second .content-sidebar-wrap {
+//    width: 75%;
+//}
+//
+//body.sidebar-second #content {
+//    width: 100%;
+//}
+//
+//body.sidebar-second #sidebar-second {
+//    width: 22%;
+//}
 
 .breadcrumb {
     @include adjust-font-size-to(13px);
@@ -835,11 +835,11 @@ body.sidebar-second #sidebar-second {
         margin: 1rem 0;
     }
 }
-
-#head, #content, #sidebar-second, #sidebar-first {
-    margin-top: 10px;
-    margin-top: 1rem;
-}
+//
+//#head, #content, #sidebar-second, #sidebar-first {
+//    margin-top: 10px;
+//    margin-top: 1rem;
+//}
 
 .node {
     margin: 15px 0;

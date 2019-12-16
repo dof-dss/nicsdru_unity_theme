@@ -13,3 +13,7 @@ site-styling:
       css/1_base/embedded.css: { minified: true }
       css/1_base/forms.css: { minified: true }
       css/1_base/tables.css: { minified: true }
+
+    # The SMACSS category, "layout", is loaded after "base" styles.
+    layout:
+      css/2_layouts/layouts.css: { weight: -100, minified: true }
