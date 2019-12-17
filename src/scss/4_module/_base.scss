@@ -841,21 +841,21 @@ body.sidebar-second #sidebar-second {
     margin-top: 1rem;
 }
 
-.node {
-    margin: 15px 0;
-    margin: 1.5rem 0;
-}
-
-.node h2.title, .page-title {
-    @include adjust-font-size-to($h1-font-size);
-
-    margin: 23px 0;
-    margin: 2.3rem 0;
-}
-
-.node h2.title a {
-    color: #981332;
-}
+//.node {
+//    margin: 15px 0;
+//    margin: 1.5rem 0;
+//}
+//
+//.node h2.title, .page-title {
+//    @include adjust-font-size-to($h1-font-size);
+//
+//    margin: 23px 0;
+//    margin: 2.3rem 0;
+//}
+//
+//.node h2.title a {
+//    color: #981332;
+//}
 
 .block {
     margin-bottom: 2%;
