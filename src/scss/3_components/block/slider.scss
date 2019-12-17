@@ -1,0 +1,130 @@
+.region-slideshow {
+  max-width: 1024px;
+  margin: auto;
+  overflow: hidden;
+}
+
+#block-nivo-slider-nivo-slider {
+  max-width: 1024px;
+  margin: 0 auto;
+
+  .nivo-caption {
+    @media screen and (max-width: $lap) {
+      background: #6a6a6a;
+      opacity: 1;
+    }
+
+    @media screen and (max-width: $tab) {
+      width: 100%;
+      position: relative;
+      padding: 1rem 0;
+    }
+
+    h2,
+    h3 {
+      @media screen and (max-width: $lap) {
+        margin: 0;
+        font-size: 1.8rem;
+      }
+    }
+
+    h2 {
+      @media screen and (max-width: $tab) {
+        font-size: 1.6rem;
+      }
+    }
+
+    h3 {
+      @media screen and (max-width: $tab) {
+        margin: 5px 0;
+      }
+    }
+
+    p {
+      @media screen and (max-width: $lap) {
+        font-size: 1.4rem;
+      }
+
+      @media screen and (max-width: $tab) {
+        padding: 6px 6%;
+      }
+    }
+
+    .btn {
+      @media screen and (max-width: $lap) {
+        margin-top: 10px;
+        font-size: 1.4rem;
+      }
+
+      @media screen and (max-width: $tab) {
+        margin: 5px 0;
+        display: block !important;
+      }
+    }
+  }
+}
+
+#slider {
+  background: transparent;
+  position: relative;
+  box-shadow: none;
+  overflow: visible;
+}
+
+.nivo-caption {
+  background: rgba(0, 0, 0, .3);
+  margin: 0;
+  right: 0;
+  padding: 1rem 0;
+  color: white;
+  //width: 35%;
+  width: 355px;
+  font-size: 1.4rem;
+  height: auto;
+  top: 0;
+  left: auto;
+
+  h2 {
+    padding: 1% 5% 1% 6%;
+    font-size: 2rem;
+    text-transform: uppercase;
+    text-shadow: 1px 1px 1px #414141;
+  }
+
+  p {
+    padding: 0 6%;
+  }
+
+  .btn {
+    display: inline-block !important;
+  }
+}
+
+.slider-wrapper #slider {
+  position: relative;
+  overflow: hidden;
+  margin: 0 auto;
+  z-index: 1;
+  width: 100%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.theme-default .nivo-controlNav {
+  text-align: center;
+  padding: .5rem 0 0;
+
+  &.nivo-thumbs-enabled img {
+    width: 100px;
+  }
+
+  a {
+    text-indent: 9999px;
+    font-size: 0;
+
+    &:hover img {
+      background: #999;
+    }
+  }
+}
