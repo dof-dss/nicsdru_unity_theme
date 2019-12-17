@@ -14,32 +14,32 @@
 }
 
 @media screen and (max-width: 960px) {
-    .content-sidebar-wrap,
-    #content,
-    #sidebar-first,
-    #sidebar-second {
-        float: none;
-        width: 100% !important;
-    }
-
-    #sidebar-first {
-        clear: both;
-    }
-
-    #sidebar-first,
-    #sidebar-second,
-    #head,
-    #foot {
-        padding: 0 3.52%;
-    }
+    //.content-sidebar-wrap,
+    //#content,
+    //#sidebar-first,
+    //#sidebar-second {
+    //    float: none;
+    //    width: 100% !important;
+    //}
+    //
+    //#sidebar-first {
+    //    clear: both;
+    //}
+    //
+    //#sidebar-first,
+    //#sidebar-second,
+    //#head,
+    //#foot {
+    //    padding: 0 3.52%;
+    //}
 
     #top-area .column {
         width: 32%;
     }
-
-    #sidebar-first, #sidebar-second, #head, #foot {
-        padding: 0 1.5%;
-    }
+    //
+    //#sidebar-first, #sidebar-second, #head, #foot {
+    //    padding: 0 1.5%;
+    //}
 
     .region-front-welcome {
         margin: 1% 2%;
@@ -48,10 +48,10 @@
     .block {
         margin-bottom: 2%;
     }
-
-    .content-sidebar-wrap #content {
-        margin: 0;
-    }
+    //
+    //.content-sidebar-wrap #content {
+    //    margin: 0;
+    //}
 
     #footer_wrapper, #top-area {
         padding: 0 15px;
@@ -178,16 +178,16 @@
         margin: 9px 0 0;
         margin: .9rem 0 0;
     }
-
-    .front .content-sidebar-wrap {
-        margin: 0;
-    }
+    //
+    //.front .content-sidebar-wrap {
+    //    margin: 0;
+    //}
 
     .region-front-welcome {
         padding: 10px;
         padding: 1rem;
     }
-
+  
     //#site-title,
     //#site-description {
     //    margin: 0;
@@ -339,31 +339,31 @@
     //    text-align: center;
     //    border-right: none;
     //}
+    //
+    //.content-sidebar-wrap,
+    //#sidebar-first,
+    //#sidebar-second {
+    //    float: none;
+    //    width: auto;
+    //}
+    //
+    //.content-sidebar-wrap #content {
+    //    float: left;
+    //    width: auto;
+    //}
 
-    .content-sidebar-wrap,
-    #sidebar-first,
-    #sidebar-second {
-        float: none;
-        width: auto;
-    }
-
-    .content-sidebar-wrap #content {
-        float: left;
-        width: auto;
-    }
-
-    #sidebar-first .block,
-    #sidebar-second .block,
+    //#sidebar-first .block,
+    //#sidebar-second .block,
     #footer-area .column,
     #top-area .column {
         float: none !important;
         width: auto !important;
         margin-left: 0;
     }
-
-    #sidebar-first {
-        clear: both;
-    }
+    //
+    //#sidebar-first {
+    //    clear: both;
+    //}
 
     #footer-area .column,
     #top-area .column {
