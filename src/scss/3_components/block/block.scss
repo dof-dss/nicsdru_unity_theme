@@ -11,7 +11,7 @@
 
   & > h2 {
     @include responsive-typo-map($h1-text);
-    margin: .5rem 0 1.5rem 0;
+    margin: .5rem 0 1.5rem;
     padding: 1rem;
     overflow: hidden;
     text-align: left;
