@@ -22,4 +22,4 @@ site-styling:
     component:
       css/3_components/navigation/main-nav.css: { minified: true }
       css/3_components/navigation/breadcrumb.css: { minified: true }
-
+      css/3_components/content/node.css: { minified: true }
