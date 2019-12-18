@@ -1,3 +1,5 @@
+@import '../init';
+
 // Form defaults
 //
 // These are the default base styles applied to HTML form elements.
@@ -34,8 +36,8 @@ fieldset {
 
   legend {
     background: #dbdbdb;
-    border: 1px solid #ccc;
-    border-bottom: 0;
+    border: solid #ccc;
+    border-width: 1px 1px 0;
     display: block;
     height: 2em;
     left: -1px;
