@@ -1,0 +1,37 @@
+.theme-default {
+  .nivo-directionNav a {
+    opacity: 9 !important;
+  }
+
+  .nivo-caption {
+    p,
+    h3,
+    h2,
+    h1 {
+      font-family: 'Open Sans', sans-serif;
+      color: #fff;
+      font-weight: normal;
+    }
+
+    a {
+      border: 0;
+    }
+  }
+
+  a {
+    &.nivo-nextNav {
+      left: 45px;
+      background-position: -30px 0;
+
+      &:hover {
+        background-position: -30px bottom;
+      }
+    }
+
+    &.nivo-prevNav {
+      &:hover {
+        background-position: left bottom;
+      }
+    }
+  }
+}
