@@ -857,24 +857,24 @@
 //    color: #981332;
 //}
 
-.block {
-    margin-bottom: 2%;
-}
-
-.block:last-child {
-    margin: 0;
-}
-
-.block > h2 {
-    @include adjust-font-size-to($h1-font-size);
-
-    margin: 5px 0px 15px 0px;
-    margin: .5rem 0 1.5rem 0;
-    padding: 10px;
-    padding: 1rem;
-    overflow: hidden;
-    text-align: left;
-}
+//.block {
+//    margin-bottom: 2%;
+//}
+//
+//.block:last-child {
+//    margin: 0;
+//}
+//
+//.block > h2 {
+//    @include adjust-font-size-to($h1-font-size);
+//
+//    margin: 5px 0px 15px 0px;
+//    margin: .5rem 0 1.5rem 0;
+//    padding: 10px;
+//    padding: 1rem;
+//    overflow: hidden;
+//    text-align: left;
+//}
 
 .theme-default .nivo-directionNav a {
     opacity: 9 !important;

@@ -44,10 +44,10 @@
     .region-front-welcome {
         margin: 1% 2%;
     }
-
-    .block {
-        margin-bottom: 2%;
-    }
+    //
+    //.block {
+    //    margin-bottom: 2%;
+    //}
     //
     //.content-sidebar-wrap #content {
     //    margin: 0;
@@ -484,10 +484,10 @@
     textarea.form-textarea {
         width: 100%;
     }
-
-    .block > h2 {
-        @include adjust-font-size-to(18px);
-    }
+    //
+    //.block > h2 {
+    //    @include adjust-font-size-to(18px);
+    //}
 
     .region-front-welcome p {
         margin: 0;
