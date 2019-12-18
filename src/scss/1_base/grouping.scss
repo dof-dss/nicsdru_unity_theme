@@ -1,3 +1,5 @@
+@import '../init';
+
 // Horizontal rule
 //
 // The `<hr>` element represents a paragraph-level thematic break, e.g. a scene
@@ -115,7 +117,7 @@ blockquote,
 q {
   quotes: none;
   border: 1px solid rgb(226, 220, 220);
-  background: rgb(250, 247, 247) image-url('quote.png') no-repeat;
+  background: rgb(250, 247, 247) resolve('quote.png') no-repeat;
   padding: 1rem .5rem .5rem 4.7rem;
   text-shadow: 1px 1px #fff;
   margin: 5px 0;
@@ -124,6 +126,5 @@ q {
   &::before,
   &::after {
     content: '';
-    content: none;
   }
 }

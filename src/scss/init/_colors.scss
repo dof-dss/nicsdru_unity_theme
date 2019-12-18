@@ -56,7 +56,7 @@ $chroma: add-colors('functional', (
   menu-background:        #002e62,
   menu-item-hover:        #3e1151,
   menu-separator:         #fff,
-  menu-sub-item-background: lighten(menu-item-hover, 10),
+  menu-sub-item-background: (menu-item-hover lighten 10%),
   menu-sub-item-hover:    #1abc9c,
 
   table-background:       #fff,
@@ -67,8 +67,8 @@ $chroma: add-colors('functional', (
   table-cell-border: #dbdbdb,
   table-cell-text: #747474,
 
-  footer-background: $brand-primary,
-  footer-border: #00æ83,
+  footer-background: 'brand-primary',
+  footer-border: #00a583,
   footer-text: #fff,
   footer-headings: #fff,
 ));
