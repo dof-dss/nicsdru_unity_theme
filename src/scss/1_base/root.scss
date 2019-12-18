@@ -1,5 +1,4 @@
-// sass-lint:disable no-vendor-prefixes
-
+@import '../init';
 // Root
 //
 // The HTML root component contains the doctype, HTML element, HEAD element and
@@ -28,6 +27,6 @@ html {
 body {
   @include adjust-font-size-to($p-font-size);
   font-family: $base-font-family;
-  color: $base-txt-color;
+  color: $text;
   line-height: 160%;
 }
