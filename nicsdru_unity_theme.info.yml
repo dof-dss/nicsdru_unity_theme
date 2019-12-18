@@ -6,6 +6,8 @@ core: 8.x
 
 libraries:
   - nicsdru_unity_theme/unity-global-styling
+  - nicsdru_unity_theme/unity-fonts
+  - nicsdru_unity_theme/fontawesome
 
 #libraries-override:
 #  core/modernizr: nicsdru_unity_theme/nicsdru-modernizr
