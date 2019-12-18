@@ -857,80 +857,80 @@
 //    color: #981332;
 //}
 
-.block {
-    margin-bottom: 2%;
-}
+//.block {
+//    margin-bottom: 2%;
+//}
+//
+//.block:last-child {
+//    margin: 0;
+//}
+//
+//.block > h2 {
+//    @include adjust-font-size-to($h1-font-size);
+//
+//    margin: 5px 0px 15px 0px;
+//    margin: .5rem 0 1.5rem 0;
+//    padding: 10px;
+//    padding: 1rem;
+//    overflow: hidden;
+//    text-align: left;
+//}
 
-.block:last-child {
-    margin: 0;
-}
-
-.block > h2 {
-    @include adjust-font-size-to($h1-font-size);
-
-    margin: 5px 0px 15px 0px;
-    margin: .5rem 0 1.5rem 0;
-    padding: 10px;
-    padding: 1rem;
-    overflow: hidden;
-    text-align: left;
-}
-
-.theme-default .nivo-directionNav a {
-    opacity: 9 !important;
-}
-
-.nivo-directionNav {
-    position: absolute;
-    bottom: 46px;
-    right: 90px;
-    left: auto;
-}
-
-.theme-default .nivo-caption p,
-.theme-default .nivo-caption h3,
-.theme-default .nivo-caption h2,
-.theme-default .nivo-caption h1 {
-    font-family: 'Open Sans', sans-serif;
-    color: #fff;
-    font-weight: normal;
-}
-
-.theme-default .nivo-caption a {
-    border: 0;
-}
-
-.theme-default a.nivo-nextNav {
-    left: 45px;
-}
-
-.theme-default a.nivo-nextNav:hover {
-    background-position: -30px bottom;
-}
-
-.theme-default a.nivo-prevNav:hover {
-    background-position: left bottom;
-}
-
-.theme-default a.nivo-nextNav {
-    background-position: -30px 0;
-}
+//.theme-default .nivo-directionNav a {
+//    opacity: 9 !important;
+//}
+//
+//.nivo-directionNav {
+//    position: absolute;
+//    bottom: 46px;
+//    right: 90px;
+//    left: auto;
+//}
+//
+//.theme-default .nivo-caption p,
+//.theme-default .nivo-caption h3,
+//.theme-default .nivo-caption h2,
+//.theme-default .nivo-caption h1 {
+//    font-family: 'Open Sans', sans-serif;
+//    color: #fff;
+//    font-weight: normal;
+//}
+//
+//.theme-default .nivo-caption a {
+//    border: 0;
+//}
+//
+//.theme-default a.nivo-nextNav {
+//    left: 45px;
+//}
+//
+//.theme-default a.nivo-nextNav:hover {
+//    background-position: -30px bottom;
+//}
+//
+//.theme-default a.nivo-prevNav:hover {
+//    background-position: left bottom;
+//}
+//
+//.theme-default a.nivo-nextNav {
+//    background-position: -30px 0;
+//}
 
 #footer-area ul.menu li a.active {
     color: #ddd;
 }
 
-.region-front-welcome {
-    max-width: 1024px;
-    margin: 2% auto;
-    text-align: center;
-}
-
-.region-front-welcome .block h2 {
-    text-align: center;
-}
-
-.region-front-welcome p {}
+//.region-front-welcome {
+//    max-width: 1024px;
+//    margin: 2% auto;
+//    text-align: center;
+//}
+//
+//.region-front-welcome .block h2 {
+//    text-align: center;
+//}
+//
+//.region-front-welcome p {}
 
 .submitted {
     background: rgb(247, 247, 247);
