@@ -1,0 +1,189 @@
+#container {
+  clear: both;
+  overflow: hidden;
+}
+
+.container-wrap {
+  max-width: 1024px;
+  margin: 0 auto 1rem;
+  padding: 0;
+  overflow: hidden;
+}
+
+.content-sidebar-wrap {
+  float: left;
+  width: 100%;
+
+  @media screen and (max-width: $lap) {
+    float: none;
+    width: 100% !important;
+  }
+
+  @media screen and (max-width: $tab) {
+    width: auto;
+  }
+
+  #content {
+    display: inline;
+    margin-bottom: 1rem;
+    float: right;
+    width: 100%;
+
+    @media screen and (max-width: $lap) {
+      margin: 0;
+    }
+
+    @media screen and (max-width: $tab) {
+      float: left;
+      width: auto;
+    }
+  }
+}
+
+#sidebar-first {
+  color: $text;
+  float: left;
+
+  @media screen and (max-width: $lap) {
+    clear: both;
+    float: none;
+    width: 100% !important;
+    padding: 0 1.5%;
+  }
+
+  @media screen and (max-width: $tab) {
+    width: auto;
+    clear: both;
+  }
+
+  .block {
+    @media screen and (max-width: $tab) {
+      float: none !important;
+      width: auto !important;
+      margin-left: 0;
+    }
+  }
+}
+
+#sidebar-second {
+  color: $text;
+  float: right;
+
+  @media screen and (max-width: $lap) {
+    float: none;
+    width: 100% !important;
+    padding: 0 1.5%;
+  }
+
+  @media screen and (max-width: $tab) {
+    width: auto;
+  }
+
+  .block {
+    @media screen and (max-width: $tab) {
+      float: none !important;
+      width: auto !important;
+      margin-left: 0;
+    }
+  }
+}
+
+aside {
+  .block .content {
+    padding: 0 1rem;
+  }
+
+  #user-login-form {
+    input.form-text {
+      width: 90%;
+    }
+
+    .form-actions {
+      padding-top: 0;
+    }
+  }
+}
+
+body {
+
+  /* 3 columns */
+
+  &.two-sidebars {
+    .content-sidebar-wrap {
+      width: 80%;
+    }
+
+    #content {
+      width: 75%;
+    }
+
+    #sidebar-first {
+      width: 24%;
+    }
+
+    #sidebar-second {
+      width: 19%;
+    }
+  }
+
+  /* 2 columns: sidebar-first */
+
+  &.sidebar-first {
+    .content-sidebar-wrap {
+      width: 100%;
+    }
+
+    #content {
+      width: 80%;
+    }
+
+    #sidebar-first {
+      width: 19%;
+    }
+  }
+
+  /* 2 columns: sidebar-second */
+
+  &.sidebar-second {
+    .content-sidebar-wrap {
+      width: 75%;
+    }
+
+    #content {
+      width: 100%;
+    }
+
+    #sidebar-second {
+      width: 22%;
+    }
+  }
+}
+
+#head,
+#content,
+#sidebar-second,
+#sidebar-first {
+  margin-top: 1rem;
+}
+
+#content {
+  @media screen and (max-width: $lap) {
+    float: none;
+    width: 100% !important;
+  }
+}
+
+#head,
+#foot {
+  @media screen and (max-width: $lap) {
+    padding: 0 1.5%;
+  }
+}
+
+.front .content-sidebar-wrap {
+  @media screen and (max-width: $tab) {
+    margin: 0;
+  }
+}
+
+
