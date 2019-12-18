@@ -10,7 +10,7 @@
 
 table {
   width: 100%;
-  margin-bottom: rhythm(3);
+  margin-bottom: 1.8rem;
   background: $table-background;
   border-collapse: collapse;
   border-spacing: 0;
@@ -31,8 +31,8 @@ td {
 }
 
 th {
-  background: $table-th-cell;
-  border-right: 1px solid $table-th-cell-border;
+  background: $table-header-cell-background;
+  border-right: 1px solid $table-header-cell-border;
   color: #fff;
   padding: 10px;
   font-weight: bold;
@@ -40,8 +40,8 @@ th {
 
 td {
   background: $table-background;
-  color: $table-cell-txt-color;
+  color: $table-cell-text;
   text-align: left;
   padding: 10px;
-  border: 1px solid $table-td-cell-border;
+  border: 1px solid $table-cell-border;
 }
