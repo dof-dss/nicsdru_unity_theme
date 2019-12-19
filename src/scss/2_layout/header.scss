@@ -1,3 +1,5 @@
+@import "../init";
+
 #inner_header_wrapper {
   margin: 0 auto;
   position: relative;
@@ -21,13 +23,13 @@
     background-color: $menu-background;
     position: relative;
 
-    &.nomenu {
+    &.no-menu {
       .burger-toggle {
         display: none !important;
       }
     }
 
-    &.nomenu.nosearch {
+    &.no-menu.no-search {
       display: none;
     }
 
@@ -51,9 +53,7 @@
         position: absolute;
         top: -1px;
         right: 10px;
-        background-image: url('/sites/all/themes/nics_software/images/search-icon.png');
-        background-position: 30px center;
-        background-color: #fff;
+        background: #fff resolve('search-icon.png') no-repeat 30px center;
         text-indent: -999rem;
       }
     }
