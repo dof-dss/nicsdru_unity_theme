@@ -1,3 +1,5 @@
+@import '../init';
+
 // Body copy
 //
 // The default `font-size` and `line-height` properties are applied to the
@@ -10,8 +12,8 @@
 //
 // Style guide: base.grouping.p
 p {
-  margin-bottom: rhythm(3);
-  color: $base-txt-color;
+  margin-bottom: 1.8rem;
+  color: $text;
 }
 
 // Text-level semantics
@@ -38,6 +40,7 @@ code {
   margin: 5px 0;
   border-radius: 7px;
 }
+@import '../init';
 
 // Marked text
 //

@@ -1,3 +1,5 @@
+@import '../../init';
+
 .menu_wrapper {
   width: 100%;
 
@@ -75,13 +77,13 @@
   }
 
   li {
+    @include adjust-font-size-to(14px);
     position: relative;
     display: -moz-inline-stack;
     display: inline-block;
     zoom: 1;
     vertical-align: top;
     border-right: 1px solid $menu-separator;
-    font-size: 1.4rem;
     float: left;
 
     @media screen and (max-width: $tab) {
@@ -139,10 +141,10 @@
 
       a,
       span.activelink {
+        @include adjust-font-size-to(14px);
         min-width: 150px;
         margin: 0;
         border-top: 1px solid $menu-separator;
-        font-size: 1.4rem;
         text-align: left;
         overflow: hidden;
         padding: .8rem 1.1rem;
@@ -233,7 +235,7 @@
     display: none;
 
     @media screen and (max-width: $tab) {
-      font-size: 1.5rem;
+      @include adjust-font-size-to(15px);
       font-weight: normal;
       background: $menu-background;
       color: $white;

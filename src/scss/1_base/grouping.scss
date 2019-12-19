@@ -1,3 +1,5 @@
+@import '../init';
+
 // Horizontal rule
 //
 // The `<hr>` element represents a paragraph-level thematic break, e.g. a scene
@@ -52,7 +54,7 @@ ul {
 
 ul {
   list-style-type: disc;
-  margin: rhythm(2) 0 rhythm(4) rhythm(4);
+  margin: 1.2rem 0 2.4rem 2.4rem;
 
   ul {
     list-style-type: square;
@@ -66,7 +68,7 @@ ul {
 
 ol {
   list-style-type: decimal;
-  margin: rhythm(2) 0 rhythm(4) rhythm(4);
+  margin: 1.2rem 0 2.4rem 2.4rem;
 
   ol {
     list-style: upper-alpha;
@@ -84,12 +86,12 @@ ol {
 
 dt {
   font-weight: bold;
-  margin-bottom: rhythm(4);
+  margin-bottom: 2.4rem;
 }
 
 dd {
   margin-left: 30px;
-  margin-bottom: rhythm(4);
+  margin-bottom: 2.4rem;
 }
 
 // Block quotes
@@ -115,7 +117,7 @@ blockquote,
 q {
   quotes: none;
   border: 1px solid rgb(226, 220, 220);
-  background: rgb(250, 247, 247) image-url("quote.png") no-repeat;
+  background: rgb(250, 247, 247) resolve('quote.png') no-repeat;
   padding: 1rem .5rem .5rem 4.7rem;
   text-shadow: 1px 1px #fff;
   margin: 5px 0;
@@ -123,7 +125,6 @@ q {
 
   &::before,
   &::after {
-    content: "";
-    content: none;
+    content: '';
   }
 }

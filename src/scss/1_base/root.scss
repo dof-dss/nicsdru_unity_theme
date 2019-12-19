@@ -1,4 +1,5 @@
 @import '../init';
+
 // Root
 //
 // The HTML root component contains the doctype, HTML element, HEAD element and
@@ -25,7 +26,7 @@ html {
 }
 
 body {
-  @include adjust-font-size-to($p-font-size);
+  @include responsive-typo-map($normal-text);
   font-family: $base-font-family;
   color: $text;
   line-height: 160%;

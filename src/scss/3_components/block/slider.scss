@@ -1,3 +1,5 @@
+@import '../../init';
+
 .region-slideshow {
   max-width: 1024px;
   margin: auto;
@@ -23,14 +25,14 @@
     h2,
     h3 {
       @media screen and (max-width: $lap) {
+        @include adjust-font-size-to(18px);
         margin: 0;
-        font-size: 1.8rem;
       }
     }
 
     h2 {
       @media screen and (max-width: $tab) {
-        font-size: 1.6rem;
+        @include adjust-font-size-to(16px);
       }
     }
 
@@ -42,7 +44,7 @@
 
     p {
       @media screen and (max-width: $lap) {
-        font-size: 1.4rem;
+        @include adjust-font-size-to(14px);
       }
 
       @media screen and (max-width: $tab) {
@@ -52,8 +54,8 @@
 
     .btn {
       @media screen and (max-width: $lap) {
+        @include adjust-font-size-to(14px);
         margin-top: 10px;
-        font-size: 1.4rem;
       }
 
       @media screen and (max-width: $tab) {
@@ -72,6 +74,7 @@
 }
 
 .nivo-caption {
+  @include adjust-font-size-to(14px);
   background: rgba(0, 0, 0, .3);
   margin: 0;
   right: 0;
@@ -79,14 +82,13 @@
   color: white;
   //width: 35%;
   width: 355px;
-  font-size: 1.4rem;
   height: auto;
   top: 0;
   left: auto;
 
   h2 {
+    @include adjust-font-size-to(20px);
     padding: 1% 5% 1% 6%;
-    font-size: 2rem;
     text-transform: uppercase;
     text-shadow: 1px 1px 1px #414141;
   }

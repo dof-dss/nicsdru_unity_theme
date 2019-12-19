@@ -1,3 +1,5 @@
+@import '../init';
+
 // Links
 //
 // Hyperlinks are used to allow the user to navigate to other resources or to
@@ -15,10 +17,10 @@
 //
 // Style guide: base.link
 a {
-  color: $anchor;
+  color: $link;
   text-decoration: none;
 
   &:hover {
-    color: $anchor-hover;
+    color: $link-hover;
   }
 }
