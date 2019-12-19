@@ -114,8 +114,8 @@
 }
 
 #site-title {
+  @include adjust-font-size-to(30px);
   margin: 1rem 0 0;
-  font-size: 3rem;
   font-weight: bold;
 
   @media screen and (max-width: $tab) {

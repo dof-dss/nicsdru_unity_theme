@@ -19,7 +19,7 @@
     text-align: left;
 
     @media screen and (max-width: $mob) {
-      font-size: 1.8rem;
+      @include adjust-font-size-to(18px);
     }
   }
 }
