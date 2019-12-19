@@ -23,8 +23,10 @@
     {% endif %}
   </div>
 {% endif %}
-<div id="site-title">
-  <div id="site-description">
-    {{ site_slogan }}
+{% if site_slogan %}
+  <div id="site-title">
+    <div id="site-description">
+      {{ site_slogan }}
+    </div>
   </div>
-</div>
+{% endif %}
