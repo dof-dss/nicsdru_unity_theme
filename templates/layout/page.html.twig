@@ -53,11 +53,12 @@
  * @see html.html.twig
  */
 #}
+{% set hero_attributes = create_attribute() %}
 {%
   set hero_classes = [
+  'top_right',
   page.primary_menu ? 'with-menu' : 'no-menu',
   page.search ? 'with-search' : 'no-search',
-  'top_right',
 ]
 %}
 
@@ -67,7 +68,7 @@
       <div class="top_left">
         {{ page.header }}
       </div>
-      <div {{ attributes.addClass(hero_classes) }} id="headerHero">
+      <div{{ hero_attributes.addClass(hero_classes).setAttribute('id', 'headerHero') }}>
         {{ page.search }}
         <button class="burger-toggle collapse" type="button" data-toggle="collapse" data-target=".main-menu">
           <span class="sr-only">Menu</span>
