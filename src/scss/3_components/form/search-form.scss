@@ -1,0 +1,130 @@
+@import '../../init';
+
+#block-search-form,
+#block-swr-search {
+  overflow: visible;
+  position: relative;
+  width: 100%;
+  height: 3.5rem;
+  margin: 0 auto;
+  padding: 0;
+
+  @media screen and (min-width: $tab) {
+    margin-top: 30px;
+  }
+
+  .content {
+    margin-top: 0;
+  }
+
+  .form-text {
+    float: none;
+    width: 220px;
+    max-width: 100%;
+    margin-right: 0;
+    padding: 8px;
+  }
+
+  input:focus {
+    outline: none;
+  }
+
+  .form-submit:hover {
+    opacity: .8;
+  }
+}
+
+%search-form {
+  & input {
+    font-size: 1.4rem;
+    box-sizing: border-box;
+    height: 3.3rem;
+
+    &[type='submit'] {
+      background: url('/../images/search-icon.png') no-repeat center top;
+      text-indent: -9999px;
+      height: 27px;
+      width: 27px;
+      position: absolute;
+      top: 2px;
+      right: 10px;
+    }
+
+    @media screen and (min-width: 320px) {
+      height: 3.5rem;
+    }
+  }
+
+  .form-text {
+    width: 100%;
+    border: 1px solid #666;
+    border-radius: 0;
+    padding: .5rem;
+
+    @media screen and (min-width: 320px) {
+      padding: .8rem;
+      width: 200px;
+    }
+  }
+
+  .form-submit {
+    right: 15px;
+    border: 0;
+    box-shadow: none;
+    cursor: pointer;
+    padding: 0;
+
+    @media screen and (min-width: 320px) {
+      right: 5px;
+    }
+  }
+
+  .form-actions input {
+    margin: 1px 0;
+    border-radius: 0;
+  }
+
+  & input[type='text'],
+  input[type='search'] {
+    @media screen and (min-width: 320px) {
+      border: 1px solid #ccc;
+      color: $text;
+      background-color: inherit;
+      background: url('../images/search-icon.png') no-repeat left top 3px;
+      min-width: 200px;
+      height: 33px;
+      border-radius: 0;
+      padding: 0 .5em 0 2em;
+      margin-right: 0;
+    }
+
+    @media screen and (min-width: $phab) {
+      margin-right: 10rem;
+    }
+  }
+
+  & input[type='submit'] {
+    @media screen and (min-width: 320px) {
+      background-color: #666;
+      background-image: none;
+      color: #fff;
+      box-sizing: border-box;
+      width: 10rem;
+      height: 33px;
+      margin: 2px 0 0;
+      overflow: hidden;
+      line-height: 1;
+      text-indent: 0;
+      font-weight: normal;
+      text-shadow: none;
+      position: relative;
+      right: 5px;
+      top: 0;
+    }
+
+    @media screen and (min-width: $phab) {
+      right: 0;
+      position: absolute;
+    }
+  }
+}
