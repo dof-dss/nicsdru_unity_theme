@@ -1773,36 +1773,36 @@ ol.search-results {
     color: #e0e0e0;
 }
 
-#footer {
-    overflow: auto;
-    padding: 1% 2% 2% 2%;
-    background: $footer-background;
-    border-top: 4px solid $footer-border;
-    max-width: 1024px;
-
-    @include adjust-font-size-to($p-font-size);
-
-    margin: 0 auto;
-}
-
-#footer-area .column {
-    float: left;
-    width: 24.2%;
-    margin: 0 0 0% 1%;
-    padding: 1%;
-}
-
-#footer p {
-    color: $footer-text;
-}
-
-#footer-area .column:first-child {
-    margin-left: 0;
-}
-
-#footer-area .column-title {
-    color: $footer-headings;
-}
+//#footer {
+//    overflow: auto;
+//    padding: 1% 2% 2% 2%;
+//    background: $footer-background;
+//    border-top: 4px solid $footer-border;
+//    max-width: 1024px;
+//
+//    @include adjust-font-size-to($p-font-size);
+//
+//    margin: 0 auto;
+//}
+//
+//#footer-area .column {
+//    float: left;
+//    width: 24.2%;
+//    margin: 0 0 0% 1%;
+//    padding: 1%;
+//}
+//
+//#footer p {
+//    color: $footer-text;
+//}
+//
+//#footer-area .column:first-child {
+//    margin-left: 0;
+//}
+//
+//#footer-area .column-title {
+//    color: $footer-headings;
+//}
 
 #copyright {
     clear: both;

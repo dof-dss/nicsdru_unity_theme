@@ -1,0 +1,37 @@
+@import '../init';
+
+#footer {
+  @include responsive-typo-map($p-font-size);
+
+  overflow: auto;
+  padding: 1% 2% 2% 2%;
+  background: $footer-background;
+  border-top: 4px solid $footer-border;
+  max-width: 1024px;
+  margin: 0 auto;
+
+  p {
+    color: $footer-text;
+
+    @media screen and (max-width: $tab) {
+      margin: 0;
+    }
+  }
+}
+
+#footer-area {
+  .column {
+    float: left;
+    width: 24.2%;
+    margin: 0 0 0 1%;
+    padding: 1%;
+
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+
+  .column-title {
+    color: $footer-headings;
+  }
+}
