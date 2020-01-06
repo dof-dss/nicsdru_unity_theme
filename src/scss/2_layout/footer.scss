@@ -17,6 +17,29 @@
       margin: 0;
     }
   }
+
+  .block > h2 {
+    color: #fff;
+    padding: 1rem 0;
+  }
+
+  .column li {
+    display: block;
+    padding: 3px 0 3px 1px;
+    padding: .3rem 0 .3rem .1rem;
+    border-bottom-width: 1px;
+    border-bottom-width: .1rem;
+    border-bottom-style: dotted;
+    border-color: #555;
+  }
+
+  ul {
+    margin: 0;
+  }
+
+  a {
+    color: $footer-border;
+  }
 }
 
 #footer-area {
@@ -29,9 +52,25 @@
     &:first-child {
       margin-left: 0;
     }
+
+    &:last-child {
+      float: right;
+    }
   }
 
   .column-title {
     color: $footer-headings;
   }
+
+  ul.menu li a.active {
+    color: #ddd;
+  }
+}
+
+.footer_block {
+  clear: both;
+}
+
+.footer_inner_credit {
+  margin: 1rem auto;
 }
