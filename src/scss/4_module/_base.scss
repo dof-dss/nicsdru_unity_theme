@@ -1003,14 +1003,14 @@ input.form-checkbox, input.form-radio {
 /* Menus and item lists
 /*-------------------------------------------*/
 
-.item-list ul {
-    margin: 0;
-    padding: 0;
-}
-
-ul.inline {
-    clear: both;
-}
+//.item-list ul {
+//    margin: 0;
+//    padding: 0;
+//}
+//
+//ul.inline {
+//    clear: both;
+//}
 
 /*-------------------------------------------*
 /* Admin Tabs
@@ -1022,72 +1022,72 @@ ul.inline {
     margin: 0 0 .5rem 0;
 }
 
-ul.primary {
-    border: none;
-    margin: 0;
-    padding: 0;
-}
-
-ul.primary li {
-    float: left;
-}
-
-ul.primary li a {
-    background: none;
-    border: none;
-    display: block;
-    float: left;
-    line-height: 1.5385em;
-    margin: 0;
-    padding: 0 1em;
-
-    @include border-radius(4px 4px, 0 0);
-
-    margin-right: 5px;
-    margin-right: .5rem;
-}
-
-ul.primary li a:hover, ul.primary li a.active {
-    background: $text;
-    border: none;
-    color: #fff;
-}
-
-ul.primary li a:hover {
-    background: #888;
-    text-decoration: none;
-}
-
-ul.secondary {
-    background: $text;
-    border-bottom: none;
-    clear: both;
-    margin: 0;
-    padding: 0;
-}
-
-ul.secondary li {
-    border-right: none;
-}
-
-ul.secondary li a, ul.secondary li a:link {
-    border: none;
-    color: #ccc;
-    display: block;
-    float: left;
-    line-height: 1.5385em;
-    padding: 0 1em;
-}
-
-ul.secondary li a:hover, ul.secondary li a.active {
-    background: #888;
-    color: #fff;
-    text-decoration: none;
-}
-
-ul.secondary a.active {
-    border-bottom: none;
-}
+//ul.primary {
+//    border: none;
+//    margin: 0;
+//    padding: 0;
+//}
+//
+//ul.primary li {
+//    float: left;
+//}
+//
+//ul.primary li a {
+//    background: none;
+//    border: none;
+//    display: block;
+//    float: left;
+//    line-height: 1.5385em;
+//    margin: 0;
+//    padding: 0 1em;
+//
+//    @include border-radius(4px 4px, 0 0);
+//
+//    margin-right: 5px;
+//    margin-right: .5rem;
+//}
+//
+//ul.primary li a:hover, ul.primary li a.active {
+//    background: $text;
+//    border: none;
+//    color: #fff;
+//}
+//
+//ul.primary li a:hover {
+//    background: #888;
+//    text-decoration: none;
+//}
+//
+//ul.secondary {
+//    background: $text;
+//    border-bottom: none;
+//    clear: both;
+//    margin: 0;
+//    padding: 0;
+//}
+//
+//ul.secondary li {
+//    border-right: none;
+//}
+//
+//ul.secondary li a, ul.secondary li a:link {
+//    border: none;
+//    color: #ccc;
+//    display: block;
+//    float: left;
+//    line-height: 1.5385em;
+//    padding: 0 1em;
+//}
+//
+//ul.secondary li a:hover, ul.secondary li a.active {
+//    background: #888;
+//    color: #fff;
+//    text-decoration: none;
+//}
+//
+//ul.secondary a.active {
+//    border-bottom: none;
+//}
 
 /*-------------------------------------------*
 /* Tabs and Tags
