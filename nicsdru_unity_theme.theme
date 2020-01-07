@@ -103,3 +103,16 @@ function nicsdru_unity_theme_preprocess_html(&$variables) {
     $variables['attributes']['class'][] = 'no-sidebars';
   }
 }
+
+/**
+ * Implements hook_preprocess_form().
+ */
+function nicsdru_unity_theme_preprocess_form(array &$variables) {
+  switch ($variables['element']['#id']) {
+    case "block-exposedformnewsnews-search-api":
+    case "block-exposedformpublication-search-api":
+      $variables['attributes']['class'][] = Html::cleanCssIdentifier('search-form');
+      $variables['attributes']['class'][] = Html::cleanCssIdentifier('search-form--page');
+      break;
+  }
+}

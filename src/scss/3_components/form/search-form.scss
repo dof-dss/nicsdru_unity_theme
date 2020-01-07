@@ -1,7 +1,6 @@
 @import '../../init';
 
-#block-search-form,
-#block-swr-search {
+.block-search-form {
   overflow: visible;
   position: relative;
   width: 100%;
@@ -25,23 +24,19 @@
     padding: 8px;
   }
 
-  input:focus {
-    outline: none;
-  }
-
   .form-submit:hover {
     opacity: .8;
   }
 }
 
-%search-form {
+.search-form {
   & input {
     font-size: 1.4rem;
     box-sizing: border-box;
     height: 3.3rem;
 
     &[type='submit'] {
-      background: url('/../images/search-icon.png') no-repeat center top;
+      background: url('../../images/search-icon.png') no-repeat center top;
       text-indent: -9999px;
       height: 27px;
       width: 27px;
@@ -90,7 +85,7 @@
       border: 1px solid #ccc;
       color: $text;
       background-color: inherit;
-      background: url('../images/search-icon.png') no-repeat left top 3px;
+      background: url('../../images/search-icon.png') no-repeat left top 3px;
       min-width: 200px;
       height: 33px;
       border-radius: 0;
