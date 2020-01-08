@@ -1,0 +1,61 @@
+@import '../../init';
+
+.field-name-taxonomy-forums div {
+  display: inline;
+  margin-top: .4rem;
+}
+
+#forum {
+  .title {
+    @include responsive-typo-map($h2-font-size);
+  }
+
+  .submitted {
+    @include adjust-font-size-to(12px);
+
+    background: transparent;
+    padding: 0;
+  }
+
+  .container {
+    background: #a1a1a1;
+    color: #fff;
+
+    a {
+      color: #000;
+      font-weight: bold;
+    }
+  }
+
+  div.indent {
+    margin-left: .2rem;
+  }
+
+  th {
+    background: #434343;
+    text-shadow: none;
+    color: #fff;
+
+    a {
+      color: #fff;
+    }
+  }
+
+  td.forum .icon,
+  .icon div {
+    background: url('../../../images/no-new-posts.png') no-repeat;
+    width: 35px;
+    height: 35px;
+  }
+
+  .name a {
+    @include adjust-font-size-to(16px);
+  }
+}
+
+.forum-starter-picture {
+  float: left;
+  padding: .4rem;
+  border: 1px solid #d9d9d9;
+  margin: .5rem .7rem .5rem 0;
+}
