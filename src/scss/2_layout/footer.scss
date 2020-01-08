@@ -47,8 +47,18 @@
     margin: 0 0 0 1%;
     padding: 1%;
 
+    @media screen and (max-width: $tab) {
+      float: none !important;
+      width: auto !important;
+      margin: 1rem;
+    }
+
     &:first-child {
       margin-left: 0;
+
+      @media screen and (max-width: $tab) {
+        margin: 1rem;
+      }
     }
 
     &:last-child {
@@ -71,4 +81,14 @@
 
 .footer_inner_credit {
   margin: 1rem auto;
+}
+
+#footer_wrapper {
+  @media screen and (max-width: $lap) {
+    padding: 0 1.5rem;
+  }
+
+  @media screen and (max-width: $tab) {
+    padding: 0;
+  }
 }
