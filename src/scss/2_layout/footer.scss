@@ -4,7 +4,7 @@
   @include responsive-typo-map($p-font-size);
 
   overflow: auto;
-  padding: 1% 2% 2% 2%;
+  padding: 1% 2% 2%;
   background: $footer-background;
   border-top: 4px solid $footer-border;
   max-width: 1024px;
@@ -25,9 +25,7 @@
 
   .column li {
     display: block;
-    padding: 3px 0 3px 1px;
     padding: .3rem 0 .3rem .1rem;
-    border-bottom-width: 1px;
     border-bottom-width: .1rem;
     border-bottom-style: dotted;
     border-color: #555;
