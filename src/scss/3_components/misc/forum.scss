@@ -43,7 +43,7 @@
 
   td.forum .icon,
   .icon div {
-    background: url('../../../images/no-new-posts.png') no-repeat;
+    background: resolve('no-new-posts.png') no-repeat;
     width: 35px;
     height: 35px;
   }
