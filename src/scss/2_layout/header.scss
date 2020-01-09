@@ -69,12 +69,40 @@
   float: right;
   width: 50%;
 
+  .region-search {
+    float: right;
+    margin: 1% 0;
+
+    @media screen and (max-width: $tab) {
+      width: 100%;
+      padding: 0;
+    }
+  }
+
   .region-user-menu {
+    overflow: hidden;
+    width: 100%;
+
     ul.menu {
+      float: right;
+
       @media screen and (max-width: $tab) {
         float: none;
       }
     }
+  }
+
+  ul.menu li a.active {
+    color: #6cdcff;
+  }
+}
+
+.top_left,
+.top_right,
+.search_block,
+.region-user-menu {
+  @media screen and (max-width: $tab) {
+    width: 100%;
   }
 }
 
