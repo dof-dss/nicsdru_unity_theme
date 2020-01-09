@@ -1,0 +1,78 @@
+@import '../../init';
+
+.item-list ul {
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  &.inline {
+    clear: both;
+  }
+
+  &.primary {
+    border: 0;
+    margin: 0;
+    padding: 0;
+
+    li {
+      float: left;
+
+      a {
+        @include border-radius(4px 4px, 0 0);
+        background: none;
+        border: 0;
+        display: block;
+        float: left;
+        line-height: 1.5385em;
+        margin: 0 .5rem 0 0;
+        padding: 0 1em;
+
+        &:hover,
+        &:active {
+          background: $text;
+          border: 0;
+          color: #fff;
+        }
+
+        &:hover {
+          background: #888;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+
+  &.secondary {
+    background: $text;
+    border-bottom: 0;
+    clear: both;
+    margin: 0;
+    padding: 0;
+
+    li {
+      border-right: 0;
+
+      a,
+      a:link {
+        border: 0;
+        color: #ccc;
+        display: block;
+        float: left;
+        line-height: 1.5385em;
+        padding: 0 1em;
+      }
+
+      a:hover,
+      a.active {
+        background: #888;
+        color: #fff;
+        text-decoration: none;
+      }
+    }
+
+    a.active {
+      border-bottom: 0;
+    }
+  }
+}
