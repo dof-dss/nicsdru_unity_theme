@@ -2,10 +2,10 @@
     #wrapper {
         max-width: 960px;
     }
-
-    #top-area .column:last-child {
-        margin-right: 0;
-    }
+    //
+    //#top-area .column:last-child {
+    //    margin-right: 0;
+    //}
 
     #copyright {
         padding: 0 10px;
@@ -32,10 +32,10 @@
     //#foot {
     //    padding: 0 3.52%;
     //}
-
-    #top-area .column {
-        width: 32%;
-    }
+    //
+    //#top-area .column {
+    //    width: 32%;
+    //}
     //
     //#sidebar-first, #sidebar-second, #head, #foot {
     //    padding: 0 1.5%;
@@ -54,7 +54,7 @@
     //}
     //
     //#footer_wrapper,
-    #top-area {
+    //#top-area {
     //    padding: 0 15px;
     //    padding: 0 1.5rem;
     //}
@@ -148,11 +148,11 @@
     body {
         margin-top: 0;
     }
-
-    .top_left, .top_right,
-    .search_block, .region-user-menu {
-        width: 100%;
-    }
+    //
+    //.top_left, .top_right,
+    //.search_block, .region-user-menu {
+    //    width: 100%;
+    //}
     //
     //#footer p {
     //    margin: 0;
@@ -163,11 +163,11 @@
         padding: 0 1rem;
         line-height: 200%;
     }
-
-    .top_right .region-search {
-        width: 100%;
-        padding: 0;
-    }
+    //
+    //.top_right .region-search {
+    //    width: 100%;
+    //    padding: 0;
+    //}
     //
     //.social-icons {
     //    width: 100%;
@@ -356,7 +356,7 @@
     //#sidebar-first .block,
     //#sidebar-second .block,
     //#footer-area .column,
-    #top-area .column {
+    //#top-area .column {
     //    float: none !important;
     //    width: auto !important;
     //    margin-left: 0;
@@ -367,12 +367,12 @@
     //}
 
     //#footer-area .column,
-    #top-area .column {
+    //#top-area .column {
     //    margin: 10px;
     //    margin: 1rem;
     //}
 
-    #top-area .column:first-child,
+    //#top-area .column:first-child,
     //#footer-area .column:first-child {
     //    margin: 10px;
     //    margin: 1rem;
@@ -385,7 +385,7 @@
     }
     //
     //#footer_wrapper,
-    #top-area {
+    //#top-area {
     //    padding: 0;
     //}
 
