@@ -2079,28 +2079,28 @@ a.btn {
 }
 
 /*Error Style*/
-
-div.error,
-div.status,
-div.warning {
-    background: #FEF5F1;
-
-    @include border-radius(3px, 3px);
-
-    border-color: #ec7f58;
-    padding: 15px 20px;
-    padding: 1.5rem 2rem;
-}
-
-div.status {
-    background: #f8fff0;
-    border-color: #be7;
-}
-
-div.warning {
-    background-color: #fffce5;
-    border-color: #ed5;
-}
+//
+//div.error,
+//div.status,
+//div.warning {
+//    background: #FEF5F1;
+//
+//    @include border-radius(3px, 3px);
+//
+//    border-color: #ec7f58;
+//    padding: 15px 20px;
+//    padding: 1.5rem 2rem;
+//}
+//
+//div.status {
+//    background: #f8fff0;
+//    border-color: #be7;
+//}
+//
+//div.warning {
+//    background-color: #fffce5;
+//    border-color: #ed5;
+//}
 
 /* common */
 .float-left {
