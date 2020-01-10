@@ -1,72 +1,71 @@
+@import '../init';
+
 // styling for webforms
 .content .node-webform {
-    fieldset {
-        border: 0 none;
-        margin-bottom: 5px;
-        margin-bottom: .5rem;
+  fieldset {
+    border: 0 none;
+    margin-bottom: .5rem;
 
-        legend {
-            background: #dbdbdb none repeat scroll 0 0;
-            border-color: #ccc;
-            border-image: none;
-            border-style: solid;
-
-            @include border-top-left-radius(4px);
-
-            @include border-top-right-radius(4px);
-
-            border-width: 1px 1px 0;
-            display: block;
-            position: relative;
-            line-height: 2;
-            padding: 0;
-            text-indent: 1rem;
-            width: 100%;
-        }
+    legend {
+      background: #dbdbdb none repeat scroll 0 0;
+      border-color: #ccc;
+      border-image: none;
+      border-style: solid;
+      border-top-left-radius: 4px;
+      border-top-right-radius: 4px;
+      border-width: 1px 1px 0;
+      display: block;
+      position: relative;
+      line-height: 2;
+      padding: 0;
+      text-indent: 1rem;
+      width: 100%;
     }
+  }
 
-    .fieldset-wrapper {
-        padding: 0;
-        margin-top: 0;
+  .fieldset-wrapper {
+    padding: 0;
+    margin-top: 0;
 
-        @media screen and (min-width: 640px) {
-            max-width: 60%;
-        }
+    @media screen and (min-width: $phab) {
+      max-width: 60%;
     }
+  }
 
-    button, input, select, textarea {
-        border-radius: 0 !important;
-        font-family: inherit;
-        font-size: 100%;
+  button,
+  input,
+  select,
+  textarea {
+    border-radius: 0 !important;
+    font-family: inherit;
+    font-size: 100%;
+  }
+
+  .webform-component input {
+    width: 100%;
+  }
+
+  button,
+  input[type='submit'],
+  input[type='reset'],
+  input[type='button'] {
+    text-decoration: none !important;
+    text-align: center;
+    text-shadow: none;
+    font-weight: normal;
+    display: inline-block;
+    box-sizing: border-box;
+    min-width: 130px;
+    border: 0 solid $webform-btn; //What is this variable meant to refer to?
+    border-radius: 0;
+    color: $btn-txt-color !important; //What is this variable meant to refer to?
+    background: $webform-btn;
+    background-size: 17px auto;
+    padding: .5rem 1em .6rem;
+
+    &:hover {
+      background: $webform-btn-hover; //What is this variable meant to refer to?
+      border-color: $webform-btn-hover;
     }
-
-    .webform-component input {
-        width: 100%;
-    }
-
-    button,
-    input[type="submit"],
-    input[type="reset"],
-    input[type="button"] {
-        text-decoration: none !important;
-        text-align: center;
-        text-shadow: none;
-        font-weight: normal;
-        display: inline-block;
-        box-sizing: border-box;
-        min-width: 130px;
-        border: 0 solid;
-        border-radius: 0;
-        color: $btn-txt-color !important;
-        background: $webform-btn;
-        border-color: $webform-btn;
-        background-size: 17px auto;
-        padding: 5px 1em 6px 1em;
-        padding: .5rem 1em .6rem 1em;
-
-        &:hover {
-            background: $webform-btn-hover;
-            border-color: $webform-btn-hover;
-        }
-    }
+  }
 }

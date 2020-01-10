@@ -1,107 +1,103 @@
+@import '../init';
+
 // styling for the featured news items
 #block-views-latest-news-block {
-    .ds-1col.node-teaser {
-        position: relative;
-        border-bottom: 1px solid #cdcdcd;
+  .ds-1col.node-teaser {
+    position: relative;
+    border-bottom: 1px solid #cdcdcd;
 
-        .field-photo {
-            position: relative;
-        }
-
-        h2 {
-            margin: 18px 0 6px;
-            margin: rhythm(3) 0 rhythm(1);
-        }
-
-        .meta {
-            @include adjust-font-size-to(14px);
-        }
-
-        .news-teaser {
-            margin-top: 6px;
-            margin-top: rhythm(1);
-            padding-bottom: 18px;
-            padding-bottom: rhythm(3);
-        }
-
-        .read-more-link {
-            margin-left: 5px;
-        }
+    .field-photo {
+      position: relative;
     }
+
+    h2 {
+      margin: 1.8rem 0 .6rem;
+    }
+
+    .meta {
+      @include adjust-font-size-to(14px);
+    }
+
+    .news-teaser {
+      margin-top: .6rem;
+      padding-bottom: 1.8rem;
+    }
+
+    .read-more-link {
+      margin-left: 5px;
+    }
+  }
 }
 
 //styling for a news page
 .ds-1col.node-news {
-    position: relative;
+  position: relative;
 
-    .teaser-text {
-        @include adjust-font-size-to($h3-font-size);
+  .teaser-text {
+    @include responsive-typo-map($h3-font-size);
 
-        font-weight: bold;
+    font-weight: bold;
+  }
+
+  .field-photo {
+    float: right;
+    width: 100%;
+
+    img {
+      width: 100%;
+      height: auto;
     }
 
-    .field-photo {
-        float: right;
-        width: 100%;
-
-        img {
-            width: 100%;
-            height: auto;
-        }
-
-        @media screen and (min-width: 440px) {
-            max-width: 250px;
-            margin: 0 0 10px 10px;
-            margin: 0 0 1rem 1rem;
-        }
+    @media screen and (min-width: $mob) {
+      max-width: 250px;
+      margin: 0 0 1rem 1rem;
     }
+  }
 
-    span.date-display-single {
-        display: block;
-    }
+  span.date-display-single {
+    display: block;
+  }
 
-    .read-more-link {
-        margin-left: 5px;
-    }
+  .read-more-link {
+    margin-left: 5px;
+  }
 }
 
 // News by date filter
 
 #block-views-news-by-date-block-1 {
-    ul li {
-        color: #333;
-        list-style: outside;
-        padding: 0;
-        margin-left: 20px;
+  ul {
+    li {
+      color: #333;
+      list-style: outside;
+      padding: 0;
+      margin-left: 20px;
     }
-}
 
-// Toogle news archive
-#block-views-news-by-date-block-1 ul.views-summary {
-    //margin: 0;
-    @include rhythm-margins(0, 3);
-    & > li {
-        margin: 0 0 0 20px;
+    // Toogle news archive
+    &.views-summary {
+      @include rhythm-margins(0, 3);
+
+      & > li {
         margin: 0 0 0 2rem;
-        padding: 0 0 6px;
-        padding: 0 0 rhythm(1);
+        padding: 0 0 .6rem;
 
         i {
-            margin-right: 10px;
-            cursor: pointer;
+          margin-right: 10px;
+          cursor: pointer;
         }
 
         ul {
-            display: none;
-            margin: 6px 0 0 20px;
+          display: none;
+          margin: 6px 0 0 20px;
 
-            li {
-                list-style: disc;
-                margin: 0 0 0 20px;
-                margin: 0 0 0 2rem;
-                padding: 0 0 6px;
-                padding: 0 0 rhythm(1);
-            }
+          li {
+            list-style: disc;
+            margin: 0 0 0 2rem;
+            padding: 0 0 .6rem;
+          }
         }
+      }
     }
+  }
 }

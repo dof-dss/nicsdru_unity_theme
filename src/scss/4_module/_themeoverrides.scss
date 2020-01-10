@@ -1,132 +1,131 @@
-blockquote, q {
-    background: transparent url("/sites/all/themes/nics_software/images/quote.png") no-repeat scroll 0 0;
-    border: none;
-}
-%list-spacing {
-    ul, ol {
-      margin-bottom: 18px;
-      margin-bottom: rhythm(3);
+@import '../init';
 
-      li {
-        padding: 0 0 6px;
-        padding: 0 0 rhythm(1);
-      }
-    }
+blockquote,
+q {
+  background: transparent resolve('quote.png') no-repeat scroll 0 0;
+  border: 0;
 }
+
+%list-spacing {
+  ul,
+  ol {
+    margin-bottom: 1.8rem;
+
+    li {
+      padding: 0 0 .6rem;
+    }
+  }
+}
+
 // styling for unordered list items
 #content {
-    @extend %list-spacing;
+  @extend %list-spacing;
 }
-.node-page, .node-news, .node-faq {
-    /* ol {
-        margin-bottom: 18px;
-        margin-bottom: rhythm(3);
 
-        li {
-            padding: 0 0 6px;
-            padding: 0 0 rhythm(1);
-        }
-    } */
+.node-page,
+.node-news,
+.node-faq {
+  ul {
+    li {
+      position: relative;
+      list-style: none;
 
-    ul {
-        //margin-bottom: 18px;
-        //margin-bottom: rhythm(3);
-
-        li {
-            position: relative;
-            list-style: none;
-            //padding: 0 0 6px;
-            //padding: 0 0 rhythm(1);
-
-            &:before {
-                content: "-";
-                position: absolute;
-                left: -20px;
-                top: 0;
-            }
-        }
+      &::before {
+        content: '-';
+        position: absolute;
+        left: -20px;
+        top: 0;
+      }
     }
+  }
 }
 
 aside {
-    //#sidebar-second {
-    ul {
-        margin: 0;
+  //#sidebar-second {
+  ul {
+    @include rhythm-margins(2, 3);
 
-        @include rhythm-margins(2, 3);
+    margin: 0;
 
-        li {
-            margin: 0 0 0 20px;
-            margin: 0 0 0 2rem;
-            padding: 0 0 6px;
-            padding: 0 0 rhythm(1);
-        }
+    li {
+      margin: 0 0 0 2rem;
+      padding: 0 0 .6rem;
     }
+  }
 }
 
 // FAQ Module overrides
 
 .field-faq {
-    font-family: inherit;
-    font-size: inherit;
+  font-family: inherit;
+  font-size: inherit;
 
-    h3 {
-        background: none;
-        border: none;
-        font-weight: 600;
+  h3 {
+    background: none;
+    border: 0;
+    font-weight: 600;
 
-        a {
-            color: $brand-primary;
-        }
+    a {
+      color: $brand-primary;
     }
+  }
 }
 
-.ui-state-active a, .ui-state-active a:link, .ui-state-active a:visited, .ui-state-default a, .ui-state-default a:link, .ui-state-default a:visited, .ui-widget-content a {
-    color: $brand-primary;
+.ui-state-active a,
+.ui-state-active a:link,
+.ui-state-active a:visited,
+.ui-state-default a,
+.ui-state-default a:link,
+.ui-state-default a:visited,
+.ui-widget-content a {
+  color: $brand-primary;
 }
 
 .ui-widget {
-    font-size: inherit;
-    font-family: inherit;
+  font-size: inherit;
+  font-family: inherit;
 }
 
-.ui-accordion .ui-accordion-icons {
+.ui-accordion {
+  .ui-accordion-icons {
     padding-left: 25px;
-}
+  }
 
-.ui-accordion .ui-accordion-header .ui-accordion-header-icon {
+  .ui-accordion-header .ui-accordion-header-icon {
     left: 0;
+  }
 }
 
 .ui-widget-content {
-    border: none;
-    background: none;
+  border: 0;
+  background: none;
+  color: $text;
+  overflow: hidden !important;
+
+  li {
     color: $text;
-    overflow: hidden !important;
-
-    li {
-        color: $text;
-    }
+  }
 }
+
 .x-scroll {
-    width: 100%;
-    overflow-x: auto;
-    margin: rhythm(2) 0 rhythm(4) 0;
+  width: 100%;
+  overflow-x: auto;
+  margin: 1.2rem 0 2.4rem;
 
-    @media screen and (min-width: 765px) {
-        margin: 18px 0 27px 0;
-        margin: rhythm(3) 0 rhythm(4.5) 0;
-    }
+  @media screen and (min-width: $tab) {
+    margin: 1.8rem 0 2.7rem;
+  }
 
-    table {
-        margin: 0;
-    }
+  table {
+    margin: 0;
+  }
 }
 
 .wysiwyg-map {
   width: 100% !important;
   margin-bottom: 12px;
 }
+
 .google-map-field {
   div {
     line-height: 1;
@@ -138,7 +137,7 @@ aside {
     input {
       // Since the button text appears in the Url it should be lowercase. It's coded that way (see
       // software_resp_default_search_form.inc) - this rule capitalises the button text on the page.
-      &[type=submit] {
+      &[type='submit'] {
         text-transform: capitalize;
       }
     }

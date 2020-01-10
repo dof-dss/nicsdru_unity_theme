@@ -1,45 +1,47 @@
-.view-publications {
-    .views-row {
-        clear: both;
-        border-bottom: 1px solid #ccc;
-    }
+@import '../init';
 
-    .views-row-last {
-        border: none;
-    }
+.view-publications {
+  .views-row {
+    clear: both;
+    border-bottom: 1px solid #ccc;
+  }
+
+  .views-row-last {
+    border: 0;
+  }
 }
 
 .node-publication-page.node-teaser {
-    @media screen and (min-width: 765px) {
-        .publication-image {
-            width: 40%;
-            float: left;
-            margin-right: 5%;
-        }
-
-        .publication-main {
-            width: 55%;
-            float: left;
-        }
+  @media screen and (min-width: $tab) {
+    .publication-image {
+      width: 40%;
+      float: left;
+      margin-right: 5%;
     }
+
+    .publication-main {
+      width: 55%;
+      float: left;
+    }
+  }
 }
 
 .node-type-publication-page {
-    .field-publication-image {
-        @media screen and (min-width: 765px) {
-            float: right;
-            margin-left: 20px;
-        }
+  .field-publication-image {
+    @media screen and (min-width: $tab) {
+      float: right;
+      margin-left: 20px;
     }
+  }
 }
 
 .view-publication-search-api {
-    .views-row {
-        border-bottom: 1px solid #ccc;
-        padding-bottom: 10px;
-    }
+  .views-row {
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+  }
 
-    .views-row-last {
-        border: none;
-    }
+  .views-row-last {
+    border: 0;
+  }
 }
