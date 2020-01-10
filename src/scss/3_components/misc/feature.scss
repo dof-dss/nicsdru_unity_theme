@@ -1,0 +1,16 @@
+@import '../../init';
+
+.feature {
+  text-align: center;
+
+  .fa {
+    @include adjust-font-size-to(58px);
+    background: #f3f3f3;
+    padding: 2.6rem;
+    border-radius: 50%;
+    width: 110px;
+    text-align: center;
+    height: 110px;
+    margin: 3% 0;
+  }
+}
