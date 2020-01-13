@@ -1,0 +1,29 @@
+@import '../../init';
+
+.region-clients {
+  margin: 2% 0;
+
+  @media screen and (max-width: $tab) {
+    margin: 5%;
+  }
+
+  ul {
+    margin: 1rem 0;
+    overflow: hidden;
+  }
+
+  li {
+    display: inline-block;
+    width: 20%;
+    float: left;
+    text-align: center;
+
+    @media screen and (max-width: $tab) {
+      width: 49%;
+    }
+
+    @media screen and (max-width: $mob) {
+      width: 100%;
+    }
+  }
+}
