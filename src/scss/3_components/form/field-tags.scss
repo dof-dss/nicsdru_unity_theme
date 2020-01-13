@@ -1,0 +1,23 @@
+@import '../../init';
+
+.field-name-field-tags {
+  margin: 0 0 1rem;
+
+  a {
+    @include adjust-font-size-to(12px);
+    display: inline-block;
+    background: resolve('tag.png') no-repeat;
+    padding: 0 .8rem 0 1.6rem;
+    height: 22px;
+    text-shadow: 1px 1px #fff;
+    border-radius: 2px;
+  }
+
+  .field-item {
+    margin: 0 1em 0 0;
+  }
+
+  div {
+    display: inline;
+  }
+}

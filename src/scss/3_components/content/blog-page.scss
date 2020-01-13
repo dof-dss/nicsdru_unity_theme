@@ -1,0 +1,13 @@
+@import '../../init';
+
+.page-blog article {
+  padding-bottom: 4rem;
+  border-bottom: 1px solid #F0F0F0;
+  margin-bottom: 4rem;
+
+  footer {
+    background: #F3F3F3;
+    padding: .5rem 1rem;
+    border: 1px solid #E7E7E7;
+  }
+}

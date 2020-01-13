@@ -1,0 +1,94 @@
+@import '../init';
+
+#footer {
+  @include responsive-typo-map($p-font-size);
+
+  overflow: auto;
+  padding: 1% 2% 2%;
+  background: $footer-background;
+  border-top: 4px solid $footer-border;
+  max-width: 1024px;
+  margin: 0 auto;
+
+  p {
+    color: $footer-text;
+
+    @media screen and (max-width: $tab) {
+      margin: 0;
+    }
+  }
+
+  .block > h2 {
+    color: #fff;
+    padding: 1rem 0;
+  }
+
+  .column li {
+    display: block;
+    padding: .3rem 0 .3rem .1rem;
+    border-bottom-width: .1rem;
+    border-bottom-style: dotted;
+    border-color: #555;
+  }
+
+  ul {
+    margin: 0;
+  }
+
+  a {
+    color: $footer-border;
+  }
+}
+
+#footer-area {
+  .column {
+    float: left;
+    width: 24.2%;
+    margin: 0 0 0 1%;
+    padding: 1%;
+
+    @media screen and (max-width: $tab) {
+      float: none !important;
+      width: auto !important;
+      margin: 1rem;
+    }
+
+    &:first-child {
+      margin-left: 0;
+
+      @media screen and (max-width: $tab) {
+        margin: 1rem;
+      }
+    }
+
+    &:last-child {
+      float: right;
+    }
+  }
+
+  .column-title {
+    color: $footer-headings;
+  }
+
+  ul.menu li a.active {
+    color: #ddd;
+  }
+}
+
+.footer_block {
+  clear: both;
+}
+
+.footer_inner_credit {
+  margin: 1rem auto;
+}
+
+#footer_wrapper {
+  @media screen and (max-width: $lap) {
+    padding: 0 1.5rem;
+  }
+
+  @media screen and (max-width: $tab) {
+    padding: 0;
+  }
+}

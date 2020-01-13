@@ -1,0 +1,20 @@
+@import '../../init';
+
+.region-user-menu {
+  h2 {
+    display: none;
+  }
+
+  ul li {
+    display: inline-block;
+    background: none;
+    padding: 0 1rem;
+    border-right: 1px solid #636363;
+    line-height: 100%;
+
+    &.last {
+      border: 0;
+      padding-right: 0;
+    }
+  }
+}
