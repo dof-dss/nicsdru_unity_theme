@@ -1,0 +1,42 @@
+@import '../../init';
+
+#copyright {
+  clear: both;
+  padding: 1% 0 0;
+
+  @media screen and (max-width: $desk) {
+    padding: 0 1rem;
+  }
+
+  @media screen and (max-width: $tab) {
+    line-height: 200%;
+    padding: 4%;
+  }
+
+  p {
+    margin: 0;
+
+    @media screen and (max-width: $tab) {
+      text-align: center;
+    }
+  }
+}
+
+.copyright {
+  float: left;
+  max-width: 728px;
+}
+
+.credits {
+  float: right;
+  margin-right: 1.2rem;
+  text-align: right;
+}
+
+.copyright,
+.credits {
+  @media screen and (max-width: $tab) {
+    float: none;
+    text-align: left;
+  }
+}

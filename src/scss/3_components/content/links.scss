@@ -1,0 +1,38 @@
+@import '../../init';
+
+.links {
+  color: #000;
+  margin-top: 1rem;
+}
+
+ul.links {
+  margin: 0;
+}
+
+a {
+  &.read_more {
+    background: #00AC00;
+    padding: .5rem .9rem;
+    text-decoration: none;
+    margin: 1rem 0;
+    border: 0 !important;
+
+    &:hover {
+      background: green;
+    }
+  }
+
+
+  &.btn {
+    @include responsive-typo-map($p-font-size);
+
+    display: inline-block;
+    color: #fff;
+    margin: 1rem 0 0;
+    text-align: center;
+    padding: .6rem 1.6rem;
+    cursor: pointer;
+    background: $brand-primary;
+    border-radius: 0;
+  }
+}
