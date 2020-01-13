@@ -1,5 +1,13 @@
 @import '../init';
 
+// Text-level semantics
+//
+// The elements in this section give semantics to inline text.
+//
+// Weight: -6
+//
+// Style guide: base.text
+
 // Body copy
 //
 // The default `font-size` and `line-height` properties are applied to the
@@ -10,19 +18,11 @@
 //
 // Weight: -2
 //
-// Style guide: base.grouping.p
+// Style guide: base.text.p
 p {
   margin-bottom: 1.8rem;
   color: $text;
 }
-
-// Text-level semantics
-//
-// The elements in this section give semantics to inline text.
-//
-// Weight: 1
-//
-// Style guide: base.text
 
 // Code
 //
@@ -69,7 +69,7 @@ del {
 
 // Abbreviation / Acroynym
 //
-// The <acronym> tag is not supported in HTML5. Use the <abbr> tag instead.
+// The `<acronym>` tag is not supported in HTML5. Use the `<abbr>` tag instead.
 // The `<abbr>` element makes the meanings of abbreviations and acronyms visible
 // on hover. An abbreviation and an acronym are both shortened versions of something else.
 // Both are often represented as a series of letters. Marking up abbreviations can give

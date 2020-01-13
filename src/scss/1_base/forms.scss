@@ -7,9 +7,9 @@
 // Component classes can override these styles, but if no class applies a style
 // to an HTML form element, these styles will be the ones displayed.
 //
-// Weight: -1
+// Weight: -3
 //
-// Style guide: forms.base
+// Style guide: base.forms
 
 // Fieldsets
 //
@@ -18,7 +18,7 @@
 //
 // Markup: kss-templates/forms-fieldset.twig
 //
-// Style guide: forms.base.fieldset
+// Style guide: base.forms.fieldset
 fieldset {
   background: #fff;
   border: 1px solid #ccc;
