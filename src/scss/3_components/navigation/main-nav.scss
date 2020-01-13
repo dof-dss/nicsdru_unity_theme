@@ -291,7 +291,7 @@ ul.menu {
 .region ul.menu li,
 .region ul.links li,
 .region .item-list ul li {
-  background: url('/sites/all/themes/nics_software/images/marker.png') no-repeat scroll 4px center rgba(0, 0, 0, 0);
+  background: resolve('marker.png') no-repeat scroll 4px center rgba(0, 0, 0, 0);
   list-style: none outside none;
   margin: 0 0 .2rem;
   padding: 0 0 0 1.5rem;
