@@ -8,6 +8,9 @@
     "type": "git",
     "url": "https://github.com/dof-dss/nicsdru_unity_theme"
   },
+  "files": [
+    "src/scss/"
+  ],
   "devDependencies": {
     "autoprefixer": "^9.6.4",
     "breakpoint-sass": "^2.7.1",
