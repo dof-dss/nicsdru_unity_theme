@@ -931,28 +931,28 @@
 //}
 //
 //.region-front-welcome p {}
-
-.submitted {
-    background: rgb(247, 247, 247);
-    border: 1px solid rgb(236, 236, 236);
-    clear: both;
-    color: rgb(56, 56, 56);
-    display: inline-block;
-    margin-bottom: 5px;
-    margin-bottom: .5rem;
-    padding: 2px 8px;
-    padding: .2rem .8rem;
-}
 //
-//.links {
-//    color: #000;
-//    margin-top: 10px;
-//    margin-top: 1rem;
+//.submitted {
+//    background: rgb(247, 247, 247);
+//    border: 1px solid rgb(236, 236, 236);
+//    clear: both;
+//    color: rgb(56, 56, 56);
+//    display: inline-block;
+//    margin-bottom: 5px;
+//    margin-bottom: .5rem;
+//    padding: 2px 8px;
+//    padding: .2rem .8rem;
 //}
-//
-//ul.links {
-//    margin: 0;
-//}
+// 
+// .links {
+//     color: #000;
+//     margin-top: 10px;
+//     margin-top: 1rem;
+// }
+// 
+// ul.links {
+//     margin: 0;
+// }
 
 ///*-------------------------------------------*
 ///* Fix CKEditor style
@@ -983,21 +983,21 @@
 .poll .vote-form .choices {
     margin: 0;
 }
-
-.form-submit {
-    cursor: pointer;
-    margin: 5px;
-    margin: .5rem;
-}
-
-input.form-checkbox, input.form-radio {
-    vertical-align: baseline;
-}
-
-.form-text {
-    padding: 8px;
-    padding: .8rem;
-}
+//
+//.form-submit {
+//    cursor: pointer;
+//    margin: 5px;
+//    margin: .5rem;
+//}
+//
+//input.form-checkbox, input.form-radio {
+//    vertical-align: baseline;
+//}
+//
+//.form-text {
+//    padding: 8px;
+//    padding: .8rem;
+//}
 
 /*-------------------------------------------*
 /* Menus and item lists
