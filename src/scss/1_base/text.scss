@@ -1,8 +1,16 @@
+/*
+ * @file
+ * Sets out the base behaviour of text elements.
+ */
 @import '../init';
 
 // Text-level semantics
 //
+<<<<<<< HEAD
 // The elements in this section give semantics to inline text.
+=======
+// The elements in this section give semantics to other inline text elements.
+>>>>>>> e4e9d1d994218f3ef76f8e965659780e37058903
 //
 // Weight: -6
 //
@@ -16,7 +24,7 @@
 //
 // Markup: kss-templates/grouping-p.twig
 //
-// Weight: -2
+// Weight: 1
 //
 // Style guide: base.text.p
 p {
@@ -30,6 +38,8 @@ p {
 //
 // Markup: kss-templates/text-code.twig
 //
+// Weight: 2
+//
 // Style guide: base.text.code
 code {
   background: rgb(250, 250, 250);
@@ -40,7 +50,6 @@ code {
   margin: 5px 0;
   border-radius: 7px;
 }
-@import '../init';
 
 // Marked text
 //
@@ -48,6 +57,8 @@ code {
 // context.
 //
 // Markup: kss-templates/text-mark.twig
+//
+// Weight: 3
 //
 // Style guide: base.text.mark
 mark {
@@ -61,6 +72,8 @@ mark {
 // The `<del>` element indicates blocks of text that have been deleted.
 //
 // Markup: kss-templates/text-del.twig
+//
+// Weight: 4
 //
 // Style guide: base.text.del
 del {
@@ -77,20 +90,14 @@ del {
 //
 // Markup: kss-templates/text-abbr.twig
 //
+// Weight: 5
+//
 // Style guide: base.text.abbr
 abbr,
 acronym {
   border-bottom: 1px dotted #999;
   cursor: help;
 }
-
-// Cite
-//
-// The `<cite>` element represents a reference to a creative work.
-//
-// Markup: kss-templates/text-cite.twig
-//
-// Style guide: base.text.cite
 
 // Italics
 //
@@ -102,7 +109,7 @@ acronym {
 //
 // Markup: kss-templates/text-i.twig
 //
-// Weight: -1
+// Weight: 6
 //
 // Style guide: base.text.i
 cite,
@@ -117,6 +124,8 @@ i {
 //
 // Markup: kss-templates/text-ins.twig
 //
+// Weight: 7
+//
 // Style guide: base.text.ins
 ins {
   background-color: #fdfc9b;
@@ -129,6 +138,8 @@ ins {
 // in a fixed-width font (usually Courier), and it preserves both spaces and line breaks.
 //
 // Markup: kss-templates/text-ins.twig
+//
+// Weight: 8
 //
 // Style guide: base.text.ins
 pre {
@@ -150,7 +161,7 @@ pre {
 //
 // Markup: kss-templates/text-b.twig
 //
-// Weight: -1
+// Weight: 9
 //
 // Style guide: base.text.b
 b,
@@ -164,6 +175,8 @@ strong {
 // represents a subscript.
 //
 // Markup: kss-templates/text-sub.twig
+//
+// Weight: 11
 //
 // Style guide: base.text.sub
 sup,

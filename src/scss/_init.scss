@@ -10,12 +10,15 @@
 // - Next we import Sass modules.
 // - Last we define our custom functions and mixins for this project.
 //
+<<<<<<< HEAD
 // Weight: 0
+=======
+// Weight: 10
+>>>>>>> e4e9d1d994218f3ef76f8e965659780e37058903
 //
 // Style guide: init
 
-// The following Sass functions/mixins are required to generate some variables'
-// values, so we load them first.
+// The following Sass functions/mixins are required to generate some variables' values, so we load them first.
 @import '../../node_modules/breakpoint-sass/stylesheets/breakpoint';
 @import '../../node_modules/chroma-sass/sass/chroma/functions';
 
