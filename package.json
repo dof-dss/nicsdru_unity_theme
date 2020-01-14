@@ -32,6 +32,7 @@
     "imagemin-zopfli": "^6.0.0",
     "kss": "^3.0.0-beta.23",
     "modernizr": "^3.6.0",
+    "nicsdru_origins_theme": "^0.1.0",
     "nightwatch": "^1.2.4",
     "nightwatch-accessibility": "^1.8.0",
     "node-sass": "^4.12.0",
