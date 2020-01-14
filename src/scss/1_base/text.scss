@@ -6,7 +6,11 @@
 
 // Text-level semantics
 //
+<<<<<<< HEAD
+// The elements in this section give semantics to inline text.
+=======
 // The elements in this section give semantics to other inline text elements.
+>>>>>>> e4e9d1d994218f3ef76f8e965659780e37058903
 //
 // Weight: -6
 //
@@ -78,7 +82,7 @@ del {
 
 // Abbreviation / Acroynym
 //
-// The <acronym> tag is not supported in HTML5. Use the <abbr> tag instead.
+// The `<acronym>` tag is not supported in HTML5. Use the `<abbr>` tag instead.
 // The `<abbr>` element makes the meanings of abbreviations and acronyms visible
 // on hover. An abbreviation and an acronym are both shortened versions of something else.
 // Both are often represented as a series of letters. Marking up abbreviations can give
