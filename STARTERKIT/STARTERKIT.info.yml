@@ -7,6 +7,12 @@ core: 8.x
 libraries:
   - STARTERKIT/site-styling
 
+libraries-override:
+  nicsdru_unity_theme/unity-global-styling:
+    css:
+      theme:
+        css/styles.css: false
+
 base theme: nicsdru_unity_theme
 
 regions:
