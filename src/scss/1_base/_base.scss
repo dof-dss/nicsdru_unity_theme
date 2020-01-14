@@ -17,6 +17,7 @@
 // Style guide: base
 
 // Ensure any custom fonts get loaded first to minimize front-end performance impact.
+@import '../init';
 @import 'html5';
 @import 'root';
 @import 'links';

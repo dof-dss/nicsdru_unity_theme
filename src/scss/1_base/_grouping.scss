@@ -1,0 +1,139 @@
+/*
+ * @file
+ * Sets out the base behaviour of grouping elements.
+ */
+
+// Grouping content
+//
+// Weight: -5
+//
+// Style guide: base.grouping
+
+// Horizontal rule
+//
+// The `<hr>` element represents a paragraph-level thematic break, e.g. a scene
+// change in a story, or a transition to another topic within a section of a
+// reference book.
+//
+// Markup: kss-templates/grouping-hr.twig
+//
+// Style guide: base.grouping.hr
+hr {
+  border: 0;
+  border-top: 1px solid #eee;
+}
+
+// Lists
+//
+// Weight: -1
+//
+// Style guide: base.grouping.lists
+
+// Unordered list
+//
+// The `<ul>` element is a list of items in which the order does <em>not</em>
+// explicitly matter.
+//
+// Markup: kss-templates/grouping-ul.twig
+//
+// Style guide: base.grouping.lists.ul
+
+// Ordered list
+//
+// The `<ol>` element is a list of items in which the order <em>does</em>
+// explicitly matter.
+//
+// Markup: kss-templates/grouping-ol.twig
+//
+// Style guide: base.grouping.lists.ol
+
+// Description list
+//
+// The `<dl>` element is a list of terms with their associated descriptions.
+//
+// Markup: kss-templates/grouping-dl.twig
+//
+// Weight: 1
+//
+// Style guide: base.grouping.lists.dl
+ol,
+ul {
+  list-style: none;
+}
+
+ul {
+  list-style-type: disc;
+  margin: 1.2rem 0 2.4rem 2.4rem;
+
+  ul {
+    list-style-type: square;
+    margin-bottom: 0;
+
+    ul {
+      list-style-type: circle;
+    }
+  }
+}
+
+ol {
+  list-style-type: decimal;
+  margin: 1.2rem 0 2.4rem 2.4rem;
+
+  ol {
+    list-style: upper-alpha;
+    margin-bottom: 0;
+
+    ol {
+      list-style: lower-roman;
+
+      ol {
+        list-style: lower-alpha;
+      }
+    }
+  }
+}
+
+dt {
+  font-weight: bold;
+  margin-bottom: 2.4rem;
+}
+
+dd {
+  margin-left: 30px;
+  margin-bottom: 2.4rem;
+}
+
+// Block quotes
+//
+// The `<blockquote>` element is for quoting blocks of content from another source within your document. Wrap the
+// `<blockquote>` around any <abbr title="HyperText Markup Language">HTML</abbr> as the quote. For straight
+// inline quotes, it is recommended to use a `<p>`.
+//
+// Markup: kss-templates/grouping-blockquote.twig
+//
+// Style guide: base.grouping.blockquote
+
+// Quote
+//
+// The `<q>` element represents an inline quote from another source. Longer quotes should use the `<blockquote>` element.
+//
+// Markup: kss-templates/grouping-q.twig
+//
+// Weight: 10
+//
+// Style guide: base.text.q
+blockquote,
+q {
+  quotes: none;
+  border: 1px solid rgb(226, 220, 220);
+  background: rgb(250, 247, 247) resolve('quote.png') no-repeat;
+  padding: 1rem .5rem .5rem 4.7rem;
+  text-shadow: 1px 1px #fff;
+  margin: 5px 0;
+  border-radius: 7px;
+
+  &::before,
+  &::after {
+    content: '';
+  }
+}
