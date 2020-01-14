@@ -1,18 +1,23 @@
+/*
+ * @file
+ * Resets and creates defaults for root html elements.
+ */
 @import '../init';
 
 // Root
 //
-// The HTML root component contains the doctype, HTML element, HEAD element and
-// BODY element. It also contains the CSS for those elements and the `*`
-// universal selector.
+// The HTML root component contains the doctype, HTML element, `<head>>` element and `<body>>` element. It also contains
+// the CSS for those elements and the `*` universal selector. There no example included of the component in the style
+// guide, otherwise, the style guide will have multiple HTML and BODY elements. There is however an example
+// `base-root.twig` file included in the kss-templates for completeness.
+// The root component sets some sensible defaults - for all elements use the saner border-box model, then set a sensible
+// value for the the root html element font-size, the purpose of which is to make rem calculations easier. Finally set
+// the base font family on the `<body>` tag in order that there are some sensible defaults for all elements that are not
+// otherwise overridden.
 //
-// markup: kss-templates/base-root.twig
-//
-// weight: 2
+// weight: -10
 //
 // Style guide: base.root
-
-// Use the saner border-box model for all elements.
 * html .clear {
   height: 1%;
 }

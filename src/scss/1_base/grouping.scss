@@ -1,4 +1,14 @@
+/*
+ * @file
+ * Sets out the base behaviour of grouping elements.
+ */
 @import '../init';
+
+// Grouping content
+//
+// Weight: -5
+//
+// Style guide: base.grouping
 
 // Horizontal rule
 //
@@ -96,10 +106,9 @@ dd {
 
 // Block quotes
 //
-// The `<blockquote>` element is for quoting blocks of content from another
-// source within your document. Wrap the `<blockquote>` around any <abbr
-// title="HyperText Markup Language">HTML</abbr> as the quote. For straight
-// quotes, we recommend a `<p>`.
+// The `<blockquote>` element is for quoting blocks of content from another source within your document. Wrap the
+// `<blockquote>` around any <abbr title="HyperText Markup Language">HTML</abbr> as the quote. For straight
+// inline quotes, it is recommended to use a `<p>`.
 //
 // Markup: kss-templates/grouping-blockquote.twig
 //
@@ -107,10 +116,11 @@ dd {
 
 // Quote
 //
-// The `<q>` element represents an inline quote from another source. Longer
-// quotes should use the `<blockquote>` element.
+// The `<q>` element represents an inline quote from another source. Longer quotes should use the `<blockquote>` element.
 //
 // Markup: kss-templates/grouping-q.twig
+//
+// Weight: 10
 //
 // Style guide: base.text.q
 blockquote,
