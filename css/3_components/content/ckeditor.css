@@ -1,0 +1,16 @@
+/* Vertical rhythm presets =========================================== */
+/* Breakpoints ======================================================== */
+/* line 3, src/scss/3_components/content/ckeditor.scss */
+table.cke_editor {
+  background: transparent;
+  border: 0;
+}
+
+/* line 7, src/scss/3_components/content/ckeditor.scss */
+table.cke_editor td {
+  background: transparent;
+  padding: 0;
+  border: 0;
+}
+
+/*# sourceMappingURL=ckeditor.css.map */

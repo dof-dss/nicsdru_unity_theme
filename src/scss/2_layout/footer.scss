@@ -1,7 +1,7 @@
 @import '../init';
 
 #footer {
-  @include responsive-typo-map($p-font-size);
+  @include responsive-typo-map($normal-text);
 
   overflow: auto;
   padding: 1% 2% 2%;

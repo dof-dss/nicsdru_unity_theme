@@ -1,0 +1,31 @@
+/* Vertical rhythm presets =========================================== */
+/* Breakpoints ======================================================== */
+/* line 3, src/scss/3_components/form/forms.scss */
+.submitted {
+  background: #f7f7f7;
+  border: 1px solid #ececec;
+  clear: both;
+  color: #383838;
+  display: inline-block;
+  margin-bottom: .5rem;
+  padding: .2rem .8rem;
+}
+
+/* line 13, src/scss/3_components/form/forms.scss */
+.form-submit {
+  cursor: pointer;
+  margin: .5rem;
+}
+
+/* line 18, src/scss/3_components/form/forms.scss */
+input.form-checkbox,
+input.form-radio {
+  vertical-align: baseline;
+}
+
+/* line 23, src/scss/3_components/form/forms.scss */
+.form-text {
+  padding: .8rem;
+}
+
+/*# sourceMappingURL=forms.css.map */

@@ -1,0 +1,58 @@
+/* Vertical rhythm presets =========================================== */
+/* Breakpoints ======================================================== */
+/* line 3, src/scss/3_components/block/copyright.scss */
+#copyright {
+  clear: both;
+  padding: 1% 0 0;
+}
+
+@media screen and (max-width: 1153px) {
+  /* line 3, src/scss/3_components/block/copyright.scss */
+  #copyright {
+    padding: 0 1rem;
+  }
+}
+
+@media screen and (max-width: 766px) {
+  /* line 3, src/scss/3_components/block/copyright.scss */
+  #copyright {
+    line-height: 200%;
+    padding: 4%;
+  }
+}
+
+/* line 16, src/scss/3_components/block/copyright.scss */
+#copyright p {
+  margin: 0;
+}
+
+@media screen and (max-width: 766px) {
+  /* line 16, src/scss/3_components/block/copyright.scss */
+  #copyright p {
+    text-align: center;
+  }
+}
+
+/* line 25, src/scss/3_components/block/copyright.scss */
+.copyright {
+  float: left;
+  max-width: 728px;
+}
+
+/* line 30, src/scss/3_components/block/copyright.scss */
+.credits {
+  float: right;
+  margin-right: 1.2rem;
+  text-align: right;
+}
+
+@media screen and (max-width: 766px) {
+  /* line 36, src/scss/3_components/block/copyright.scss */
+  .copyright,
+  .credits {
+    float: none;
+    text-align: left;
+  }
+}
+
+/*# sourceMappingURL=copyright.css.map */

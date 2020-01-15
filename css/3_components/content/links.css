@@ -1,0 +1,42 @@
+/* Vertical rhythm presets =========================================== */
+/* Breakpoints ======================================================== */
+/* line 3, src/scss/3_components/content/links.scss */
+.links {
+  color: #000;
+  margin-top: 1rem;
+}
+
+/* line 8, src/scss/3_components/content/links.scss */
+ul.links {
+  margin: 0;
+}
+
+/* line 13, src/scss/3_components/content/links.scss */
+a.read_more {
+  background: #00ac00;
+  padding: .5rem .9rem;
+  text-decoration: none;
+  margin: 1rem 0;
+  border: 0 !important;
+}
+
+/* line 20, src/scss/3_components/content/links.scss */
+a.read_more:hover {
+  background: green;
+}
+
+/* line 26, src/scss/3_components/content/links.scss */
+a.btn {
+  font-size: 1.6rem;
+  margin: 0 0 2.4rem;
+  display: inline-block;
+  color: #fff;
+  margin: 1rem 0 0;
+  text-align: center;
+  padding: .6rem 1.6rem;
+  cursor: pointer;
+  background: #002e62;
+  border-radius: 0;
+}
+
+/*# sourceMappingURL=links.css.map */

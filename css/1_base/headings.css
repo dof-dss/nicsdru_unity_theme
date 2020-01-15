@@ -1,0 +1,49 @@
+/*
+ * @file
+ * Sets out the base behaviour of heading elements.
+ */
+/* Vertical rhythm presets =========================================== */
+/* Breakpoints ======================================================== */
+/* line 18, src/scss/1_base/headings.scss */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: bold;
+  color: #373737;
+}
+
+/* line 23, src/scss/1_base/headings.scss */
+h1 {
+  font-size: 2.4rem;
+  margin: 0 0 0.6rem;
+}
+
+/* line 27, src/scss/1_base/headings.scss */
+h2 {
+  font-size: 2rem;
+  margin: 3.6rem 0 1.2rem;
+}
+
+/* line 31, src/scss/1_base/headings.scss */
+h3 {
+  font-size: 1.8rem;
+  margin: 2.4rem 0 1.2rem;
+}
+
+/* line 35, src/scss/1_base/headings.scss */
+h4 {
+  font-size: 1.6rem;
+  margin: 2.4rem 0 0;
+}
+
+/* line 39, src/scss/1_base/headings.scss */
+h5 {
+  font-size: 1.6rem;
+  margin: 0 0 0.6rem;
+}
+
+/* line 43, src/scss/1_base/headings.scss */
+h6 {
+  font-size: 1.6rem;
+  margin: 0 0 0.6rem;
+}
+
+/*# sourceMappingURL=headings.css.map */
