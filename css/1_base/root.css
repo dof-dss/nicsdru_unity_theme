@@ -1,0 +1,32 @@
+/*
+ * @file
+ * Resets and creates defaults for root html elements.
+ */
+/* Vertical rhythm presets =========================================== */
+/* Breakpoints ======================================================== */
+/* line 23, src/scss/1_base/root.scss */
+* html .clear {
+  height: 1%;
+}
+
+/* line 27, src/scss/1_base/root.scss */
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* line 31, src/scss/1_base/root.scss */
+html {
+  font-size: 62.5%;
+}
+
+/* line 35, src/scss/1_base/root.scss */
+body {
+  font-size: 1.6rem;
+  margin: 0 0 2.4rem;
+  font-family: "Open Sans", sans-serif;
+  color: #373737;
+  line-height: 160%;
+}
+
+/*# sourceMappingURL=root.css.map */

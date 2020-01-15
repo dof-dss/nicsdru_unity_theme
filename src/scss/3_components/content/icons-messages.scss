@@ -106,7 +106,7 @@
 
 .info-notice {
   @extend %notice-builder;
-  border-color: $brand-primary-light;
+  border-color: $brand-primary; // was $brand-primary-light in nicsdru_nidriect_theme
   background: #fff resolve('i.svg') no-repeat .9rem .9rem / 24px 24px;
 
   @include breakpoint($phab, $no-query: true) {
@@ -120,6 +120,7 @@
 
 ul.info-notice {
   padding: 1rem 1rem 1rem 4rem;
+
   @include breakpoint($phab) {
     padding: 1.4rem 1.4rem 1.4rem 7rem;
   }

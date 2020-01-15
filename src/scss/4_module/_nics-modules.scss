@@ -30,17 +30,19 @@
 
 // styling for links output from media module in body field
 .field-name-body .inline-linkedfile {
-  @extend %p;
+  // %p was not found
+  //@extend %p;
 }
 
 .call-to-action {
-  @extend %btn;
+  // selectors not found
+  //@extend %btn;
 
-  @extend %btn-large;
+  //@extend %btn-large;
 
-  @extend %btn-arrow-right;
+  //@extend %btn-arrow-right;
 
-  @extend %btn-action;
+  //@extend %btn-action;
 }
 
 span.elink {
@@ -161,10 +163,11 @@ span.elink {
   }
 
   .thwoop-icon {
-    @include retina {
-      background-image: resolve('img-expand-icon-x2.png');
-      background-size: 25px 25px;
-    }
+    // Mixin retina does not exist.
+    //@include retina {
+    //  background-image: resolve('img-expand-icon-x2.png');
+    //  background-size: 25px 25px;
+    //}
 
     display: block;
     width: 33px;
@@ -178,10 +181,11 @@ span.elink {
     background-size: 25px 25px;
 
     &.shrink {
-      @include retina {
-        background-image: resolve('img-shrink-icon-x2.png');
-        background-size: 50px 50px;
-      }
+      // Mixin retina does not exist.
+      //@include retina {
+      //  background-image: resolve('img-shrink-icon-x2.png');
+      //  background-size: 50px 50px;
+      //}
 
       width: 60px;
       height: 60px;
@@ -270,12 +274,14 @@ span.elink {
 /* element-invisible as defined by http://snook.ca/archives/html_and_css/hiding-content-for-accessibility */
 .element-invisible,
 %element-invisible {
-  @include element-invisible;
+  // Mixin does not exist.
+  //@include element-invisible;
 }
 
 /* Turns off the element-invisible effect. */
 %element-invisible-off {
-  @include element-invisible-off;
+  // Mixin does not exist.
+  //@include element-invisible-off;
 }
 
 // -*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*- //
@@ -379,7 +385,8 @@ span.elink {
         width: 16%;
 
         .parent-title {
-          @include element-invisible;
+          // Mixin does not exist.
+          //@include element-invisible;
         }
       }
     }
@@ -434,5 +441,4 @@ iframe {
   min-height: 170px;
   margin: 1.5em 0;
 }
-
 

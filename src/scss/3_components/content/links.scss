@@ -11,7 +11,7 @@ ul.links {
 
 a {
   &.read_more {
-    background: #00AC00;
+    background: #00ac00;
     padding: .5rem .9rem;
     text-decoration: none;
     margin: 1rem 0;
@@ -24,7 +24,7 @@ a {
 
 
   &.btn {
-    @include responsive-typo-map($p-font-size);
+    @include responsive-typo-map($normal-text);
 
     display: inline-block;
     color: #fff;

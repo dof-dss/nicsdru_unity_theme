@@ -11,10 +11,11 @@
 //
 // Style guide: init.functions.headings
 
-@function headings($from:1, $to:6) {
+@function headings($from: 1, $to: 6) {
   @if $from == $to {
     @return 'h#{$from}';
-  } @else {
+  }
+  @else {
     @return 'h#{$from},' + headings($from+1, $to);
   }
 }

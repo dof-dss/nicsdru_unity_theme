@@ -56,16 +56,16 @@
     display: inline-block;
     box-sizing: border-box;
     min-width: 130px;
-    border: 0 solid $webform-btn; //What is this variable meant to refer to?
+    border: 0 solid $border; // Was $webform-btn
     border-radius: 0;
-    color: $btn-txt-color !important; //What is this variable meant to refer to?
-    background: $webform-btn;
+    color: $text !important; // Was $btn-txt-color
+    background: $button; // Was $webform-btn
     background-size: 17px auto;
     padding: .5rem 1em .6rem;
 
     &:hover {
-      background: $webform-btn-hover; //What is this variable meant to refer to?
-      border-color: $webform-btn-hover;
+      background: $button-action; // Was $webform-btn-hover
+      border-color: $button-action; // Was $webform-btn-hover
     }
   }
 }

@@ -1,0 +1,965 @@
+/* Vertical rhythm presets =========================================== */
+/* Breakpoints ======================================================== */
+@media screen and (max-width: 1152px) {
+  /* line 2, src/scss/2_layout/_media_overrides.scss */
+  #wrapper {
+    max-width: 960px;
+  }
+}
+
+@media screen and (max-width: 960px) {
+  /* line 62, src/scss/2_layout/_media_overrides.scss */
+  #post-content {
+    margin: 10px;
+    margin: 1rem;
+  }
+}
+
+@media screen and (max-width: 765px) {
+  /* line 148, src/scss/2_layout/_media_overrides.scss */
+  body {
+    margin-top: 0;
+  }
+  /* line 161, src/scss/2_layout/_media_overrides.scss */
+  #foot,
+  #copyright {
+    padding: 0 10px;
+    padding: 0 1rem;
+    line-height: 200%;
+  }
+}
+
+@media screen and (max-width: 440px) {
+  /* line 478, src/scss/2_layout/_media_overrides.scss */
+  .block-menu ul {
+    float: none;
+    text-align: center;
+  }
+}
+
+/* Vertical rhythm presets =========================================== */
+/* Breakpoints ======================================================== */
+/* line 3, src/scss/4_module/_themeoverrides.scss */
+blockquote,
+q {
+  background: transparent resolve("quote.png") no-repeat scroll 0 0;
+  border: 0;
+}
+
+/* line 10, src/scss/4_module/_themeoverrides.scss */
+#content ul,
+#content ol {
+  margin-bottom: 1.8rem;
+}
+
+/* line 14, src/scss/4_module/_themeoverrides.scss */
+#content ul li,
+#content ol li {
+  padding: 0 0 .6rem;
+}
+
+/* line 29, src/scss/4_module/_themeoverrides.scss */
+.node-page ul li,
+.node-news ul li,
+.node-faq ul li {
+  position: relative;
+  list-style: none;
+}
+
+/* line 33, src/scss/4_module/_themeoverrides.scss */
+.node-page ul li::before,
+.node-news ul li::before,
+.node-faq ul li::before {
+  content: '-';
+  position: absolute;
+  left: -20px;
+  top: 0;
+}
+
+/* line 45, src/scss/4_module/_themeoverrides.scss */
+aside ul {
+  margin-top: 1.2rem;
+  margin-bottom: 1.8rem;
+  margin: 0;
+}
+
+/* line 50, src/scss/4_module/_themeoverrides.scss */
+aside ul li {
+  margin: 0 0 0 2rem;
+  padding: 0 0 .6rem;
+}
+
+/* line 59, src/scss/4_module/_themeoverrides.scss */
+.field-faq {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+/* line 63, src/scss/4_module/_themeoverrides.scss */
+.field-faq h3 {
+  background: none;
+  border: 0;
+  font-weight: 600;
+}
+
+/* line 68, src/scss/4_module/_themeoverrides.scss */
+.field-faq h3 a {
+  color: #002e62;
+}
+
+/* line 74, src/scss/4_module/_themeoverrides.scss */
+.ui-state-active a,
+.ui-state-active a:link,
+.ui-state-active a:visited,
+.ui-state-default a,
+.ui-state-default a:link,
+.ui-state-default a:visited,
+.ui-widget-content a {
+  color: #002e62;
+}
+
+/* line 84, src/scss/4_module/_themeoverrides.scss */
+.ui-widget {
+  font-size: inherit;
+  font-family: inherit;
+}
+
+/* line 90, src/scss/4_module/_themeoverrides.scss */
+.ui-accordion .ui-accordion-icons {
+  padding-left: 25px;
+}
+
+/* line 94, src/scss/4_module/_themeoverrides.scss */
+.ui-accordion .ui-accordion-header .ui-accordion-header-icon {
+  left: 0;
+}
+
+/* line 99, src/scss/4_module/_themeoverrides.scss */
+.ui-widget-content {
+  border: 0;
+  background: none;
+  color: #373737;
+  overflow: hidden !important;
+}
+
+/* line 105, src/scss/4_module/_themeoverrides.scss */
+.ui-widget-content li {
+  color: #373737;
+}
+
+/* line 110, src/scss/4_module/_themeoverrides.scss */
+.x-scroll {
+  width: 100%;
+  overflow-x: auto;
+  margin: 1.2rem 0 2.4rem;
+}
+
+@media screen and (min-width: 766px) {
+  /* line 110, src/scss/4_module/_themeoverrides.scss */
+  .x-scroll {
+    margin: 1.8rem 0 2.7rem;
+  }
+}
+
+/* line 119, src/scss/4_module/_themeoverrides.scss */
+.x-scroll table {
+  margin: 0;
+}
+
+/* line 124, src/scss/4_module/_themeoverrides.scss */
+.wysiwyg-map {
+  width: 100% !important;
+  margin-bottom: 12px;
+}
+
+/* line 130, src/scss/4_module/_themeoverrides.scss */
+.google-map-field div {
+  line-height: 1;
+}
+
+/* line 140, src/scss/4_module/_themeoverrides.scss */
+.views-exposed-widgets .views-submit-button input[type='submit'] {
+  text-transform: capitalize;
+}
+
+/* Vertical rhythm presets =========================================== */
+/* Breakpoints ======================================================== */
+/* line 4, src/scss/4_module/_nics-modules.scss */
+.region ul.menu li,
+.region ul.links li,
+.region .item-list ul li {
+  background: none;
+}
+
+/* line 11, src/scss/4_module/_nics-modules.scss */
+.top_left {
+  min-height: 110px;
+  padding-left: 150px;
+  position: relative;
+}
+
+/* line 16, src/scss/4_module/_nics-modules.scss */
+.top_left #logo {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+/* line 23, src/scss/4_module/_nics-modules.scss */
+.top_left #site-title #site-description {
+  font-size: 1.8rem;
+  line-height: 145%;
+}
+
+/* line 48, src/scss/4_module/_nics-modules.scss */
+span.elink {
+  padding-right: 1em;
+  background: transparent resolve("new-window.gif") right center no-repeat;
+}
+
+/* line 57, src/scss/4_module/_nics-modules.scss */
+.field-name-body picture[data-picture-mapping='page_images'],
+.field-body picture[data-picture-mapping='page_images'] {
+  clear: right;
+  float: right;
+  width: 36.103%;
+  margin: 3px 0 0 27px;
+}
+
+/* line 64, src/scss/4_module/_nics-modules.scss */
+.field-name-body picture[data-picture-mapping='page_image_nocrop'],
+.field-body picture[data-picture-mapping='page_image_nocrop'] {
+  width: auto;
+  margin: 10px 0;
+  display: block;
+}
+
+/* line 69, src/scss/4_module/_nics-modules.scss */
+.field-name-body picture[data-picture-mapping='page_image_nocrop'] img,
+.field-body picture[data-picture-mapping='page_image_nocrop'] img {
+  width: auto;
+}
+
+/* line 78, src/scss/4_module/_nics-modules.scss */
+.one-sidebar .sidebar-second picture[data-picture-mapping='sidebar_images'],
+.one-sidebar .sidebar-first picture[data-picture-mapping='sidebar_images'] {
+  width: 100%;
+}
+
+@media screen and (min-width: 440px) {
+  /* line 85, src/scss/4_module/_nics-modules.scss */
+  picture[data-picture-mapping='inline'],
+  picture[data-picture-mapping='inline_expandable'],
+  .thwooper {
+    clear: right;
+    float: right;
+    width: 48.3871%;
+    max-width: 300px;
+    margin: 2.1rem 0 0 2.7rem;
+  }
+  /* line 95, src/scss/4_module/_nics-modules.scss */
+  .thwooper img.media-element,
+  .thwooper picture[data-picture-mapping*='inline'] {
+    margin: 0 !important;
+  }
+  /* line 100, src/scss/4_module/_nics-modules.scss */
+  picture[data-picture-mapping*='inline'] img {
+    width: 100%;
+    max-width: none;
+  }
+  /* line 105, src/scss/4_module/_nics-modules.scss */
+  div.field-file-image-caption-text {
+    font-size: 1.6rem;
+    line-height: 1.8rem;
+    width: 100%;
+    clear: both;
+    padding: 9px 0;
+    margin: 0 0 1.8rem;
+    color: #16a085;
+  }
+  /* line 114, src/scss/4_module/_nics-modules.scss */
+  picture[data-picture-mapping='inline'] + div.field-file-image-caption-text,
+  picture[data-picture-mapping='inline_expandable'] + div.field-file-image-caption-text,
+  .thwooper + div.field-file-image-caption-text {
+    clear: right;
+    float: right;
+    width: 48.3871%;
+    margin-left: 2.7rem;
+  }
+  /* line 124, src/scss/4_module/_nics-modules.scss */
+  picture[data-picture-mapping='inline'] img,
+  picture[data-picture-mapping='inline_expandable'] img {
+    float: right;
+    max-width: 670px;
+  }
+  /* thwoop and magnific popup image styles */
+  /* line 131, src/scss/4_module/_nics-modules.scss */
+  .thwooper {
+    display: block;
+    clear: right;
+    float: right;
+    outline: 0 solid !important;
+    position: relative;
+  }
+  /* line 138, src/scss/4_module/_nics-modules.scss */
+  .thwooper picture {
+    width: 100%;
+    max-width: 670px;
+    margin: 0;
+    position: relative;
+    z-index: 0;
+    float: right;
+  }
+  /* line 148, src/scss/4_module/_nics-modules.scss */
+  .thwooped {
+    clear: both;
+    width: 100%;
+    margin: 2.7rem 0;
+    max-width: none;
+  }
+  /* line 154, src/scss/4_module/_nics-modules.scss */
+  .thwooped picture[data-picture-mapping*='inline'] {
+    max-width: 670px;
+  }
+  /* line 158, src/scss/4_module/_nics-modules.scss */
+  .thwooped + div.field-file-image-caption-text {
+    width: 100%;
+    max-width: 670px;
+    margin: -2.7rem 0 2.7rem;
+  }
+  /* line 165, src/scss/4_module/_nics-modules.scss */
+  .thwoop-icon {
+    display: block;
+    width: 33px;
+    height: 33px;
+    padding: 4px;
+    position: absolute;
+    right: 5px;
+    bottom: 5px;
+    z-index: 10;
+    background: rgba(0, 0, 0, 0.3) resolve("img-expand-icon-x1.png") 4px 4px no-repeat;
+    background-size: 25px 25px;
+  }
+  /* line 183, src/scss/4_module/_nics-modules.scss */
+  .thwoop-icon.shrink {
+    width: 60px;
+    height: 60px;
+    padding: 5px;
+    bottom: 27px;
+    left: calc(100% - 80px);
+    right: 10px;
+    background: rgba(0, 0, 0, 0.3) resolve("img-shrink-icon-x1.png") 5px 5px no-repeat;
+    background-size: 50px 50px;
+  }
+  /* line 201, src/scss/4_module/_nics-modules.scss */
+  a:hover .thwoop-icon {
+    background-color: rgba(0, 0, 0, 0.6);
+  }
+  /* line 205, src/scss/4_module/_nics-modules.scss */
+  .inline-xl {
+    position: relative;
+    display: block;
+    padding-top: 1.8rem;
+    font-size: .1px;
+    line-height: 0;
+  }
+  /* line 212, src/scss/4_module/_nics-modules.scss */
+  .inline-xl img {
+    float: none;
+    margin: 0;
+  }
+  /* line 216, src/scss/4_module/_nics-modules.scss */
+  .inline-xl img.media-element {
+    margin: 0;
+  }
+  /* line 221, src/scss/4_module/_nics-modules.scss */
+  .inline-xl .thwoop-icon {
+    display: none;
+    width: 50px;
+    height: 50px;
+    padding: 0;
+    background-image: resolve("img-expand-icon-x2.png");
+    background-size: 40px 40px;
+    background-position: center center;
+  }
+}
+
+@media screen and (min-width: 440px) and (min-width: 766px) {
+  /* line 221, src/scss/4_module/_nics-modules.scss */
+  .inline-xl .thwoop-icon {
+    display: block;
+  }
+}
+
+/* line 241, src/scss/4_module/_nics-modules.scss */
+.front .hide-front {
+  display: none !important;
+}
+
+/* line 248, src/scss/4_module/_nics-modules.scss */
+.toc {
+  display: block;
+}
+
+@media screen and (min-width: 961px) {
+  /* line 248, src/scss/4_module/_nics-modules.scss */
+  .toc {
+    display: none;
+  }
+}
+
+/* line 256, src/scss/4_module/_nics-modules.scss */
+#toc-aside {
+  display: none;
+}
+
+@media screen and (min-width: 961px) {
+  /* line 256, src/scss/4_module/_nics-modules.scss */
+  #toc-aside {
+    display: block;
+  }
+}
+
+/* line 265, src/scss/4_module/_nics-modules.scss */
+.field-name-body .toc h2 {
+  margin-top: 0;
+}
+
+/*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*- //
+ * Accessibility features.
+ *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*/
+/* element-invisible as defined by http://snook.ca/archives/html_and_css/hiding-content-for-accessibility */
+/* Turns off the element-invisible effect. */
+/* line 290, src/scss/4_module/_nics-modules.scss */
+.book-navigation {
+  width: 100%;
+}
+
+/* line 293, src/scss/4_module/_nics-modules.scss */
+.book-navigation .menu {
+  border-top: 1px solid #888;
+  border-bottom: 1px solid #888;
+  padding: 2.1rem 1rem 2.1rem 2.7rem;
+  margin: 0 0 1.8rem;
+  list-style: none;
+}
+
+/* line 301, src/scss/4_module/_nics-modules.scss */
+.book-navigation .menu li {
+  position: relative;
+  list-style: none;
+}
+
+/* line 305, src/scss/4_module/_nics-modules.scss */
+.book-navigation .menu li::before {
+  content: '-';
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+/* line 313, src/scss/4_module/_nics-modules.scss */
+.book-navigation .page-links {
+  width: 100%;
+  background-color: #f2f2f2;
+  min-height: 33px;
+  padding: 0;
+  margin-top: 1.5rem;
+  border: 0 solid;
+}
+
+/* line 321, src/scss/4_module/_nics-modules.scss */
+.book-navigation .page-links a,
+.book-navigation .page-links span {
+  font-size: 1.4rem;
+  line-height: 2.1rem;
+  display: block;
+  width: 100%;
+  min-height: 33px;
+  float: none;
+  color: #333;
+  line-height: 2.4rem;
+}
+
+/* line 333, src/scss/4_module/_nics-modules.scss */
+.book-navigation .page-links span {
+  background: none !important;
+  border: 0 solid !important;
+}
+
+/* line 337, src/scss/4_module/_nics-modules.scss */
+.book-navigation .page-links span.parent-title {
+  display: inline;
+}
+
+/* line 342, src/scss/4_module/_nics-modules.scss */
+.book-navigation .page-links .page-next {
+  padding: .7rem 1.4rem .7rem 2.1rem;
+  background: #dfdfdf resolve("collection-next.png") right center no-repeat;
+  background-size: 6px auto;
+  border-right: 7px solid #dfdfdf;
+  text-align: right;
+}
+
+/* line 350, src/scss/4_module/_nics-modules.scss */
+.book-navigation .page-links .page-up {
+  margin: 0;
+  padding: .7rem;
+}
+
+/* line 354, src/scss/4_module/_nics-modules.scss */
+.book-navigation .page-links .page-up:hover {
+  background-color: #888;
+  color: #fff;
+}
+
+/* line 360, src/scss/4_module/_nics-modules.scss */
+.book-navigation .page-links .page-previous {
+  padding: .7rem 2.1rem .7rem 1.4rem;
+  background: #dfdfdf resolve("collection-prev.png") left center no-repeat;
+  background-size: 6px auto;
+  border-left: 7px solid #dfdfdf;
+  text-align: left;
+}
+
+/* line 369, src/scss/4_module/_nics-modules.scss */
+.book-navigation .page-links.clearfix::after {
+  content: '';
+}
+
+@media screen and (min-width: 440px) {
+  /* line 374, src/scss/4_module/_nics-modules.scss */
+  .book-navigation .page-links {
+    display: table;
+  }
+  /* line 377, src/scss/4_module/_nics-modules.scss */
+  .book-navigation .page-links a,
+  .book-navigation .page-links span {
+    width: 42%;
+    display: table-cell;
+    vertical-align: middle;
+  }
+  /* line 384, src/scss/4_module/_nics-modules.scss */
+  .book-navigation .page-links .page-up {
+    width: 16%;
+  }
+}
+
+@media screen and (min-width: 641px) {
+  /* line 397, src/scss/4_module/_nics-modules.scss */
+  .book-navigation .menu {
+    padding: 3rem 1.8rem 3.6rem;
+  }
+  /* line 401, src/scss/4_module/_nics-modules.scss */
+  .book-navigation .page-links {
+    min-height: 50px;
+  }
+  /* line 404, src/scss/4_module/_nics-modules.scss */
+  .book-navigation .page-links a,
+  .book-navigation .page-links span {
+    font-size: 1.8rem;
+    line-height: 2.4rem;
+    min-height: 50px;
+  }
+  /* line 411, src/scss/4_module/_nics-modules.scss */
+  .book-navigation .page-links .page-next {
+    padding: 1.2rem 2.4rem 1.2rem 5rem;
+    background-size: auto auto;
+    border-right: 21px solid #dfdfdf;
+  }
+  /* line 417, src/scss/4_module/_nics-modules.scss */
+  .book-navigation .page-links .page-up {
+    padding: 1.2rem;
+  }
+  /* line 421, src/scss/4_module/_nics-modules.scss */
+  .book-navigation .page-links .page-previous {
+    padding: 1.2rem 5rem 1.2rem 2.4rem;
+    background-size: auto auto;
+    border-left: 21px solid #dfdfdf;
+  }
+}
+
+@media screen and (min-width: 766px) {
+  /* line 431, src/scss/4_module/_nics-modules.scss */
+  .book-navigation .menu {
+    padding-right: 0;
+  }
+}
+
+/* line 439, src/scss/4_module/_nics-modules.scss */
+iframe {
+  width: 100%;
+  min-height: 170px;
+  margin: 1.5em 0;
+}
+
+/* Vertical rhythm presets =========================================== */
+/* Breakpoints ======================================================== */
+/* line 3, src/scss/4_module/_cookieWarning.scss */
+#cookie-law {
+  background: rgba(0, 46, 98, 0.95) repeat scroll left top;
+  float: left;
+  padding: 0 1rem 2rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 99999;
+}
+
+/* line 13, src/scss/4_module/_cookieWarning.scss */
+#cookie-law .cookie-law-inner {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 940px;
+}
+
+/* line 19, src/scss/4_module/_cookieWarning.scss */
+#cookie-law .cookie-law-content p {
+  font-size: 1.6rem;
+  color: #fff;
+}
+
+/* line 23, src/scss/4_module/_cookieWarning.scss */
+#cookie-law .cookie-law-content p.cookie-law-title {
+  font-size: 2.4rem;
+  margin-top: 1rem;
+}
+
+/* line 28, src/scss/4_module/_cookieWarning.scss */
+#cookie-law .cookie-law-content p a {
+  text-decoration: underline;
+  color: #fff;
+}
+
+/* line 32, src/scss/4_module/_cookieWarning.scss */
+#cookie-law .cookie-law-content p a:hover, #cookie-law .cookie-law-content p a:focus {
+  color: #fff;
+}
+
+/* Vertical rhythm presets =========================================== */
+/* Breakpoints ======================================================== */
+/* line 5, src/scss/4_module/_webform.scss */
+.content .node-webform fieldset {
+  border: 0 none;
+  margin-bottom: .5rem;
+}
+
+/* line 9, src/scss/4_module/_webform.scss */
+.content .node-webform fieldset legend {
+  background: #dbdbdb none repeat scroll 0 0;
+  border-color: #ccc;
+  border-image: none;
+  border-style: solid;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  border-width: 1px 1px 0;
+  display: block;
+  position: relative;
+  line-height: 2;
+  padding: 0;
+  text-indent: 1rem;
+  width: 100%;
+}
+
+/* line 26, src/scss/4_module/_webform.scss */
+.content .node-webform .fieldset-wrapper {
+  padding: 0;
+  margin-top: 0;
+}
+
+@media screen and (min-width: 641px) {
+  /* line 26, src/scss/4_module/_webform.scss */
+  .content .node-webform .fieldset-wrapper {
+    max-width: 60%;
+  }
+}
+
+/* line 35, src/scss/4_module/_webform.scss */
+.content .node-webform button,
+.content .node-webform input,
+.content .node-webform select,
+.content .node-webform textarea {
+  border-radius: 0 !important;
+  font-family: inherit;
+  font-size: 100%;
+}
+
+/* line 44, src/scss/4_module/_webform.scss */
+.content .node-webform .webform-component input {
+  width: 100%;
+}
+
+/* line 48, src/scss/4_module/_webform.scss */
+.content .node-webform button,
+.content .node-webform input[type='submit'],
+.content .node-webform input[type='reset'],
+.content .node-webform input[type='button'] {
+  text-decoration: none !important;
+  text-align: center;
+  text-shadow: none;
+  font-weight: normal;
+  display: inline-block;
+  box-sizing: border-box;
+  min-width: 130px;
+  border: 0 solid #e8e7e7;
+  border-radius: 0;
+  color: #373737 !important;
+  background: #373737;
+  background-size: 17px auto;
+  padding: .5rem 1em .6rem;
+}
+
+/* line 66, src/scss/4_module/_webform.scss */
+.content .node-webform button:hover,
+.content .node-webform input[type='submit']:hover,
+.content .node-webform input[type='reset']:hover,
+.content .node-webform input[type='button']:hover {
+  background: #3fa940;
+  border-color: #3fa940;
+}
+
+/* Vertical rhythm presets =========================================== */
+/* Breakpoints ======================================================== */
+/* line 5, src/scss/4_module/_news.scss */
+#block-views-latest-news-block .ds-1col.node-teaser {
+  position: relative;
+  border-bottom: 1px solid #cdcdcd;
+}
+
+/* line 9, src/scss/4_module/_news.scss */
+#block-views-latest-news-block .ds-1col.node-teaser .field-photo {
+  position: relative;
+}
+
+/* line 13, src/scss/4_module/_news.scss */
+#block-views-latest-news-block .ds-1col.node-teaser h2 {
+  margin: 1.8rem 0 .6rem;
+}
+
+/* line 17, src/scss/4_module/_news.scss */
+#block-views-latest-news-block .ds-1col.node-teaser .meta {
+  font-size: 1.4rem;
+}
+
+/* line 21, src/scss/4_module/_news.scss */
+#block-views-latest-news-block .ds-1col.node-teaser .news-teaser {
+  margin-top: .6rem;
+  padding-bottom: 1.8rem;
+}
+
+/* line 26, src/scss/4_module/_news.scss */
+#block-views-latest-news-block .ds-1col.node-teaser .read-more-link {
+  margin-left: 5px;
+}
+
+/* line 33, src/scss/4_module/_news.scss */
+.ds-1col.node-news {
+  position: relative;
+}
+
+/* line 36, src/scss/4_module/_news.scss */
+.ds-1col.node-news .teaser-text {
+  font-size: 1.8rem;
+  margin: 2.4rem 0 1.2rem;
+  font-weight: bold;
+}
+
+/* line 42, src/scss/4_module/_news.scss */
+.ds-1col.node-news .field-photo {
+  float: right;
+  width: 100%;
+}
+
+/* line 46, src/scss/4_module/_news.scss */
+.ds-1col.node-news .field-photo img {
+  width: 100%;
+  height: auto;
+}
+
+@media screen and (min-width: 440px) {
+  /* line 42, src/scss/4_module/_news.scss */
+  .ds-1col.node-news .field-photo {
+    max-width: 250px;
+    margin: 0 0 1rem 1rem;
+  }
+}
+
+/* line 57, src/scss/4_module/_news.scss */
+.ds-1col.node-news span.date-display-single {
+  display: block;
+}
+
+/* line 61, src/scss/4_module/_news.scss */
+.ds-1col.node-news .read-more-link {
+  margin-left: 5px;
+}
+
+/* line 70, src/scss/4_module/_news.scss */
+#block-views-news-by-date-block-1 ul li {
+  color: #333;
+  list-style: outside;
+  padding: 0;
+  margin-left: 20px;
+}
+
+/* line 78, src/scss/4_module/_news.scss */
+#block-views-news-by-date-block-1 ul.views-summary {
+  margin-top: 0rem;
+  margin-bottom: 1.8rem;
+}
+
+/* line 81, src/scss/4_module/_news.scss */
+#block-views-news-by-date-block-1 ul.views-summary > li {
+  margin: 0 0 0 2rem;
+  padding: 0 0 .6rem;
+}
+
+/* line 85, src/scss/4_module/_news.scss */
+#block-views-news-by-date-block-1 ul.views-summary > li i {
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+/* line 90, src/scss/4_module/_news.scss */
+#block-views-news-by-date-block-1 ul.views-summary > li ul {
+  display: none;
+  margin: 6px 0 0 20px;
+}
+
+/* line 94, src/scss/4_module/_news.scss */
+#block-views-news-by-date-block-1 ul.views-summary > li ul li {
+  list-style: disc;
+  margin: 0 0 0 2rem;
+  padding: 0 0 .6rem;
+}
+
+/* Vertical rhythm presets =========================================== */
+/* Breakpoints ======================================================== */
+/* line 4, src/scss/4_module/_publications.scss */
+.view-publications .views-row {
+  clear: both;
+  border-bottom: 1px solid #ccc;
+}
+
+/* line 9, src/scss/4_module/_publications.scss */
+.view-publications .views-row-last {
+  border: 0;
+}
+
+@media screen and (min-width: 766px) {
+  /* line 16, src/scss/4_module/_publications.scss */
+  .node-publication-page.node-teaser .publication-image {
+    width: 40%;
+    float: left;
+    margin-right: 5%;
+  }
+  /* line 22, src/scss/4_module/_publications.scss */
+  .node-publication-page.node-teaser .publication-main {
+    width: 55%;
+    float: left;
+  }
+}
+
+@media screen and (min-width: 766px) {
+  /* line 30, src/scss/4_module/_publications.scss */
+  .node-type-publication-page .field-publication-image {
+    float: right;
+    margin-left: 20px;
+  }
+}
+
+/* line 39, src/scss/4_module/_publications.scss */
+.view-publication-search-api .views-row {
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 10px;
+}
+
+/* line 44, src/scss/4_module/_publications.scss */
+.view-publication-search-api .views-row-last {
+  border: 0;
+}
+
+/* Vertical rhythm presets =========================================== */
+/* Breakpoints ======================================================== */
+/* line 3, src/scss/4_module/_responsiveMenu.scss */
+.burger-toggle {
+  display: none;
+}
+
+/* line 7, src/scss/4_module/_responsiveMenu.scss */
+.js .burger-toggle {
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  box-sizing: border-box;
+  width: 62px;
+  height: 54px;
+  margin-left: 1px;
+  font-size: 16px;
+  padding: 0;
+  color: #fff;
+  background: transparent !important;
+  border: 0;
+  text-shadow: none;
+  box-shadow: none;
+  font-weight: normal;
+}
+
+@media screen and (max-width: 766px) {
+  /* line 7, src/scss/4_module/_responsiveMenu.scss */
+  .js .burger-toggle {
+    width: 96px;
+    padding-right: 56px;
+    padding-left: 5px;
+    border-left-width: 5px;
+    border-right-width: 5px;
+    margin-left: 0;
+  }
+}
+
+@media screen and (min-width: 766px) {
+  /* line 7, src/scss/4_module/_responsiveMenu.scss */
+  .js .burger-toggle {
+    display: none;
+  }
+}
+
+/* line 38, src/scss/4_module/_responsiveMenu.scss */
+.js .burger-toggle .sr-only {
+  display: none;
+}
+
+@media screen and (max-width: 766px) {
+  /* line 38, src/scss/4_module/_responsiveMenu.scss */
+  .js .burger-toggle .sr-only {
+    display: block;
+    position: absolute !important;
+    right: 8px;
+    background-color: inherit;
+    color: #fff;
+    border-radius: 0;
+    margin: 0;
+    line-height: 29px;
+  }
+}
+
+/* line 53, src/scss/4_module/_responsiveMenu.scss */
+.js .burger-toggle .icon-bar {
+  display: block;
+  width: 28px;
+  height: 3px;
+  background-color: #fff;
+  border-radius: 2px;
+  margin: 5px auto;
+}
+
+@media screen and (max-width: 766px) {
+  /* line 53, src/scss/4_module/_responsiveMenu.scss */
+  .js .burger-toggle .icon-bar {
+    width: 21px;
+  }
+}
+
+/*# sourceMappingURL=style_overrides.css.map */

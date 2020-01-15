@@ -19,7 +19,7 @@ ul {
       float: left;
 
       a {
-        @include border-radius(4px 4px, 0 0);
+        border-radius: 4px; // was @include border-radius(4px 4px, 0 0);
         background: none;
         border: 0;
         display: block;

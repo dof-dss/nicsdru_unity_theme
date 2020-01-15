@@ -33,7 +33,7 @@
 @mixin rtp-map-attributes($fs-font-size) {
   // If $fs-font-size is a list, include
   // both font-size, line-height and margins
-  @if type-of($fs-font-size) == "list" {
+  @if type-of($fs-font-size) == 'list' {
     @if (nth($fs-font-size, 1) != null) {
       @include adjust-font-size-to(nth($fs-font-size, 1));
     }
