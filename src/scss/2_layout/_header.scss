@@ -1,0 +1,198 @@
+/*
+ * @file
+ * Defines the layout styles for the header area.
+ */
+
+// Header
+//
+// The header layout partial deals with the structure of elements in the header area of the page, this typically
+// includes the:-
+// - Site Branding region which renders (if available)
+//   - site_logo: Logo for site as defined in Appearance or theme settings.
+//   - site_slogan: Slogan for site as defined in Site information settings.
+// - Search region which is a region intended to contain a site search block (if site search is configured).
+//
+// Weight: 1
+//
+// Style guide: layout.header
+
+#inner_header_wrapper {
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+}
+
+#header {
+  max-width: 1024px;
+  margin: 1% auto;
+
+  @media screen and (max-width: $tab) {
+    margin-bottom: 0;
+  }
+}
+
+.top_left {
+  float: left;
+  width: 50%;
+}
+
+.top_right {
+  float: right;
+  width: 50%;
+
+  .region-search {
+    float: right;
+    margin: 1% 0;
+
+    @media screen and (max-width: $tab) {
+      width: 100%;
+      padding: 0;
+    }
+  }
+
+  .region-user-menu {
+    overflow: hidden;
+    width: 100%;
+
+    ul.menu {
+      float: right;
+
+      @media screen and (max-width: $tab) {
+        float: none;
+      }
+    }
+  }
+
+  ul.menu li a.active {
+    color: #6cdcff;
+  }
+}
+
+.top_left,
+.top_right,
+.search_block,
+.region-user-menu {
+  @media screen and (max-width: $tab) {
+    width: 100%;
+  }
+}
+
+#logo {
+  float: left;
+  margin: .8rem 1rem .8rem 0;
+
+  @media screen and (max-width: $tab) {
+    text-align: center;
+    width: 100%;
+    margin: .8rem 0 0;
+  }
+
+  img {
+   display: block;
+
+   @media screen and (max-width: $tab) {
+     text-align: center;
+     display: inline-block;
+   }
+  }
+}
+
+#site-title a,
+#site-description {
+  font-weight: normal;
+}
+
+#site-title,
+#site-description {
+  float: left;
+
+  @media screen and (max-width: $tab) {
+    margin: 0;
+    line-height: 1.62em;
+  }
+}
+
+#site-title {
+  @include adjust-font-size-to(30px);
+  margin: 1rem 0 0;
+  font-weight: bold;
+
+  @media screen and (max-width: $tab) {
+    padding: 0;
+    width: 100%;
+    display: inline-block;
+  }
+
+  a {
+    float: left;
+
+    @media screen and (max-width: $tab) {
+      width: 100%;
+      text-align: center;
+    }
+  }
+}
+
+#site-description {
+  @include responsive-typo-map($normal-text);
+  margin: .4rem 0 0;
+  float: left;
+  clear: both;
+  line-height: 100%;
+
+  // customisations
+  font-style: italic;
+  color: $link;
+
+  @media screen and (max-width: $tab) {
+    padding-top: 1.8rem;
+    padding-bottom: .5rem;
+    width: 100%;
+    text-align: center;
+  }
+}
+
+#headerHero {
+  @media screen and (max-width: $tab) {
+    padding: .5rem 0 .5rem 10rem;
+    min-height: 54px;
+    margin: 1rem 0 0;
+    background-color: $menu-background;
+    position: relative;
+
+    &.no-menu {
+      .burger-toggle {
+        display: none !important;
+      }
+
+      &.no-search {
+        display: none;
+      }
+    }
+
+    .region-search {
+      input[type='text'],
+      input[type='search'] {
+        width: 98%;
+        height: 35px;
+        padding: 0 1rem;
+        max-width: 100%;
+        border: 0;
+        margin: 0;
+        float: none;
+        border-radius: 0;
+        background: #fff;
+      }
+
+      .form-submit {
+        height: 34px;
+        width: 65px;
+        position: absolute;
+        top: -1px;
+        right: 10px;
+        background: #fff resolve('search-icon.png') no-repeat 30px center;
+        text-indent: -999rem;
+      }
+    }
+  }
+}
