@@ -1,0 +1,120 @@
+/* Vertical rhythm presets =========================================== */
+/* Breakpoints ======================================================== */
+/* line 3, src/scss/2_layout/footer.scss */
+#footer {
+  font-size: 1.6rem;
+  margin: 0 0 2.4rem;
+  overflow: auto;
+  padding: 1% 2% 2%;
+  background: #002e62;
+  border-top: 4px solid #00a583;
+  max-width: 1024px;
+  margin: 0 auto;
+}
+
+/* line 13, src/scss/2_layout/footer.scss */
+#footer p {
+  color: #fff;
+}
+
+@media screen and (max-width: 766px) {
+  /* line 13, src/scss/2_layout/footer.scss */
+  #footer p {
+    margin: 0;
+  }
+}
+
+/* line 21, src/scss/2_layout/footer.scss */
+#footer .block > h2 {
+  color: #fff;
+  padding: 1rem 0;
+}
+
+/* line 26, src/scss/2_layout/footer.scss */
+#footer .column li {
+  display: block;
+  padding: .3rem 0 .3rem .1rem;
+  border-bottom-width: .1rem;
+  border-bottom-style: dotted;
+  border-color: #555;
+}
+
+/* line 34, src/scss/2_layout/footer.scss */
+#footer ul {
+  margin: 0;
+}
+
+/* line 38, src/scss/2_layout/footer.scss */
+#footer a {
+  color: #00a583;
+}
+
+/* line 44, src/scss/2_layout/footer.scss */
+#footer-area .column {
+  float: left;
+  width: 24.2%;
+  margin: 0 0 0 1%;
+  padding: 1%;
+}
+
+@media screen and (max-width: 766px) {
+  /* line 44, src/scss/2_layout/footer.scss */
+  #footer-area .column {
+    float: none !important;
+    width: auto !important;
+    margin: 1rem;
+  }
+}
+
+/* line 56, src/scss/2_layout/footer.scss */
+#footer-area .column:first-child {
+  margin-left: 0;
+}
+
+@media screen and (max-width: 766px) {
+  /* line 56, src/scss/2_layout/footer.scss */
+  #footer-area .column:first-child {
+    margin: 1rem;
+  }
+}
+
+/* line 64, src/scss/2_layout/footer.scss */
+#footer-area .column:last-child {
+  float: right;
+}
+
+/* line 69, src/scss/2_layout/footer.scss */
+#footer-area .column-title {
+  color: #fff;
+}
+
+/* line 73, src/scss/2_layout/footer.scss */
+#footer-area ul.menu li a.active {
+  color: #ddd;
+}
+
+/* line 78, src/scss/2_layout/footer.scss */
+.footer_block {
+  clear: both;
+}
+
+/* line 82, src/scss/2_layout/footer.scss */
+.footer_inner_credit {
+  margin: 1rem auto;
+}
+
+@media screen and (max-width: 961px) {
+  /* line 86, src/scss/2_layout/footer.scss */
+  #footer_wrapper {
+    padding: 0 1.5rem;
+  }
+}
+
+@media screen and (max-width: 766px) {
+  /* line 86, src/scss/2_layout/footer.scss */
+  #footer_wrapper {
+    padding: 0;
+  }
+}
+
+/*# sourceMappingURL=footer.css.map */

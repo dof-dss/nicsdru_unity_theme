@@ -7,7 +7,7 @@
 
 #forum {
   .title {
-    @include responsive-typo-map($h2-font-size);
+    @include responsive-typo-map($h2-text);
   }
 
   .submitted {

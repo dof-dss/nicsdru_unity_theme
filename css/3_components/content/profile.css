@@ -1,0 +1,26 @@
+/* line 1, src/scss/3_components/content/profile.scss */
+.profile {
+  margin: 1.5385em 0;
+}
+
+/* line 4, src/scss/3_components/content/profile.scss */
+.profile dd {
+  margin-bottom: 1.5385em;
+}
+
+/* line 8, src/scss/3_components/content/profile.scss */
+.profile h3 {
+  border: 0;
+}
+
+/* line 12, src/scss/3_components/content/profile.scss */
+.profile dt {
+  margin-bottom: 0;
+}
+
+/* line 17, src/scss/3_components/content/profile.scss */
+.password-parent {
+  width: 36em;
+}
+
+/*# sourceMappingURL=profile.css.map */

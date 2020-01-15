@@ -1,0 +1,43 @@
+/* Vertical rhythm presets =========================================== */
+/* Breakpoints ======================================================== */
+/* line 3, src/scss/3_components/content/region-clients.scss */
+.region-clients {
+  margin: 2% 0;
+}
+
+@media screen and (max-width: 766px) {
+  /* line 3, src/scss/3_components/content/region-clients.scss */
+  .region-clients {
+    margin: 5%;
+  }
+}
+
+/* line 10, src/scss/3_components/content/region-clients.scss */
+.region-clients ul {
+  margin: 1rem 0;
+  overflow: hidden;
+}
+
+/* line 15, src/scss/3_components/content/region-clients.scss */
+.region-clients li {
+  display: inline-block;
+  width: 20%;
+  float: left;
+  text-align: center;
+}
+
+@media screen and (max-width: 766px) {
+  /* line 15, src/scss/3_components/content/region-clients.scss */
+  .region-clients li {
+    width: 49%;
+  }
+}
+
+@media screen and (max-width: 440px) {
+  /* line 15, src/scss/3_components/content/region-clients.scss */
+  .region-clients li {
+    width: 100%;
+  }
+}
+
+/*# sourceMappingURL=region-clients.css.map */

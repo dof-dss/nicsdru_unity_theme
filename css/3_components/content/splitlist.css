@@ -1,0 +1,24 @@
+/* line 1, src/scss/3_components/content/splitlist.scss */
+.split-list {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 100%;
+  clear: both;
+  float: left;
+}
+
+/* line 7, src/scss/3_components/content/splitlist.scss */
+.split-list li {
+  float: left;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 50%;
+  padding-right: 1em;
+}
+
+/* line 13, src/scss/3_components/content/splitlist.scss */
+.split-list li:nth-child(odd) {
+  clear: left;
+}
+
+/*# sourceMappingURL=splitlist.css.map */

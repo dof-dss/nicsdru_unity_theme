@@ -1,0 +1,23 @@
+/* Vertical rhythm presets =========================================== */
+/* Breakpoints ======================================================== */
+/* line 4, src/scss/3_components/navigation/user-menu.scss */
+.region-user-menu h2 {
+  display: none;
+}
+
+/* line 8, src/scss/3_components/navigation/user-menu.scss */
+.region-user-menu ul li {
+  display: inline-block;
+  background: none;
+  padding: 0 1rem;
+  border-right: 1px solid #636363;
+  line-height: 100%;
+}
+
+/* line 15, src/scss/3_components/navigation/user-menu.scss */
+.region-user-menu ul li.last {
+  border: 0;
+  padding-right: 0;
+}
+
+/*# sourceMappingURL=user-menu.css.map */
