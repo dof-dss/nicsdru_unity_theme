@@ -763,5 +763,14 @@ $kss-vertical-rhythm      : $kss-font-size * 1.5;
   @import '../../../node_modules/highlight.js/styles/vs2015';
 }
 
+.kss-layout-block {
+  background-color: #444;
+  border: 2px solid #fff;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 150%;
+  padding: 10px;
+}
+
 @import '../../../node_modules/chroma-sass/sass/chroma/kss';
 @include chroma-kss-styles();
