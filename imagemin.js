@@ -12,23 +12,18 @@ const imageminPngout = require('imagemin-pngout');
 const imageminZopfli = require('imagemin-zopfli');
 const imageminGifsicle = require('imagemin-gifsicle');
 
-imagemin([JPEGImages], output, {use: [imageminJpegtran()]}).then(() => {
-  console.log('Images optimized');
-});
-
 const optimiseJPEGImages = () =>
-  imagemin([JPEGImages], output, {
+  imagemin([JPEGImages], {
+    destination: output,
     plugins: [
       imageminJpegoptim(),
       imageminJpegtran(),
     ]
   });
 
-optimiseJPEGImages()
-  .catch(error => console.log(error));
-
 const optimisePNGImages = () =>
-  imagemin([PNGImages], output, {
+  imagemin([PNGImages], {
+    destination: output,
     plugins: [
       imageminOptipng(),
       imageminPngcrush({
@@ -39,15 +34,28 @@ const optimisePNGImages = () =>
     ]
   });
 
-optimisePNGImages()
-  .catch(error => console.log(error));
-
 const optimiseGIFImages = () =>
-  imagemin([GIFImages], output, {
+  imagemin([GIFImages], {
+    destination: output,
     plugins: [
       imageminGifsicle(),
     ]
   });
 
-optimiseJPEGImages()
-  .catch(error => console.log(error));
+// (async () => {
+//   const files = await imagemin([PNGImages], {
+//     destination: output,
+//     plugins: [imageminOptipng(), imageminPngcrush({reduce: true,}), imageminPngout(), imageminZopfli()]
+//   });
+//
+//   console.log(files);
+// })();
+
+(async () => {
+  const files = await optimisePNGImages()
+    .then(() => optimiseJPEGImages())
+    .then(() => optimiseGIFImages())
+    .catch(error => console.log(error));
+
+  console.log(files);
+})();
