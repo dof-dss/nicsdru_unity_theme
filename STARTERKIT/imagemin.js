@@ -42,15 +42,6 @@ const optimiseGIFImages = () =>
     ]
   });
 
-// (async () => {
-//   const files = await imagemin([PNGImages], {
-//     destination: output,
-//     plugins: [imageminOptipng(), imageminPngcrush({reduce: true,}), imageminPngout(), imageminZopfli()]
-//   });
-//
-//   console.log(files);
-// })();
-
 (async () => {
   const files = await optimisePNGImages()
     .then(() => optimiseJPEGImages())

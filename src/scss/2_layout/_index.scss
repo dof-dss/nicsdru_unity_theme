@@ -1,0 +1,40 @@
+/*
+ * @file
+ * Helper partial to outline the order partials should be loaded in this section - used for reference & in the style guide.
+ */
+
+// Layout
+//
+// The theme provides a number of Drupal 'regions' namely:-
+// - header: 'Site branding'
+// - search: 'Search'
+// - primary_menu: 'Main menu'
+// - slideshow: 'Slideshow'
+// - front_welcome: 'Front welcome'
+// - top_first: 'First top'
+// - top_second: 'Second top'
+// - top_third: 'Third top'
+// - breadcrumb: 'Breadcrumb'
+// - sidebar_first: 'First sidebar'
+// - sidebar_second: 'Sidebar second'
+// - content: 'Content'
+// - bottom_widget_1: 'Bottom widget 1'
+// - bottom_widget_2: 'Bottom widget 2'
+// - bottom_widget_3: 'Bottom widget 3'
+// - footer_first: 'First Bottom'
+// - footer_second: 'Second Bottom'
+// - footer_third: 'Third Bottom'
+// - footer_fourth: 'Fourth Bottom'
+// - footer: 'Footer Bottom'
+// Code in the layout section of the src/scss primarily facilitates structuring and placement of these Drupal regions
+// on a given page.
+//
+// Markup: layout.twig
+//
+// Weight: -8
+//
+// Style guide: layout
+
+//@import '../init';
+@import 'header';
+

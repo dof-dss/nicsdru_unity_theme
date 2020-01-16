@@ -1,5 +1,3 @@
-@import '../init';
-
 // Tables
 //
 // The `<table>` element displays tabular data in rows, columns, and cells.
@@ -8,8 +6,7 @@
 //
 // Weight: -2
 //
-// Style guide: base.tables
-
+// Style guide: base.table
 table {
   width: 100%;
   margin-bottom: 1.8rem;
@@ -25,19 +22,19 @@ td {
   vertical-align: middle;
 }
 
-.sticky-header th,
-.sticky-table th {
-  border-bottom: 3px solid #ccc;
-  padding-right: 1em;
-  text-align: left;
-}
-
 th {
   background: $table-header-cell-background;
   border-right: 1px solid $table-header-cell-border;
   color: #fff;
   padding: 10px;
   font-weight: bold;
+
+  .sticky-header &,
+  .sticky-table & {
+    border-bottom: 3px solid #ccc;
+    padding-right: 1em;
+    text-align: left;
+  }
 }
 
 td {

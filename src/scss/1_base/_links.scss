@@ -1,5 +1,3 @@
-@import '../init';
-
 // Links
 //
 // Hyperlinks are used to allow the user to navigate to other resources or to
@@ -24,5 +22,6 @@ a {
 
   &:hover {
     color: $link-hover;
+    text-decoration: underline;
   }
 }
