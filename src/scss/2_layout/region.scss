@@ -1,7 +1,7 @@
 @import '../init';
 
 .region-front-welcome {
-  max-width: 1024px;
+  max-width: $max-grid-width;
   margin: 2% auto;
   text-align: center;
 

@@ -1,13 +1,13 @@
 @import '../../init';
 
 .region-slideshow {
-  max-width: 1024px;
+  max-width: $max-grid-width;
   margin: auto;
   overflow: hidden;
 }
 
 #block-nivo-slider-nivo-slider {
-  max-width: 1024px;
+  max-width: $max-grid-width;
   margin: 0 auto;
 
   .nivo-caption {
