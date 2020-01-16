@@ -51,7 +51,7 @@
 /* line 44, src/scss/3_components/misc/forum.scss */
 #forum td.forum .icon,
 #forum .icon div {
-  background: resolve("no-new-posts.png") no-repeat;
+  background: url('../../../images/no-new-posts.png?16faec7e97e') no-repeat;
   width: 35px;
   height: 35px;
 }

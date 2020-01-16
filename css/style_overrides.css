@@ -42,7 +42,7 @@
 /* line 3, src/scss/4_module/_themeoverrides.scss */
 blockquote,
 q {
-  background: transparent resolve("quote.png") no-repeat scroll 0 0;
+  background: transparent url('../images/quote.png?16faec7e9b0') no-repeat scroll 0 0;
   border: 0;
 }
 
@@ -214,7 +214,7 @@ aside ul li {
 /* line 48, src/scss/4_module/_nics-modules.scss */
 span.elink {
   padding-right: 1em;
-  background: transparent resolve("new-window.gif") right center no-repeat;
+  background: transparent url('../images/new-window.gif?16faec7efd4') right center no-repeat;
 }
 
 /* line 57, src/scss/4_module/_nics-modules.scss */
@@ -337,7 +337,7 @@ span.elink {
     right: 5px;
     bottom: 5px;
     z-index: 10;
-    background: rgba(0, 0, 0, 0.3) resolve("img-expand-icon-x1.png") 4px 4px no-repeat;
+    background: rgba(0, 0, 0, 0.3) url('../images/img-expand-icon-x1.png?16faec7e941') 4px 4px no-repeat;
     background-size: 25px 25px;
   }
   /* line 183, src/scss/4_module/_nics-modules.scss */
@@ -348,7 +348,7 @@ span.elink {
     bottom: 27px;
     left: calc(100% - 80px);
     right: 10px;
-    background: rgba(0, 0, 0, 0.3) resolve("img-shrink-icon-x1.png") 5px 5px no-repeat;
+    background: rgba(0, 0, 0, 0.3) url('../images/img-shrink-icon-x1.png?16faec7ea35') 5px 5px no-repeat;
     background-size: 50px 50px;
   }
   /* line 201, src/scss/4_module/_nics-modules.scss */
@@ -378,7 +378,7 @@ span.elink {
     width: 50px;
     height: 50px;
     padding: 0;
-    background-image: resolve("img-expand-icon-x2.png");
+    background-image: url('../images/img-expand-icon-x2.png?16faec7ec8a');
     background-size: 40px 40px;
     background-position: center center;
   }
@@ -495,7 +495,7 @@ span.elink {
 /* line 342, src/scss/4_module/_nics-modules.scss */
 .book-navigation .page-links .page-next {
   padding: .7rem 1.4rem .7rem 2.1rem;
-  background: #dfdfdf resolve("collection-next.png") right center no-repeat;
+  background: #dfdfdf url('../images/collection-next.png?16faec7e8d0') right center no-repeat;
   background-size: 6px auto;
   border-right: 7px solid #dfdfdf;
   text-align: right;
@@ -516,7 +516,7 @@ span.elink {
 /* line 360, src/scss/4_module/_nics-modules.scss */
 .book-navigation .page-links .page-previous {
   padding: .7rem 2.1rem .7rem 1.4rem;
-  background: #dfdfdf resolve("collection-prev.png") left center no-repeat;
+  background: #dfdfdf url('../images/collection-prev.png?16faec7e8ea') left center no-repeat;
   background-size: 6px auto;
   border-left: 7px solid #dfdfdf;
   text-align: left;
@@ -649,6 +649,7 @@ iframe {
 .content .node-webform fieldset legend {
   background: #dbdbdb none repeat scroll 0 0;
   border-color: #ccc;
+  -o-border-image: none;
   border-image: none;
   border-style: solid;
   border-top-left-radius: 4px;
@@ -700,6 +701,7 @@ iframe {
   text-shadow: none;
   font-weight: normal;
   display: inline-block;
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   min-width: 130px;
   border: 0 solid #e8e7e7;
@@ -893,6 +895,7 @@ iframe {
   position: absolute;
   left: 0;
   top: 0;
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   width: 62px;
   height: 54px;
@@ -903,6 +906,7 @@ iframe {
   background: transparent !important;
   border: 0;
   text-shadow: none;
+  -webkit-box-shadow: none;
   box-shadow: none;
   font-weight: normal;
 }

@@ -39,13 +39,14 @@
 /* line 33, src/scss/3_components/form/search-form.scss */
 .search-form input {
   font-size: 1.4rem;
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   height: 3.3rem;
 }
 
 /* line 38, src/scss/3_components/form/search-form.scss */
 .search-form input[type='submit'] {
-  background: resolve("search-icon.png") no-repeat center top;
+  background: url('../../../images/search-icon.png?16faec7eae6') no-repeat center top;
   text-indent: -9999px;
   height: 27px;
   width: 27px;
@@ -81,6 +82,7 @@
 .search-form .form-submit {
   right: 15px;
   border: 0;
+  -webkit-box-shadow: none;
   box-shadow: none;
   cursor: pointer;
   padding: 0;
@@ -106,7 +108,7 @@
     border: 1px solid #ccc;
     color: #373737;
     background-color: inherit;
-    background: resolve("search-icon.png") no-repeat left top 3px;
+    background: url('../../../images/search-icon.png?16faec7eae6') no-repeat left top 3px;
     min-width: 200px;
     height: 33px;
     border-radius: 0;
@@ -129,6 +131,7 @@
     background-color: #666;
     background-image: none;
     color: #fff;
+    -webkit-box-sizing: border-box;
     box-sizing: border-box;
     width: 10rem;
     height: 33px;

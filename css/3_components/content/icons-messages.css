@@ -27,6 +27,7 @@ a:focus .ico-elink {
 /* line 69, src/scss/3_components/content/icons-messages.scss */
 .ico-arrow-left {
   fill: #373737;
+  -webkit-transform: rotate(180deg);
   transform: rotate(180deg);
 }
 
@@ -38,12 +39,14 @@ a:focus .ico-elink {
 /* line 78, src/scss/3_components/content/icons-messages.scss */
 .ico-arrow-up {
   fill: #373737;
+  -webkit-transform: rotate(270deg);
   transform: rotate(270deg);
 }
 
 /* line 83, src/scss/3_components/content/icons-messages.scss */
 .ico-arrow-down {
   fill: #373737;
+  -webkit-transform: rotate(90deg);
   transform: rotate(90deg);
 }
 
@@ -74,19 +77,19 @@ a:focus .ico-elink {
 /* line 107, src/scss/3_components/content/icons-messages.scss */
 .info-notice {
   border-color: #002e62;
-  background: #fff resolve("i.svg") no-repeat 0.9rem 0.9rem/24px 24px;
+  background: #fff url('../../../images/i.svg?16faec7e7fa') no-repeat 0.9rem 0.9rem/24px 24px;
 }
 
 @media (min-width: 641px) {
   /* line 107, src/scss/3_components/content/icons-messages.scss */
   .info-notice {
-    background: #fff resolve("i.svg") no-repeat 1.4rem 1.4rem/30px 30px;
+    background: #fff url('../../../images/i.svg?16faec7e7fa') no-repeat 1.4rem 1.4rem/30px 30px;
   }
 }
 
 /* line 116, src/scss/3_components/content/icons-messages.scss */
 .no-svg .info-notice {
-  background-image: resolve("i.png");
+  background-image: url('../../../images/i.png?16faec7ebaf');
 }
 
 /* line 121, src/scss/3_components/content/icons-messages.scss */
@@ -116,55 +119,55 @@ ul.info-notice {
 /* line 147, src/scss/3_components/content/icons-messages.scss */
 .messages--error {
   border-color: #e34f4f;
-  background: #fff resolve("wrong.svg") no-repeat 0.9rem 0.9rem/24px 24px;
+  background: #fff url('../../../images/wrong.svg?16faec7e7fa') no-repeat 0.9rem 0.9rem/24px 24px;
 }
 
 @media (min-width: 641px) {
   /* line 147, src/scss/3_components/content/icons-messages.scss */
   .messages--error {
-    background: #fff resolve("wrong.svg") no-repeat 1.4rem 1.4rem/30px 30px;
+    background: #fff url('../../../images/wrong.svg?16faec7e7fa') no-repeat 1.4rem 1.4rem/30px 30px;
   }
 }
 
 /* line 155, src/scss/3_components/content/icons-messages.scss */
 .no-svg .messages--error {
-  background-image: resolve("wrong.png");
+  background-image: url('../../../images/wrong.png?16faec7efc9');
 }
 
 /* line 160, src/scss/3_components/content/icons-messages.scss */
 .messages--status {
   border-color: #3fa940;
-  background: #fff resolve("status.svg") no-repeat 0.9rem 0.9rem/24px 24px;
+  background: #fff url('../../../images/status.svg?16faec7e7fa') no-repeat 0.9rem 0.9rem/24px 24px;
 }
 
 @media (min-width: 641px) {
   /* line 160, src/scss/3_components/content/icons-messages.scss */
   .messages--status {
-    background: #fff resolve("status.svg") no-repeat 1.4rem 1.4rem/30px 30px;
+    background: #fff url('../../../images/status.svg?16faec7e7fa') no-repeat 1.4rem 1.4rem/30px 30px;
   }
 }
 
 /* line 168, src/scss/3_components/content/icons-messages.scss */
 .no-svg .messages--status {
-  background-image: resolve("status.png");
+  background-image: url('../../../images/status.png?16faec7e8e8');
 }
 
 /* line 173, src/scss/3_components/content/icons-messages.scss */
 .messages--warning {
   border-color: #db6304;
-  background: #fff resolve("warning.svg") no-repeat 0.9rem 0.9rem/24px 24px;
+  background: #fff url('../../../images/warning.svg?16faec7e7fa') no-repeat 0.9rem 0.9rem/24px 24px;
 }
 
 @media (min-width: 641px) {
   /* line 173, src/scss/3_components/content/icons-messages.scss */
   .messages--warning {
-    background: #fff resolve("warning.svg") no-repeat 1.4rem 1.4rem/30px 30px;
+    background: #fff url('../../../images/warning.svg?16faec7e7fa') no-repeat 1.4rem 1.4rem/30px 30px;
   }
 }
 
 /* line 181, src/scss/3_components/content/icons-messages.scss */
 .no-svg .messages--warning {
-  background-image: resolve("warning.png");
+  background-image: url('../../../images/warning.png?16faec7eaa8');
 }
 
 /* line 186, src/scss/3_components/content/icons-messages.scss */

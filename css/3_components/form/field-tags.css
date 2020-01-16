@@ -9,7 +9,7 @@
 .field-name-field-tags a {
   font-size: 1.2rem;
   display: inline-block;
-  background: resolve("tag.png") no-repeat;
+  background: url('../../../images/tag.png?16faec7ea6d') no-repeat;
   padding: 0 .8rem 0 1.6rem;
   height: 22px;
   text-shadow: 1px 1px #fff;

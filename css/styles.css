@@ -1,0 +1,772 @@
+/*
+ * @file
+ * Creates a unified css file of all the individual styling files for kss style guide / documentation.
+ */
+/*
+ * @file
+ * Helper partial to outline the order partials should be loaded in this section - used for reference & in the style guide.
+ */
+/* Vertical rhythm presets =========================================== */
+/* Breakpoints ======================================================== */
+/* line 2, src/scss/1_base/_html5.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+/* line 23, src/scss/1_base/_html5.scss */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+/* line 37, src/scss/1_base/_html5.scss */
+.clear {
+  clear: both;
+  display: block;
+  overflow: hidden;
+  visibility: hidden;
+  width: 0;
+  height: 0;
+}
+
+/* line 46, src/scss/1_base/_html5.scss */
+.clear::after {
+  clear: both;
+  content: ' ';
+  display: block;
+  font-size: 0;
+  line-height: 0;
+  visibility: hidden;
+  width: 0;
+  height: 0;
+}
+
+/* line 57, src/scss/1_base/_html5.scss */
+video {
+  display: block;
+}
+
+/* line 61, src/scss/1_base/_html5.scss */
+audio {
+  max-width: 100%;
+}
+
+/*
+ * @file
+ * Resets and creates defaults for root html elements.
+ */
+/* line 22, src/scss/1_base/_root.scss */
+* html .clear {
+  height: 1%;
+}
+
+/* line 26, src/scss/1_base/_root.scss */
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* line 30, src/scss/1_base/_root.scss */
+html {
+  font-size: 62.5%;
+}
+
+/* line 34, src/scss/1_base/_root.scss */
+body {
+  font-size: 1.6rem;
+  margin: 0 0 2.4rem;
+  font-family: "Open Sans", sans-serif;
+  color: #373737;
+  line-height: 160%;
+}
+
+/* line 19, src/scss/1_base/_links.scss */
+a {
+  color: #16a085;
+  text-decoration: none;
+}
+
+/* line 23, src/scss/1_base/_links.scss */
+a:hover {
+  color: #16a085;
+  text-decoration: underline;
+}
+
+/*
+ * @file
+ * Sets out the base behaviour of heading elements.
+ */
+/* line 17, src/scss/1_base/_headings.scss */
+headings() {
+  font-weight: bold;
+  color: #373737;
+}
+
+/* line 22, src/scss/1_base/_headings.scss */
+h1 {
+  font-size: 2.4rem;
+  margin: 0 0 0.6rem;
+}
+
+/* line 26, src/scss/1_base/_headings.scss */
+h2 {
+  font-size: 2rem;
+  margin: 3.6rem 0 1.2rem;
+}
+
+/* line 30, src/scss/1_base/_headings.scss */
+h3 {
+  font-size: 1.8rem;
+  margin: 2.4rem 0 1.2rem;
+}
+
+/* line 34, src/scss/1_base/_headings.scss */
+h4 {
+  font-size: 1.6rem;
+  margin: 2.4rem 0 0;
+}
+
+/* line 38, src/scss/1_base/_headings.scss */
+h5 {
+  font-size: 1.6rem;
+  margin: 0 0 0.6rem;
+}
+
+/* line 42, src/scss/1_base/_headings.scss */
+h6 {
+  font-size: 1.6rem;
+  margin: 0 0 0.6rem;
+}
+
+/*
+ * @file
+ * Sets out the base behaviour of text elements.
+ */
+/* line 25, src/scss/1_base/_text.scss */
+p {
+  margin-bottom: 1.8rem;
+  color: #373737;
+}
+
+/* line 39, src/scss/1_base/_text.scss */
+code {
+  background: #fafafa;
+  text-shadow: 1px 1px #fff;
+  border: 1px solid #bbb;
+  display: block;
+  padding: 7px;
+  margin: 5px 0;
+  border-radius: 7px;
+}
+
+/* line 59, src/scss/1_base/_text.scss */
+mark {
+  background-color: #fdfc9b;
+  font-style: italic;
+  font-weight: bold;
+}
+
+/* line 74, src/scss/1_base/_text.scss */
+del {
+  text-decoration: line-through;
+}
+
+/* line 91, src/scss/1_base/_text.scss */
+abbr,
+acronym {
+  border-bottom: 1px dotted #999;
+  cursor: help;
+}
+
+/* line 110, src/scss/1_base/_text.scss */
+cite,
+em,
+i {
+  font-style: italic;
+}
+
+/* line 125, src/scss/1_base/_text.scss */
+ins {
+  background-color: #fdfc9b;
+  text-decoration: none;
+}
+
+/* line 140, src/scss/1_base/_text.scss */
+pre {
+  background: #d8d8d8;
+  text-shadow: 1px 1px #fff;
+  border: 1px solid #bbb;
+  padding: 7px;
+  margin: 5px 0;
+  border-radius: 7px;
+}
+
+/* line 162, src/scss/1_base/_text.scss */
+b,
+strong {
+  font-weight: bold;
+}
+
+/* line 177, src/scss/1_base/_text.scss */
+sup,
+sub {
+  font-size: 1rem;
+  height: 0;
+  line-height: 1;
+  vertical-align: baseline;
+  position: relative;
+}
+
+/* line 186, src/scss/1_base/_text.scss */
+sup {
+  bottom: 1ex;
+}
+
+/* line 190, src/scss/1_base/_text.scss */
+sub {
+  top: .5ex;
+}
+
+/*
+ * @file
+ * Sets out the base behaviour of grouping elements.
+ */
+/* line 21, src/scss/1_base/_grouping.scss */
+hr {
+  border: 0;
+  border-top: 1px solid #eee;
+}
+
+/* line 59, src/scss/1_base/_grouping.scss */
+ol,
+ul {
+  list-style: none;
+}
+
+/* line 64, src/scss/1_base/_grouping.scss */
+ul {
+  list-style-type: disc;
+  margin: 1.2rem 0 2.4rem 2.4rem;
+}
+
+/* line 68, src/scss/1_base/_grouping.scss */
+ul ul {
+  list-style-type: square;
+  margin-bottom: 0;
+}
+
+/* line 72, src/scss/1_base/_grouping.scss */
+ul ul ul {
+  list-style-type: circle;
+}
+
+/* line 78, src/scss/1_base/_grouping.scss */
+ol {
+  list-style-type: decimal;
+  margin: 1.2rem 0 2.4rem 2.4rem;
+}
+
+/* line 82, src/scss/1_base/_grouping.scss */
+ol ol {
+  list-style: upper-alpha;
+  margin-bottom: 0;
+}
+
+/* line 86, src/scss/1_base/_grouping.scss */
+ol ol ol {
+  list-style: lower-roman;
+}
+
+/* line 89, src/scss/1_base/_grouping.scss */
+ol ol ol ol {
+  list-style: lower-alpha;
+}
+
+/* line 96, src/scss/1_base/_grouping.scss */
+dt {
+  font-weight: bold;
+  margin-bottom: 2.4rem;
+}
+
+/* line 101, src/scss/1_base/_grouping.scss */
+dd {
+  margin-left: 30px;
+  margin-bottom: 2.4rem;
+}
+
+/* line 125, src/scss/1_base/_grouping.scss */
+blockquote,
+q {
+  quotes: none;
+  border: 1px solid #e2dcdc;
+  background: #faf7f7 url('../images/quote.png?16faec7e9b0') no-repeat;
+  padding: 1rem .5rem .5rem 4.7rem;
+  text-shadow: 1px 1px #fff;
+  margin: 5px 0;
+  border-radius: 7px;
+}
+
+/* line 135, src/scss/1_base/_grouping.scss */
+blockquote::before, blockquote::after,
+q::before,
+q::after {
+  content: '';
+}
+
+/* line 14, src/scss/1_base/_embedded.scss */
+img,
+svg,
+video {
+  max-width: 100%;
+  height: auto;
+}
+
+/* line 30, src/scss/1_base/_embedded.scss */
+svg:not(:root) {
+  overflow: hidden;
+}
+
+/* line 20, src/scss/1_base/_forms.scss */
+fieldset {
+  background: #fff;
+  border: 1px solid #ccc;
+  margin-top: 1rem;
+  margin-bottom: 3.2rem;
+  padding: 0 0 1rem;
+  position: relative;
+  top: 12px;
+  border-radius: 4px;
+}
+
+/* line 30, src/scss/1_base/_forms.scss */
+fieldset.collapsed {
+  background: transparent;
+  border-radius: 0;
+}
+
+/* line 34, src/scss/1_base/_forms.scss */
+fieldset.collapsed legend {
+  border-radius: 4px;
+}
+
+/* line 39, src/scss/1_base/_forms.scss */
+fieldset legend {
+  background: #dbdbdb;
+  border: solid #ccc;
+  border-width: 1px 1px 0;
+  display: block;
+  height: 2em;
+  left: -1px;
+  line-height: 2;
+  padding: 0;
+  position: absolute;
+  text-indent: 1rem;
+  text-shadow: 0 1px 0 #fff;
+  top: -12px;
+  width: 100%;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+}
+
+/* line 57, src/scss/1_base/_forms.scss */
+fieldset .fieldset-wrapper {
+  padding: 0 1rem;
+}
+
+/* line 61, src/scss/1_base/_forms.scss */
+fieldset .fieldset-description {
+  margin-top: .5rem;
+  margin-bottom: 1em;
+  line-height: 1.4;
+  font-style: italic;
+}
+
+/* line 69, src/scss/1_base/_forms.scss */
+input:not(input[type='radio']) {
+  border-radius: 0;
+  margin: .2rem 0;
+  padding: .4rem;
+  -webkit-appearance: none;
+}
+
+/* line 76, src/scss/1_base/_forms.scss */
+input,
+textarea {
+  font-size: .929em;
+}
+
+/* line 81, src/scss/1_base/_forms.scss */
+textarea {
+  line-height: 1.5;
+}
+
+@media screen and (max-width: 440px) {
+  /* line 84, src/scss/1_base/_forms.scss */
+  textarea.form-textarea {
+    width: 100%;
+  }
+}
+
+/* line 91, src/scss/1_base/_forms.scss */
+textarea.form-textarea,
+select.form-select {
+  padding: .4rem;
+}
+
+@media screen and (max-width: 440px) {
+  /* line 96, src/scss/1_base/_forms.scss */
+  input.form-text,
+  select.form-select {
+    width: 93%;
+  }
+}
+
+/* line 103, src/scss/1_base/_forms.scss */
+input.form-text,
+textarea.form-textarea,
+select.form-select {
+  border: 1px solid #ccc;
+}
+
+/* line 109, src/scss/1_base/_forms.scss */
+.password-suggestions ul li {
+  margin-left: 1.2em;
+}
+
+/* line 113, src/scss/1_base/_forms.scss */
+button,
+input[type='submit'],
+input[type='reset'],
+input[type='button'] {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#e3e3e3));
+  background-image: linear-gradient(to bottom, #fff 0%, #e3e3e3 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fff', endColorstr='#e3e3e3');
+  border: 1px solid #dbdbdb;
+  border-radius: 0;
+  -webkit-box-shadow: inset 0 1px 0 0 white;
+  box-shadow: inset 0 1px 0 0 white;
+  color: #777;
+  text-shadow: 0 1px 0 white;
+  position: relative;
+  font-weight: bold;
+  padding: .5rem 1em .6rem;
+}
+
+/* line 128, src/scss/1_base/_forms.scss */
+button:hover,
+input[type='submit']:hover,
+input[type='reset']:hover,
+input[type='button']:hover {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#dbdbdb), to(#f2f2f2));
+  background-image: linear-gradient(to bottom, #dbdbdb 0%, #f2f2f2 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#dbdbdb', endColorstr='#f2f2f2');
+  -webkit-box-shadow: inset 0 1px 0 0 white;
+  box-shadow: inset 0 1px 0 0 white;
+  cursor: pointer;
+}
+
+/* line 10, src/scss/1_base/_tables.scss */
+table {
+  width: 100%;
+  margin-bottom: 1.8rem;
+  background: #fff;
+  border-collapse: collapse;
+  border-spacing: 0;
+  border: 1px solid #bbb;
+}
+
+/* line 19, src/scss/1_base/_tables.scss */
+th,
+tr,
+td {
+  vertical-align: middle;
+}
+
+/* line 25, src/scss/1_base/_tables.scss */
+th {
+  background: #2e3d4a;
+  border-right: 1px solid #c8c7c7;
+  color: #fff;
+  padding: 10px;
+  font-weight: bold;
+}
+
+/* line 32, src/scss/1_base/_tables.scss */
+.sticky-header th,
+.sticky-table th {
+  border-bottom: 3px solid #ccc;
+  padding-right: 1em;
+  text-align: left;
+}
+
+/* line 40, src/scss/1_base/_tables.scss */
+td {
+  background: #fff;
+  color: #747474;
+  text-align: left;
+  padding: 10px;
+  border: 1px solid #dbdbdb;
+}
+
+/*
+ * @file
+ * Helper partial to outline the order layout files should be loaded - used for reference & in the style guide.
+ */
+/* Vertical rhythm presets =========================================== */
+/* Breakpoints ======================================================== */
+/* line 15, src/scss/2_layout/layouts.scss */
+#container {
+  clear: both;
+  overflow: hidden;
+}
+
+/* line 20, src/scss/2_layout/layouts.scss */
+.container-wrap {
+  max-width: 1024px;
+  margin: 0 auto 1rem;
+  padding: 0;
+  overflow: hidden;
+}
+
+/* line 27, src/scss/2_layout/layouts.scss */
+.content-sidebar-wrap {
+  float: left;
+  width: 100%;
+}
+
+@media screen and (max-width: 961px) {
+  /* line 27, src/scss/2_layout/layouts.scss */
+  .content-sidebar-wrap {
+    float: none;
+    width: 100% !important;
+  }
+}
+
+@media screen and (max-width: 766px) {
+  /* line 27, src/scss/2_layout/layouts.scss */
+  .content-sidebar-wrap {
+    width: auto;
+  }
+}
+
+/* line 40, src/scss/2_layout/layouts.scss */
+.content-sidebar-wrap #content {
+  display: inline;
+  margin-bottom: 1rem;
+  float: right;
+  width: 100%;
+}
+
+@media screen and (max-width: 961px) {
+  /* line 40, src/scss/2_layout/layouts.scss */
+  .content-sidebar-wrap #content {
+    margin: 0;
+  }
+}
+
+@media screen and (max-width: 766px) {
+  /* line 40, src/scss/2_layout/layouts.scss */
+  .content-sidebar-wrap #content {
+    float: left;
+    width: auto;
+  }
+}
+
+/* line 57, src/scss/2_layout/layouts.scss */
+#sidebar-first {
+  color: #373737;
+  float: left;
+}
+
+@media screen and (max-width: 961px) {
+  /* line 57, src/scss/2_layout/layouts.scss */
+  #sidebar-first {
+    clear: both;
+    float: none;
+    width: 100% !important;
+    padding: 0 1.5%;
+  }
+}
+
+@media screen and (max-width: 766px) {
+  /* line 57, src/scss/2_layout/layouts.scss */
+  #sidebar-first {
+    width: auto;
+    clear: both;
+  }
+}
+
+@media screen and (max-width: 766px) {
+  /* line 73, src/scss/2_layout/layouts.scss */
+  #sidebar-first .block {
+    float: none !important;
+    width: auto !important;
+    margin-left: 0;
+  }
+}
+
+/* line 82, src/scss/2_layout/layouts.scss */
+#sidebar-second {
+  color: #373737;
+  float: right;
+}
+
+@media screen and (max-width: 961px) {
+  /* line 82, src/scss/2_layout/layouts.scss */
+  #sidebar-second {
+    float: none;
+    width: 100% !important;
+    padding: 0 1.5%;
+  }
+}
+
+@media screen and (max-width: 766px) {
+  /* line 82, src/scss/2_layout/layouts.scss */
+  #sidebar-second {
+    width: auto;
+  }
+}
+
+@media screen and (max-width: 766px) {
+  /* line 96, src/scss/2_layout/layouts.scss */
+  #sidebar-second .block {
+    float: none !important;
+    width: auto !important;
+    margin-left: 0;
+  }
+}
+
+/* line 106, src/scss/2_layout/layouts.scss */
+aside .block .content {
+  padding: 0 1rem;
+}
+
+/* line 111, src/scss/2_layout/layouts.scss */
+aside #user-login-form input.form-text {
+  width: 90%;
+}
+
+/* line 115, src/scss/2_layout/layouts.scss */
+aside #user-login-form .form-actions {
+  padding-top: 0;
+}
+
+/* line 121, src/scss/2_layout/layouts.scss */
+body {
+  /* 3 columns */
+  /* 2 columns: sidebar-first */
+  /* 2 columns: sidebar-second */
+}
+
+/* line 126, src/scss/2_layout/layouts.scss */
+body.two-sidebars .content-sidebar-wrap {
+  width: 80%;
+}
+
+/* line 130, src/scss/2_layout/layouts.scss */
+body.two-sidebars #content {
+  width: 75%;
+}
+
+/* line 134, src/scss/2_layout/layouts.scss */
+body.two-sidebars #sidebar-first {
+  width: 24%;
+}
+
+/* line 138, src/scss/2_layout/layouts.scss */
+body.two-sidebars #sidebar-second {
+  width: 19%;
+}
+
+/* line 146, src/scss/2_layout/layouts.scss */
+body.sidebar-first .content-sidebar-wrap {
+  width: 100%;
+}
+
+/* line 150, src/scss/2_layout/layouts.scss */
+body.sidebar-first #content {
+  width: 80%;
+}
+
+/* line 154, src/scss/2_layout/layouts.scss */
+body.sidebar-first #sidebar-first {
+  width: 19%;
+}
+
+/* line 162, src/scss/2_layout/layouts.scss */
+body.sidebar-second .content-sidebar-wrap {
+  width: 75%;
+}
+
+/* line 166, src/scss/2_layout/layouts.scss */
+body.sidebar-second #content {
+  width: 100%;
+}
+
+/* line 170, src/scss/2_layout/layouts.scss */
+body.sidebar-second #sidebar-second {
+  width: 22%;
+}
+
+/* line 176, src/scss/2_layout/layouts.scss */
+#head,
+#content,
+#sidebar-second,
+#sidebar-first {
+  margin-top: 1rem;
+}
+
+@media screen and (max-width: 961px) {
+  /* line 183, src/scss/2_layout/layouts.scss */
+  #content {
+    float: none;
+    width: 100% !important;
+  }
+}
+
+@media screen and (max-width: 961px) {
+  /* line 190, src/scss/2_layout/layouts.scss */
+  #head,
+  #foot {
+    padding: 0 1.5%;
+  }
+}
+
+@media screen and (max-width: 766px) {
+  /* line 197, src/scss/2_layout/layouts.scss */
+  .front .content-sidebar-wrap {
+    margin: 0;
+  }
+}
+
+/*
+ * @file
+ * Helper partial to outline the order component files should be loaded - used for reference & in the style guide.
+ */
+
+/*# sourceMappingURL=styles.css.map */

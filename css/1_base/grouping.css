@@ -72,7 +72,7 @@ blockquote,
 q {
   quotes: none;
   border: 1px solid #e2dcdc;
-  background: #faf7f7 resolve("quote.png") no-repeat;
+  background: #faf7f7 url('../../images/quote.png?16faec7e9b0') no-repeat;
   padding: 1rem .5rem .5rem 4.7rem;
   text-shadow: 1px 1px #fff;
   margin: 5px 0;
