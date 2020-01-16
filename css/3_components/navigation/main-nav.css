@@ -331,6 +331,7 @@
     top: 5px;
     background: #004695;
     border: 0;
+    -webkit-box-shadow: none;
     box-shadow: none;
     color: white;
     text-shadow: none;
@@ -363,7 +364,7 @@ ul.menu {
 .region ul.menu li,
 .region ul.links li,
 .region .item-list ul li {
-  background: resolve("marker.png") no-repeat scroll 4px center rgba(0, 0, 0, 0);
+  background: url('../../../images/marker.png?16faec7e8d0') no-repeat scroll 4px center rgba(0, 0, 0, 0);
   list-style: none outside none;
   margin: 0 0 .2rem;
   padding: 0 0 0 1.5rem;
