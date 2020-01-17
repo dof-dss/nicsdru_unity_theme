@@ -9,7 +9,7 @@
 }
 
 #main-menu {
-  max-width: 1024px;
+  max-width: $max-grid-width;
   margin: 0 auto;
   position: relative;
   background-color: $menu-background;
