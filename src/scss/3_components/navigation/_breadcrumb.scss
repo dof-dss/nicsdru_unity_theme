@@ -1,0 +1,23 @@
+/*
+ * @file
+ * Defines a breadcrumb component.
+ */
+
+// Breadcrumb
+//
+// The
+//
+// Markup: ../kss-templates/breadcrumb.twig
+//
+// Weight: 2
+//
+// Style guide: components.navigation.breadcrumb
+.breadcrumb {
+  @include adjust-font-size-to(13px);
+  margin: 1rem;
+  border-bottom: #eee 1px solid;
+
+  @media screen and (min-width: $lap) {
+    margin: 1rem 0;
+  }
+}
