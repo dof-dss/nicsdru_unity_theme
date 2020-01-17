@@ -1,0 +1,19 @@
+//@import '../../init';
+
+/*
+ * .node rule comes from line 845 in the original nics_software 1_base/_base.scss, but not sure the code is over invoked,
+ * so for now lets comment it out from unity.
+ */
+//.node {
+//  margin: 1.5rem 0;
+//
+//  @media screen and (max-width: $mob) {
+//    margin-top: .5rem;
+//  }
+//}
+
+//.node h2.title,
+.page-title {
+  @include responsive-typo-map($h1-text);
+  margin: 2.3rem 0;
+}
