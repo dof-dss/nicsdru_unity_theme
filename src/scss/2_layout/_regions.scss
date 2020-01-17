@@ -1,5 +1,45 @@
-@import '../init';
+/*
+ * @file
+ * Defines the layouts for particular regions of the page.
+ */
 
+// Regions
+//
+// The regions layout partial deals with the structure of elements in regions of the page not otherwise defined, so this
+// includes the:-
+// - The front welcome region.
+// - The first top region.
+// - The second top region.
+// - The third top region.
+//
+// Weight: 3
+//
+// Style guide: layout.regions
+
+// style the front welcome region.
+.region-front-welcome {
+  max-width: $max-grid-width;
+  margin: 2% auto;
+  text-align: center;
+
+  @media screen and (max-width: $lap) {
+    margin: 1% 2%;
+  }
+
+  @media screen and (max-width: $tab) {
+    padding: 1rem;
+  }
+
+  @media screen and (max-width: $mob) {
+    margin: 0;
+  }
+
+  .block h2 {
+    text-align: center;
+  }
+}
+
+// style the top area - first top, second top & third top regions.
 #top-area {
   clear: both;
   position: relative;

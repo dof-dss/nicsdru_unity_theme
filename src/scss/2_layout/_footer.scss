@@ -1,8 +1,26 @@
-@import '../init';
+/*
+ * @file
+ * Defines the layouts for the footer area of the page.
+ */
 
+// Footer
+//
+// The footer layout partial deals with the structure of elements in the footer area of the page, this typically
+// includes the:-
+// - The footer first region.
+// - The footer second region.
+// - The footer third region.
+// - The footer fourth region.
+// - The footer bottom region.
+//
+// Note that background colour for the footer area is controlled by variables in the init/colors partial. You can view
+// the currently <a href="/section-init.html">defined color values here in the styleguide</a>.
+//
+// Weight: 10
+//
+// Style guide: layout.footer
 #footer {
   @include responsive-typo-map($normal-text);
-
   overflow: auto;
   padding: 1% 2% 2%;
   background: $footer-background;
@@ -40,7 +58,7 @@
   }
 }
 
-#footer-area {
+.footer-area {
   .column {
     float: left;
     width: 24.2%;
@@ -64,10 +82,14 @@
     &:last-child {
       float: right;
     }
-  }
 
-  .column-title {
-    color: $footer-headings;
+    &-title {
+      color: $footer-headings;
+    }
+
+    .bottom_widget & {
+      width: 32.5%;
+    }
   }
 
   ul.menu li a.active {
@@ -79,9 +101,9 @@
   clear: both;
 }
 
-.footer_inner_credit {
-  margin: 1rem auto;
-}
+//.footer_inner_credit {
+//  margin: 1rem auto;
+//}
 
 #footer_wrapper {
   @media screen and (max-width: $lap) {
