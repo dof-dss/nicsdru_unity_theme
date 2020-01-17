@@ -1,9 +1,13 @@
+{# If there is no modifier set a default layout for a css grid so each grid item is 1 fr #}
+{% if modifier_class is empty %}
+  {% set modifier_class = 'no-sidebars' %}
+{% endif %}
 <div class="{{modifier_class}}">
   <div id="header_wrapper">
     <div id="inner_header_wrapper">
       <header id="header">
         <div class="top_left">
-          <div class="kss-layout-block">The header region.</div>
+          <div class="kss-layout-block">The site branding region.</div>
         </div>
         <div id="headerHero" class="top_right with-menu with-search">
           <div class="kss-layout-block">The search region.</div>
@@ -17,13 +21,17 @@
         <div class="clear"></div>
       </header>
     </div>
-    <div class="kss-layout-block">The primary menu region.</div>
+    <div class="kss-layout-block">The main menu region.</div>
   </div>
-  <div id="top-area" class="clearfix">
-    <div class="column kss-layout-block">The top_first region.</div>
-    <div class="column kss-layout-block">The top_second region</div>
-    <div class="column kss-layout-block">The top_third region</div>
-  </div>
+  {% if modifier_class == 'front' %}
+    <div class="kss-layout-block">The slideshow region.</div>
+    <div class="kss-layout-block">The front welcome region.</div>
+    <div id="top-area" class="clearfix">
+      <div class="column kss-layout-block">The first top region.</div>
+      <div class="column kss-layout-block">The second top region</div>
+      <div class="column kss-layout-block">The third top region</div>
+    </div>
+  {% endif %}
   <div id="container">
     <div class="container-wrap">
       <div class="content-sidebar-wrap">
@@ -33,16 +41,33 @@
             <div class="kss-layout-block">The content region</div>
           </main>
         </div>
-        <aside id="sidebar-first"><div class="kss-layout-block">The sidebar_first region</div></aside>
-        <aside id="sidebar-second"><div class="kss-layout-block">The sidebar_second region</div></aside>
+        {% if modifier_class == 'front' or modifier_class == 'two-sidebars' or modifier_class == 'one-sidebar sidebar-first' %}
+          <aside id="sidebar-first"><div class="kss-layout-block">The sidebar first region</div></aside>
+        {% endif %}
+      </div>
+      {% if modifier_class == 'front' or modifier_class == 'two-sidebars' or modifier_class == 'one-sidebar sidebar-second' %}
+        <aside id="sidebar-second"><div class="kss-layout-block">The sidebar second region</div></aside>
+      {% endif %}
+      {% if modifier_class == 'front' %}
         <div id="bottom_wrapper" class="footer_block bottom_widget">
           <div id="bottom-area" class="clearfix">
-            <div class="column kss-layout-block">The bottom_widget_1 region.</div>
-            <div class="column kss-layout-block">The bottom_widget_2 region.</div>
-            <div class="column kss-layout-block">The bottom_widget_3 region.</div>
+            <div class="column kss-layout-block">The bottom widget 1 region.</div>
+            <div class="column kss-layout-block">The bottom widget 2 region.</div>
+            <div class="column kss-layout-block">The bottom widget 3 region.</div>
           </div>
         </div>
-      </div>
+      {% endif %}
+    </div>
+  </div>
+  <div id="footer">
+    <div id="footer_wrapper">
+        <div id="footer-area" class="clearfix">
+          <div class="column kss-layout-block">The footer first region</div>
+          <div class="column kss-layout-block">The footer second region</div>
+          <div class="column kss-layout-block">The footer third region</div>
+          <div class="column kss-layout-block">The footer fourth region </div>
+        </div>
+        <div class="footer_credit kss-layout-block">The footer bottom region</div>
     </div>
   </div>
 </div>
