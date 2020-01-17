@@ -17,13 +17,5 @@
 // Style guide: base
 
 // Ensure any custom fonts get loaded first to minimize front-end performance impact.
-@import 'init';
-@import '../../node_modules/nicsdru_unity_theme/src/scss/html5';
-@import '../../node_modules/nicsdru_unity_theme/src/scss/root';
-@import '../../node_modules/nicsdru_unity_theme/src/scss/links';
-@import '../../node_modules/nicsdru_unity_theme/src/scss/headings';
-@import '../../node_modules/nicsdru_unity_theme/src/scss/text';
-@import '../../node_modules/nicsdru_unity_theme/src/scss/grouping';
-@import '../../node_modules/nicsdru_unity_theme/src/scss/embedded';
-@import '../../node_modules/nicsdru_unity_theme/src/scss/forms';
-@import '../../node_modules/nicsdru_unity_theme/src/scss/tables';
+@import 'init/index';
+@import '../../node_modules/nicsdru_unity_theme/src/scss/1_base/index';
