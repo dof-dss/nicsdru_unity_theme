@@ -57,7 +57,7 @@
     position: absolute;
     top: -1px;
     right: 10px;
-    background: #fff resolve("search-icon.png") no-repeat 30px center;
+    background: #fff url('../../images/search-icon.png?16faec7eae6') no-repeat 30px center;
     text-indent: -999rem;
   }
 }

@@ -7,7 +7,7 @@
   padding: 1% 2% 2%;
   background: $footer-background;
   border-top: 4px solid $footer-border;
-  max-width: 1024px;
+  max-width: $max-grid-width;
   margin: 0 auto;
 
   p {
