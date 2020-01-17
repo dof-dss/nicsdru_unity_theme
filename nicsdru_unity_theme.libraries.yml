@@ -75,3 +75,10 @@ unity-comments:
     # The SMACSS category, "component", is loaded after "base" and "layout" styles.
     component:
       css/3_components/block/comments.css: { minified: true }
+
+# This library provides styling for an optional tag field.
+unity-field-tags:
+  css:
+    # The SMACSS category, "component", is loaded after "base" and "layout" styles.
+    component:
+      css/3_components/field/field-tags.css: { minified: true }
