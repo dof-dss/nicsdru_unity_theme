@@ -27,14 +27,19 @@
 // - footer_fourth: 'Fourth Bottom'
 // - footer: 'Footer Bottom'
 // Code in the layout section of the src/scss primarily facilitates structuring and placement of these Drupal regions
-// on a given page.
+// on a given page. A demonstration template is provided below. Some regions are configure to only render on the front
+// page of the site (these are outlined in the documentation further down).
+//
+// .two-sidebars  - A two sidebar layout with there is a sidebar on the left and right column.
+// .one-sidebar.sidebar-first - A one sidebar layout with the sidebar first or on the left side.
+// .one-sidebar.sidebar-second - A one sidebar layout with the sidebar second or on the right side.
+// .no-sidebars - A flat layout where there is no content in any sidebar regions.
 //
 // Markup: layout.twig
 //
 // Weight: -8
 //
 // Style guide: layout
-
-//@import '../init';
 @import 'header';
+@import 'container';
 

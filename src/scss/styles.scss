@@ -1,8 +1,9 @@
 /*
  * @file
- * Creates a unified css file of all the individual styling files for kss style guide / documentation.
+ * Creates a unified css file of all the individual styling files for kss style guide and for the unity theme itself.
  */
 
-@import '1_base/base';
-@import '2_layout/layouts';
-@import '3_components/components';
+@import 'init';
+@import '1_base/index';
+@import '2_layout/index';
+@import '3_components/index';

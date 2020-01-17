@@ -1,0 +1,39 @@
+/*
+ * @file
+ * Defines how a block component is styled.
+ */
+
+// Blocks
+//
+// A block is a fairly generic term, however the styles invoke in the section of the code are specifically for Drupal
+// blocks which are boxes of content rendered into an area, or region, of a web page (such as "User Login" or
+// "Who's online") that can be displayed in regions (such as footer or sidebar) on your page. No sample code is provided
+// as the the generic styling only concerns applying some spacing around a block element and setting some overrides to
+// the block title / `<h2>` element.
+//
+// Weight: 3
+//
+// Style guide: components.blocks
+.block {
+  margin-bottom: 2%;
+
+  @media screen and (max-width: $lap) {
+    margin-bottom: 2%;
+  }
+
+  &:last-child {
+    margin: 0;
+  }
+
+  & > h2 {
+    @include responsive-typo-map($h1-text);
+    margin: .5rem 0 1.5rem;
+    padding: 1rem;
+    overflow: hidden;
+    text-align: left;
+
+    @media screen and (max-width: $mob) {
+      @include adjust-font-size-to(18px);
+    }
+  }
+}
