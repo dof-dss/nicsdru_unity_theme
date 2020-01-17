@@ -82,7 +82,7 @@ TODO: add in how to sub-theme from this theme.
 
 ## Documentation
 
-TODO: add documentation.
+[Guidance on styling and developer helpers on how to use this theme is available here](https://dof-dss.github.io/nicsdru_unity_theme/).
 
 [autoprefixer]: https://github.com/postcss/autoprefixer
 
