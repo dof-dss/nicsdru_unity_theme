@@ -1,5 +1,19 @@
+/*
+ * @file
+ * Defines a tags field component.
+ */
 @import '../../init';
 
+// Tags
+//
+// The original theme has a concept that a user might tag content with a series of tags. This component deals with
+// the output of such a field type. It is not included in the core theming of the site as it is not currently use in any
+// site, however the code was ported and added to a standalone library in the unity theme in order that it can still be
+// used if required in the future.
+//
+// Weight: 1
+//
+// Style guide: components.misc.tags
 .field-name-field-tags {
   margin: 0 0 1rem;
 

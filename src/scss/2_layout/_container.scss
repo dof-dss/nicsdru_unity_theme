@@ -2,6 +2,19 @@
  * @file
  * Defines the layouts for the container section of the page.
  */
+
+// Container
+//
+// The container layout partial deals with the structure of elements in the main area of the page, this typically
+// includes the:-
+// - The main content region.
+// - The breadcrumb region.
+// - Sidebar first region.
+// - Sidebar second region.
+//
+// Weight: 2
+//
+// Style guide: layout.container
 #container {
   clear: both;
   overflow: hidden;
@@ -114,54 +127,52 @@ aside {
   }
 }
 
-body {
-  /* 3 columns */
-  &.two-sidebars {
-    .content-sidebar-wrap {
-      width: 80%;
-    }
-
-    #content {
-      width: 75%;
-    }
-
-    #sidebar-first {
-      width: 24%;
-    }
-
-    #sidebar-second {
-      width: 19%;
-    }
+/* 3 columns */
+.two-sidebars {
+  .content-sidebar-wrap {
+    width: 80%;
   }
 
-  /* 2 columns: sidebar-first */
-  &.sidebar-first {
-    .content-sidebar-wrap {
-      width: 100%;
-    }
-
-    #content {
-      width: 80%;
-    }
-
-    #sidebar-first {
-      width: 19%;
-    }
+  #content {
+    width: 75%;
   }
 
-  /* 2 columns: sidebar-second */
-  &.sidebar-second {
-    .content-sidebar-wrap {
-      width: 75%;
-    }
+  #sidebar-first {
+    width: 24%;
+  }
 
-    #content {
-      width: 100%;
-    }
+  #sidebar-second {
+    width: 19%;
+  }
+}
 
-    #sidebar-second {
-      width: 22%;
-    }
+/* 2 columns: sidebar-first */
+.sidebar-first {
+  .content-sidebar-wrap {
+    width: 100%;
+  }
+
+  #content {
+    width: 80%;
+  }
+
+  #sidebar-first {
+    width: 19%;
+  }
+}
+
+/* 2 columns: sidebar-second */
+.sidebar-second {
+  .content-sidebar-wrap {
+    width: 75%;
+  }
+
+  #content {
+    width: 100%;
+  }
+
+  #sidebar-second {
+    width: 22%;
   }
 }
 
