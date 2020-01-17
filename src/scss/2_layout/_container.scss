@@ -1,17 +1,7 @@
 /*
  * @file
- * Helper partial to outline the order layout files should be loaded - used for reference & in the style guide.
+ * Defines the layouts for the container section of the page.
  */
-
-// Layouts
-//
-// Layout rules divide the page into sections. Layouts hold one or more modules / components together.
-//
-// Weight: -8
-//
-// Style guide: layouts
-@import '../init';
-
 #container {
   clear: both;
   overflow: hidden;
@@ -119,9 +109,7 @@ aside {
 }
 
 body {
-
   /* 3 columns */
-
   &.two-sidebars {
     .content-sidebar-wrap {
       width: 80%;
@@ -141,7 +129,6 @@ body {
   }
 
   /* 2 columns: sidebar-first */
-
   &.sidebar-first {
     .content-sidebar-wrap {
       width: 100%;
@@ -157,7 +144,6 @@ body {
   }
 
   /* 2 columns: sidebar-second */
-
   &.sidebar-second {
     .content-sidebar-wrap {
       width: 75%;
