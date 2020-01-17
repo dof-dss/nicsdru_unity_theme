@@ -2,7 +2,7 @@
 {% if modifier_class is empty %}
   {% set modifier_class = 'no-sidebars' %}
 {% endif %}
-<div class="{{modifier_class}}">
+<div class="{{modifier_class}}{% if modifier_class == 'front' %} {{ 'two-sidebars' }}{% endif %}">
   <div id="header_wrapper">
     <div id="inner_header_wrapper">
       <header id="header">
@@ -50,7 +50,7 @@
       {% endif %}
       {% if modifier_class == 'front' %}
         <div id="bottom_wrapper" class="footer_block bottom_widget">
-          <div id="bottom-area" class="clearfix">
+          <div id="bottom-area" class="footer-area clearfix">
             <div class="column kss-layout-block">The bottom widget 1 region.</div>
             <div class="column kss-layout-block">The bottom widget 2 region.</div>
             <div class="column kss-layout-block">The bottom widget 3 region.</div>
@@ -61,7 +61,7 @@
   </div>
   <div id="footer">
     <div id="footer_wrapper">
-        <div id="footer-area" class="clearfix">
+        <div id="footer-area" class="footer-area clearfix">
           <div class="column kss-layout-block">The footer first region</div>
           <div class="column kss-layout-block">The footer second region</div>
           <div class="column kss-layout-block">The footer third region</div>

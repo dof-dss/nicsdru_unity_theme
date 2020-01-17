@@ -12,6 +12,9 @@
 // - Sidebar first region.
 // - Sidebar second region.
 //
+// The layout of the sidebar sections is controlled by the inclusion of a class or classes via a preprocess hook on
+// the `<body>` tag of the page. The width of the sidebar regions / areas can be overridden by declaring $variables - XXX
+//
 // Weight: 2
 //
 // Style guide: layout.container
@@ -188,13 +191,13 @@ aside {
     float: none;
     width: 100% !important;
   }
-}
+} // not sure where this comes from?
 
-#head,
-#foot {
-  @media screen and (max-width: $lap) {
-    padding: 0 1.5%;
-  }
-}
+//#head,
+//#foot {
+//  @media screen and (max-width: $lap) {
+//    padding: 0 1.5%;
+//  }
+//}
 
 

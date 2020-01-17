@@ -27,11 +27,11 @@
 // - footer_fourth: 'Fourth Bottom'
 // - footer: 'Footer Bottom'
 //
-// Code in the layout section of the src/scss primarily facilitates structuring and placement of these Drupal regions
-// on a given page. Demonstration templates are provided below. Some regions are configure to only render on the front
-// page of the site (these are outlined in the documentation further down). Note that a region will render if there is
-// is some code / markup in the Drupal region, [https://www.drupal.org/node/1576530](see here for more information on
-// Drupal regions).
+// Code in the src/scss/layout directory of the theme primarily facilitates structuring and placement of these Drupal
+// regions on a given page. Demonstration templates are provided below. Some regions are configured to only render on
+// the front page of the site (these are outlined further in the documentation in the regions section of this page.
+// Note that a Drupal region will only render if there is some code / markup in the region for Drupal to output.
+// <a href="https://www.drupal.org/node/1576530">See here for more information on Drupal regions.</a>
 //
 // .two-sidebars  - A two sidebar layout where there is a column on the left and right sides.
 // .one-sidebar.sidebar-first - A one sidebar layout where the column comes first or left of the main content.
@@ -45,4 +45,7 @@
 // Style guide: layout
 @import 'header';
 @import 'container';
+@import 'regions';
+
+@import 'footer';
 
