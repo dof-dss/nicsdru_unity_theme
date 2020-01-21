@@ -3,6 +3,8 @@
  * Defines the layouts for the container section of the page.
  */
 
+@import "../init";
+
 // Container
 //
 // The container layout partial deals with the structure of elements in the main area of the page, this typically
@@ -130,53 +132,65 @@ aside {
   }
 }
 
+$three-col-layout: (19%, 60%, 19%) !default;
+
 /* 3 columns */
 .two-sidebars {
-  .content-sidebar-wrap {
-    width: 80%;
-  }
+  @include unity-layout($three-col-layout);
 
-  #content {
-    width: 75%;
-  }
-
-  #sidebar-first {
-    width: 24%;
-  }
-
-  #sidebar-second {
-    width: 19%;
-  }
+  //.content-sidebar-wrap {
+  //  width: 80%;
+  //}
+  //
+  //#content {
+  //  width: 75%;
+  //}
+  //
+  //#sidebar-first {
+  //  width: 24%;
+  //}
+  //
+  //#sidebar-second {
+  //  width: 19%;
+  //}
 }
+
+$two-col-layout-sidebar-first: (19%, 80%) !default;
 
 /* 2 columns: sidebar-first */
 .sidebar-first {
-  .content-sidebar-wrap {
-    width: 100%;
-  }
+  @include unity-layout($two-col-layout-sidebar-first);
 
-  #content {
-    width: 80%;
-  }
-
-  #sidebar-first {
-    width: 19%;
-  }
+  //.content-sidebar-wrap {
+  //  width: 100%;
+  //}
+  //
+  //#content {
+  //  width: 80%;
+  //}
+  //
+  //#sidebar-first {
+  //  width: 19%;
+  //}
 }
+
+$two-col-layout-sidebar-second: (75%, 22%) !default;
 
 /* 2 columns: sidebar-second */
 .sidebar-second {
-  .content-sidebar-wrap {
-    width: 75%;
-  }
+  @include unity-layout($two-col-layout-sidebar-second);
 
-  #content {
-    width: 100%;
-  }
-
-  #sidebar-second {
-    width: 22%;
-  }
+  //.content-sidebar-wrap {
+  //  width: 75%;
+  //}
+  //
+  //#content {
+  //  width: 100%;
+  //}
+  //
+  //#sidebar-second {
+  //  width: 22%;
+  //}
 }
 
 #head,
