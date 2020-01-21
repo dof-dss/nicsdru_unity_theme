@@ -20,7 +20,6 @@
 
 @import 'init/colors';
 @import 'init/variables';
-@import 'init/mixins';
 @import 'init/typography';
 
 // 3rd party libraries
@@ -64,3 +63,5 @@
 // Style guide: init.mixins
 @import '../../node_modules/nicsdru_origins_theme/src/scss/init/visually-hidden/visually-hidden';
 @import '../../node_modules/nicsdru_origins_theme/src/scss/init/responsive-typo/resp-typo';
+@import 'init/unity-layout/unity-layout';
+
