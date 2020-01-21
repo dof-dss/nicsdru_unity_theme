@@ -77,7 +77,9 @@
     "favicons-file-fix": "[ -n \"$(tail -c1 templates/block/favicon.html)\" ] && echo >> templates/block/favicon.html",
     "favicons-tidyup": "cp images/favicons/favicon.ico favicon.ico",
     "––––––– DOCUMENTATION SCRIPTS": "–––––––––––––",
-    "docs-build": "npm-run-all --sequential scss-kss-builder scss-docs docs-compile docs-publish",
+    "docs-build": "npm-run-all --sequential scss-kss-builder scss-docs docs-compile",
+    "predocs-chroma": "sass --no-source-map --style=expanded src/scss/init/kss-chroma-markup.scss css/kss-chroma-markup.css",
+    "docs-chroma": "node config/chroma.js",
     "docs-compile": "kss --config config/kss-config.json",
     "docs-publish": "gh-pages -d styleguide",
     "––––––– WATCH SCRIPTS": "–––––––––––––",
@@ -90,7 +92,7 @@
     "build-css": "npm-run-all --parallel css-lint* scss-prod --sequential css-post",
     "build-js": "npm run js",
     "build-img": "npm-run-all --parallel imgmin svgmin icons",
-    "build-docs": "npm run docs-build",
+    "build:docs": "npm run docs-build",
     "lint": "npm-run-all --parallel css-lint js-lint"
   },
   "config": {
