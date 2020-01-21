@@ -1,0 +1,8 @@
+@import "../../init";
+
+$test-layout: (10%, 78%, 10%);
+
+.test {
+  @include unity-layout($test-layout);
+}
+
