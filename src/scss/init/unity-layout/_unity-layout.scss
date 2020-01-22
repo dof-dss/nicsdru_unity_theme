@@ -152,8 +152,13 @@
         #sidebar-second {
           width: $value-3;
         }
+      } @else {
+        @error 'Sass map variable should contain a list of either 2 or 3 values';
       }
     }
+  }
+  @else {
+    @error 'Sass map variable should contain a list of either 2 or 3 values';
   }
 }
 
