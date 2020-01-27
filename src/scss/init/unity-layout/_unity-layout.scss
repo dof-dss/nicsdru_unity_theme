@@ -1,28 +1,36 @@
-/**
- * Return true if $value variable is of type number
- */
+// is-number($value)
+//
+// Returns true if $value variable is of type number
+//
+// Style guide: init.unity-layout.functions.is-number
 @function is-number($value) {
   @return type_of($value) == 'number';
 }
 
-/**
- * Return true if $value variable is an integer
- */
+// is-integer($value)
+//
+// Returns true if $value variable is an integer
+//
+// Style guide: init.unity-layout.functions.is-integer
 @function is-integer($value) {
   @return is-number($value) and round($value) == $value;
 }
 
-/**
- * Return true if $value variable is a percentage with no decimals
- */
+// is-percentage($value)
+//
+// Return true if $value variable is a percentage with no decimals
+//
+// Style guide: init.unity-layout.functions.is-percentage
 @function is-percentage($value) {
   @return is-integer($value) and unit($value) == '%';
 }
 
-/**
- * Check if $value variable is a valid integer or percentage value. If $value is an integer, but not a percentage
- * then return a percentage value. If $value is neither an integer, nor a percentage, then return false.
- */
+// convert-percentage($value)
+//
+// Check if $value variable is a valid integer or percentage value. If $value is an integer, but not a percentage
+// then return a percentage value. If $value is neither an integer, nor a percentage, then return false.
+//
+// Style guide: init.unity-layout.functions.convert-percentage
 @function convert-percentage($value) {
   @if is-integer($value) and not(is-percentage($value)) {
     $percent-value: $value * 1%;
@@ -34,10 +42,12 @@
   }
 }
 
-/**
- * Pass each $value in $values list through convert-percentage() function. Return the new list of $values if all values
- * are valid, if not, return false.
- */
+// is-valid($values)
+//
+// Pass each $value in $values list through convert-percentage() function. Return the new list of $values if all values
+// are valid, if not, return false.
+//
+// Style guide: init.unity-layout.functions.is-valid
 @function is-valid($values) {
   $new-values: ();
   @for $i from 1 through length($values) {
@@ -52,9 +62,12 @@
   @return $new-values;
 }
 
-/**
- * Return true if the sum of $values is less than or equal to 100.
- */
+
+// value-sum($values)
+//
+// Return true if the sum of $values is less than or equal to 100.
+//
+// Style guide: init.unity-layout.functions.value-sum
 @function value-sum($values) {
   $sum: 0;
   @each $value in $values {
@@ -63,9 +76,11 @@
   @return $sum <= 100;
 }
 
-/**
- * Return true if all values are valid percentages and the sum of $values is less than or equal to 100.
- */
+// unity-layout-values-valid($values)
+//
+// Return true if all values are valid percentages and the sum of $values is less than or equal to 100.
+//
+// Style guide: init.unity-layout.functions.unity-layout-values-valid
 @function unity-layout-values-valid($values) {
   @if is-valid($values) {
     $values: is-valid($values);
@@ -79,9 +94,19 @@
   }
 }
 
-/**
- * Mixin to output layout widths based on the list of values passed in through a sass map variable.
- */
+// unity-layout($values)
+//
+// Applies main layout widths based on the list of values passed in through a sass map variable.
+//
+// Two values should be inserted for a 2 column layout and three values for a 3 column layout. The values should be
+// declared from left to right as you expect to view the layout, e.g. $values = 19%, 60%, 19% - the first value will
+// represent sidebar-first, the second value content and the third sidebar-second.
+//
+// All values must be integers or rounded percentages. The sum of the values must not exceed 100.
+//
+// $values = 19%, 60%, 19% - width values
+//
+// Style guide: init.unity-layout.mixins.unity-layout
 @mixin unity-layout($values) {
   @if type-of($values) == "list" {
     @if unity-layout-values-valid($values) {
