@@ -1,4 +1,17 @@
-@import '../../init';
+/*
+ * @file
+ * Defines a main navigation component.
+ */
+
+// Main Navigation
+//
+// A list of links to the site's top-level pages.
+//
+// :hover - A menu item that is being hovered over.
+//
+// Markup: ../kss-templates/main-nav.twig
+//
+// Style guide: components.navigation.main-navigation
 
 .menu_wrapper {
   width: 100%;
