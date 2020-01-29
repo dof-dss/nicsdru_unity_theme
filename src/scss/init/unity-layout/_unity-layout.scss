@@ -1,36 +1,3 @@
-// is-number($value)
-//
-// Returns true if $value variable is of type number
-//
-// Weight: -7
-//
-// Style guide: init.libraries.unity-layout.is-number
-@function is-number($value) {
-  @return type_of($value) == 'number';
-}
-
-// is-integer($value)
-//
-// Returns true if $value variable is an integer
-//
-// Weight: -6
-//
-// Style guide: init.libraries.unity-layout.is-integer
-@function is-integer($value) {
-  @return is-number($value) and round($value) == $value;
-}
-
-// is-percentage($value)
-//
-// Return true if $value variable is a percentage with no decimals
-//
-// Weight: -5
-//
-// Style guide: init.libraries.unity-layout.is-percentage
-@function is-percentage($value) {
-  @return is-integer($value) and unit($value) == '%';
-}
-
 // convert-percentage($value)
 //
 // Check if $value variable is a valid integer or percentage value. If $value is an integer, but not a percentage
@@ -43,7 +10,7 @@
   @if is-integer($value) and not(is-percentage($value)) {
     $percent-value: $value * 1%;
     @return $percent-value;
-  } @else if is-percentage($value) {
+  } @else if is-percentage($value) and is-integer($value) {
     @return $value;
   } @else {
     @return false;
@@ -58,7 +25,7 @@
 // Weight: -3
 //
 // Style guide: init.libraries.unity-layout.is-valid
-@function is-valid($values) {
+@function _unity-layout-is-percentage($values) {
   $new-values: ();
   @for $i from 1 through length($values) {
     $value: nth($values, $i);
@@ -95,9 +62,9 @@
 // Weight: -1
 //
 // Style guide: init.libraries.unity-layout.unity-layout-values-valid
-@function unity-layout-values-valid($values) {
-  @if is-valid($values) {
-    $values: is-valid($values);
+@function _unity-layout-values-valid($values) {
+  @if _unity-layout-is-percentage($values) {
+    $values: _unity-layout-is-percentage($values);
     @if value-sum($values) {
       @return $values;
     } @else {
@@ -123,8 +90,8 @@
 // Style guide: init.libraries.unity-layout
 @mixin unity-layout($values) {
   @if type-of($values) == "list" {
-    @if unity-layout-values-valid($values) {
-      $values: unity-layout-values-valid($values);
+    @if _unity-layout-values-valid($values) {
+      $values: _unity-layout-values-valid($values);
       @if (length($values) == 2) {
         $value-1: nth($values, 1);
         $value-2: nth($values, 2);
