@@ -8,13 +8,8 @@ site-styling:
 
     # The SMACSS category, "layout", is loaded after "base" styles.
     layout:
-      css/2_layout/header.css: { weight: -100, minified: true }
-      css/2_layout/layouts.css: { weight: -100, minified: true }
-      css/2_layout/region.css: { weight: -100, minified: true }
+      css/layouts.css: { weight: -100, minified: true }
 
     # The SMACSS category, "component", is loaded after "base" and "layout" styles.
     component:
-      css/3_components/navigation/main-nav.css: { minified: true }
-      css/3_components/navigation/breadcrumb.css: { minified: true }
-      css/3_components/content/node.css: { minified: true }
-      css/3_components/block/block.css: { minified: true }
+      css/components.css: { minified: true }
