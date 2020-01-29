@@ -1,17 +1,1 @@
-/* Vertical rhythm presets =========================================== */
-/* Breakpoints ======================================================== */
-/* line 3, src/scss/3_components/navigation/breadcrumb.scss */
-.breadcrumb {
-  font-size: 1.3rem;
-  margin: 1rem;
-  border-bottom: #eee 1px solid;
-}
-
-@media screen and (min-width: 961px) {
-  /* line 3, src/scss/3_components/navigation/breadcrumb.scss */
-  .breadcrumb {
-    margin: 1rem 0;
-  }
-}
-
-/*# sourceMappingURL=breadcrumb.css.map */
+.breadcrumb{font-size:1.3rem;margin:1rem;border-bottom:#eee 1px solid}@media screen and (min-width: 961px){.breadcrumb{margin:1rem 0}}
