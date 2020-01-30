@@ -45,3 +45,15 @@ $indent-amount: 1.8rem;
 
 // Set the grid sizes with a default value that can be overwritten on a per theme basis.
 $max-grid-width: 1024px !default;
+
+
+/* Breadcrumb ======================================================== */
+// A margin rule to separate breadcrumbs and breadcrumb separators.
+$breadcrumb-margin: .5rem 0 .5rem .5rem;
+
+// A border bottom color to separate the breadcrumb navigation and content.
+$breadcrumb-border-bottom: #eee;
+
+// Set the breadcrumb separator with a default value that can be overwritten on a per theme basis.
+$breadcrumb-separator: '»' !default;
+
