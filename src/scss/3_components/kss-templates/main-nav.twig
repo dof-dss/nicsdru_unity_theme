@@ -10,29 +10,32 @@
  *   - title: [string] Title of the menu item.
  *   - url: [string] URL of the item (optional).
 #}
-<nav id="main-menu" class="main-menu clear" aria-labelledby="block-nicsdru-unity-theme-main-menu-menu">
-  <ul class="menu">
-  {% for item in main_nav %}
-    <li class="menu-item {{ modifier_class }}">
-      {% if item.url %}
-        <a href="{{ item.url }}">{{ item.text }}</a>
-      {% else %}
-        {{ item.text }}
-      {% endif %}
-{#      {% if item.current and modifier_class == 'expanded' %}#}
-{#        <ul class="menu">#}
-{#          {% for child in item.current %}#}
-{#            <li class="menu-item">#}
-{#              {% if child.url %}#}
-{#                <a href="{{ child.url }}">{{ child.text }}</a>#}
-{#              {% else %}#}
-{#                {{ child.text }}#}
-{#              {% endif %}#}
-{#            </li>#}
-{#          {% endfor %}#}
-{#        </ul>#}
-{#      {% endif %}#}
-    </li>
-  {% endfor %}
-  </ul>
-</nav>
+<div class="menu_wrapper">
+  <nav id="main-menu" class="main-menu clearfix" aria-labelledby="block-nicsdru-unity-theme-main-menu-menu">
+    <h2 class="visually-hidden" id="block-nicsdru-unity-theme-main-menu-menu">Main navigation</h2>
+    <ul class="menu">
+    {% for item in main_nav %}
+      <li class="menu-item {{ modifier_class }}">
+        {% if item.url %}
+          <a href="{{ item.url }}">{{ item.text }}</a>
+        {% else %}
+          <span class="activelink">{{ item.text }}</span>
+        {% endif %}
+        {% if item.expanded and modifier_class == 'expanded' %}
+          <ul class="menu">
+            {% for child in item.current %}
+              <li class="menu-item">
+                {% if child.url %}
+                  <a href="{{ child.url }}">{{ child.text }}</a>
+                {% else %}
+                  {{ child.text }}
+                {% endif %}
+              </li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+      </li>
+    {% endfor %}
+    </ul>
+  </nav>
+</div>
