@@ -11,5 +11,7 @@
 // Weight: -6
 //
 // Style guide: components
-@import 'navigation/main-nav';
-@import 'navigation/breadcrumb';
+@import 'navigation/main-nav'; // styleguide 1
+@import 'navigation/breadcrumb'; // styleguide 2
+@import 'content/node';
+@import 'block/block'; // styleguide 3

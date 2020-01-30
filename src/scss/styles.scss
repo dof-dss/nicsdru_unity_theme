@@ -3,7 +3,7 @@
  * Creates a unified css file of all the individual styling files for kss style guide and for the unity theme itself.
  */
 
-@import 'init';
+@import 'init/index';
 @import '1_base/index';
 @import '2_layout/index';
 @import '3_components/index';
