@@ -6,24 +6,25 @@
     },
     {
       "url": "#",
-      "text": "Nav item 1",
-      "expanded": [
-        {
-          "url": "#",
-          "text": "Child item 1"
-        },
-        {
-          "url": "#",
-          "text": "Child item 2"
-        }
-      ]
-    },
-    {
-      "text": "Current item"
+      "text": "Navigation item 1"
     },
     {
       "url": "#",
-      "text": "Nav item 2"
+      "text": "Navigation item 2"
+    },
+    {
+      "url": "#",
+      "text": "Navigation item 3"
+    }
+  ],
+  "expanded": [
+    {
+      "url": "#",
+      "text": "Child item 1"
+    },
+    {
+      "url": "#",
+      "text": "Child item 2"
     }
   ]
 }
