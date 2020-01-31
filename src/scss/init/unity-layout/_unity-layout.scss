@@ -1,0 +1,166 @@
+// convert-percentage($value)
+//
+// Check if $value variable is a valid integer or percentage value. If $value is an integer, but not a percentage
+// then return a percentage value. If $value is neither an integer, nor a percentage, then return false.
+//
+// Weight: -4
+//
+// Style guide: init.libraries.unity-layout.convert-percentage
+@function convert-percentage($value) {
+  @if is-integer($value) and not(is-percentage($value)) {
+    $percent-value: $value * 1%;
+    @return $percent-value;
+  } @else if is-percentage($value) and is-integer($value) {
+    @return $value;
+  } @else {
+    @return false;
+  }
+}
+
+// is-valid($values)
+//
+// Pass each $value in $values list through convert-percentage() function. Return the new list of $values if all values
+// are valid, if not, return false.
+//
+// Weight: -3
+//
+// Style guide: init.libraries.unity-layout.is-valid
+@function _unity-layout-is-percentage($values) {
+  $new-values: ();
+  @for $i from 1 through length($values) {
+    $value: nth($values, $i);
+    $new-value: convert-percentage($value);
+    $new-values: append($new-values, $new-value);
+
+    @if not($new-value) {
+      @return false;
+    }
+  }
+  @return $new-values;
+}
+
+
+// value-sum($values)
+//
+// Return true if the sum of $values is less than or equal to 100.
+//
+// Weight: -2
+//
+// Style guide: init.libraries.unity-layout.value-sum
+@function value-sum($values) {
+  $sum: 0;
+  @each $value in $values {
+    $sum: $sum + $value;
+  }
+  @return $sum <= 100;
+}
+
+// unity-layout-values-valid($values)
+//
+// Return true if all values are valid percentages and the sum of $values is less than or equal to 100.
+//
+// Weight: -1
+//
+// Style guide: init.libraries.unity-layout.unity-layout-values-valid
+@function _unity-layout-values-valid($values) {
+  @if _unity-layout-is-percentage($values) {
+    $values: _unity-layout-is-percentage($values);
+    @if value-sum($values) {
+      @return $values;
+    } @else {
+      @error 'The sum of the values must be 100 or less';
+    }
+  } @else {
+    @error "Included values must be an integer with an optional percentage unit value";
+  }
+}
+
+// unity-layout($values)
+//
+// Applies main layout widths based on the list of values passed in through a sass map variable.
+//
+// Two values should be inserted for a 2 column layout and three values for a 3 column layout. The values should be
+// declared from left to right as you expect to view the layout, e.g. $values = 19%, 60%, 19% - the first value will
+// represent sidebar-first, the second value content and the third sidebar-second.
+//
+// All values must be integers or rounded percentages. The sum of the values must not exceed 100.
+//
+// $values = 19%, 60%, 19% - width values
+//
+// Style guide: init.libraries.unity-layout
+@mixin unity-layout($values) {
+  @if type-of($values) == "list" {
+    @if _unity-layout-values-valid($values) {
+      $values: _unity-layout-values-valid($values);
+      @if (length($values) == 2) {
+        $value-1: nth($values, 1);
+        $value-2: nth($values, 2);
+
+        // If $value-1 is less than $value-2 then it is a two column, sidebar-first layout. If $value-1 is
+        // greater than or equal to $value-2 then it is a two column, sidebar-second layout.
+        @if ($value-1 < $value-2) {
+          .content-sidebar-wrap {
+            width: 100%;
+          }
+
+          #content {
+            width: $value-2;
+          }
+
+          #sidebar-first {
+            width: $value-1;
+          }
+        } @else {
+          .content-sidebar-wrap {
+            width: $value-1;
+          }
+
+          #content {
+            width: 100%;
+          }
+
+          #sidebar-second {
+            width: $value-2;
+          }
+        }
+      } @else if (length($values) == 3) {
+        $value-1: nth($values, 1);
+        $value-2: nth($values, 2);
+        $value-3: nth($values, 3);
+
+        $gap: (100 - ($value-1 + $value-2 + $value-3)) / 2; // Calculate the gap width based on the input values.
+
+        $value-4: $value-1 + $value-2 + $gap; // Calculate the width of .content-sidebar-wrap.
+        $value-1: strip-unit($value-1);
+        $value-2: strip-unit($value-2);
+        $value-4: strip-unit($value-4);
+
+        // Calculate widths of $value-1 and $value-2 proportional to $value-4 and convert them to percentages
+        // with no decimals.
+        $value-1: round(percentage($value-1 / $value-4));
+        $value-2: round(percentage($value-2 / $value-4));
+
+        .content-sidebar-wrap {
+          width: $value-4 * 1%;
+        }
+
+        #content {
+          width: $value-2;
+        }
+
+        #sidebar-first {
+          width: $value-1;
+        }
+
+        #sidebar-second {
+          width: $value-3;
+        }
+      } @else {
+        @error 'Sass map variable should contain a list of either 2 or 3 values';
+      }
+    }
+  }
+  @else {
+    @error 'Sass map variable should contain a list of either 2 or 3 values';
+  }
+}
