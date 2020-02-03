@@ -130,53 +130,25 @@ aside {
   }
 }
 
+$three-col-layout: (19%, 60%, 19%) !default;
+
 /* 3 columns */
 .two-sidebars {
-  .content-sidebar-wrap {
-    width: 80%;
-  }
-
-  #content {
-    width: 75%;
-  }
-
-  #sidebar-first {
-    width: 24%;
-  }
-
-  #sidebar-second {
-    width: 19%;
-  }
+  @include unity-layout($three-col-layout);
 }
+
+$two-col-layout-sidebar-first: (19%, 80%) !default;
 
 /* 2 columns: sidebar-first */
 .sidebar-first {
-  .content-sidebar-wrap {
-    width: 100%;
-  }
-
-  #content {
-    width: 80%;
-  }
-
-  #sidebar-first {
-    width: 19%;
-  }
+  @include unity-layout($two-col-layout-sidebar-first);
 }
+
+$two-col-layout-sidebar-second: (75%, 22%) !default;
 
 /* 2 columns: sidebar-second */
 .sidebar-second {
-  .content-sidebar-wrap {
-    width: 75%;
-  }
-
-  #content {
-    width: 100%;
-  }
-
-  #sidebar-second {
-    width: 22%;
-  }
+  @include unity-layout($two-col-layout-sidebar-second);
 }
 
 #head,
