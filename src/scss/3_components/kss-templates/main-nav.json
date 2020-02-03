@@ -1,0 +1,30 @@
+{
+  "main_nav": [
+    {
+      "url": "#",
+      "text": "Home"
+    },
+    {
+      "url": "#",
+      "text": "Navigation item 1"
+    },
+    {
+      "url": "#",
+      "text": "Navigation item 2"
+    },
+    {
+      "url": "#",
+      "text": "Navigation item 3"
+    }
+  ],
+  "expanded": [
+    {
+      "url": "#",
+      "text": "Child item 1"
+    },
+    {
+      "url": "#",
+      "text": "Child item 2"
+    }
+  ]
+}

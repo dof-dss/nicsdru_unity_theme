@@ -7,7 +7,7 @@
 //
 // A list of links to the site's top-level pages.
 //
-// The max-width of the main-navigation section is set using the $max-grid-width variable, declared in the
+// The max-width of the main-navigation section is set using the `$max-grid-width variable`, declared in the
 // 'init/_variables.scss' partial.
 //
 // The background and border color of elements make use of color variables, set in the 'init/_colors.scss' partial.
@@ -17,7 +17,6 @@
 // .menu_wrapper to $menu-background.
 //
 // :hover - A menu item that is being hovered over.
-// .active-trail - A menu item that represents the current active page
 //
 // Markup: ../kss-templates/main-nav.twig
 //
