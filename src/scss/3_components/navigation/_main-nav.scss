@@ -1,7 +1,36 @@
-@import '../../init';
+/*
+ * @file
+ * Defines a main navigation component.
+ */
+
+// Main Navigation
+//
+// A list of links to the site's top-level pages.
+//
+// The max-width of the main-navigation section is set using the $max-grid-width variable, declared in the
+// 'init/_variables.scss' partial.
+//
+// The background and border color of elements make use of color variables, set in the 'init/_colors.scss' partial.
+//
+// $main-menu-span - Determines whether the main-menu is constrained by the width of container or not. If set to any
+// value but container then the menu will stretch the full width of the site by setting the background colour of
+// .menu_wrapper to $menu-background.
+//
+// :hover - A menu item that is being hovered over.
+// .active-trail - A menu item that represents the current active page
+//
+// Markup: ../kss-templates/main-nav.twig
+//
+// Style guide: components.navigation.main-navigation
+
+$main-menu-span: container !default;
 
 .menu_wrapper {
   width: 100%;
+
+  @if $main-menu-span != 'container' {
+    background-color: $menu-background;
+  }
 
   @media screen and (max-width: $tab) {
     margin: 0;
