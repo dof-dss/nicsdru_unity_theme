@@ -60,12 +60,3 @@
 .invisible {
   visibility: hidden;
 }
-
-/**
- * Creates an invisible block in main-nav documentation when modifier_class is :hover, to allow space for the
- * children items to be displayed.
- */
-.hover-empty-fill {
-  height: 85px;
-  visibility: hidden;
-}

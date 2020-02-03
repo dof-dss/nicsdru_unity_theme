@@ -34,17 +34,17 @@
     {% elseif modifier_class == 'pseudo-class-hover' %}
       <li class="menu-item {{ modifier_class }}">
         <a href="#">Hover item</a>
-        <ul class="menu">
-          {% for child in expanded %}
-            <li class="menu-item">
-              {% if child.url %}
-                <a href="{{ child.url }}">{{ child.text }}</a>
-              {% else %}
-                {{ child.text }}
-              {% endif %}
-            </li>
-          {% endfor %}
-        </ul>
+{#        <ul class="menu">#}
+{#          {% for child in expanded %}#}
+{#            <li class="menu-item">#}
+{#              {% if child.url %}#}
+{#                <a href="{{ child.url }}">{{ child.text }}</a>#}
+{#              {% else %}#}
+{#                {{ child.text }}#}
+{#              {% endif %}#}
+{#            </li>#}
+{#          {% endfor %}#}
+{#        </ul>#}
       </li>
     {% else %}
       <li class="menu-item">
@@ -53,8 +53,4 @@
     {% endif %}
     </ul>
   </nav>
-  {# invisible block is added when modifier_class is :hover to allow space for the children items to be displayed #}
-  {% if modifier_class == 'pseudo-class-hover' %}
-    <div class="hover-empty-fill"></div>
-  {% endif %}
 </div>
