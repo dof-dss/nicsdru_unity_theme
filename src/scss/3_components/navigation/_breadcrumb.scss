@@ -12,12 +12,51 @@
 // Weight: 2
 //
 // Style guide: components.navigation.breadcrumb
+
+// Breadcrumb variables
+//
+// Set some values for the site breadcrumbs.
+//
+// $breadcrumb-margin - a margin rule to separate breadcrumbs and breadcrumb separators.
+// $breadcrumb-border-bottom - a border bottom color to separate the breadcrumb navigation and content.
+// $breadcrumb-separator - a symbol placed after breadcrumb text to separate breadcrumb items.
+//
+// Weight: 0
+//
+// Style guide: components.navigation.breadcrumb
+
+// Set the breadcrumb variables with a default value that can be overwritten on a per theme basis.
+$breadcrumb-margin: .5rem 0 .5rem .5rem !default;
+$breadcrumb-border-bottom: #eee !default;
+$breadcrumb-separator: '»' !default;
+
 .breadcrumb {
   @include adjust-font-size-to(13px);
   margin: 1rem;
-  border-bottom: #eee 1px solid;
+  border-bottom: $breadcrumb-border-bottom 1px solid;
 
   @media screen and (min-width: $lap) {
     margin: 1rem 0;
+  }
+
+  .breadcrumb {
+    &--list {
+      list-style: none;
+      margin: 0;
+    }
+
+    &--item {
+      display: inline-block;
+      margin: $breadcrumb-margin;
+
+      &::after {
+        content: $breadcrumb-separator;
+        margin: $breadcrumb-margin;
+      }
+
+      &:last-child::after {
+        content: none;
+      }
+    }
   }
 }
