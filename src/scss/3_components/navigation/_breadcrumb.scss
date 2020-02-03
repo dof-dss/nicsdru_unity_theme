@@ -7,13 +7,21 @@
 //
 // The path to the current page in the form of a list of links.
 //
+// Markup: ../kss-templates/breadcrumb.twig
+//
+// Weight: 2
+//
+// Style guide: components.navigation.breadcrumb
+
+// Breadcrumb variables
+//
+// Set some values for the site breadcrumbs.
+//
 // $breadcrumb-margin - a margin rule to separate breadcrumbs and breadcrumb separators.
 // $breadcrumb-border-bottom - a border bottom color to separate the breadcrumb navigation and content.
 // $breadcrumb-separator - a symbol placed after breadcrumb text to separate breadcrumb items.
 //
-// Markup: ../kss-templates/breadcrumb.twig
-//
-// Weight: 2
+// Weight: 0
 //
 // Style guide: components.navigation.breadcrumb
 
