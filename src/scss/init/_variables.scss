@@ -63,20 +63,3 @@ $grid-breakpoints: (
 
 // Set the grid sizes with a default value that can be overwritten on a per theme basis.
 $max-grid-width: 1024px !default;
-
-// Breadcrumb variables
-//
-// Set some values for the site breadcrumbs.
-//
-// $breadcrumb-margin - a margin rule to separate breadcrumbs and breadcrumb separators.
-// $breadcrumb-border-bottom - a border bottom color to separate the breadcrumb navigation and content.
-// $breadcrumb-separator - a symbol placed after breadcrumb text to separate breadcrumb items.
-//
-// Weight: -7
-//
-// Style guide: init.variables.breadcrumb
-$breadcrumb-margin: .5rem 0 .5rem .5rem;
-$breadcrumb-border-bottom: #eee;
-
-// Set the breadcrumb separator with a default value that can be overwritten on a per theme basis.
-$breadcrumb-separator: '»' !default;
