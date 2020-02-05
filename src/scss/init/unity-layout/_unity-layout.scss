@@ -17,7 +17,7 @@
   }
 }
 
-// is-valid($values)
+// _unity-layout-is-percentage($values)
 //
 // Pass each $value in $values list through convert-percentage() function. Return the new list of $values if all values
 // are valid, if not, return false.
@@ -55,7 +55,7 @@
   @return $sum <= 100;
 }
 
-// unity-layout-values-valid($values)
+// _unity-layout-values-valid($values)
 //
 // Return true if all values are valid percentages and the sum of $values is less than or equal to 100.
 //
