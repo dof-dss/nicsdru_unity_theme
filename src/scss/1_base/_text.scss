@@ -129,14 +129,14 @@ ins {
 
 // Pre-formatted text
 //
-// The `<pre>` element defines preformatted text. Text in a <pre> element is displayed
+// The `<pre>` element defines preformatted text. Text in a `<pre>` element is displayed
 // in a fixed-width font (usually Courier), and it preserves both spaces and line breaks.
 //
-// Markup: kss-templates/text-ins.twig
+// Markup: kss-templates/text-pre.twig
 //
 // Weight: 8
 //
-// Style guide: base.text.ins
+// Style guide: base.text.pre
 pre {
   background: #d8d8d8;
   text-shadow: 1px 1px #fff;
