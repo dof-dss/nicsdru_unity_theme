@@ -6,16 +6,19 @@
   @for $i from 1 through length($values) {
     $value: nth($values, $i);
 
-    @if is-integer($value) and not(is-percentage($value)) {
-      $new-value: percentage($value / 100);
-    } @else if is-percentage($value) and is-integer($value) {
-      $new-value: $value;
+    @if is-integer($value) {
+      @if not(is-percentage($value)) {
+        $new-value: percentage($value / 100);
+      } @else {
+        $new-value: $value;
+      }
     } @else {
       @return false;
     }
 
     $new-values: append($new-values, $new-value);
   }
+  @debug $new-values;
   @return $new-values;
 }
 
@@ -132,5 +135,3 @@
   }
 }
 
-$test-values: (10.5, 60%, 10);
-@include unity-layout($test-values);
