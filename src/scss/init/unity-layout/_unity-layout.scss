@@ -1,11 +1,5 @@
-// _unity-layout-is-percentage($values)
-//
-// Pass each $value in $values list through convert-percentage() function. Return the new list of $values if all values
-// are valid, if not, return false.
-//
-// Weight: -3
-//
-// Style guide: init.libraries.unity-layout.is-valid
+// Check if each $value in $values is an integer and a percentage. Convert $value to a percentage if it is an integer.
+// If all variables are valid, then return the list $new-values, if not, return false.
 @function _unity-layout-is-percentage($values) {
   $new-values: ();
   $new-value: 0;
@@ -25,14 +19,7 @@
   @return $new-values;
 }
 
-
-// _unity-layout-check-values-total($values)
-//
 // Return true if the sum of $values is less than or equal to 100.
-//
-// Weight: -2
-//
-// Style guide: init.libraries.unity-layout.value-sum
 @function _unity-layout-check-values-total($values) {
   $sum: 0;
   @each $value in $values {
@@ -41,13 +28,7 @@
   @return $sum <= 100;
 }
 
-// _unity-layout-values-valid($values)
-//
 // Return true if all values are valid percentages and the sum of $values is less than or equal to 100.
-//
-// Weight: -1
-//
-// Style guide: init.libraries.unity-layout.unity-layout-values-valid
 @function _unity-layout-values-valid($values) {
   @if _unity-layout-is-percentage($values) {
     $values: _unity-layout-is-percentage($values);
