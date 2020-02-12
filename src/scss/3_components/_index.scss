@@ -11,7 +11,49 @@
 // Weight: -6
 //
 // Style guide: components
-@import 'navigation/main-nav'; // styleguide 1
-@import 'navigation/breadcrumb'; // styleguide 2
-@import 'content/node';
-@import 'block/block'; // styleguide 3
+
+// Navigation components
+//
+// Weight: -10
+//
+// Style guide: components.navigation
+@import 'navigation/main-nav';
+@import 'navigation/breadcrumb';
+
+// Block components
+//
+// Weight: -8
+//
+// Style guide: components.block
+@import 'block/block';
+
+// Form components
+//
+// Weight: -6
+//
+// Style guide: components.form
+@import 'form/forms';
+@import 'form/search-form';
+
+// Content components
+//
+// Weight: -4
+//
+// Style guide: components.content
+@import 'content/lists';
+@import 'content/links';
+@import 'content/icons-messages';
+
+
+
+
+// Standalone component libraries - TO REMOVE
+//
+// Weight: 100
+//
+// Style guide: components.standalone
+//@import 'field/field-tags';
+//@import 'content/profile';
+//@import 'misc/forum';
+//@import 'block/comments';
+
