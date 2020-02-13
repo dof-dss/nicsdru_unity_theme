@@ -18,7 +18,6 @@
 
     $new-values: append($new-values, $new-value);
   }
-  @debug $new-values;
   @return $new-values;
 }
 
