@@ -5,15 +5,15 @@
 
 // Blocks
 //
-// A block is a fairly generic term, however the styles invoke in the section of the code are specifically for Drupal
-// blocks which are boxes of content rendered into an area, or region, of a web page (such as "User Login" or
+// A block is a fairly generic term, however the styles invoked in this section of the code are specifically for Drupal
+// blocks which are 'boxes' of content rendered into an area, or region, of a web page (such as "User Login" or
 // "Who's online") that can be displayed in regions (such as footer or sidebar) on your page. No sample code is provided
-// as the the generic styling only concerns applying some spacing around a block element and setting some overrides to
+// as the styling only concerns applying some spacing around a block element and setting some overrides to
 // the block title / `<h2>` element.
 //
 // Weight: 3
 //
-// Style guide: components.blocks
+// Style guide: components.block
 .block {
   margin-bottom: 2%;
 
