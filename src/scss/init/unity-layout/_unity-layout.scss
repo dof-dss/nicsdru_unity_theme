@@ -1,53 +1,28 @@
-// convert-percentage($value)
-//
-// Check if $value variable is a valid integer or percentage value. If $value is an integer, but not a percentage
-// then return a percentage value. If $value is neither an integer, nor a percentage, then return false.
-//
-// Weight: -4
-//
-// Style guide: init.libraries.unity-layout.convert-percentage
-@function convert-percentage($value) {
-  @if is-integer($value) and not(is-percentage($value)) {
-    $percent-value: $value * 1%;
-    @return $percent-value;
-  } @else if is-percentage($value) and is-integer($value) {
-    @return $value;
-  } @else {
-    @return false;
-  }
-}
-
-// _unity-layout-is-percentage($values)
-//
-// Pass each $value in $values list through convert-percentage() function. Return the new list of $values if all values
-// are valid, if not, return false.
-//
-// Weight: -3
-//
-// Style guide: init.libraries.unity-layout.is-valid
+// Check if each $value in $values is an integer and a percentage. Convert $value to a percentage if it is an integer.
+// If all variables are valid, then return the list $new-values, if not, return false.
 @function _unity-layout-is-percentage($values) {
   $new-values: ();
+  $new-value: 0;
   @for $i from 1 through length($values) {
     $value: nth($values, $i);
-    $new-value: convert-percentage($value);
-    $new-values: append($new-values, $new-value);
 
-    @if not($new-value) {
+    @if is-integer($value) {
+      @if not(is-percentage($value)) {
+        $new-value: percentage($value / 100);
+      } @else {
+        $new-value: $value;
+      }
+    } @else {
       @return false;
     }
+
+    $new-values: append($new-values, $new-value);
   }
   @return $new-values;
 }
 
-
-// value-sum($values)
-//
 // Return true if the sum of $values is less than or equal to 100.
-//
-// Weight: -2
-//
-// Style guide: init.libraries.unity-layout.value-sum
-@function value-sum($values) {
+@function _unity-layout-check-values-total($values) {
   $sum: 0;
   @each $value in $values {
     $sum: $sum + $value;
@@ -55,17 +30,11 @@
   @return $sum <= 100;
 }
 
-// _unity-layout-values-valid($values)
-//
 // Return true if all values are valid percentages and the sum of $values is less than or equal to 100.
-//
-// Weight: -1
-//
-// Style guide: init.libraries.unity-layout.unity-layout-values-valid
 @function _unity-layout-values-valid($values) {
   @if _unity-layout-is-percentage($values) {
     $values: _unity-layout-is-percentage($values);
-    @if value-sum($values) {
+    @if _unity-layout-check-values-total($values) {
       @return $values;
     } @else {
       @error 'The sum of the values must be 100 or less';
@@ -164,3 +133,4 @@
     @error 'Sass map variable should contain a list of either 2 or 3 values';
   }
 }
+
