@@ -132,3 +132,8 @@ input[type='button'] {
     cursor: pointer;
   }
 }
+
+input.form-checkbox,
+input.form-radio {
+  vertical-align: baseline;
+}
