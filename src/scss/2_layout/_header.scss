@@ -49,19 +49,6 @@
     }
   }
 
-  .region-user-menu {
-    overflow: hidden;
-    width: 100%;
-
-    ul.menu {
-      float: right;
-
-      @media screen and (max-width: $tab) {
-        float: none;
-      }
-    }
-  }
-
   ul.menu li a.active {
     color: #6cdcff;
   }
@@ -69,8 +56,7 @@
 
 .top_left,
 .top_right,
-.search_block,
-.region-user-menu {
+.search_block {
   @media screen and (max-width: $tab) {
     width: 100%;
   }
