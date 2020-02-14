@@ -1,3 +1,11 @@
+// Button Links
+//
+// Hyperlinks are used to allow the user to navigate to other resources or to download a resource. Button links
+// are styled as a button element.
+//
+// Markup: ../kss-templates/links.twig
+//
+// Style guide: components.content.links
 a {
   &.btn {
     @include responsive-typo-map($normal-text);
