@@ -1,17 +1,4 @@
 a {
-  &.read_more {
-    background: #00ac00;
-    padding: .5rem .9rem;
-    text-decoration: none;
-    margin: 1rem 0;
-    border: 0 !important;
-
-    &:hover {
-      background: green;
-    }
-  }
-
-
   &.btn {
     @include responsive-typo-map($normal-text);
 
