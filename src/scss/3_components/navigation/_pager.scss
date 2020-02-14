@@ -1,15 +1,33 @@
-.item-list .pager li {
-  background: #cfcfcf;
-  border-radius: 3px;
-  margin-right: .4rem;
-  text-shadow: 1px 1px #fff;
-  border: 0;
-}
+nav.pager {
+  clear: both;
+  padding: 0;
+  margin: 1.2rem 0 2.4rem;
+  text-align: center;
 
-.pager a {
-  text-decoration: none;
+  li {
+    display: inline-block;
+    list-style-type: none;
+  }
 
-  &:hover {
-    text-decoration: none;
+  a {
+    font-size: 1.5rem;
+  }
+
+  // Baseline styles for pager elements.
+  .pager__item,
+  .pager-item,
+  .pager-first,
+  .pager-previous,
+  .pager-next,
+  .pager-last,
+  .pager-ellipsis,
+  .is-active {
+    display: inline-block;
+    padding: 0 .3334em;
+  }
+
+  /* The current page's list item. */
+  .pager__item.is-active {
+    font-weight: bold;
   }
 }
