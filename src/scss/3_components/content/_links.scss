@@ -10,5 +10,10 @@ a {
     cursor: pointer;
     background: $brand-primary;
     border-radius: 0;
+
+    &:hover {
+      opacity: .7;
+      text-decoration: none;
+    }
   }
 }
