@@ -1,0 +1,45 @@
+.submitted {
+  background: rgb(247, 247, 247);
+  border: 1px solid rgb(236, 236, 236);
+  clear: both;
+  color: rgb(56, 56, 56);
+  display: inline-block;
+  margin-bottom: .5rem;
+  padding: .2rem .8rem;
+}
+
+.form-submit {
+  cursor: pointer;
+}
+
+.form-text {
+  padding: .8rem;
+}
+
+.form-item {
+  margin-bottom: 1em;
+  margin-top: .2rem;
+}
+
+.form-type-radio,
+.form-type-checkbox {
+  label {
+    margin-left: .4rem;
+  }
+
+  .description {
+    margin-left: .2rem;
+  }
+}
+
+.form-actions {
+  padding-top: 1rem;
+}
+
+.fieldset-wrapper {
+  margin-top: 2.5rem;
+}
+
+.password-suggestions ul li {
+  margin-left: 1.2em;
+}
