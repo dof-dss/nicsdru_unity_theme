@@ -1,3 +1,13 @@
+// Pager
+//
+// A list of links to navigate to pages of content. Pager items are numbered, with a link to first, previous,
+// next and last pages, where appropriate.
+//
+// Markup: ../kss-templates/pager.twig
+//
+// Weight: 0
+//
+// Style guide: components.navigation.pager
 nav.pager {
   clear: both;
   padding: 0;

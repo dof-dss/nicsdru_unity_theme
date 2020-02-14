@@ -1,0 +1,77 @@
+{#
+/**
+ * @file
+ * Theme override to display a pager.
+ *
+ * Available variables:
+ * - heading_id: Pagination heading ID.
+ * - items: List of pager items.
+ *   The list is keyed by the following elements:
+ *   - first: Item for the first page; not present on the first page of results.
+ *   - previous: Item for the previous page; not present on the first page
+ *     of results.
+ *   - next: Item for the next page; not present on the last page of results.
+ *   - last: Item for the last page; not present on the last page of results.
+ *   - pages: List of pages, keyed by page number.
+ *   Sub-sub elements:
+ *   items.first, items.previous, items.next, items.last, and each item inside
+ *   items.pages contain the following elements:
+ *   - href: URL with appropriate query parameters for the item.
+ *   - attributes: A keyed list of HTML attributes for the item.
+ *   - text: The visible text used for the item link, such as "‹ Previous"
+ *     or "Next ›".
+ * - current: The page number of the current page.
+ * - ellipses: If there are more pages than the quantity allows, then an
+ *   ellipsis before or after the listed pages may be present.
+ *   - previous: Present if the currently visible list of pages does not start
+ *     at the first page.
+ *   - next: Present if the visible list of pages ends before the last page.
+ *
+ * @see template_preprocess_pager()
+ */
+#}
+<nav class="pager" aria-labelledby="pager-heading">
+  <h2 id="pager-heading" class="visually-hidden">{{ 'Pagination' }}</h2>
+  <ul class="pager__items js-pager__items list--inline list--no-bullet">
+    <li class="pager__item list-item pager__item--first">
+      <a href="#" title="Go to first page">
+        <span class="visually-hidden">First page</span>
+        <span aria-hidden="true">« First</span>
+      </a>
+    </li>
+    <li class="pager__item list-item pager__item--previous">
+      <a href="#" title="Go to previous page" rel="prev">
+        <span class="visually-hidden">Previous page</span>
+        <span aria-hidden="true">‹ Previous</span>
+      </a>
+    </li>
+    {% for item in pager %}
+      <li class="pager__item list-item{{ item.url != '#' ? 'is-active' : '' }}">
+        {% if item.url != '#' %}
+          {% set title = 'Current page' %}
+        {% else %}
+          {% set page = item.text %}
+          {% set title = "Go to page " ~ item.text %}
+        {% endif %}
+        <a href="{{ item.url }}" title="{{ title }}">
+          <span class="visually-hidden">
+            {{ item.url != '#' ? 'Current page' : 'Page' }}
+          </span>
+          {{- item.text -}}
+        </a>
+      </li>
+    {% endfor %}
+    <li class="pager__item list-item pager__item--next">
+      <a href="#" title="Go to next page" rel="next">
+        <span class="visually-hidden">Next page</span>
+        <span aria-hidden="true">Next ›</span>
+      </a>
+    </li>
+    <li class="pager__item list-item pager__item--last">
+      <a href="#" title="Go to last page">
+        <span class="visually-hidden">Last page</span>
+        <span aria-hidden="true">Last »</span>
+      </a>
+    </li>
+  </ul>
+</nav>
