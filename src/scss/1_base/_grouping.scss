@@ -137,3 +137,9 @@ q {
     content: '';
   }
 }
+
+#wrapper {
+  @media screen and (max-width: $desk) {
+    max-width: 960px;
+  }
+}
