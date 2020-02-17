@@ -19,6 +19,7 @@
 // Style guide: components.navigation
 @import 'navigation/main-nav';
 @import 'navigation/breadcrumb';
+@import 'navigation/pager';
 
 // Block components
 //
@@ -32,7 +33,7 @@
 // Weight: -6
 //
 // Style guide: components.form
-@import 'form/forms';
+@import 'form/forms-generic';
 @import 'form/search-form';
 
 // Content components

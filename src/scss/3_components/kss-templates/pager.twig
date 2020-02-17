@@ -1,0 +1,58 @@
+{#
+/**
+ * @file
+ * Theme override to display a pager.
+ *
+ * Variables:
+ * - heading: [string] Accessible heading.
+ * - pager: [array] List of pager items.
+ *   The list is keyed by the following elements:
+ *   - title: [string] Title of the pager menu item.
+ *   - url: [string] URL of the item (optional).
+ */
+#}
+<nav class="pager" aria-labelledby="pager-heading">
+  <h2 id="pager-heading" class="visually-hidden">{{ 'Pagination' }}</h2>
+  <ul class="pager__items js-pager__items list--inline list--no-bullet">
+    <li class="pager__item list-item pager__item--first">
+      <a href="#" title="Go to first page">
+        <span class="visually-hidden">First page</span>
+        <span aria-hidden="true">« First</span>
+      </a>
+    </li>
+    <li class="pager__item list-item pager__item--previous">
+      <a href="#" title="Go to previous page" rel="prev">
+        <span class="visually-hidden">Previous page</span>
+        <span aria-hidden="true">‹ Previous</span>
+      </a>
+    </li>
+    {% for item in pager %}
+      <li class="pager__item list-item{{ item.url != '#' ? 'is-active' : '' }}">
+        {% if item.url != '#' %}
+          {% set title = 'Current page' %}
+        {% else %}
+          {% set page = item.text %}
+          {% set title = "Go to page " ~ item.text %}
+        {% endif %}
+        <a href="{{ item.url }}" title="{{ title }}">
+          <span class="visually-hidden">
+            {{ item.url != '#' ? 'Current page' : 'Page' }}
+          </span>
+          {{- item.text -}}
+        </a>
+      </li>
+    {% endfor %}
+    <li class="pager__item list-item pager__item--next">
+      <a href="#" title="Go to next page" rel="next">
+        <span class="visually-hidden">Next page</span>
+        <span aria-hidden="true">Next ›</span>
+      </a>
+    </li>
+    <li class="pager__item list-item pager__item--last">
+      <a href="#" title="Go to last page">
+        <span class="visually-hidden">Last page</span>
+        <span aria-hidden="true">Last »</span>
+      </a>
+    </li>
+  </ul>
+</nav>
