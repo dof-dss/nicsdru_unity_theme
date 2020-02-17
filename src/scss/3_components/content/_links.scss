@@ -9,7 +9,6 @@
 a {
   &.btn {
     @include responsive-typo-map($normal-text);
-
     display: inline-block;
     color: #fff;
     margin: 1rem 0 0;
