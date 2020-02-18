@@ -125,7 +125,7 @@ dd {
 blockquote,
 q {
   quotes: none;
-  border: none;
+  border: 0;
   background: transparent resolve('quote.png') no-repeat scroll 0 0;
   padding: 1rem .5rem .5rem 4.7rem;
   text-shadow: 1px 1px #fff;
