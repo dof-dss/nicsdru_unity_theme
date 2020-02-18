@@ -125,8 +125,8 @@ dd {
 blockquote,
 q {
   quotes: none;
-  border: 1px solid rgb(226, 220, 220);
-  background: rgb(250, 247, 247) resolve('quote.png') no-repeat;
+  border: 0;
+  background: transparent resolve('quote.png') no-repeat scroll 0 0;
   padding: 1rem .5rem .5rem 4.7rem;
   text-shadow: 1px 1px #fff;
   margin: 5px 0;
