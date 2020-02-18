@@ -80,7 +80,9 @@ ul {
 // This is a type of list that divides the list into two columns, with every second list item listed in the right
 // hand column.
 //
-// Markup: ../kss-templates/list-splitlist.twig
+// .split-list - a list divided into two columns.
+//
+// Markup: ../kss-templates/list.twig
 //
 // Style guide: components.content.lists.split-lists
 .split-list {
@@ -101,3 +103,25 @@ ul {
   }
 }
 
+// Dash list
+//
+// This is a type of list that uses a '-' symbol instead of a bullet.
+//
+// .dash-list - A list using a '-' symbol.
+//
+// Markup: ../kss-templates/list.twig
+//
+// Style guide: components.content.lists.dash-lists
+.dash-list {
+  li {
+    position: relative;
+    list-style: none;
+
+    &::before {
+      content: '-';
+      position: absolute;
+      left: -20px;
+      top: 0;
+    }
+  }
+}
