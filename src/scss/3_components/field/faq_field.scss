@@ -1,14 +1,15 @@
 .field-faq {
   font-family: inherit;
   font-size: inherit;
-}
 
-.field-faq__question {
-  background: none;
-  border: none;
-  font-weight: 600;
+  &__question {
+    background: none;
+    border: none;
+    font-weight: 600;
 
-  a {
-    color: $brand-primary;
+    a {
+      color: $brand-primary;
+    }
   }
+
 }
