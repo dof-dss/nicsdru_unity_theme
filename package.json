@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "description": "A package of utilities used to theme our site",
   "main": "index.js",
-  "license": "GPL-2.0-or-later",
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "https://github.com/dof-dss/nicsdru_unity_theme"

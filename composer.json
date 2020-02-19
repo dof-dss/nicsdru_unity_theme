@@ -3,9 +3,12 @@
     "type": "drupal-custom-theme",
     "description": "Drupal 8 theme",
     "keywords": ["Drupal", "theme"],
-    "license": "GPL-2.0+",
+    "license": "MIT",
     "homepage": "https://github.com/dof-dss/nicsdru_unity_theme",
     "minimum-stability": "dev",
+    "require": {
+        "php": ">=7.0"
+    },
     "authors": [
         {
             "name": "David Corbett",
