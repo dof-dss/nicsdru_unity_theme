@@ -33,6 +33,23 @@
 .top_left {
   float: left;
   width: 50%;
+  min-height: 110px;
+  padding-left: 150px;
+  position: relative;
+
+  #logo {
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+
+  #site-title {
+    #site-description {
+      line-height: 145%;
+
+      @include adjust-font-size-to(18px);
+    }
+  }
 }
 
 .top_right {
