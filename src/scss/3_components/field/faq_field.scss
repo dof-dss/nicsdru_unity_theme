@@ -1,0 +1,22 @@
+// FAQ field
+//
+// A frequently asked question, with a link to the appropriate answer.
+//
+// Markup: ../kss-templates/faq-field.twig
+//
+// Style guide: components.field.faq-field
+.field-faq {
+  font-family: inherit;
+  font-size: inherit;
+
+  &__question {
+    background: none;
+    border: 0;
+    font-weight: 600;
+
+    a {
+      color: $brand-primary;
+    }
+  }
+
+}
