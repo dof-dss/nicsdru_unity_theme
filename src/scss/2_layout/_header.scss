@@ -45,9 +45,8 @@
 
   #site-title {
     #site-description {
-      line-height: 145%;
-
       @include adjust-font-size-to(18px);
+      line-height: 145%;
     }
   }
 }
