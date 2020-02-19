@@ -1,0 +1,13 @@
+.x-scroll {
+  width: 100%;
+  overflow-x: auto;
+  margin: rhythm(2) 0 rhythm(4) 0;
+
+  @media screen and (min-width: $tab) {
+    margin: rhythm(3) 0 rhythm(4.5) 0;
+  }
+
+  table {
+    margin: 0;
+  }
+}
