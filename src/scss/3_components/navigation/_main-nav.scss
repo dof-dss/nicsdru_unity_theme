@@ -113,6 +113,8 @@ $main-menu-span: container !default;
     vertical-align: top;
     border-right: 1px solid $menu-separator;
     float: left;
+    padding: 0;
+    margin: 0;
 
     @media screen and (max-width: $tab) {
       float: none;
