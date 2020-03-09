@@ -405,6 +405,7 @@ ul.menu {
         clip: auto;
       }
 
+      //Overrides for IE10 and IE11 browsers
       @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
         margin-top: 1.3rem;
       }
