@@ -355,6 +355,7 @@ ul.menu {
 
 .burger-toggle {
   display: none;
+  filter: none;
 
   .js & {
     @include adjust-font-size-to(16px);
@@ -399,6 +400,13 @@ ul.menu {
         border-radius: 0;
         margin: 0;
         line-height: 29px;
+        height: auto;
+        width: auto;
+        clip: auto;
+      }
+
+      @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+        margin-top: 1.3rem;
       }
     }
 
