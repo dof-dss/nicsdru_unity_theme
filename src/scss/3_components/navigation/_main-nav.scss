@@ -113,6 +113,8 @@ $main-menu-span: container !default;
     vertical-align: top;
     border-right: 1px solid $menu-separator;
     float: left;
+    padding: 0;
+    margin: 0;
 
     @media screen and (max-width: $tab) {
       float: none;
@@ -353,6 +355,7 @@ ul.menu {
 
 .burger-toggle {
   display: none;
+  filter: none;
 
   .js & {
     @include adjust-font-size-to(16px);
@@ -397,6 +400,14 @@ ul.menu {
         border-radius: 0;
         margin: 0;
         line-height: 29px;
+        height: auto;
+        width: auto;
+        clip: auto;
+      }
+
+      //Overrides for IE10 and IE11 browsers
+      @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+        margin-top: 1.3rem;
       }
     }
 

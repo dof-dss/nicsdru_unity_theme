@@ -1,123 +1,92 @@
-.block-search-form {
-  overflow: visible;
-  position: relative;
-  width: 100%;
-  height: 3.5rem;
-  margin: 0 auto;
-  padding: 0;
+.search-form {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: calc(100% - 4rem) 4rem;
+  grid-template-columns: auto 4rem;
+  grid-template-areas: "form-item form-action";
+  align-items: center;
+  margin-top: 40px;
 
-  @media screen and (min-width: $tab) {
-    margin-top: 30px;
-  }
-
-  .content {
+  @media screen and (max-width: $tab) {
+    margin-right: 10px;
     margin-top: 0;
   }
 
-  .form-text {
-    float: none;
-    width: 220px;
-    max-width: 100%;
-    margin-right: 0;
-    padding: 8px;
+  @supports (display: grid) {
+    margin-top: 0;
   }
 
-  .form-submit:hover {
-    opacity: .8;
+  //Overrides for IE10 and IE11 browsers
+  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    margin-top: 0;
   }
-}
 
-.search-form {
-  & input {
-    font-size: 1.4rem;
-    box-sizing: border-box;
-    height: 3.3rem;
+  .form-item {
+    margin: 0;
+    -ms-grid-column: 1;
+    grid-area: form-item;
+    float: left;
+    width: calc(100% - 4rem);
 
-    &[type='submit'] {
-      background: resolve('search-icon.png') no-repeat center top;
-      text-indent: -9999px;
-      height: 27px;
-      width: 27px;
-      position: absolute;
-      top: 2px;
-      right: 10px;
+    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+      width: auto;
     }
 
-    @media screen and (min-width: 320px) {
-      height: 3.5rem;
+    @supports (display: grid) {
+      float: none;
+      width: auto;
     }
   }
 
-  .form-text {
-    width: 100%;
-    border: 1px solid #666;
-    border-radius: 0;
-    padding: .5rem;
+  .form-actions {
+    padding: 0;
+    -ms-grid-column: 2;
+    grid-area: form-action;
+    float: right;
 
-    @media screen and (min-width: 320px) {
-      padding: .8rem;
-      width: 200px;
+    @supports (display: grid) {
+      float: none;
     }
   }
 
   .form-submit {
-    right: 15px;
     border: 0;
     box-shadow: none;
     cursor: pointer;
     padding: 0;
 
-    @media screen and (min-width: 320px) {
-      right: 5px;
+    &:hover {
+      opacity: .8;
     }
   }
 
-  .form-actions input {
-    margin: 1px 0;
-    border-radius: 0;
-  }
+  input {
+    font-size: 1.4rem;
+    box-sizing: border-box;
+    height: 3.5rem;
 
-  & input[type='text'],
-  input[type='search'] {
-    @media screen and (min-width: 320px) {
-      border: 1px solid #ccc;
-      color: $text;
-      background-color: inherit;
-      background: resolve('search-icon.png') no-repeat left top 3px;
-      min-width: 200px;
-      height: 33px;
-      border-radius: 0;
-      padding: 0 .5em 0 2em;
-      margin-right: 0;
+    &[type='submit'] {
+      background: resolve('search-icon.png') no-repeat center 4px;
+      text-indent: -9999px;
+      width: 4rem;
+      filter: none;
+
+      @media screen and (min-width: 320px) {
+        background-color: #666;
+        color: #fff;
+        box-sizing: border-box;
+        margin: 0;
+        line-height: 1;
+        font-weight: normal;
+        text-shadow: none;
+        position: relative;
+      }
     }
 
-    @media screen and (min-width: $phab) {
-      margin-right: 10rem;
-    }
-  }
-
-  & input[type='submit'] {
-    @media screen and (min-width: 320px) {
-      background-color: #666;
-      background-image: none;
-      color: #fff;
-      box-sizing: border-box;
-      width: 10rem;
-      height: 33px;
-      margin: 2px 0 0;
-      overflow: hidden;
-      line-height: 1;
-      text-indent: 0;
-      font-weight: normal;
-      text-shadow: none;
-      position: relative;
-      right: 5px;
-      top: 0;
-    }
-
-    @media screen and (min-width: $phab) {
-      right: 0;
-      position: absolute;
+    &[type='text'] {
+      @media screen and (max-width: $tab) {
+        width: 100%;
+      }
     }
   }
 }
