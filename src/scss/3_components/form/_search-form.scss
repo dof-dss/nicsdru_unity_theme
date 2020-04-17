@@ -71,6 +71,12 @@
       width: 4rem;
       filter: none;
 
+      &:focus {
+        outline: 3px solid #333;
+        outline-offset: -2px;
+        overflow: hidden;
+      }
+
       @media screen and (min-width: 320px) {
         background-color: #666;
         color: #fff;
@@ -84,6 +90,11 @@
     }
 
     &[type='text'] {
+      &:focus {
+        outline: 3px solid #333;
+        outline-offset: -2px;
+      }
+
       @media screen and (max-width: $tab) {
         width: 100%;
       }
