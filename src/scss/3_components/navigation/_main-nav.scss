@@ -212,6 +212,11 @@ $main-menu-span: container !default;
       }
     }
 
+    a:focus {
+      background: $menu-item-focus;
+      outline: none;
+    }
+
     &:hover > ul,
     li:hover > ul,
     li li:hover > ul {
