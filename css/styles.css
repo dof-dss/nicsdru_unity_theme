@@ -123,6 +123,45 @@ a:hover {
   text-decoration: underline;
 }
 
+/* line 29, src/scss/1_base/_links.scss */
+.skip-link,
+.skip-link:visited {
+  opacity: .75;
+  -webkit-transition: opacity .3s 0s;
+  transition: opacity .3s 0s;
+  color: #fff;
+  background-color: #000;
+  outline: none;
+  text-align: center;
+}
+
+/* line 38, src/scss/1_base/_links.scss */
+.skip-link::after,
+.skip-link:visited::after {
+  content: ' ';
+  display: inline-block;
+  width: 1.5em;
+  height: .75em;
+  background: transparent url('../images/arrow-down.png?1719c8fb907') no-repeat 50% 50%;
+  background-size: 1.6rem auto;
+}
+
+/* line 48, src/scss/1_base/_links.scss */
+.skip-link:focus {
+  font-size: 1.6rem;
+  margin: 0 0 2.4rem;
+  opacity: 1;
+  display: block;
+  line-height: 1.5;
+  padding: .9rem 3.5rem;
+  color: #fff;
+  text-decoration: underline;
+  outline: none;
+  overflow: hidden;
+  white-space: nowrap;
+  background-color: #333;
+}
+
 /*
  * @file
  * Sets out the base behaviour of heading elements.
@@ -335,7 +374,7 @@ blockquote,
 q {
   quotes: none;
   border: 0;
-  background: transparent url('../images/quote.png?1718884a3e7') no-repeat scroll 0 0;
+  background: transparent url('../images/quote.png?1719c8fb9cf') no-repeat scroll 0 0;
   padding: 1rem .5rem .5rem 4.7rem;
   text-shadow: 1px 1px #fff;
   margin: 5px 0;
@@ -804,7 +843,7 @@ td {
   /* line 218, src/scss/2_layout/_header.scss */
   #headerHero .region-search .form-submit {
     height: 35px;
-    background: #fff url('../images/search-icon.png?1718884a4ba') no-repeat center;
+    background: #fff url('../images/search-icon.png?1719c8fbb26') no-repeat center;
     text-indent: -999rem;
   }
 }
@@ -2053,7 +2092,7 @@ nav.pager .pager__item.is-active {
 
 /* line 68, src/scss/3_components/form/_search-form.scss */
 .search-form input[type='submit'] {
-  background: url('../images/search-icon.png?1718884a4ba') no-repeat center 4px;
+  background: url('../images/search-icon.png?1719c8fbb26') no-repeat center 4px;
   text-indent: -9999px;
   width: 4rem;
   -webkit-filter: none;
@@ -2315,19 +2354,19 @@ a:focus .ico-elink {
 /* line 107, src/scss/3_components/content/icons-messages.scss */
 .info-notice {
   border-color: #002e62;
-  background: #fff url('../images/i.svg?1718884a15b') no-repeat 0.9rem 0.9rem/24px 24px;
+  background: #fff url('../images/i.svg?1719c8fb768') no-repeat 0.9rem 0.9rem/24px 24px;
 }
 
 @media (min-width: 641px) {
   /* line 107, src/scss/3_components/content/icons-messages.scss */
   .info-notice {
-    background: #fff url('../images/i.svg?1718884a15b') no-repeat 1.4rem 1.4rem/30px 30px;
+    background: #fff url('../images/i.svg?1719c8fb768') no-repeat 1.4rem 1.4rem/30px 30px;
   }
 }
 
 /* line 116, src/scss/3_components/content/icons-messages.scss */
 .no-svg .info-notice {
-  background-image: url('../images/i.png?1718884a5c4');
+  background-image: url('../images/i.png?1719c8fbbff');
 }
 
 /* line 121, src/scss/3_components/content/icons-messages.scss */
@@ -2357,55 +2396,55 @@ ul.info-notice {
 /* line 147, src/scss/3_components/content/icons-messages.scss */
 .messages--error {
   border-color: #e34f4f;
-  background: #fff url('../images/wrong.svg?1718884a15b') no-repeat 0.9rem 0.9rem/24px 24px;
+  background: #fff url('../images/wrong.svg?1719c8fb768') no-repeat 0.9rem 0.9rem/24px 24px;
 }
 
 @media (min-width: 641px) {
   /* line 147, src/scss/3_components/content/icons-messages.scss */
   .messages--error {
-    background: #fff url('../images/wrong.svg?1718884a15b') no-repeat 1.4rem 1.4rem/30px 30px;
+    background: #fff url('../images/wrong.svg?1719c8fb768') no-repeat 1.4rem 1.4rem/30px 30px;
   }
 }
 
 /* line 155, src/scss/3_components/content/icons-messages.scss */
 .no-svg .messages--error {
-  background-image: url('../images/wrong.png?1718884aada');
+  background-image: url('../images/wrong.png?1719c8fc123');
 }
 
 /* line 160, src/scss/3_components/content/icons-messages.scss */
 .messages--status {
   border-color: #3fa940;
-  background: #fff url('../images/status.svg?1718884a15b') no-repeat 0.9rem 0.9rem/24px 24px;
+  background: #fff url('../images/status.svg?1719c8fb768') no-repeat 0.9rem 0.9rem/24px 24px;
 }
 
 @media (min-width: 641px) {
   /* line 160, src/scss/3_components/content/icons-messages.scss */
   .messages--status {
-    background: #fff url('../images/status.svg?1718884a15b') no-repeat 1.4rem 1.4rem/30px 30px;
+    background: #fff url('../images/status.svg?1719c8fb768') no-repeat 1.4rem 1.4rem/30px 30px;
   }
 }
 
 /* line 168, src/scss/3_components/content/icons-messages.scss */
 .no-svg .messages--status {
-  background-image: url('../images/status.png?1718884a2f8');
+  background-image: url('../images/status.png?1719c8fb906');
 }
 
 /* line 173, src/scss/3_components/content/icons-messages.scss */
 .messages--warning {
   border-color: #db6304;
-  background: #fff url('../images/warning.svg?1718884a15b') no-repeat 0.9rem 0.9rem/24px 24px;
+  background: #fff url('../images/warning.svg?1719c8fb768') no-repeat 0.9rem 0.9rem/24px 24px;
 }
 
 @media (min-width: 641px) {
   /* line 173, src/scss/3_components/content/icons-messages.scss */
   .messages--warning {
-    background: #fff url('../images/warning.svg?1718884a15b') no-repeat 1.4rem 1.4rem/30px 30px;
+    background: #fff url('../images/warning.svg?1719c8fb768') no-repeat 1.4rem 1.4rem/30px 30px;
   }
 }
 
 /* line 181, src/scss/3_components/content/icons-messages.scss */
 .no-svg .messages--warning {
-  background-image: url('../images/warning.png?1718884a46f');
+  background-image: url('../images/warning.png?1719c8fbaee');
 }
 
 /* line 186, src/scss/3_components/content/icons-messages.scss */
