@@ -25,3 +25,36 @@ a {
     text-decoration: underline;
   }
 }
+
+.skip-link,
+.skip-link:visited {
+  opacity: .75;
+  transition: opacity .3s 0s;
+  color: #fff;
+  background-color: #000;
+  outline: none;
+  text-align: center;
+
+  &::after {
+    content: ' ';
+    display: inline-block;
+    width: 1.5em;
+    height: .75em;
+    background: transparent resolve('arrow-down.png') no-repeat 50% 50%;
+    background-size: 1.6rem auto;
+  }
+}
+
+.skip-link:focus {
+  @include responsive-typo-map($normal-text);
+  opacity: 1;
+  display: block;
+  line-height: 1.5;
+  padding: .9rem 3.5rem;
+  color: #fff;
+  text-decoration: underline;
+  outline: none;
+  overflow: hidden;
+  white-space: nowrap;
+  background-color: $charcoal;
+}
