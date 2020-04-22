@@ -261,7 +261,8 @@ $main-menu-span: container !default;
   }
 
   span.activelink,
-  li.active-trail a {
+  li.active-trail a,
+  li a.is-active {
     background: $menu-item-hover;
     color: $white;
   }
