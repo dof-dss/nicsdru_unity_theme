@@ -44,6 +44,15 @@ $main-menu-span: container !default;
 
   @media screen and (max-width: $tab) {
     border: 0;
+    display: none;
+
+    &.collapse {
+      display: block;
+
+      > ul {
+        display: block;
+      }
+    }
   }
 
   ul {
@@ -59,8 +68,8 @@ $main-menu-span: container !default;
     }
 
     ul {
-      @media screen and (max-width: $tab) {
-        .ul-toggle {
+      .ul-toggle {
+        @media screen and (max-width: $tab) {
           font-size: 17px;
           top: 1px;
         }
@@ -97,8 +106,11 @@ $main-menu-span: container !default;
         border: 0;
         margin: 0;
 
-        &:hover > a {
-          background: $menu-sub-item-hover;
+        &:hover {
+          > a,
+          > .menu-title {
+            background: $menu-sub-item-hover;
+          }
         }
       }
     }
@@ -153,14 +165,17 @@ $main-menu-span: container !default;
       margin: 0;
       position: relative;
       width: 100%;
+      background: $menu-item-hover;
 
-      li a {
+      li a,
+      li .menu-title {
         @media screen and (max-width: $tab) {
           background: lighten($menu-background, 12%);
         }
       }
 
-      a {
+      a,
+      .menu-title {
         background: $menu-item-hover;
 
         @media screen and (max-width: $tab) {
@@ -170,7 +185,8 @@ $main-menu-span: container !default;
       }
 
       a,
-      span.activelink {
+      span.activelink,
+      span.menu-title {
         @include adjust-font-size-to(14px);
         min-width: 150px;
         margin: 0;
@@ -186,7 +202,9 @@ $main-menu-span: container !default;
         }
       }
 
-      &:hover > a {
+      &:hover,
+      &:focus,
+      a:focus {
         background: $menu-sub-item-hover;
         border-top: 1px solid $menu-separator;
       }
@@ -204,7 +222,7 @@ $main-menu-span: container !default;
       }
     }
 
-    &:hover > a {
+    &:hover {
       background: $menu-item-hover;
 
       @media screen and (max-width: $tab) {
@@ -212,18 +230,12 @@ $main-menu-span: container !default;
       }
     }
 
+    &:focus,
     a:focus {
-      background: $menu-item-focus;
-      outline: none;
-    }
-
-    &:hover > ul,
-    li:hover > ul,
-    li li:hover > ul {
-      display: block;
-
-      @media screen and (max-width: $tab) {
-        display: none;
+      @media screen and (min-width: $tab) {
+        background: $menu-item-focus;
+        box-shadow: 0 0 5px 3px $menu-sub-item-hover;
+        outline: none;
       }
     }
 
@@ -236,6 +248,7 @@ $main-menu-span: container !default;
   }
 
   a,
+  span.menu-title,
   span.activelink {
     padding: 1.1rem 2rem;
     display: block;
@@ -262,6 +275,8 @@ $main-menu-span: container !default;
 
   span.activelink,
   li.active-trail a,
+  li.active-trail .menu-title,
+  li.active-trail,
   li a.is-active {
     background: $menu-item-hover;
     color: $white;
@@ -289,7 +304,16 @@ $main-menu-span: container !default;
   }
 
   .ul-toggle {
-    display: none;
+    //&::before {
+    //  display: inline-block;
+    //  font-style: normal;
+    //  font-variant: normal;
+    //  text-rendering: auto;
+    //  -webkit-font-smoothing: antialiased;
+    //  font-family: "Font Awesome 5 Free";
+    //  font-weight: 900;
+    //  content: "\f0d7";
+    //}
 
     @media screen and (max-width: $tab) {
       display: block !important;
@@ -315,6 +339,51 @@ $main-menu-span: container !default;
   &.expanded {
     @media screen and (max-width: $tab) {
       position: relative;
+    }
+  }
+
+  .expanded {
+    &.open > ul {
+      @media screen and (min-width: $tab) {
+        display: block;
+      }
+    }
+
+    a,
+    span.menu-title {
+      display: inline-block;
+    }
+
+    .menu-icon {
+      font-size: 1.5rem;
+      color: #fff;
+      display: inline-block;
+      padding: 0 .5rem;
+
+      @media screen and (max-width: $tab) {
+        display: block;
+        position: absolute;
+        right: 5px;
+        top: 5px;
+        transform: unset;
+        background: lighten($menu-background, 10%);
+        font-size: 2.5rem;
+        padding: 7px 12px;
+      }
+    }
+  }
+
+  .menu-main_sub {
+    a,
+    span.menu-title {
+      display: block;
+    }
+
+    .menu-icon {
+      position: absolute;
+      right: .5rem;
+      top: 50%;
+      transform: translate(0, -50%);
     }
   }
 }
