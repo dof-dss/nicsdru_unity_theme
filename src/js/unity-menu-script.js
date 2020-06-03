@@ -1,15 +1,15 @@
 /* eslint-disable */
-(function ($) {
+(function ($, Drupal) {
   $(document).ready(function ($) {
     $(window).resize(function() {
       if( ($(window).width() > 766)) {
         $('#main-menu').find('.expanded').each(function (index, el) {
-          console.log(this);
           $(this).find('button').remove();
           if (!$(this).children('span').hasClass('menu-icon')) {
             var $linkText = $(this).children('.menu-title').html();
+            $linkText = Drupal.t('Show submenu for ' + $linkText);
             $(this).append('<span class="menu-icon fas fa-caret-down"></span>' +
-              '<span class="visually-hidden">Show submenu for ' + $linkText + '</span>');
+              '<span class="visually-hidden">' + $linkText + '</span>');
           }
         });
         $('#main-menu li').mouseenter(function() {
@@ -34,8 +34,9 @@
     if ($(window).width() > 766) {
       $('#main-menu').find('.expanded').each(function (index, el) {
         var $linkText = $(this).children('.menu-title').html();
+        $linkText = Drupal.t('Show submenu for ' + $linkText);
         $(this).append('<span class="menu-icon fas fa-caret-down"></span>' +
-          '<span class="visually-hidden">Show submenu for ' + $linkText + '</span>');
+          '<span class="visually-hidden">' + $linkText + '</span>');
       });
 
       $('#main-menu .expanded').hover(
@@ -88,5 +89,5 @@
       });
     });
   });
-})(jQuery);
+})(jQuery, Drupal);
 
