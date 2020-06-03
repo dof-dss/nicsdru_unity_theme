@@ -204,7 +204,8 @@ $main-menu-span: container !default;
 
       &:hover,
       &:focus,
-      a:focus {
+      a:focus,
+      &:focus > .menu-title {
         background: $menu-sub-item-hover;
         border-top: 1px solid $menu-separator;
       }
@@ -304,17 +305,6 @@ $main-menu-span: container !default;
   }
 
   .ul-toggle {
-    //&::before {
-    //  display: inline-block;
-    //  font-style: normal;
-    //  font-variant: normal;
-    //  text-rendering: auto;
-    //  -webkit-font-smoothing: antialiased;
-    //  font-family: "Font Awesome 5 Free";
-    //  font-weight: 900;
-    //  content: "\f0d7";
-    //}
-
     @media screen and (max-width: $tab) {
       display: block !important;
       position: absolute;
