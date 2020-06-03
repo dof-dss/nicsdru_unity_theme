@@ -34,7 +34,11 @@
     {% else %}
       <ul{{ attributes.addClass('menu-main_sub') }}>
         <li class="menu-item">
-          <a href="{{ parent.url }}">{{ parent.title }} page</a>
+          <a href="{{ parent.url }}">
+            {% trans %}
+              {{ parent.title }} page
+            {% endtrans %}
+          </a>
         </li>
     {% endif %}
     {% for item in items %}
