@@ -32,9 +32,10 @@
     {% if menu_level == 0 %}
       <ul{{ attributes.addClass('menu menu-main') }}>
     {% else %}
+      {# Add parent link and text to its child menu list #}
       <ul{{ attributes.addClass('menu-main_sub') }}>
-        <li class="menu-item">
-          <a href="{{ parent.url }}">
+        <li class="menu-item leaf first">
+          <a href="{{ parent.url }}" class="menu-link">
             {% trans %}
               {{ parent.title }} page
             {% endtrans %}
@@ -42,24 +43,20 @@
         </li>
     {% endif %}
     {% for item in items %}
-      {%
+       {%
         set classes = [
           'menu-item',
           item.is_expanded ? 'expanded' : 'leaf',
           item.is_collapsed ? 'collapsed',
           item.in_active_trail ? 'active-trail',
-          loop.first ? 'first',
           loop.last ? 'last',
         ]
       %}
+      <li{{ item.attributes.addClass(classes) }}>
+        {{ link(item.title, item.url, { 'class':['menu-link'] }) }}
       {% if item.is_expanded %}
-        <li{{ item.attributes.addClass(classes).setAttribute('tabindex', '0') }}>
-          <span class="menu-title">{{ item.title }}</span>
           {% set parent = item %}
           {{ menus.menu_links(item.below, attributes, menu_level + 1, parent) }}
-      {% else %}
-        <li{{ item.attributes.addClass(classes) }}>
-          {{ link(item.title, item.url) }}
       {% endif %}
       </li>
     {% endfor %}
