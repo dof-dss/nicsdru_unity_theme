@@ -1,13 +1,17 @@
-name: NICS Unity Theme
+name: NICS Unity Theme Edit
 type: theme
 description: 'Base theme for Drupal 8 sites'
 package: NICS
 core: 8.x
 
 libraries:
-  - nicsdru_unity_theme/unity-global-styling
-  - nicsdru_unity_theme/unity-fonts
-  - nicsdru_unity_theme/fontawesome
+  - nicsdru_unity_theme_edit/unity-global-styling
+  - nicsdru_unity_theme_edit/unity-fonts
+  - nicsdru_unity_theme_edit/fontawesome
+
+ckeditor_stylesheets:
+  - css/ckeditor.css
+  - css/styles.css
 
 #libraries-override:
 #  core/modernizr: nicsdru_unity_theme/nicsdru-modernizr
