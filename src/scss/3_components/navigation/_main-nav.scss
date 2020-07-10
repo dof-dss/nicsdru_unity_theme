@@ -42,391 +42,336 @@ $main-menu-span: container !default;
   position: relative;
   background-color: $menu-background;
 
-  @media screen and (max-width: $tab) {
-    border: 0;
-  }
-
-  ul {
-    float: left;
-    padding: 0;
-    margin: 0;
-    list-style: none;
+  .nav-main {
+    height: auto;
+    min-height: 44px;
 
     @media screen and (max-width: $tab) {
-      display: none;
-      float: none;
-      max-width: 100%;
-    }
-
-    ul {
-      @media screen and (max-width: $tab) {
-        .ul-toggle {
-          font-size: 17px;
-          top: 1px;
-        }
-      }
-    }
-
-    li {
-      &:first-child {
-        padding-left: 0;
-      }
-
-      .leaf,
-      .expanded,
-      .collapsed {
-        list-style: none;
-      }
-    }
-
-    &.collapse {
-      @media screen and (max-width: $tab) {
-        display: block !important;
-      }
-    }
-
-    &.menu li {
-      @media screen and (max-width: $tab) {
-        margin: 0;
-        width: 100%;
-        text-align: center;
-        border-right: 0;
-      }
-
-      li {
-        border: 0;
-        margin: 0;
-
-        &:hover > a {
-          background: $menu-sub-item-hover;
-        }
-      }
+      height: 0;
+      overflow: hidden;
+      min-height: 0;
     }
   }
 
-  li {
-    @include adjust-font-size-to(14px);
-    position: relative;
-    display: -moz-inline-stack;
-    display: inline-block;
-    zoom: 1;
-    vertical-align: top;
-    border-right: 1px solid $menu-separator;
-    float: left;
-    padding: 0;
-    margin: 0;
-
-    @media screen and (max-width: $tab) {
-      float: none;
-      max-width: 100%;
-    }
-
-    ul {
-      display: none;
-      position: absolute;
-      z-index: 9999;
+  .menu {
+    &-main {
+      float: left;
       padding: 0;
       margin: 0;
-      background: #2e3d4a;
-      overflow: visible !important;
+      list-style: none;
 
       @media screen and (max-width: $tab) {
-        position: static;
-        border: 0;
+        max-width: 100%;
+        float: none;
       }
 
-      ul {
-        left: 151px;
-        top: 0;
+      &_sub {
+        display: none;
+        position: absolute;
+        z-index: 9999;
+        padding: 0;
+        margin: 0;
+        background: #2e3d4a;
+        overflow: visible !important;
 
         @media screen and (max-width: $tab) {
-          margin: 0 !important;
+          position: static;
           border: 0;
         }
+
+        ul {
+          left: 151px;
+          top: 0;
+
+          @media screen and (max-width: $tab) {
+            margin: 0;
+            border: 0;
+          }
+        }
+
+        .menu-item {
+          float: none;
+          min-width: 150px;
+          padding: 0;
+          margin: 0;
+          position: relative;
+          width: 100%;
+          background: $menu-item-hover;
+
+          &.open,
+          &:hover {
+            background: $menu-sub-item-hover;
+
+            @media screen and (max-width: $tab) {
+              background: lighten($menu-background, 10%);
+            }
+           }
+
+          @media screen and (max-width: $tab) {
+            margin: 0;
+            width: 100%;
+            text-align: center;
+            border-right: 0;
+
+            background: lighten($menu-background, 10%);
+
+            .menu-item .menu-link {
+              background: lighten($menu-background, 12%);
+            }
+          }
+        }
+
+        .menu-link {
+          @include adjust-font-size-to(14px);
+          min-width: 150px;
+          margin: 0;
+          border-top: 1px solid $menu-separator;
+          text-align: left;
+          overflow: hidden;
+          padding: .8rem 1.1rem;
+          border-radius: 0;
+          color: $white;
+
+          &:focus,
+          &:hover {
+            background: $menu-sub-item-hover;
+          }
+
+          &.is-active {
+            font-weight: bold;
+          }
+
+          @media screen and (max-width: $tab) {
+            border-top: 1px solid #fff;
+            text-align: center;
+          }
+
+          @media screen and (min-width: $tab) {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+          }
+        }
       }
     }
 
-    li {
-      float: none;
-      min-width: 150px;
+    &-item {
+      @include adjust-font-size-to(14px);
+      position: relative;
+      display: -moz-inline-stack;
+      zoom: 1;
+      vertical-align: top;
+      border-right: 1px solid $menu-separator;
+      float: left;
       padding: 0;
       margin: 0;
-      position: relative;
-      width: 100%;
 
-      li a {
-        @media screen and (max-width: $tab) {
-          background: lighten($menu-background, 12%);
+      @media screen and (max-width: $tab) {
+        float: none;
+        max-width: 100%;
+      }
+
+      &.open {
+        background: $menu-item-hover;
+
+        .fas {
+          transform: rotate(180deg);
+          padding-right: .5rem;
+          padding-left: 0;
+        }
+
+        > ul {
+          display: block;
         }
       }
 
-      a {
+      &:hover {
+        background: $menu-item-hover;
+
+        @media screen and (min-width: $tab) {
+          .fas {
+            transform: rotate(180deg);
+            padding-right: .5rem;
+            padding-left: 0;
+          }
+
+          > ul {
+            display: block;
+          }
+        }
+      }
+
+      .menu-main_sub {
+        .menu-item {
+          @media screen and (min-width: $tab) {
+            .fas {
+              transform: rotate(-90deg);
+              height: 15px;
+              padding: 0;
+            }
+
+            &:hover,
+            &.open {
+              .fas {
+                transform: rotate(90deg);
+              }
+            }
+          }
+
+          @media screen and (max-width: $tab) {
+            .fas {
+              transform: rotate(0);
+              padding-left: .5rem;
+            }
+
+            &.open {
+              .fas {
+                transform: rotate(180deg);
+              }
+            }
+          }
+        }
+      }
+    }
+
+    &-link {
+      padding: 1.1rem 2rem;
+      display: block;
+      text-decoration: none;
+      color: #fff;
+      font-weight: 500;
+      min-width: 44px;
+
+      @media screen and (max-width: $tab) {
+        width: 100%;
+        padding: 13px 2%;
+        border-radius: 0;
+        border-bottom: 1px solid #fff;
+        border-right: 0;
+        text-align: center;
+      }
+
+      &:hover,
+      &:focus {
         background: $menu-item-hover;
 
         @media screen and (max-width: $tab) {
-          text-align: center;
           background: lighten($menu-background, 10%);
         }
       }
 
-      a,
-      span.activelink {
-        @include adjust-font-size-to(14px);
-        min-width: 150px;
-        margin: 0;
-        border-top: 1px solid $menu-separator;
-        text-align: left;
-        overflow: hidden;
-        padding: .8rem 1.1rem;
-        border-radius: 0;
-        color: $white;
-
-        @media screen and (max-width: $tab) {
-          border-top: 1px solid #fff;
-        }
+      &:focus {
+        box-shadow: 0 0 5px 3px $menu-sub-item-hover;
+        outline: none;
       }
 
-      &:hover > a {
-        background: $menu-sub-item-hover;
-        border-top: 1px solid $menu-separator;
-      }
-
-      .activelink {
-        @media screen and (max-width: $tab) {
-          text-align: center;
-        }
-      }
-
-      .drop-down-toggle {
-        @media screen and (max-width: $tab) {
-          top: 5px;
-        }
+      .fas {
+        padding-left: .5rem;
       }
     }
 
-    &:hover > a {
-      background: $menu-item-hover;
+    .is-active {
+      background-color: $menu-item-hover;
+      color: $white;
 
       @media screen and (max-width: $tab) {
+        //padding: 1.3rem 2rem;
         background: lighten($menu-background, 10%);
       }
     }
-
-    a:focus {
-      background: $menu-item-focus;
-      outline: none;
-    }
-
-    &:hover > ul,
-    li:hover > ul,
-    li li:hover > ul {
-      display: block;
-
-      @media screen and (max-width: $tab) {
-        display: none;
-      }
-    }
-
-    .leaf,
-    .expanded,
-    .collapsed {
-      margin: 0;
-      padding: 0;
-    }
   }
 
-  a,
-  span.activelink {
-    padding: 1.1rem 2rem;
-    display: block;
-    text-decoration: none;
-    color: #fff;
-    font-weight: 500;
-
-    @media screen and (max-width: $tab) {
-      width: 100%;
-      padding: 13px 2%;
-      border-radius: 0;
-      border-bottom: 1px solid #fff;
-      border-right: 0;
-      text-align: center;
-    }
-  }
-
-  span.activelink {
-    @media screen and (max-width: $tab) {
-      padding: 1.3rem 2rem;
-      background: lighten($menu-background, 10%);
-    }
-  }
-
-  span.activelink,
-  li.active-trail a,
-  li a.is-active {
-    background: $menu-item-hover;
-    color: $white;
-  }
-
-  .nav-toggle {
-    display: none;
-
-    @media screen and (max-width: $tab) {
-      @include adjust-font-size-to(15px);
-      font-weight: normal;
-      background: $menu-background;
-      color: $white;
-      margin: 0;
-      padding: 3%;
-      letter-spacing: 1px;
-      text-align: center;
-    }
-
-    &.open {
-      @media screen and (max-width: $tab) {
-        display: block;
-      }
-    }
-  }
-
-  .ul-toggle {
-    display: none;
-
-    @media screen and (max-width: $tab) {
-      display: block !important;
-      position: absolute;
-      right: 5px;
-      top: 5px;
-      background: lighten($menu-background, 10%);
-      border: 0;
-      box-shadow: none;
-      color: white;
-      text-shadow: none;
-      font-weight: normal;
-      font-size: 20px;
-    }
-  }
-
-  &.collapse .menu-navigation-container > ul.menu {
-    @media screen and (max-width: $tab) {
-      display: block !important;
-    }
-  }
-
-  &.expanded {
-    @media screen and (max-width: $tab) {
-      position: relative;
-    }
-  }
-}
-
-ul.menu {
-  padding: 0;
-  margin: .5rem 0;
-}
-
-.region ul.menu li,
-.region ul.links li,
-.region .item-list ul li {
-  list-style: none outside none;
-  margin: 0 0 .2rem;
-  padding: 0 0 0 1.5rem;
-  text-align: left;
-}
-
-.drop-down-toggle {
-  position: absolute;
-  top: 7px;
-  right: 16px;
-  display: none;
-  width: 24px;
-  height: 24px;
-  border-radius: 15px;
-  background: rgb(73, 71, 71);
-  border: rgb(170, 170, 170) 2px solid;
-
-  @media screen and (max-width: $tab) {
-    display: block;
-  }
-}
-
-.drop-down-arrow {
-  display: block;
-  width: 0;
-  height: 0;
-  margin: .8rem 0 0 .5rem;
-  border-top: 5px solid #aaa;
-  border-left: transparent 5px solid;
-  border-right: transparent 5px solid;
-}
-
-.burger-toggle {
-  display: none;
-  filter: none;
-
-  .js & {
-    @include adjust-font-size-to(16px);
-    display: block;
+  .toggler {
     position: absolute;
-    left: 0;
     top: 0;
-    box-sizing: border-box;
-    width: 62px;
-    height: 54px;
-    margin-left: 1px;
-    padding: 0;
-    color: #fff;
-    background: transparent !important;
-    border: 0;
-    text-shadow: none;
-    box-shadow: none;
-    font-weight: normal;
+    left: -.5rem;
+    z-index: 2;
+    cursor: pointer;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+    opacity: 0;
+    max-height: 5rem;
+    min-height: 5rem;
 
     @media screen and (max-width: $tab) {
-      width: 96px;
-      padding-right: 56px;
-      padding-left: 5px;
-      border-left-width: 5px;
-      border-right-width: 5px;
-      margin-left: 0;
-    }
+      top: -5.2rem;
+      left: .5rem;
+      width: 5rem;
+      height: 5rem;
 
-    @media screen and (min-width: $tab) {
-      display: none;
-    }
+      /* Toggler Animation */
+      &:checked + .hamburger > div {
+        transform: rotate(135deg);
 
-    .sr-only {
-      display: none;
+        /* Turns Lines Into X */
+        &::before,
+        &::after {
+          top: 0;
+          transform: rotate(90deg);
+        }
+      }
 
-      @media screen and (max-width: $tab) {
-        display: block;
-        position: absolute !important;
-        right: 8px;
-        background-color: inherit;
-        color: #fff;
-        border-radius: 0;
-        margin: 0;
-        line-height: 29px;
+      &:checked:hover + .hamburger > div {
+        transform: rotate(225deg);
+      }
+
+      /* Show menu */
+      &:checked ~ .nav-main {
         height: auto;
-        width: auto;
-        clip: auto;
-      }
-
-      //Overrides for IE10 and IE11 browsers
-      @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
-        margin-top: 1.3rem;
+        transition: max-height 1s ease;
       }
     }
+  }
 
-    .icon-bar {
-      display: block;
-      width: 28px;
-      height: 3px;
-      background-color: #fff;
-      border-radius: 2px;
-      margin: 5px auto;
+  .hamburger {
+    position: absolute;
+    top: -5.2rem;
+    left: .5rem;
+    z-index: 1;
+    width: auto;
+    height: 50px;
+    padding: 1rem;
+    display: none;
+    align-items: center;
+    justify-content: center;
 
-      @media screen and (max-width: $tab) {
-        width: 21px;
+    @media screen and (max-width: $tab) {
+      display: flex;
+
+      /* Hamburger Line */
+      & > div {
+        position: relative;
+        flex: none;
+        width: 2.1rem;
+        height: .3rem;
+        background: $white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all .4s ease;
+
+        /* Hamburger Lines - Top & Bottom */
+        &::after,
+        &::before {
+          content: '';
+          position: absolute;
+          z-index: 1;
+          top: -.9rem;
+          width: 100%;
+          height: .3rem;
+          background: inherit;
+        }
+
+        /* Moves Line Down */
+        &::after {
+          top: .9rem;
+        }
+      }
+
+      &-text {
+        color: $white;
+        padding-left: 1rem;
       }
     }
   }
