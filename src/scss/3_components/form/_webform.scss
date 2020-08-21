@@ -1,0 +1,34 @@
+/* Error Tool Tip Styles*/
+.form-item--error-message {
+  position: relative;
+  top: 100%;
+  left: -1px;
+  margin-top: -1px;
+  z-index: 101;
+  width: fit-content;
+  max-width: 56rem;
+
+  .error {
+    @include responsive-typo-map($normal-text);
+    font-weight: bold;
+    display: block;
+    position: absolute;
+    position: relative;
+    padding: .9rem;
+    color: $white;
+    background-color: $hc-red;
+    border: 1px solid $hc-red;
+    border-radius: 3px;
+    box-shadow: 4px 4px 9px 0 rgba(0, 0, 0, .3);
+    opacity: 1;
+
+    &::after {
+      content: '';
+      border: .9rem solid transparent;
+      border-bottom-color: $hc-red;
+      position: absolute;
+      top: -1.8rem;
+      left: .9rem;
+    }
+  }
+}
