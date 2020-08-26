@@ -30,10 +30,10 @@
   {% import _self as menus %}
   {% if items %}
     {% if menu_level == 0 %}
-      <ul{{ attributes.addClass('menu menu-main') }}>
+      <ul{{ attributes.addClass('menu menu-main').removeAttribute('region') }}>
     {% else %}
       {# Add parent link and text to its child menu list #}
-      <ul{{ attributes.addClass('menu-main_sub') }}>
+      <ul{{ attributes.addClass('menu-main_sub').removeAttribute('region') }}>
         <li class="menu-item leaf first">
           <a href="{{ parent.url }}" class="menu-link">
             {% trans %}
