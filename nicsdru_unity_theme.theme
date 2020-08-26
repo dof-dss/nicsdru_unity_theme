@@ -136,3 +136,12 @@ function nicsdru_unity_theme_preprocess_views_view(&$variables) {
     $variables['exposed']['query']['#title_display'] = 'invisible';
   }
 }
+
+/**
+ * Implements hook_theme_preprocess_image().
+ */
+function nicsdru_unity_theme_preprocess_image(&$variables) {
+  if (!isset($variables['attributes']['alt'])) {
+    $variables['attributes']['alt'] = '';
+  }
+}
