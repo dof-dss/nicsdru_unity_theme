@@ -142,7 +142,7 @@ a:hover {
   display: inline-block;
   width: 1.5em;
   height: .75em;
-  background: transparent url('../images/arrow-down.png?17293439e54') no-repeat 50% 50%;
+  background: transparent url('../images/arrow-down.png?1740ba26843') no-repeat 50% 50%;
   background-size: 1.6rem auto;
 }
 
@@ -374,7 +374,7 @@ blockquote,
 q {
   quotes: none;
   border: 0;
-  background: transparent url('../images/quote.png?17293439f81') no-repeat scroll 0 0;
+  background: transparent url('../images/quote.png?1740ba26927') no-repeat scroll 0 0;
   padding: 1rem .5rem .5rem 4.7rem;
   text-shadow: 1px 1px #fff;
   margin: 5px 0;
@@ -843,7 +843,7 @@ td {
   /* line 218, src/scss/2_layout/_header.scss */
   #headerHero .region-search .form-submit {
     height: 35px;
-    background: #fff url('../images/search-icon.png?1729343a126') no-repeat center;
+    background: #fff url('../images/search-icon.png?1740ba26a5e') no-repeat center;
     text-indent: -999rem;
   }
 }
@@ -1922,13 +1922,98 @@ nav.pager .pager__item.is-active {
 }
 
 /* line 39, src/scss/3_components/form/_forms-generic.scss */
-.fieldset-wrapper {
-  margin-top: 2.5rem;
+fieldset {
+  border: none;
 }
 
-/* line 43, src/scss/3_components/form/_forms-generic.scss */
+/* line 42, src/scss/3_components/form/_forms-generic.scss */
+fieldset .fieldset-wrapper {
+  margin-top: 2.5rem;
+  padding-left: 0.3rem;
+}
+
+/* line 48, src/scss/3_components/form/_forms-generic.scss */
 .password-suggestions ul li {
   margin-left: 1.2em;
+}
+
+/* line 52, src/scss/3_components/form/_forms-generic.scss */
+label {
+  display: block;
+}
+
+/* line 56, src/scss/3_components/form/_forms-generic.scss */
+[type='text'],
+[type='search'],
+[type='tel'],
+[type='url'],
+[type='email'],
+[type='password'],
+[type='date'],
+[type='time'],
+[type='number'] {
+  width: 100%;
+  max-width: 56rem;
+  max-width: -webkit-fit-content;
+  max-width: -moz-fit-content;
+  max-width: fit-content;
+}
+
+/* line 70, src/scss/3_components/form/_forms-generic.scss */
+[size='30'],
+[size='40'],
+[size='50'],
+[size='60'] {
+  max-width: 65rem;
+}
+
+/* line 77, src/scss/3_components/form/_forms-generic.scss */
+[type='text'],
+[type='search'],
+[type='tel'],
+[type='url'],
+[type='email'],
+[type='password'],
+[type='date'],
+[type='time'],
+[type='number'],
+textarea {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  color: #333;
+  margin: .5em 0;
+  padding: .6rem;
+  min-height: 3.5rem;
+  /* Highlight the form elements that caused a form submission error. */
+}
+
+/* line 95, src/scss/3_components/form/_forms-generic.scss */
+[type='text'].error, [type='text'].error:focus,
+[type='search'].error,
+[type='search'].error:focus,
+[type='tel'].error,
+[type='tel'].error:focus,
+[type='url'].error,
+[type='url'].error:focus,
+[type='email'].error,
+[type='email'].error:focus,
+[type='password'].error,
+[type='password'].error:focus,
+[type='date'].error,
+[type='date'].error:focus,
+[type='time'].error,
+[type='time'].error:focus,
+[type='number'].error,
+[type='number'].error:focus,
+textarea.error,
+textarea.error:focus {
+  border: 1px solid #b63a1b;
+  outline-color: #b63a1b;
+  background-color: #ffdae0;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  color: #333;
 }
 
 /* line 1, src/scss/3_components/form/_search-form.scss */
@@ -2029,7 +2114,7 @@ nav.pager .pager__item.is-active {
 
 /* line 68, src/scss/3_components/form/_search-form.scss */
 .search-form input[type='submit'] {
-  background: url('../images/search-icon.png?1729343a126') no-repeat center 4px;
+  background: url('../images/search-icon.png?1740ba26a5e') no-repeat center 4px;
   text-indent: -9999px;
   width: 4rem;
   -webkit-filter: none;
@@ -2069,6 +2154,48 @@ nav.pager .pager__item.is-active {
   .search-form input[type='text'] {
     width: 100%;
   }
+}
+
+/* Error Tool Tip Styles*/
+/* line 2, src/scss/3_components/form/_webform.scss */
+.form-item--error-message {
+  position: relative;
+  top: 100%;
+  left: -1px;
+  margin-top: -1px;
+  z-index: 101;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  max-width: 56rem;
+}
+
+/* line 11, src/scss/3_components/form/_webform.scss */
+.form-item--error-message .error {
+  font-size: 1.6rem;
+  margin: 0 0 2.4rem;
+  font-weight: bold;
+  display: block;
+  position: absolute;
+  position: relative;
+  padding: .9rem;
+  color: #fff;
+  background-color: #d1431f;
+  border: 1px solid #d1431f;
+  border-radius: 3px;
+  -webkit-box-shadow: 4px 4px 9px 0 rgba(0, 0, 0, 0.3);
+  box-shadow: 4px 4px 9px 0 rgba(0, 0, 0, 0.3);
+  opacity: 1;
+}
+
+/* line 25, src/scss/3_components/form/_webform.scss */
+.form-item--error-message .error::after {
+  content: '';
+  border: .9rem solid transparent;
+  border-bottom-color: #d1431f;
+  position: absolute;
+  top: -1.8rem;
+  left: .9rem;
 }
 
 /* line 1, src/scss/3_components/content/_lists.scss */
@@ -2219,13 +2346,13 @@ a.btn:hover {
  * Provides the styling for icon components. The file then extrapolates some concepts around icons further
  * for when they are used in some kind of message container.
  */
-/* line 37, src/scss/3_components/content/icons-messages.scss */
+/* line 37, src/scss/3_components/content/_icons-messages.scss */
 .ico {
   display: inline;
   margin-left: .2em;
 }
 
-/* line 48, src/scss/3_components/content/icons-messages.scss */
+/* line 48, src/scss/3_components/content/_icons-messages.scss */
 .ico-elink {
   height: 1.1rem;
   width: 1.4rem;
@@ -2233,38 +2360,38 @@ a.btn:hover {
   fill: #0c1e63;
 }
 
-/* line 54, src/scss/3_components/content/icons-messages.scss */
+/* line 54, src/scss/3_components/content/_icons-messages.scss */
 a:focus .ico-elink {
   fill: #fff;
 }
 
-/* line 69, src/scss/3_components/content/icons-messages.scss */
+/* line 69, src/scss/3_components/content/_icons-messages.scss */
 .ico-arrow-left {
   fill: #373737;
   -webkit-transform: rotate(180deg);
   transform: rotate(180deg);
 }
 
-/* line 74, src/scss/3_components/content/icons-messages.scss */
+/* line 74, src/scss/3_components/content/_icons-messages.scss */
 .ico-arrow-right {
   fill: #373737;
 }
 
-/* line 78, src/scss/3_components/content/icons-messages.scss */
+/* line 78, src/scss/3_components/content/_icons-messages.scss */
 .ico-arrow-up {
   fill: #373737;
   -webkit-transform: rotate(270deg);
   transform: rotate(270deg);
 }
 
-/* line 83, src/scss/3_components/content/icons-messages.scss */
+/* line 83, src/scss/3_components/content/_icons-messages.scss */
 .ico-arrow-down {
   fill: #373737;
   -webkit-transform: rotate(90deg);
   transform: rotate(90deg);
 }
 
-/* line 89, src/scss/3_components/content/icons-messages.scss */
+/* line 89, src/scss/3_components/content/_icons-messages.scss */
 .info-notice, .messages {
   border: 2px solid;
   margin: 1.5em 0;
@@ -2272,129 +2399,129 @@ a:focus .ico-elink {
 }
 
 @media (min-width: 641px) {
-  /* line 89, src/scss/3_components/content/icons-messages.scss */
+  /* line 89, src/scss/3_components/content/_icons-messages.scss */
   .info-notice, .messages {
     padding: 1.4rem 1.4rem 1.4rem 6rem;
   }
 }
 
-/* line 98, src/scss/3_components/content/icons-messages.scss */
+/* line 98, src/scss/3_components/content/_icons-messages.scss */
 .info-notice > *:first-child, .messages > *:first-child {
   margin-top: 0;
 }
 
-/* line 102, src/scss/3_components/content/icons-messages.scss */
+/* line 102, src/scss/3_components/content/_icons-messages.scss */
 .info-notice > *:last-child, .messages > *:last-child {
   margin-bottom: 0;
 }
 
-/* line 107, src/scss/3_components/content/icons-messages.scss */
+/* line 107, src/scss/3_components/content/_icons-messages.scss */
 .info-notice {
   border-color: #002e62;
-  background: #fff url('../images/i.svg?1722d66e5b9') no-repeat 0.9rem 0.9rem/24px 24px;
+  background: #fff url('../images/i.svg?1740ba26717') no-repeat 0.9rem 0.9rem/24px 24px;
 }
 
 @media (min-width: 641px) {
-  /* line 107, src/scss/3_components/content/icons-messages.scss */
+  /* line 107, src/scss/3_components/content/_icons-messages.scss */
   .info-notice {
-    background: #fff url('../images/i.svg?1722d66e5b9') no-repeat 1.4rem 1.4rem/30px 30px;
+    background: #fff url('../images/i.svg?1740ba26717') no-repeat 1.4rem 1.4rem/30px 30px;
   }
 }
 
-/* line 116, src/scss/3_components/content/icons-messages.scss */
+/* line 116, src/scss/3_components/content/_icons-messages.scss */
 .no-svg .info-notice {
-  background-image: url('../images/i.png?1729343a245');
+  background-image: url('../images/i.png?1740ba26b27');
 }
 
-/* line 121, src/scss/3_components/content/icons-messages.scss */
+/* line 121, src/scss/3_components/content/_icons-messages.scss */
 ul.info-notice {
   padding: 1rem 1rem 1rem 4rem;
 }
 
 @media (min-width: 641px) {
-  /* line 121, src/scss/3_components/content/icons-messages.scss */
+  /* line 121, src/scss/3_components/content/_icons-messages.scss */
   ul.info-notice {
     padding: 1.4rem 1.4rem 1.4rem 7rem;
   }
 }
 
-/* line 134, src/scss/3_components/content/icons-messages.scss */
+/* line 134, src/scss/3_components/content/_icons-messages.scss */
 .messages-list {
   margin: 2.5rem 0;
   list-style: none;
 }
 
-/* line 138, src/scss/3_components/content/icons-messages.scss */
+/* line 138, src/scss/3_components/content/_icons-messages.scss */
 .field .messages-list,
 .form-wrapper .messages-list {
   margin-bottom: 0;
 }
 
-/* line 147, src/scss/3_components/content/icons-messages.scss */
+/* line 147, src/scss/3_components/content/_icons-messages.scss */
 .messages--error {
   border-color: #e34f4f;
-  background: #fff url('../images/wrong.svg?1722d66e5bb') no-repeat 0.9rem 0.9rem/24px 24px;
+  background: #fff url('../images/wrong.svg?1740ba26717') no-repeat 0.9rem 0.9rem/24px 24px;
 }
 
 @media (min-width: 641px) {
-  /* line 147, src/scss/3_components/content/icons-messages.scss */
+  /* line 147, src/scss/3_components/content/_icons-messages.scss */
   .messages--error {
-    background: #fff url('../images/wrong.svg?1722d66e5bb') no-repeat 1.4rem 1.4rem/30px 30px;
+    background: #fff url('../images/wrong.svg?1740ba26717') no-repeat 1.4rem 1.4rem/30px 30px;
   }
 }
 
-/* line 155, src/scss/3_components/content/icons-messages.scss */
+/* line 155, src/scss/3_components/content/_icons-messages.scss */
 .no-svg .messages--error {
-  background-image: url('../images/wrong.png?1729343a8be');
+  background-image: url('../images/wrong.png?1740ba26fe0');
 }
 
-/* line 160, src/scss/3_components/content/icons-messages.scss */
+/* line 160, src/scss/3_components/content/_icons-messages.scss */
 .messages--status {
   border-color: #3fa940;
-  background: #fff url('../images/status.svg?1722d66e5bb') no-repeat 0.9rem 0.9rem/24px 24px;
+  background: #fff url('../images/status.svg?1740ba26717') no-repeat 0.9rem 0.9rem/24px 24px;
 }
 
 @media (min-width: 641px) {
-  /* line 160, src/scss/3_components/content/icons-messages.scss */
+  /* line 160, src/scss/3_components/content/_icons-messages.scss */
   .messages--status {
-    background: #fff url('../images/status.svg?1722d66e5bb') no-repeat 1.4rem 1.4rem/30px 30px;
+    background: #fff url('../images/status.svg?1740ba26717') no-repeat 1.4rem 1.4rem/30px 30px;
   }
 }
 
-/* line 168, src/scss/3_components/content/icons-messages.scss */
+/* line 168, src/scss/3_components/content/_icons-messages.scss */
 .no-svg .messages--status {
-  background-image: url('../images/status.png?17293439e6b');
+  background-image: url('../images/status.png?1740ba26842');
 }
 
-/* line 173, src/scss/3_components/content/icons-messages.scss */
+/* line 173, src/scss/3_components/content/_icons-messages.scss */
 .messages--warning {
   border-color: #db6304;
-  background: #fff url('../images/warning.svg?1722d66e5bb') no-repeat 0.9rem 0.9rem/24px 24px;
+  background: #fff url('../images/warning.svg?1740ba26717') no-repeat 0.9rem 0.9rem/24px 24px;
 }
 
 @media (min-width: 641px) {
-  /* line 173, src/scss/3_components/content/icons-messages.scss */
+  /* line 173, src/scss/3_components/content/_icons-messages.scss */
   .messages--warning {
-    background: #fff url('../images/warning.svg?1722d66e5bb') no-repeat 1.4rem 1.4rem/30px 30px;
+    background: #fff url('../images/warning.svg?1740ba26717') no-repeat 1.4rem 1.4rem/30px 30px;
   }
 }
 
-/* line 181, src/scss/3_components/content/icons-messages.scss */
+/* line 181, src/scss/3_components/content/_icons-messages.scss */
 .no-svg .messages--warning {
-  background-image: url('../images/warning.png?1729343a0f7');
+  background-image: url('../images/warning.png?1740ba26a24');
 }
 
-/* line 186, src/scss/3_components/content/icons-messages.scss */
+/* line 186, src/scss/3_components/content/_icons-messages.scss */
 .messages__list {
   margin: 0;
 }
 
-/* line 190, src/scss/3_components/content/icons-messages.scss */
+/* line 190, src/scss/3_components/content/_icons-messages.scss */
 .messages__item {
   font-size: 1.8rem;
 }
 
-/* line 193, src/scss/3_components/content/icons-messages.scss */
+/* line 193, src/scss/3_components/content/_icons-messages.scss */
 .messages__item:first-child {
   margin-top: 0;
 }

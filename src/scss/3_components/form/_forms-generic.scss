@@ -36,10 +36,68 @@
   padding-top: 1rem;
 }
 
-.fieldset-wrapper {
-  margin-top: 2.5rem;
+fieldset {
+  border: none;
+
+  .fieldset-wrapper {
+    margin-top: 2.5rem;
+    padding-left: 0.3rem;
+  }
 }
 
 .password-suggestions ul li {
   margin-left: 1.2em;
+}
+
+label {
+  display: block;
+}
+
+[type='text'],
+[type='search'],
+[type='tel'],
+[type='url'],
+[type='email'],
+[type='password'],
+[type='date'],
+[type='time'],
+[type='number'] {
+  width: 100%;
+  max-width: 56rem; // fallback for older browsers
+  max-width: fit-content;
+}
+
+[size='30'],
+[size='40'],
+[size='50'],
+[size='60'] {
+  max-width: 65rem;
+}
+
+[type='text'],
+[type='search'],
+[type='tel'],
+[type='url'],
+[type='email'],
+[type='password'],
+[type='date'],
+[type='time'],
+[type='number'],
+textarea {
+  box-sizing: border-box;
+  border: 1px solid $grey-lightest;
+  color: $charcoal;
+  margin: .5em 0;
+  padding: .6rem;
+  min-height: 3.5rem;
+
+  /* Highlight the form elements that caused a form submission error. */
+  &.error,
+  &.error:focus {
+    border: 1px solid $error;
+    outline-color: $error;
+    background-color: $error-bg; // lightpink
+    box-shadow: none;
+    color: $charcoal;
+  }
 }

@@ -26,10 +26,13 @@ $chroma: add-colors((
   'grey':                 #999,
   grey-dark:              #4d4d4d,
   grey-light:             #e8e7e7,
-  grey-lightest:          #f0f0f0,
+  grey-lightest:          #ccc,
   grey-medium:            #cdcdcd,
   white:                  #fff,
   offwhite:               #f3f8fc,
+  dark-red:               #b63a1b, // 4.53:1 with light-pink
+  hc-red:                 #d1431f, // 4.63:1 with white
+  light-pink:             #ffdae0, // 4.53:1 with dark-red
 
   brand-primary:          #002e62,
 
@@ -57,6 +60,8 @@ $chroma: add-colors('functional', (
   button-action:          #3fa940,
 
   mark-bg:                #ff0,
+  error:                  'dark-red',
+  error-bg:               'light-pink',
 
   menu-background:        #002e62,
   menu-item-hover:        #3e1151,
@@ -91,6 +96,7 @@ $grey-lightest: color(grey-lightest);
 $grey-medium: color(grey-medium);
 $white: color('white');
 $offwhite: color(offwhite);
+$hc-red: color(hc-red);
 
 $brand-primary: color(brand-primary);
 
@@ -113,6 +119,8 @@ $button-disabled: color(button-disabled);
 $button-action: color(button-action);
 
 $mark-bg: color(mark-bg);
+$error: color(error);
+$error-bg: color(error-bg);
 
 $menu-background: color(menu-background);
 $menu-item-hover: color(menu-item-hover);
