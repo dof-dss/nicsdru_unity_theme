@@ -4,15 +4,13 @@
 version: 2
 
 jobs:
-  # Code linting.
-  lint:
+  install:
     docker:
-      - image: circleci/node:latest
+      - image: circleci/node:lts
     steps:
       - checkout
       - restore_cache:
-          keys:
-            - node_modules-{{ checksum "package.json" }}
+          key: node_modules-{{ checksum "package.json" }}
       - run:
           name: Fetch dependencies
           command: npm install
@@ -20,11 +18,32 @@ jobs:
           key: node_modules-{{ checksum "package.json" }}
           paths:
             - node_modules
+      - persist_to_workspace:
+          root: ./
+          paths:
+            - ./
+  # Code linting.
+  lint:
+    docker:
+      - image: circleci/node:lts
+    steps:
+      - attach_workspace:
+          at: ./
       - run:
           name: Lint all code
           command: |
             npm run lint
-
+  # Build front-end assets.
+  build_assets:
+    docker:
+      - image: circleci/node:lts
+    steps:
+      - attach_workspace:
+          at: ./
+      - run:
+          name: Fetch dependencies
+          command: npm run build
+  # Static analysis of any PHP/Drupal code.
   phpcs:
     docker:
       - image: circleci/php:7.2.20-apache-browsers
@@ -47,7 +66,13 @@ jobs:
 
 workflows:
   version: 2
-  lint-build:
+  build-static-analysis:
     jobs:
-      - lint
+      - install
+      - lint:
+          requires:
+            - install
+      - build_assets:
+          requires:
+            - install
       - phpcs
