@@ -1,0 +1,212 @@
+/*
+ * @file
+ * Provides styling for search facets.
+ */
+@import '../../init/index';
+
+// Search facets
+//
+// A search facet is a list of contextual links used to scope (filter) search results.
+//
+// Style guide: components.search-facets
+
+$facet-btn-color: #333 !default;
+$facet-btn-hover: #111 !default;
+$facet-btn-focus-outline: #949494 !default;
+$facet-btn-active: #262626 !default;
+// Use the sass lightness function to determine whether to use a light / dark text color in the facet btn.
+$facet-text-color: null;
+@if(lightness($facet-btn-color) < 50) {
+  $facet-text-color: #fff;
+}
+@else {
+  $facet-text-color: $text;
+}
+
+.facet {
+  &--btn {
+    background-color: $facet-btn-color;
+    // Touch target of 44px (border + height).
+    border-top: 2px solid #fff;
+    border-bottom: 2px solid #fff;
+    display: block;
+    line-height: 4rem;
+    min-height: 4rem;
+    min-width: 100px;
+    padding: 0 .5em;
+    text-align: left;
+    text-decoration: none;
+    vertical-align: middle;
+    width: 100%;
+    font-size: 1.6rem;
+
+    @include breakpoint($phab, $no-query: true) {
+      min-width: 120px;
+      font-size: 1.8rem;
+    }
+
+    &:link,
+    &:visited {
+      color: $facet-text-color;
+    }
+
+    &:hover {
+      background-color: $facet-btn-hover;
+      text-decoration: none;
+    }
+
+    &:focus {
+      outline: 3px solid $facet-btn-focus-outline;
+      outline-offset: -2px;
+      background-color: $facet-btn-color;
+      border-bottom-width: 2px;
+    }
+
+    &:active {
+      background-color: $facet-btn-active;
+      border-color: $facet-btn-active;
+    }
+
+    .ico-arrow-down {
+      fill: $facet-text-color;
+      float: right;
+      height: 2rem;
+      margin: 1rem;
+      width: 2rem;
+      transition: transform .4s ease;
+    }
+
+    &.active .ico-arrow-down {
+      transform: rotate(270deg);
+    }
+  }
+
+  &--dropdown-links {
+    margin: 1em 0;
+  }
+
+  &--title {
+    margin: 0;
+  }
+
+  &-list__links {
+    margin: .1rem 0 .6rem;
+  }
+
+  &-item,
+  &-summary-item--facet {
+    margin: 0;
+    padding: 0;
+
+    &__label {
+      font-size: 1.6rem;
+      line-height: 2.4rem;
+      padding: 1rem 0;
+
+      &::after {
+        content: ':';
+      }
+    }
+
+    a,
+    &--link {
+      display: inline-flex;
+      flex-flow: row nowrap;
+      align-items: center;
+      width: auto;
+      font-size: 1.6rem;
+      line-height: 2.4rem;
+      padding: .4rem .6rem;
+      margin: .6rem 0;
+      text-decoration: none;
+
+      .facet-item__value {
+        text-decoration: underline;
+      }
+    }
+
+    &-summary-item--facet a {
+      margin: 0 .4rem;
+    }
+
+    &__value {
+      display: inline-block;
+      padding: 0 .4rem;
+    }
+
+    &__count {
+      text-decoration: none;
+    }
+
+    &__status {
+      display: inline-block;
+      position: relative;
+      vertical-align: middle;
+      width: 2rem;
+      height: 2rem;
+      margin: 0;
+      padding: 0;
+      background-color: $ash-grey;
+      color: #fff;
+      text-decoration: none;
+
+      &::before,
+      &::after {
+        content: ' ';
+        display: block;
+        width: .2rem;
+        height: 1rem;
+        background-color: #fff;
+        transform: rotate(45deg);
+        position: absolute;
+        left: .9rem;
+        top: .5rem;
+      }
+
+      &::after {
+        transform: rotate(130deg);
+      }
+    }
+  }
+
+  &-item a.is-active,
+  &-summary-item--facet a {
+    background-color: #cee4f6;
+    color: #333;
+
+    .facet-item__value {
+      text-decoration: none;
+      padding-left: 0;
+    }
+
+    &:hover .facet-item__status,
+    &:focus .facet-item__status {
+      background-color: darkorange;
+    }
+  }
+
+  &-summary-item--facet a {
+    margin: 0 .5em;
+  }
+
+  &-summary {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+
+    &__label {
+      margin: 0;
+      padding: 0;
+    }
+
+    &__list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-flow: row wrap;
+    }
+  }
+}
