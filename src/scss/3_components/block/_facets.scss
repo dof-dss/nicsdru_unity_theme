@@ -2,7 +2,6 @@
  * @file
  * Provides styling for search facets.
  */
-@import '../../init/index';
 
 // Search facets
 //
@@ -10,9 +9,9 @@
 //
 // Style guide: components.search-facets
 
-$facet-btn-color: #333 !default;
-$facet-btn-hover: #111 !default;
-$facet-btn-focus-outline: #949494 !default;
+$facet-btn-color: $charcoal !default;
+$facet-btn-hover: $ash-grey !default;
+$facet-btn-focus-outline: $link-hover !default;
 $facet-btn-active: #262626 !default;
 // Use the sass lightness function to determine whether to use a light / dark text color in the facet btn.
 $facet-text-color: null;
@@ -26,12 +25,10 @@ $facet-text-color: null;
 .facet {
   &--btn {
     background-color: $facet-btn-color;
-    // Touch target of 44px (border + height).
-    border-top: 2px solid #fff;
-    border-bottom: 2px solid #fff;
+    // Touch target of 44px.
     display: block;
-    line-height: 4rem;
-    min-height: 4rem;
+    line-height: 4.4rem;
+    min-height: 4.4rem;
     min-width: 100px;
     padding: 0 .5em;
     text-align: left;
@@ -56,8 +53,8 @@ $facet-text-color: null;
     }
 
     &:focus {
-      outline: 3px solid $facet-btn-focus-outline;
-      outline-offset: -2px;
+      outline: 3px dotted $facet-btn-focus-outline;
+      outline-offset: 0px;
       background-color: $facet-btn-color;
       border-bottom-width: 2px;
     }
@@ -89,8 +86,13 @@ $facet-text-color: null;
     margin: 0;
   }
 
+  &s-widget-links {
+    background-color: #f6f6f6;
+    box-shadow: 0 0 1px inset $charcoal;
+  }
+
   &-list__links {
-    margin: .1rem 0 .6rem;
+    margin: 0 0 .6rem;
   }
 
   &-item,
@@ -113,12 +115,22 @@ $facet-text-color: null;
       display: inline-flex;
       flex-flow: row nowrap;
       align-items: center;
-      width: auto;
+      width: 100%;
       font-size: 1.6rem;
       line-height: 2.4rem;
-      padding: .4rem .6rem;
-      margin: .6rem 0;
+      padding: 1rem .6rem;
       text-decoration: none;
+
+      &:hover {
+        .facet-item__value {
+          text-decoration: none;
+        }
+      }
+
+      &:focus {
+        background-color: $facet-btn-focus-outline;
+        color: #fff;
+      }
 
       .facet-item__value {
         text-decoration: underline;
@@ -144,7 +156,7 @@ $facet-text-color: null;
       vertical-align: middle;
       width: 2rem;
       height: 2rem;
-      margin: 0;
+      margin-right: .6rem;
       padding: 0;
       background-color: $ash-grey;
       color: #fff;
@@ -171,7 +183,7 @@ $facet-text-color: null;
 
   &-item a.is-active,
   &-summary-item--facet a {
-    background-color: #cee4f6;
+    //background-color: #cee4f6;
     color: #333;
 
     .facet-item__value {
@@ -179,8 +191,20 @@ $facet-text-color: null;
       padding-left: 0;
     }
 
-    &:hover .facet-item__status,
-    &:focus .facet-item__status {
+    &:focus {
+      color: #fff;
+
+      .facet-item__status {
+        background-color: #fff;
+
+        &::before,
+        &::after {
+          background-color: $ash-grey;
+        }
+      }
+    }
+
+    &:hover .facet-item__status {
       background-color: darkorange;
     }
   }

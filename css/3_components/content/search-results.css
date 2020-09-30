@@ -1,1 +1,25 @@
-ol.search-results{padding-left:0}.search-results li{border-bottom:1px solid #d3d7d9;padding-bottom:.4285em;margin-bottom:.5em}.search-results li:last-child{border-bottom:0;padding-bottom:0;margin-bottom:1em}.search-results .search-snippet-info{padding-left:0}
+/* line 3, src/scss/3_components/content/search-results.scss */
+ol.search-results {
+  padding-left: 0;
+}
+
+/* line 8, src/scss/3_components/content/search-results.scss */
+.search-results li {
+  border-bottom: 1px solid #d3d7d9;
+  padding-bottom: .4285em;
+  margin-bottom: .5em;
+}
+
+/* line 13, src/scss/3_components/content/search-results.scss */
+.search-results li:last-child {
+  border-bottom: 0;
+  padding-bottom: 0;
+  margin-bottom: 1em;
+}
+
+/* line 20, src/scss/3_components/content/search-results.scss */
+.search-results .search-snippet-info {
+  padding-left: 0;
+}
+
+/*# sourceMappingURL=search-results.css.map */

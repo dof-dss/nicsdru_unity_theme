@@ -1,7 +1,7 @@
 /* eslint-disable */
 (function ($, Drupal) {
   Drupal.behaviors.nicsdruUnityFacets = {
-    attach: function (context, settings) {
+    attach: function attach(context) {
       // Add some progressive enhancement to the `.facet--title`.
       $('.facet--dropdown-links .facet--title', context).once('facetDropdown').each(function (index, widget) {
         var $widget = $(widget);
@@ -14,7 +14,7 @@
           'aria-expanded' : 'false',
           'aria-controls' : $facetId,
         });
-        // $widget.append('<svg aria-hidden="true" class="ico ico-arrow-down"><use xlink:href="#arrow"></use></svg>');
+        $widget.append('<svg aria-hidden="true" class="ico ico-arrow-down"><use xlink:href="#arrow"></use></svg>');
         $widget.wrapInner($wrapper);
 
         $widgetLinks.toggle();
@@ -30,6 +30,15 @@
         };
         // Add handler for clicks on widget links.
         $widgetBtn.on('click', clickHandler);
+
+        console.log($widgetLinks.find(".facet-item--link"));
+
+        if ($widgetLinks.find('.facet-item--link').hasClass('is-active')) {
+          console.log('active');
+          $widgetBtn.attr('aria-expanded', 'true');
+          $widgetBtn.addClass('active');
+          $widgetLinks.toggle();
+        }
       });
     },
   }
