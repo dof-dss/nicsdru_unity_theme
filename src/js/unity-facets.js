@@ -30,11 +30,8 @@
         };
         // Add handler for clicks on widget links.
         $widgetBtn.on('click', clickHandler);
-
-        console.log($widgetLinks.find(".facet-item--link"));
-
+        // If a filter is selected, show facet as expanded.
         if ($widgetLinks.find('.facet-item--link').hasClass('is-active')) {
-          console.log('active');
           $widgetBtn.attr('aria-expanded', 'true');
           $widgetBtn.addClass('active');
           $widgetLinks.toggle();
