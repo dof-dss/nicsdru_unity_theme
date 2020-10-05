@@ -293,12 +293,14 @@ $main-menu-span: container !default;
     opacity: 0;
     max-height: 5rem;
     min-height: 5rem;
+    display: none;
 
     @media screen and (max-width: $tab) {
       top: -5.2rem;
       left: .5rem;
       width: 5rem;
       height: 5rem;
+      display: block;
 
       /* Toggler Animation */
       &:checked + .hamburger > div {
@@ -321,6 +323,14 @@ $main-menu-span: container !default;
         height: auto;
         transition: max-height 1s ease;
       }
+    }
+  }
+
+  .toggler-label {
+    display: none;
+
+    @media screen and (max-width: $tab) {
+      display: block;
     }
   }
 
