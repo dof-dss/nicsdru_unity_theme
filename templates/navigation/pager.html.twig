@@ -60,35 +60,29 @@
       {# Now generate the actual pager piece. #}
       {% for key, item in items.pages %}
 
-        {# Add classes to some list items to control visibility at different screen sizes #}
-        {% if items.first and items.last %}
-          {% if current != key %}
-            {% set pagermob = 'pager-hide-small' %}
-          {% else %}
-            {% set pagermob = '' %}
-          {% endif %}
-          {% if current == key or (current + 1) == key or (current - 1) == key %}
-            {% set pagerphab = '' %}
-          {% else %}
-            {% set pagerphab = 'pager-hide-phab' %}
-          {% endif %}
-        {% elseif not items.first %}
-          {% if current == key or (current + 1) == key or (current + 2) == key %}
-            {% set pagermob = '' %}
-          {% else %}
-            {% set pagermob = 'pager-hide-small' %}
-          {% endif %}
-        {% elseif not items.last %}
-          {% if current == key or (current - 1) == key or (current - 2) == key %}
-            {% set pagermob = '' %}
-          {% else %}
-            {% set pagermob = 'pager-hide-small' %}
-          {% endif %}
-        {% endif %}
+        {# Initialise variables for each loop #}
+        {% set pager_attr, pagermob, pagerphab = create_attribute(), false, false %}
 
-        {% set pagerdisplay = pagermob ~ ' ' ~ pagerphab %}
+        {# If on first or last page on mobile, hide all but the first or last three page links; on other pages hide all
+        but the current page link #}
+        {% set pagermob = (items.first and items.last and current != key)
+          or (not items.first and current != key and (current + 1) != key and (current + 2) != key)
+          or (not items.last and current != key and (current - 1) != key and (current - 2) != key) ? true : false %}
 
-        <li class="pager__item list-item{{ current == key ? ' is-active' : '' }} {{ pagerdisplay }}">
+        {# If not on first or last page, hide all but the current page link and the pages links either side when on
+         phablet screen #}
+        {% set pagerphab = (items.first and items.last and current != key and (current + 1) != key
+          and (current - 1) != key) ? true : false %}
+
+        {% set pager_classes = [
+          'pager__item',
+          'list-item',
+          current == key ? 'is-active',
+          pagermob ? 'pager-hide-small',
+          pagerphab ? 'pager-hide-phab',
+        ] %}
+
+        <li{{ pager_attr.addClass(pager_classes) }}>
           {% if current == key %}
             {% set title = 'Current page'|t %}
           {% else %}
