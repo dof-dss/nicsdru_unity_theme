@@ -8,6 +8,7 @@ unity-global-styling:
     js/unity-menu-script.js: { minified: true }
     js/ext-win-script.js: { minified: true }
     js/empty-tags-script.js: { minified: true }
+    js/unity-facets.js: { minified: true }
   dependencies:
     - core/drupal
     - core/jquery
@@ -20,6 +21,7 @@ nicsdru-authenticated-styles:
   css:
     theme:
       css/drupal-admin.css: { minified: true, weight: -5 }
+      css/drupal-diff.css: { minified: true, weight: -6 }
 
 # Provide a custom modernizer script
 nicsdru-modernizr:

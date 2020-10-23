@@ -54,11 +54,35 @@
       {% endif %}
       {# Add an ellipsis if there are further previous pages. #}
       {% if ellipses.previous %}
-        <li class="pager__item list-item pager__item--ellipsis" role="presentation">&hellip;</li>
+        <li class="pager__item list-item pager__item--ellipsis {{ items.last ? 'pager-ellipsis-hide' : '' }}" role="presentation">&hellip;</li>
       {% endif %}
+
       {# Now generate the actual pager piece. #}
       {% for key, item in items.pages %}
-        <li class="pager__item list-item{{ current == key ? ' is-active' : '' }}">
+
+        {# Initialise variables for each loop #}
+        {% set pager_attr, pagermob, pagerphab = create_attribute(), false, false %}
+
+        {# If on first or last page on mobile, hide all but the first or last three page links; on other pages hide all
+        but the current page link #}
+        {% set pagermob = (items.first and items.last and current != key)
+          or (not items.first and current != key and (current + 1) != key and (current + 2) != key)
+          or (not items.last and current != key and (current - 1) != key and (current - 2) != key) ? true : false %}
+
+        {# If not on first or last page, hide all but the current page link and the pages links either side when on
+         phablet screen #}
+        {% set pagerphab = (items.first and items.last and current != key and (current + 1) != key
+          and (current - 1) != key) ? true : false %}
+
+        {% set pager_classes = [
+          'pager__item',
+          'list-item',
+          current == key ? 'is-active',
+          pagermob ? 'pager-hide-small',
+          pagerphab ? 'pager-hide-phab',
+        ] %}
+
+        <li{{ pager_attr.addClass(pager_classes) }}>
           {% if current == key %}
             {% set title = 'Current page'|t %}
           {% else %}
@@ -74,7 +98,7 @@
       {% endfor %}
       {# Add an ellipsis if there are further next pages. #}
       {% if ellipses.next %}
-        <li class="pager__item list-item pager__item--ellipsis" role="presentation">&hellip;</li>
+        <li class="pager__item list-item pager__item--ellipsis {{ items.first ? 'pager-ellipsis-hide' : '' }}" role="presentation">&hellip;</li>
       {% endif %}
       {# Print next item if we are not on the last page. #}
       {% if items.next %}

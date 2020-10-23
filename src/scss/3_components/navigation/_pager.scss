@@ -8,36 +8,104 @@
 // Weight: 0
 //
 // Style guide: components.navigation.pager
-nav.pager {
-  clear: both;
-  padding: 0;
-  margin: 1.2rem 0 2.4rem;
-  text-align: center;
-
-  li {
-    display: inline-block;
-    list-style-type: none;
+.pager {
+  .pager__items {
+    display: flex;
+    flex-flow: row wrap;
+    line-height: 5rem;
+    text-align: left;
+    list-style: none;
+    margin: 1.5em 0;
+    padding: 0;
   }
 
-  a {
-    font-size: 1.5rem;
-  }
+  .pager__item {
+    margin: .2rem;
+    padding: 0;
+    border: 0;
 
-  // Baseline styles for pager elements.
-  .pager__item,
-  .pager-item,
-  .pager-first,
-  .pager-previous,
-  .pager-next,
-  .pager-last,
-  .pager-ellipsis,
-  .is-active {
-    display: inline-block;
-    padding: 0 .3334em;
-  }
+    &--first {
+      margin-left: 0;
+    }
 
-  /* The current page's list item. */
-  .pager__item.is-active {
-    font-weight: bold;
+    &--last {
+      margin-right: 0;
+    }
+
+    &.pager-hide-small {
+      @media screen and (max-width: 476px) {
+        display: none;
+      }
+    }
+
+    &.pager-hide-phab {
+      @media screen and (max-width: $phab) {
+        display: none;
+      }
+    }
+
+    a,
+    .pager__item-current,
+    &--ellipsis {
+      display: inline-block;
+      box-sizing: border-box;
+      font-size: 1.6rem;
+      min-width: 4.4rem;
+      min-height: 4.4rem;
+      line-height: 4.2rem;
+      margin: 0;
+      padding: 0 .6rem;
+      text-align: center;
+      text-decoration: none;
+
+      @include breakpoint($tab) {
+        min-width: 4.5rem;
+        min-height: 4.5rem;
+        line-height: 4.3rem;
+      }
+    }
+
+    &--ellipsis {
+      min-width: 0;
+
+      &.pager-ellipsis-hide {
+        @media screen and (max-width: 476px) {
+          display: none;
+        }
+      }
+    }
+
+    a,
+    a:active,
+    a:focus,
+    a:visited {
+      color: $link;
+      background-color: #fff;
+      border: 1px solid $ash-grey;
+    }
+
+    a:focus {
+      outline: 3px solid $link;
+    }
+
+    a:hover {
+      color: #fff;
+      background-color: $link-hover;
+      border-color: $link-hover;
+      text-decoration: none;
+    }
+
+    &.is-active a,
+    &.is-active .pager__item-current {
+      background-color: $link-active;
+      color: #fff;
+    }
+
+    &--first a,
+    &--previous a,
+    &--next a,
+    &--last a {
+      padding: 0 .6rem;
+    }
   }
 }
