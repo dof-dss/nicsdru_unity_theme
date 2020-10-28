@@ -46,13 +46,13 @@ jobs:
   # Static analysis of any PHP/Drupal code.
   phpcs:
     docker:
-      - image: circleci/php:7.2.20-apache-browsers
+      - image: circleci/php:7.3.14-apache-browsers
     steps:
       - checkout
       - run:
           name: Fetch phpcs and dependencies
           command: |
-            composer require drupal/coder --prefer-stable --no-interaction --optimize-autoloader
+            composer require drupal/coder:^8.3 --prefer-stable --prefer-dist
             # Move vendor directory up a level as we don't want to code-check all of that.
             mv vendor ../
       - run:

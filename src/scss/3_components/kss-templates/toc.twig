@@ -1,0 +1,26 @@
+{#
+/**
+ * @file
+ * Theme override to display a table of contents.
+ *
+ * Variables:
+ * - heading: [string] Accessible heading.
+ * - toc: [array] List of table of content items.
+ *   The list is keyed by the following elements:
+ *   - title: [string] Title of the toc menu item.
+ *   - url: [string] URL of the item.
+ */
+#}
+<nav class="sub-menu toc-menu" aria-labelledby="toc-menu-heading">
+  <h2 id="toc-menu-heading" class="menu-title">Contents</h2>
+  <a href="#toc-main-skip" class="skip-link visually-hidden focusable" aria-label="Skip table of contents" tabindex="-1">
+    "Skip table of contents"
+  </a>
+  <ul class="nav-menu">
+    {% for item in toc %}
+    <li class="nav-item">
+      <a href="{{ item.url }}" tabindex="-1">{{ item.text }}</a>
+    </li>
+  </ul>
+</nav>
+<a id="toc-main-skip" tabindex="-1" class="visually-hidden" aria-hidden="true"></a>
