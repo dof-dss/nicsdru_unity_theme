@@ -9,6 +9,10 @@ unity-global-styling:
     js/ext-win-script.js: { minified: true }
     js/empty-tags-script.js: { minified: true }
     js/unity-facets.js: { minified: true }
+    js/unity-menu-links.js: { minified: true }
+    js/unity-menu-item-links.js: { minified: true }
+    js/unity-menu-popup-menu-links.js: { minified: true }
+    js/unity-menu-popup-menu-item-links.js: { minified: true }
   dependencies:
     - core/drupal
     - core/jquery

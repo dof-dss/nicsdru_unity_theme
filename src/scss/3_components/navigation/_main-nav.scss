@@ -73,6 +73,7 @@ $main-menu-span: container !default;
         margin: 0;
         background: #2e3d4a;
         overflow: visible !important;
+        list-style: none;
 
         @media screen and (max-width: $tab) {
           position: static;

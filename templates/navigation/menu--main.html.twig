@@ -26,21 +26,14 @@
 #}
 {{ menus.menu_links(items, attributes, 0) }}
 
-{% macro menu_links(items, attributes, menu_level, parent) %}
+{% macro menu_links(items, attributes, menu_level) %}
   {% import _self as menus %}
   {% if items %}
     {% if menu_level == 0 %}
-      <ul{{ attributes.addClass('menu menu-main').removeAttribute('region') }}>
+      <ul id="menu-main" class="menu menu-main" role="menubar">
     {% else %}
       {# Add parent link and text to its child menu list #}
-      <ul{{ attributes.addClass('menu-main_sub').removeAttribute('region') }}>
-        <li class="menu-item leaf first">
-          <a href="{{ parent.url }}" class="menu-link">
-            {% trans %}
-              {{ parent.title }} page
-            {% endtrans %}
-          </a>
-        </li>
+      <ul class="menu-main_sub" role="menu">
     {% endif %}
     {% for item in items %}
        {%
@@ -52,11 +45,10 @@
           loop.last ? 'last',
         ]
       %}
-      <li{{ item.attributes.addClass(classes) }}>
+      <li{{ item.attributes.addClass(classes).setAttribute('role', 'none') }}>
         {{ link(item.title, item.url, { 'class':['menu-link'] }) }}
       {% if item.is_expanded %}
-          {% set parent = item %}
-          {{ menus.menu_links(item.below, attributes, menu_level + 1, parent) }}
+          {{ menus.menu_links(item.below, attributes, menu_level + 1) }}
       {% endif %}
       </li>
     {% endfor %}
