@@ -26,7 +26,7 @@
   margin: 1% auto;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 50% 42.5%;
+  -ms-grid-columns: 50% 7.5% 42.5%;
   grid-template-columns: 50% 42.5%;
   grid-template-areas: 'top-left top-right';
   justify-content: space-between;
@@ -70,7 +70,7 @@
 .top_right {
   -ms-grid-row-align: center;
   align-self: center;
-  -ms-grid-column: 2;
+  -ms-grid-column: 3;
   grid-area: top-right;
   float: right;
 
