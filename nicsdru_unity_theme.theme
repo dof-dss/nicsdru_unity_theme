@@ -105,7 +105,7 @@ function nicsdru_unity_theme_preprocess_html(&$variables) {
  */
 function nicsdru_unity_theme_preprocess_form(array &$variables) {
   switch ($variables['element']['#id']) {
-    case "block-exposedformnews-searchnews-search-page":
+    case "block-exposedformnewsnews-search-api":
     case "block-exposedformpublication-search-api":
       $variables['attributes']['class'][] = Html::cleanCssIdentifier('search-form');
       $variables['attributes']['class'][] = Html::cleanCssIdentifier('search-form--page');
@@ -119,8 +119,6 @@ function nicsdru_unity_theme_preprocess_form(array &$variables) {
 function nicsdru_unity_theme_preprocess_views_view(&$variables) {
   $variables['attributes']['role'] = 'presentation';
 
-  kint($variables);
-
   if ($variables['id'] === 'search') {
     $variables['exposed']['#attributes']['class'][] = Html::cleanCssIdentifier('search-form');
     $variables['exposed']['#attributes']['class'][] = Html::cleanCssIdentifier('search-form--site');
@@ -132,11 +130,6 @@ function nicsdru_unity_theme_preprocess_views_view(&$variables) {
     }
     // The label should be visually hidden.
     $variables['exposed']['query']['#title_display'] = 'invisible';
-  }
-
-  if ($variables['id'] === 'news_search' || $variables['id'] === 'publications_search' || $variables['id'] === 'consultations_search') {
-    $variables['exposed']['#attributes']['class'][] = Html::cleanCssIdentifier('search-form');
-    $variables['exposed']['#attributes']['class'][] = Html::cleanCssIdentifier('search-form--page');
   }
 }
 
