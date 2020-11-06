@@ -24,12 +24,12 @@
   overflow: auto;
   padding: 1% 2% 2%;
   background: $footer-background;
-  border-top: 4px solid $footer-border;
+  border-top: 9px solid $footer-border;
   max-width: $max-grid-width;
   margin: 0 auto;
 
   p {
-    color: $footer-text;
+    //color: $footer-text;
 
     @media screen and (max-width: $tab) {
       margin: 0;
@@ -53,9 +53,9 @@
     margin: 0;
   }
 
-  a {
-    color: $footer-border;
-  }
+  //a {
+  //  color: $footer-border;
+  //}
 }
 
 .footer-area {
