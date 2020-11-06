@@ -1,0 +1,51 @@
+// Table of contents
+//
+// A list of links to navigate to sub headings within a page.
+//
+// Markup: ../kss-templates/toc.twig
+//
+// Weight: 0
+//
+// Style guide: components.navigation.toc
+
+.toc-menu {
+  background: transparent;
+  border-top: 1px solid #999;
+  border-bottom: 1px solid #999;
+  margin: 1em 0 1.5em;
+  padding: 0;
+
+  .skip-link {
+    margin: 1em 0;
+  }
+
+  .menu-title {
+    @include responsive-typo-map($normal-text);
+    font-weight: bold;
+    margin: 1em 0 .5em;
+  }
+
+  .nav-menu {
+    margin: 0 0 2.7rem;
+    list-style: none;
+    padding: 0;
+
+    .nav-item {
+      @include responsive-typo-map($normal-text);
+      margin: 0;
+      padding: 0 0 .6rem 1rem;
+      position: relative;
+
+      &::before {
+        content: '-';
+        position: absolute;
+        left: 0;
+        top: 0;
+      }
+
+      &:last-child {
+        padding-bottom: 0;
+      }
+    }
+  }
+}

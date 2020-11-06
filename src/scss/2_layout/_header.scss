@@ -26,9 +26,10 @@
   margin: 1% auto;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 1fr 1fr;
-  grid-template-columns: 1fr 1fr;
+  -ms-grid-columns: 50% 7.5% 42.5%;
+  grid-template-columns: 50% 42.5%;
   grid-template-areas: 'top-left top-right';
+  justify-content: space-between;
 
   @media screen and (max-width: $tab) {
     margin-bottom: 0;
@@ -41,7 +42,7 @@
 
 .top_left {
   min-height: 110px;
-  padding-left: 150px;
+  padding: 0;
   position: relative;
   -ms-grid-column: 1;
   grid-area: top-left;
@@ -69,9 +70,7 @@
 .top_right {
   -ms-grid-row-align: center;
   align-self: center;
-  -ms-grid-column-align: end;
-  justify-self: end;
-  -ms-grid-column: 2;
+  -ms-grid-column: 3;
   grid-area: top-right;
   float: right;
 
@@ -87,7 +86,7 @@
   }
 
   .region-search {
-    margin: 1% 0;
+    margin: .5rem 0;
 
     @media screen and (max-width: $tab) {
       width: 100%;
@@ -204,21 +203,12 @@
     .region-search {
       input[type='text'],
       input[type='search'] {
-        width: 100%;
-        height: 35px;
-        padding: 0 1rem;
         max-width: 100%;
         border: 0;
         margin: 0;
         float: none;
         border-radius: 0;
         background: #fff;
-      }
-
-      .form-submit {
-        height: 35px;
-        background: #fff resolve('search-icon.png') no-repeat center;
-        text-indent: -999rem;
       }
     }
   }
