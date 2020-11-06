@@ -212,7 +212,7 @@ function nicsdru_unity_theme_preprocess_media(&$variables) {
       default:
         $file_type = $mime_type;
     }
-    
+
     if (!empty($file)) {
       $variables['file_size'] = format_size($file->getSize(), \Drupal::languageManager()->getCurrentLanguage()->getId());
       $variables['file_type'] = $file_type;
