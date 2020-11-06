@@ -48,7 +48,12 @@
 @import 'content/links';
 @import 'content/icons-messages';
 
-
+// Content components
+//
+// Weight: -7
+//
+// Style guide: components.field
+@import 'field/file-link';
 
 
 // Standalone component libraries - TO REMOVE

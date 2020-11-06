@@ -3,11 +3,11 @@
   Drupal.behaviors.nicsdruUnityMainMenu = {
     attach: function (context, settings) {
       $('#main-menu').find('.expanded').once('has-submenu').each(function () {
-        $(this).children('a').attr('aria-expanded', 'false');
-        $(this).children('a').attr('aria-haspopup', 'true');
-        $(this).children('a').append('<span class="fas fa-caret-down"></span>');
+        $(this).children('button').attr('aria-expanded', 'false');
+        $(this).children('button').attr('aria-haspopup', 'true');
+        $(this).children('button').append('<svg aria-hidden="true" class="ico ico-arrow-down"><use xlink:href="#arrow"></use></svg>');
 
-        var $menuLink = $(this).children('a');
+        var $menuLink = $(this).children('button');
         var clickHandler = function (e) {
           e.preventDefault();
           $menuLink.attr('aria-expanded', function (i, attr) {
@@ -21,20 +21,6 @@
 
         $menuLink.on('click', clickHandler);
       });
-
-      if ($(window).width() > 766) {
-        $('#main-menu .menu-item').mouseenter(function () {
-          $(this).children('ul').css('display', 'block');
-        });
-        $('#main-menu .menu-item').mouseleave(function () {
-          var $this = $(this);
-          if (!$this.hasClass('open')) {
-            setTimeout(function () {
-              $this.children('ul').css('display', 'none');
-            }, 200);
-          }
-        });
-      }
     }
   }
 })(jQuery, Drupal);
