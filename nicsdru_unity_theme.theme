@@ -171,4 +171,3 @@ function nicsdru_unity_theme_preprocess_media(&$variables) {
     $variables['media_langcode'] = $variables['media']->language()->getId();
   }
 }
-
