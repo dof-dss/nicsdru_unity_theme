@@ -8,6 +8,13 @@
 // Weight: 0
 //
 // Style guide: components.navigation.pager
+$link: #0e6bb3 !default;
+$link-underline: #bbb !default;
+$link-active: #0e6bb3 !default;
+$link-hover: #0e6bb3 !default;
+$link-hover-background: rgba(75%, 75%, 75%, .25) !default;
+$link-visited: #0e6bb3 !default;
+$link-visited-underline: #707070 !default;
 .pager {
   .pager__items {
     display: flex;

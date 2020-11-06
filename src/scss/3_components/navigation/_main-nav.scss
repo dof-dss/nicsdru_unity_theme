@@ -55,7 +55,8 @@ $main-menu-span: container !default;
 
   .menu {
     &-main {
-      float: left;
+      display: flex;
+      //float: left;
       padding: 0;
       margin: 0;
       list-style: none;
@@ -71,7 +72,7 @@ $main-menu-span: container !default;
         z-index: 9999;
         padding: 0;
         margin: 0;
-        background: #2e3d4a;
+        background: $menu-background;
         overflow: visible !important;
 
         @media screen and (max-width: $tab) {
@@ -96,7 +97,7 @@ $main-menu-span: container !default;
           margin: 0;
           position: relative;
           width: 100%;
-          background: $menu-item-hover;
+          //background: $menu-item-hover;
 
           &.open,
           &:hover {
@@ -132,10 +133,10 @@ $main-menu-span: container !default;
           border-radius: 0;
           color: $white;
 
-          &:focus,
-          &:hover {
-            background: $menu-sub-item-hover;
-          }
+          //&:focus,
+          //&:hover {
+          //  background: $menu-sub-item-hover;
+          //}
 
           &.is-active {
             font-weight: bold;
@@ -157,12 +158,13 @@ $main-menu-span: container !default;
 
     &-item {
       @include adjust-font-size-to(14px);
+      line-height: 2.4rem;
       position: relative;
-      display: -moz-inline-stack;
-      zoom: 1;
-      vertical-align: top;
-      border-right: 1px solid $menu-separator;
-      float: left;
+      //display: -moz-inline-stack;
+      //zoom: 1;
+      //vertical-align: top;
+      //border-right: 1px solid $menu-separator;
+      //float: left;
       padding: 0;
       margin: 0;
 
@@ -172,7 +174,7 @@ $main-menu-span: container !default;
       }
 
       &.open {
-        background: $menu-item-hover;
+        //background: $menu-item-hover;
 
         .fas {
           transform: rotate(180deg);
@@ -186,7 +188,7 @@ $main-menu-span: container !default;
       }
 
       &:hover {
-        background: $menu-item-hover;
+        //background: $menu-item-hover;
 
         @media screen and (min-width: $tab) {
           .fas {
@@ -235,7 +237,8 @@ $main-menu-span: container !default;
     }
 
     &-link {
-      padding: 1.1rem 2rem;
+      border-bottom: 5px solid transparent;
+      padding: 1.1rem 2rem .4rem;
       display: block;
       text-decoration: none;
       color: #fff;
@@ -255,15 +258,15 @@ $main-menu-span: container !default;
       &:focus {
         background: $menu-item-hover;
 
-        @media screen and (max-width: $tab) {
-          background: lighten($menu-background, 10%);
-        }
+        //@media screen and (max-width: $tab) {
+        //  background: lighten($menu-background, 10%);
+        //}
       }
 
-      &:focus {
-        box-shadow: 0 0 5px 3px $menu-sub-item-hover;
-        outline: none;
-      }
+      //&:focus {
+      //  box-shadow: 0 0 5px 3px $menu-sub-item-hover;
+      //  outline: none;
+      //}
 
       .fas {
         padding-left: .5rem;
@@ -271,13 +274,16 @@ $main-menu-span: container !default;
     }
 
     .is-active {
-      background-color: $menu-item-hover;
-      color: $white;
+      //background-color: $menu-item-hover;
+      //color: $white;
+      background: rgba(191,191,191,.25);
+      border-bottom-color: #cad400;
+      //color: #333;
 
-      @media screen and (max-width: $tab) {
-        //padding: 1.3rem 2rem;
-        background: lighten($menu-background, 10%);
-      }
+      //@media screen and (max-width: $tab) {
+      //  //padding: 1.3rem 2rem;
+      //  background: lighten($menu-background, 10%);
+      //}
     }
   }
 
@@ -336,7 +342,7 @@ $main-menu-span: container !default;
 
   .hamburger {
     position: absolute;
-    top: -5.7rem;
+    top: -5.2rem;
     left: .5rem;
     z-index: 1;
     width: auto;
