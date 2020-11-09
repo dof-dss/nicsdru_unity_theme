@@ -21,8 +21,8 @@
 {% import _self as menus %}
 
 {#
-  We call a macro which calls itself to render the full tree.
-  @see https://twig.symfony.com/doc/1.x/tags/macro.html
+We call a macro which calls itself to render the full tree.
+@see https://twig.symfony.com/doc/1.x/tags/macro.html
 #}
 {{ menus.menu_links(items, attributes, 0) }}
 
@@ -30,10 +30,10 @@
   {% import _self as menus %}
   {% if items %}
     {% if menu_level == 0 %}
-      <ul id="menu-main" class="menu menu-main" role="menubar">
-    {% else %}
-      {# Add parent link and text to its child menu list #}
-      <ul class="menu-main_sub" role="menu">
+<ul id="menu-main" class="menu menu-main">
+  {% else %}
+  {# Add parent link and text to its child menu list #}
+  <ul class="menu-main_sub">
     {% endif %}
     {% for item in items %}
       {%
@@ -45,17 +45,13 @@
         loop.last ? 'last',
       ]
       %}
-      <li{{ item.attributes.addClass(classes).setAttribute('role', 'none') }}>
-        {% if item.is_expanded %}
-          <button class="menu-link menu-link_button">{{ item.title }}</button>
-        {% else %}
-          {{ link(item.title, item.url, { 'class':['menu-link'] }) }}
-        {% endif %}
+      <li{{ item.attributes.addClass(classes) }}>
+        {{ link(item.title, item.url, { 'class':['menu-link'] }) }}
         {% if item.is_expanded %}
           {{ menus.menu_links(item.below, attributes, menu_level + 1) }}
         {% endif %}
       </li>
     {% endfor %}
-    </ul>
+  </ul>
   {% endif %}
 {% endmacro %}
