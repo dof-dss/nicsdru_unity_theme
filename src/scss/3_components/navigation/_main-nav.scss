@@ -56,18 +56,19 @@ $main-menu-span: container !default;
   .menu {
     &-main {
       display: flex;
-      //float: left;
       padding: 0;
       margin: 0;
       list-style: none;
 
       @media screen and (max-width: $tab) {
+        display: block;
         max-width: 100%;
         float: none;
       }
 
       &_sub {
         display: none;
+        list-style: none;
         position: absolute;
         z-index: 9999;
         padding: 0;
@@ -97,16 +98,14 @@ $main-menu-span: container !default;
           margin: 0;
           position: relative;
           width: 100%;
-          //background: $menu-item-hover;
 
-          &.open,
-          &:hover {
+          &.open {
             background: $menu-sub-item-hover;
 
             @media screen and (max-width: $tab) {
               background: lighten($menu-background, 10%);
             }
-           }
+          }
 
           @media screen and (max-width: $tab) {
             margin: 0;
@@ -133,18 +132,12 @@ $main-menu-span: container !default;
           border-radius: 0;
           color: $white;
 
-          //&:focus,
-          //&:hover {
-          //  background: $menu-sub-item-hover;
-          //}
-
           &.is-active {
             font-weight: bold;
           }
 
           @media screen and (max-width: $tab) {
             border-top: 1px solid #fff;
-            text-align: center;
           }
 
           @media screen and (min-width: $tab) {
@@ -160,11 +153,6 @@ $main-menu-span: container !default;
       @include adjust-font-size-to(14px);
       line-height: 2.4rem;
       position: relative;
-      //display: -moz-inline-stack;
-      //zoom: 1;
-      //vertical-align: top;
-      //border-right: 1px solid $menu-separator;
-      //float: left;
       padding: 0;
       margin: 0;
 
@@ -174,64 +162,8 @@ $main-menu-span: container !default;
       }
 
       &.open {
-        //background: $menu-item-hover;
-
-        .fas {
-          transform: rotate(180deg);
-          padding-right: .5rem;
-          padding-left: 0;
-        }
-
         > ul {
           display: block;
-        }
-      }
-
-      &:hover {
-        //background: $menu-item-hover;
-
-        @media screen and (min-width: $tab) {
-          .fas {
-            transform: rotate(180deg);
-            padding-right: .5rem;
-            padding-left: 0;
-          }
-
-          > ul {
-            display: block;
-          }
-        }
-      }
-
-      .menu-main_sub {
-        .menu-item {
-          @media screen and (min-width: $tab) {
-            .fas {
-              transform: rotate(-90deg);
-              height: 15px;
-              padding: 0;
-            }
-
-            &:hover,
-            &.open {
-              .fas {
-                transform: rotate(90deg);
-              }
-            }
-          }
-
-          @media screen and (max-width: $tab) {
-            .fas {
-              transform: rotate(0);
-              padding-left: .5rem;
-            }
-
-            &.open {
-              .fas {
-                transform: rotate(180deg);
-              }
-            }
-          }
         }
       }
     }
@@ -251,41 +183,38 @@ $main-menu-span: container !default;
         border-radius: 0;
         border-bottom: 1px solid #fff;
         border-right: 0;
-        text-align: center;
       }
 
       &:hover,
       &:focus {
         background: $menu-item-hover;
-
-        //@media screen and (max-width: $tab) {
-        //  background: lighten($menu-background, 10%);
-        //}
-      }
-
-      //&:focus {
-      //  box-shadow: 0 0 5px 3px $menu-sub-item-hover;
-      //  outline: none;
-      //}
-
-      .fas {
-        padding-left: .5rem;
       }
     }
 
     .is-active {
-      //background-color: $menu-item-hover;
-      //color: $white;
-      background: rgba(191,191,191,.25);
+      background: rgba(191, 191, 191, .25);
       border-bottom-color: #cad400;
-      //color: #333;
-
-      //@media screen and (max-width: $tab) {
-      //  //padding: 1.3rem 2rem;
-      //  background: lighten($menu-background, 10%);
-      //}
     }
   }
+
+  .ico {
+    width: 1rem;
+    height: 1rem;
+    margin: 0 0 0 5px;
+  }
+
+  .menu-item.open .ico {
+    transform: rotate(270deg);
+  }
+
+  .menu-item .menu-main_sub .ico {
+    transform: none;
+  }
+
+  .menu-item .menu-main_sub.open .ico {
+    transform: rotate(180deg);
+  }
+
 
   .toggler {
     position: absolute;
@@ -391,4 +320,12 @@ $main-menu-span: container !default;
       }
     }
   }
+}
+
+.menu-link_button {
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+  text-shadow: none;
+  font-size: 1.4rem;
 }
