@@ -27,7 +27,7 @@ function nicsdru_unity_theme_preprocess(&$variables) {
 }
 
 /**
- * Implements hook_preprocess page_attachments_alter().
+ * Implements hook_preprocess_page_attachments_alter().
  */
 function nicsdru_unity_theme_page_attachments_alter(array &$page) {
   /*
@@ -219,5 +219,14 @@ function nicsdru_unity_theme_preprocess_media(&$variables) {
       $variables['file_url'] = $file->url();
     }
     $variables['media_langcode'] = $variables['media']->language()->getId();
+  }
+}
+
+/**
+ * Implements hook_preprocess_slick().
+ */
+function nicsdru_unity_theme_preprocess_slick(&$variables) {
+  if (isset($variables['arrow_attributes']['role'])) {
+    unset($variables['arrow_attributes']['role']);
   }
 }
