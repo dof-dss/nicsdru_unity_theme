@@ -205,10 +205,14 @@
       input[type='search'] {
         max-width: 100%;
         border: 0;
-        margin: 0;
+        margin: .5em 0;
         float: none;
         border-radius: 0;
         background: #fff;
+
+        @supports (display: grid) {
+          margin: 0;
+        }
       }
     }
   }
