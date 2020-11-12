@@ -23,7 +23,7 @@
         $(this).parent('.expanded').siblings().children('ul').removeAttr('style');
       };
 
-      $('#main-menu .menu-toggle-btn').on('click', clickHandler);
+      $('#main-menu .menu-toggle-btn').once('open-submenu').on('click', clickHandler);
     }
   }
 })(jQuery, Drupal);
