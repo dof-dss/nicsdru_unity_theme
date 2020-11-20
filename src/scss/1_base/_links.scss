@@ -24,7 +24,7 @@ $link-hover-background: rgba(75%, 75%, 75%, .25) !default;
 $link-visited: #0d63a5 !default;
 $link-visited-underline: #707070 !default;
 
-a {
+a:not(.toolbar-icon) {
   &[href] {
     color: $link;
     text-decoration: none;
