@@ -211,7 +211,7 @@ $main-menu-span: container !default;
     transform: none;
   }
 
-  .menu-item .menu-main_sub.open .ico {
+  .menu-item.open .menu-main_sub .ico {
     transform: rotate(180deg);
   }
 
