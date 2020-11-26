@@ -30,6 +30,15 @@
   overflow: hidden;
 }
 
+.container {
+  padding: 0 15px;
+  @include breakpoint($tab) {
+    margin: 0 auto;
+    max-width: $max-grid-width;
+    padding: 0 20px;
+  }
+}
+
 .content-sidebar-wrap {
   float: left;
   width: 100%;

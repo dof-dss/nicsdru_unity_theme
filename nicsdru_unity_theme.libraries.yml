@@ -77,3 +77,9 @@ slick-slider:
     theme:
       css/slick.css: {}
       css/slick-theme.css: {}
+
+eu-cookie-compliance:
+  version: VERSION
+  css:
+    state:
+      css/4_state/block/eu-cookie-compliance.css: { minified: true }
