@@ -44,7 +44,7 @@
   'eu-cookie-compliance-banner',
 ] %}
 <div{{ attributes.addClass(classes).setAttribute('role', 'region').setAttribute('aria-label', 'cookie banner'|t) }}>
-  <div class="container grid popup-content clearfix" role="presentation">
+  <div class="container popup-content" role="presentation">
     <div id="popup-text" class="eu-cookie-compliance-message" role="presentation">
       {{ message }}
       {% if disagree_button %}

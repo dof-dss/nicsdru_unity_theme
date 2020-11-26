@@ -1,110 +1,133 @@
 @import '../../init/index';
 
-.sliding-popup-bottom,
-.sliding-popup-top {
-  z-index: 99999;
-  text-align: left;
-}
+#sliding-popup {
+  .sliding-popup-bottom,
+  .sliding-popup-top {
+    z-index: 99999;
+    text-align: left;
+  }
 
-.sliding-popup-bottom {
-  position: fixed;
-}
+  .sliding-popup-bottom {
+    position: fixed;
+  }
 
-.sliding-popup-top {
-  position: relative;
-}
+  .sliding-popup-top {
+    position: relative;
+  }
 
-.eu-cookie-compliance {
-  &-banner {
+  button {
+    @include adjust-font-size-to(16px);
+    background-image: none;
+    box-shadow: none;
+    text-shadow: none;
+    font-weight: normal;
+
+    @include breakpoint($tab) {
+      @include adjust-font-size-to(18px);
+    }
+  }
+
+  .eu-cookie-withdraw-tab {
+    position: absolute;
+    top: 0;
+    transform: translate(-50%, -100%);
+    left: 50%;
+    border: 1px solid #000;
+    color: #000;
+  }
+
+  .eu-cookie-compliance-banner {
     background: #041e34;
     padding-bottom: 1.6rem;
 
     @include breakpoint($tab) {
       padding-bottom: 2.1rem;
     }
-
-    .popup-content {
-      @include breakpoint($tab) {
-        display: grid;
-        grid-gap: 24px;
-        justify-content: space-between;
-        grid-template-columns: 1fr 1fr;
-      }
-    }
   }
 
-  &-buttons {
-    float: none;
-    max-width: 100%;
+  .popup-content {
+    display: grid;
+    grid-gap: 24px;
+    grid-template-columns: 1fr;
 
     @include breakpoint($tab) {
-      margin: 1.6rem;
-      text-align: right;
-      align-self: end;
+      justify-content: space-between;
+      grid-template-columns: auto 400px;
     }
 
-    .btn {
-      &.btn--primary {
-        @include adjust-font-size-to(16px);
-        background: $search-submit;
-        border-color: $search-submit;
-        box-shadow: none;
-        color: #fff;
-        text-shadow: none;
-        font-weight: normal;
-      }
+    .eu-cookie-compliance-message {
+      float: none;
+      max-width: 100%;
+      text-align: left;
 
-      &:not(:last-child) {
-        margin-right: .5em;
-      }
-
-      &:focus {
-        outline-color: #fff;
-      }
-    }
-  }
-
-  &-message {
-    float: none;
-    max-width: 100%;
-
-    p {
-      @include adjust-font-size-to(16px, 4);
-      color: white;
-
-      @include breakpoint($tab) {
-        @include adjust-font-size-to(18px, 4.5);
-      }
-
-      &:first-child {
-        @include adjust-font-size-to(24px, 5.3);
-        margin: 1.6rem 0;
-
-        @include breakpoint($phab) {
-          @include adjust-font-size-to(28px, 6);
-        }
+      p {
+        @include adjust-font-size-to(16px, 4);
+        color: white;
 
         @include breakpoint($tab) {
-          margin: 2.4rem 0 1.2rem;
-          font-weight: bold;
+          @include adjust-font-size-to(18px, 4.5);
         }
-      }
 
-      &:last-of-type {
-        margin-bottom: 0;
+        &:first-child {
+          @include adjust-font-size-to(24px, 5.3);
+          margin: 1.6rem 0;
+
+          @include breakpoint($phab) {
+            @include adjust-font-size-to(28px, 6);
+          }
+
+          @include breakpoint($tab) {
+            margin: 2.4rem 0 1.2rem;
+            //font-weight: bold;
+          }
+        }
+
+        &:last-of-type {
+          margin-bottom: 0;
+        }
       }
     }
 
-    .find-more-button {
-      color: #1593f4;
-      border-bottom: 1px solid;
+    .eu-cookie-compliance-buttons {
+      float: none;
+      max-width: 100%;
+      text-align: left;
 
-      &:focus {
-        color: #fff;
+      @include breakpoint($tab) {
+        text-align: right;
+        align-self: end;
       }
 
-      &:hover {
-        border-color: #fff;
+      .btn {
+        background: #0a78cd;
+        border-color: #0a78cd;
+        color: #fff;
+        min-width: 100px;
+        min-height: 4rem;
+        padding: .8rem 1.5rem;
+
+        @include breakpoint($tab) {
+          min-width: 120px;
+          min-height: 4.5rem;
+        }
+
+        &:not(:last-child) {
+          margin-right: .5em;
+        }
+
+        &:hover,
+        &:focus {
+          background: #096ab5;
+          border-color: #096ab5;
+        }
+
+        &:hover {
+          border-bottom: 3px solid #fff;
+        }
+
+        &:focus {
+          outline: 3px solid #fff;
+        }
       }
     }
   }
@@ -123,44 +146,6 @@
   transform: scaleY(-1);
 }
 
-.eu-cookie-withdraw-tab {
-  position: absolute;
-  top: 0;
-  transform: translate(-50%, -100%);
-  left: 50%;
-}
-
 .eu-cookie-withdraw-wrapper.sliding-popup-top .eu-cookie-withdraw-tab {
   transform: translate(-50%, -100%) scaleY(-1);
-}
-
-.btn {
-  @include breakpoint($tab) {
-    min-width: 120px;
-    min-height: 4.5rem;
-    padding: .8rem 1.5rem;
-    margin: 0;
-  }
-
-  display: inline-block;
-  min-width: 100px;
-  min-height: 4rem;
-  padding: .8rem 1.2rem;
-  border: 1px solid transparent;
-  text-align: center;
-  background-repeat: no-repeat;
-  background-position-y: center;
-
-  &:link,
-  &:visited {
-    color: $white;
-  }
-
-  &:focus {
-    outline: 3px solid $charcoal;
-  }
-
-  &:active {
-    outline: 0;
-  }
 }
