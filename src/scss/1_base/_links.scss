@@ -25,7 +25,7 @@ $link-visited: #0d63a5 !default;
 $link-visited-underline: #707070 !default;
 
 a:not(.toolbar-icon) {
-  &[href] {
+  &[href]:not(.facet--btn) {
     color: $link;
     text-decoration: none;
 
@@ -37,8 +37,8 @@ a:not(.toolbar-icon) {
       padding: 0 1px;
     }
 
-    &:hover,
-    &:focus {
+    &:hover:not(.facet-item--link),
+    &:focus:not(.facet-item--link) {
       color: $link-hover;
       background: $link-hover-background;
 
