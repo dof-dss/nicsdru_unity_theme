@@ -9,8 +9,8 @@
 //
 // Style guide: components.search-facets
 
-$facet-btn-color: $charcoal !default;
-$facet-btn-hover: $ash-grey !default;
+$facet-btn-color: #111 !default;
+$facet-btn-hover: #606060 !default;
 $facet-btn-focus-outline: $link-hover !default;
 $facet-btn-active: #262626 !default;
 // Use the sass lightness function to determine whether to use a light / dark text color in the facet btn.
@@ -93,6 +93,8 @@ $facet-text-color: null;
 
   &-list__links {
     margin: 0 0 .6rem;
+    padding: 1rem .6rem;
+    list-style: none;
   }
 
   &-item,
@@ -116,9 +118,9 @@ $facet-text-color: null;
       flex-flow: row nowrap;
       align-items: center;
       width: 100%;
-      font-size: 1.6rem;
-      line-height: 2.4rem;
-      padding: 1rem .6rem;
+      //font-size: 1.6rem;
+      line-height: 1.5;
+      //padding: 1rem .6rem;
       text-decoration: none;
 
       &:hover {
@@ -127,7 +129,8 @@ $facet-text-color: null;
         }
       }
 
-      &:focus {
+      &:focus,
+      &:hover {
         background-color: $facet-btn-focus-outline;
         color: #fff;
       }
