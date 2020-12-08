@@ -34,12 +34,10 @@ a.facet--btn {
   text-decoration: none;
   vertical-align: middle;
   width: 100%;
-  font-size: 1.8rem;
   border: 3px solid $facet-btn-color;
 
   @include breakpoint($phab, $no-query: true) {
     min-width: 120px;
-    //font-size: 1.8rem;
   }
 
   &:link,
@@ -104,7 +102,6 @@ a.facet--btn {
     padding: 0;
 
     &__label {
-      //font-size: 1.6rem;
       line-height: 2.4rem;
       padding: 1rem 0;
 
@@ -119,7 +116,6 @@ a.facet--btn {
       flex-flow: row nowrap;
       align-items: center;
       width: 100%;
-      //font-size: 1.6rem;
       line-height: 1.5;
       padding: .6rem;
       text-decoration: none;
