@@ -41,7 +41,7 @@
 }
 
 .top_left {
-  min-height: 110px;
+  min-height: 95px;
   padding: 0;
   position: relative;
   -ms-grid-column: 1;
@@ -51,6 +51,10 @@
 
   @supports (display: grid) {
     float: none;
+  }
+
+  @include breakpoint($tab) {
+    min-height: 110px;
   }
 
   #logo {
@@ -186,7 +190,7 @@
   @media screen and (max-width: $tab) {
     padding: .5rem 0 .5rem 10rem;
     min-height: 54px;
-    margin: 1rem 0 0;
+    //margin: 1rem 0 0;
     background-color: $menu-background;
     position: relative;
 
