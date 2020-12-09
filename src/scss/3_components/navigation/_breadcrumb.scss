@@ -34,7 +34,7 @@ $breadcrumb-separator: '»' !default;
   @include adjust-font-size-to(13px);
   //margin: 1rem;
   border-bottom: 1px solid $breadcrumb-border-bottom;
-  line-height: 3.6rem;
+  line-height: 2.7rem;
 
   @media screen and (min-width: $lap) {
     //margin: 0;
