@@ -28,7 +28,6 @@
   {% if facet.widget.type %}
     {% set list_classes  = [
       'facet-list__' ~ facet.widget.type,
-      'list--no-bullet',
     ]
     %}
     {%- set attributes = attributes.addClass(list_classes) %}
