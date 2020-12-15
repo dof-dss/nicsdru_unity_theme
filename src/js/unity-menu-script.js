@@ -7,6 +7,7 @@
           $(this).attr('aria-haspopup', 'true');
           $(this).attr('aria-expanded', 'false');
           $(this).addClass('menu-toggle-btn');
+          $(this).attr("tabindex", "0");
           $(this).removeAttr('href');
           $(this).append('<svg aria-hidden="true" class="ico ico-arrow-down"><use xlink:href="#arrow"></use></svg>');
         }
@@ -23,7 +24,7 @@
         $(this).parent('.expanded').siblings().children('ul').removeAttr('style');
       };
 
-      $('#main-menu .menu-toggle-btn').on('click', clickHandler);
+      $('#main-menu .menu-toggle-btn').once('open-submenu').on('click keypress', clickHandler);
     }
   }
 })(jQuery, Drupal);

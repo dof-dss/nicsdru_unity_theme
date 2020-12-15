@@ -24,31 +24,29 @@ $link-hover-background: rgba(75%, 75%, 75%, .25) !default;
 $link-visited: #0d63a5 !default;
 $link-visited-underline: #707070 !default;
 
-a {
-  &[href] {
-    color: $link;
-    text-decoration: none;
+a:not(.toolbar-icon) {
+  color: $link;
+  text-decoration: none;
+
+  #content &,
+  .content &,
+  #footer & {
+    border-bottom: 1px solid $link-underline;
+    margin: 0 -1px;
+    padding: 0 1px;
+  }
+
+  &:hover:not(.facet-item--link),
+  &:focus:not(.facet-item--link) {
+    color: $link-hover;
+    background: $link-hover-background;
 
     #content &,
     .content &,
     #footer & {
-      border-bottom: 1px solid $link-underline;
-      margin: 0 -1px;
-      padding: 0 1px;
-    }
-
-    &:hover,
-    &:focus {
-      color: $link-hover;
-      background: $link-hover-background;
-
-      #content &,
-      .content &,
-      #footer & {
-        border-bottom-width: 3px;
-        margin-bottom: -2px;
-        outline: 3px solid $link-hover-background;
-      }
+      border-bottom-width: 3px;
+      margin-bottom: -2px;
+      outline: 3px solid $link-hover-background;
     }
   }
 
