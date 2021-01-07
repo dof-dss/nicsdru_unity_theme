@@ -31,7 +31,7 @@
  */
 #}
 {% if items %}
-  <nav class="pager" aria-labelledby="{{ heading_id }}">
+  <nav id="pager" class="pager" aria-labelledby="{{ heading_id }}">
     <h2 id="{{ heading_id }}" class="visually-hidden">{{ 'Pagination'|t }}</h2>
     <ul class="pager__items js-pager__items list--inline">
       {# Print first item if we are not on the first page. #}

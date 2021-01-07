@@ -15,7 +15,7 @@ $link-hover: #0e6bb3 !default;
 $link-hover-background: rgba(75%, 75%, 75%, .25) !default;
 $link-visited: #0e6bb3 !default;
 $link-visited-underline: #707070 !default;
-.pager {
+#pager {
   .pager__items {
     display: flex;
     flex-flow: row wrap;
