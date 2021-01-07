@@ -21,6 +21,15 @@
 
 h1 {
   @include responsive-typo-map($h1-text);
+
+  .subtitle {
+    @include adjust-font-size-to(24px);
+    font-weight: normal;
+
+    &::before {
+      content: ' \2014  ';
+    }
+  }
 }
 
 h2 {
