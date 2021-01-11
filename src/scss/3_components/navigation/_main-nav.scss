@@ -330,3 +330,9 @@ $main-menu-span: container !default;
   text-shadow: none;
   font-size: 1.4rem;
 }
+
+.path-search {
+  #main-menu .hamburger {
+    top: -5.1rem;
+  }
+}
