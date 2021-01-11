@@ -27,4 +27,11 @@
       $('#main-menu .menu-toggle-btn').once('open-submenu').on('click keypress', clickHandler);
     }
   }
+
+  $(document).once('close-submenu').click(function (event) {
+    var $trigger = $('#main-menu');
+    if ($trigger !== event.target && !$trigger.has(event.target).length) {
+      $('#main-menu .menu-toggle-btn').parent('.expanded').removeClass('open');
+    }
+  });
 })(jQuery, Drupal);
