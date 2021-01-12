@@ -31,7 +31,9 @@
   $(document).once('close-submenu').click(function (event) {
     var $trigger = $('#main-menu');
     if ($trigger !== event.target && !$trigger.has(event.target).length) {
-      $('#main-menu .menu-toggle-btn').parent('.expanded').removeClass('open');
+      $('#main-menu .menu-toggle-btn')
+        .attr('aria-expanded', 'false')
+        .parent('.expanded').removeClass('open')
     }
   });
 })(jQuery, Drupal);
