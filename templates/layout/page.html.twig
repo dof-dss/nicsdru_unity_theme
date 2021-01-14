@@ -115,6 +115,11 @@
   <div class="container-wrap">
     <div class="content-sidebar-wrap">
       {{ page.breadcrumb }}
+      {% if page.search_facets %}
+        <header id="search-facets">
+          {{ page.search_facets }}
+        </header>
+      {% endif %}
       <div id="content">
         {% if page.content %}
           <main id="post-content">
