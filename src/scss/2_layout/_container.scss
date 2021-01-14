@@ -76,7 +76,8 @@
   }
 }
 
-#sidebar-first {
+#sidebar-first,
+#search-facets {
   color: $text;
   float: left;
 
@@ -164,7 +165,8 @@ $two-col-layout-sidebar-second: (75%, 22%) !default;
 #head,
 #content,
 #sidebar-second,
-#sidebar-first {
+#sidebar-first,
+#search-facets {
   margin-top: 1rem;
 }
 
