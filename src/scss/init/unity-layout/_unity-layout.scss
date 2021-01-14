@@ -76,7 +76,8 @@
             width: $value-2;
           }
 
-          #sidebar-first {
+          #sidebar-first,
+          #search-facets {
             width: $value-1;
           }
         } @else {
@@ -117,7 +118,8 @@
           width: $value-2;
         }
 
-        #sidebar-first {
+        #sidebar-first,
+        #search-facets {
           width: $value-1;
         }
 
