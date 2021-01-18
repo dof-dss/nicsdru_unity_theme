@@ -172,6 +172,7 @@
 }
 
 .diff-responsive-table-wrapper {
+  min-height: 10rem;
 
   // Make first h2 > a look like h1 (cause it is the h1!).
   h2:first-child a {
