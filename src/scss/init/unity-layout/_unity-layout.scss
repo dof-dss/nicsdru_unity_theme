@@ -72,12 +72,11 @@
             width: 100%;
           }
 
-          #content {
+          .main-content {
             width: $value-2;
           }
 
-          #sidebar-first,
-          #search-facets {
+          .sidebar-first-layout {
             width: $value-1;
           }
         } @else {
@@ -85,11 +84,11 @@
             width: $value-1;
           }
 
-          #content {
+          .main-content {
             width: 100%;
           }
 
-          #sidebar-second {
+          .sidebar-second-layout {
             width: $value-2;
           }
         }
@@ -114,16 +113,15 @@
           width: $value-4 * 1%;
         }
 
-        #content {
+        .main-content {
           width: $value-2;
         }
 
-        #sidebar-first,
-        #search-facets {
+        .sidebar-first-layout {
           width: $value-1;
         }
 
-        #sidebar-second {
+        .sidebar-second-layout {
           width: $value-3;
         }
       } @else {

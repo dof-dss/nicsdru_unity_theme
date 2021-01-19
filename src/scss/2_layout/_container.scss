@@ -52,7 +52,7 @@
     width: auto;
   }
 
-  #content {
+  .main-content {
     display: inline;
     margin-bottom: 1rem;
     float: right;
@@ -76,8 +76,7 @@
   }
 }
 
-#sidebar-first,
-#search-facets {
+.sidebar-first-layout {
   color: $text;
   float: left;
 
@@ -102,7 +101,7 @@
   }
 }
 
-#sidebar-second {
+.sidebar-second-layout {
   color: $text;
   float: right;
 
@@ -163,14 +162,13 @@ $two-col-layout-sidebar-second: (75%, 22%) !default;
 }
 
 #head,
-#content,
-#sidebar-second,
-#sidebar-first,
-#search-facets {
+.main-content,
+.sidebar-second-layout,
+.sidebar-first-layout {
   margin-top: 1rem;
 }
 
-#content {
+.main-content {
   @media screen and (max-width: $lap) {
     float: none;
     width: 100% !important;
