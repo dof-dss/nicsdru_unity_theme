@@ -209,10 +209,18 @@ $main-menu-span: container !default;
 
   .menu-item .menu-main_sub .ico {
     transform: none;
+
+    @media screen and (max-width: $tab) {
+      transform: rotate(90deg);
+    }
   }
 
-  .menu-item.open .menu-main_sub .ico {
+  .menu-item .menu-main_sub .open .ico {
     transform: rotate(180deg);
+
+    @media screen and (max-width: $tab) {
+      transform: rotate(270deg);
+    }
   }
 
 
