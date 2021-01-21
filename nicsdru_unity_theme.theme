@@ -123,6 +123,7 @@ function nicsdru_unity_theme_preprocess_views_view(&$variables) {
   if ($variables['id'] === 'search') {
     $variables['exposed']['#attributes']['class'][] = Html::cleanCssIdentifier('search-form');
     $variables['exposed']['#attributes']['class'][] = Html::cleanCssIdentifier('search-form--site');
+    $variables['exposed']['query']['#required'] = TRUE;
     // If a label for the search input is not defined in the view, set
     // default label text.
     $search_label =& $variables['exposed']['#info']['filter-search_api_fulltext']['label'];
