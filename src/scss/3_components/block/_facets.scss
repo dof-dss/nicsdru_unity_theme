@@ -36,6 +36,7 @@ $facet-text-color: null;
     vertical-align: middle;
     width: 100%;
     border: 3px solid $facet-btn-color;
+    margin: 0;
 
     @include breakpoint($phab, $no-query: true) {
       min-width: 120px;
@@ -120,6 +121,7 @@ $facet-text-color: null;
         line-height: 1.5;
         padding: .6rem;
         text-decoration: none;
+        border: 0;
 
         &:hover {
           .facet-item__value {
