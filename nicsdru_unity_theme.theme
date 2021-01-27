@@ -256,7 +256,7 @@ function nicsdru_unity_theme_preprocess_container(&$variables) {
 /**
  * Implements hook_form_alter().
  */
-function nicsdru_unity_theme_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+function nicsdru_unity_theme_form_alter(&$form, FormStateInterface $form_state, $form_id) {
   if ($form['#id'] == 'views-exposed-form-search-site-search') {
     // Ensure the input field only accepts a letter or a number at the beginning of a search.
     $form['query']['#pattern'] = '^[a-zA-Z0-9]+.*?';
