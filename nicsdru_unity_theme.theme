@@ -123,7 +123,10 @@ function nicsdru_unity_theme_preprocess_views_view(&$variables) {
   if ($variables['id'] === 'search') {
     $variables['exposed']['#attributes']['class'][] = Html::cleanCssIdentifier('search-form');
     $variables['exposed']['#attributes']['class'][] = Html::cleanCssIdentifier('search-form--site');
+    // Make the site search required.
     $variables['exposed']['query']['#required'] = TRUE;
+    // See nicsdru_unity_theme_form_alter for a required pattern on the input. This text overrides the default error message.
+    $variables['exposed']['query']['#attributes']['data-msg-pattern'] = t('Query must begin with a letter or number');
     // If a label for the search input is not defined in the view, set
     // default label text.
     $search_label =& $variables['exposed']['#info']['filter-search_api_fulltext']['label'];
@@ -249,3 +252,15 @@ function nicsdru_unity_theme_preprocess_container(&$variables) {
     $variables['attributes']['id'] = $id;
   }
 }
+
+/**
+ * Implements hook_form_alter().
+ */
+function nicsdru_unity_theme_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+  if ($form['#id'] == 'views-exposed-form-search-site-search') {
+    // Ensure the input field only accepts a letter or a number at the beginning of a search.
+    $form['query']['#pattern'] = '^[a-zA-Z0-9]+.*?';
+  }
+}
+
+
