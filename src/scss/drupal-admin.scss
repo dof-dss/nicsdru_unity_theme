@@ -188,13 +188,11 @@ a.tabs-secondary--tab-link.is-active {
   }
 }
 
-.path-user {
+.user-login-form {
   .form-item {
     margin: 1em 0;
   }
-}
 
-.user-login-form {
   input[type='submit'] {
     @include adjust-font-size-to(16px, 4);
     background: $button;
@@ -208,6 +206,7 @@ a.tabs-secondary--tab-link.is-active {
     vertical-align: middle;
     text-shadow: none;
     box-shadow: none;
+    font-weight: normal;
 
     @include breakpoint($phab) {
       @include adjust-font-size-to(18px, 4.5);
