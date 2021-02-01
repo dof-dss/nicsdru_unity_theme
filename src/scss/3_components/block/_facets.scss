@@ -22,230 +22,234 @@ $facet-text-color: null;
   $facet-text-color: $text;
 }
 
-a.facet--btn {
-  background-color: $facet-btn-color;
-  // Touch target of 44px.
-  display: block;
-  line-height: 3.8rem;
-  min-height: 4.4rem;
-  min-width: 100px;
-  padding: 0 .3em;
-  text-align: left;
-  text-decoration: none;
-  vertical-align: middle;
-  width: 100%;
-  border: 3px solid $facet-btn-color;
-
-  @include breakpoint($phab, $no-query: true) {
-    min-width: 120px;
-  }
-
-  &:link,
-  &:visited {
-    color: $facet-text-color;
-  }
-
-  &:hover {
-    background-color: $facet-btn-hover;
-    border-color: $facet-btn-hover;
+#search-facets {
+  .facet--title a.facet--btn {
+    background-color: $facet-btn-color;
+    // Touch target of 44px.
+    display: block;
+    line-height: 3.8rem;
+    min-height: 4.4rem;
+    min-width: 100px;
+    padding: 0 .3em;
+    text-align: left;
     text-decoration: none;
-  }
-
-  &:focus {
-    border-color: $facet-btn-focus-outline;
-    background-color: $facet-btn-hover;
-    border-bottom-width: 2px;
-    outline: none;
-  }
-
-  &:active {
-    background-color: $facet-btn-active;
-    border-color: $facet-btn-active;
-  }
-
-  .ico-arrow-down {
-    fill: $facet-text-color;
-    float: right;
-    height: 2rem;
-    margin: 1rem;
-    width: 2rem;
-    transition: transform .4s ease;
-  }
-
-  &.active .ico-arrow-down {
-    transform: rotate(270deg);
-  }
-}
-
-.facet {
-  &--dropdown-links {
-    margin: 1em 0;
-  }
-
-  &--title {
+    vertical-align: middle;
+    width: 100%;
+    border: 3px solid $facet-btn-color;
     margin: 0;
-  }
 
-  &s-widget-links {
-    background-color: #f6f6f6;
-    box-shadow: 0 0 1px inset $charcoal;
-  }
-
-  &-list__links {
-    margin: 0;
-    list-style: none;
-  }
-
-  &-item,
-  &-summary-item--facet {
-    margin: 0;
-    padding: 0;
-
-    &__label {
-      line-height: 2.4rem;
-      padding: 1rem 0;
-
-      &::after {
-        content: ':';
-      }
+    @include breakpoint($phab, $no-query: true) {
+      min-width: 120px;
     }
 
-    a,
-    &--link {
-      display: inline-flex;
-      flex-flow: row nowrap;
-      align-items: center;
-      width: 100%;
-      line-height: 1.5;
-      padding: .6rem;
-      text-decoration: none;
+    &:link,
+    &:visited {
+      color: $facet-text-color;
+    }
 
-      &:hover {
-        .facet-item__value {
-          text-decoration: none;
+    &:hover {
+      background-color: $facet-btn-hover;
+      border-color: $facet-btn-hover;
+      text-decoration: none;
+    }
+
+    &:focus {
+      border-color: $facet-btn-focus-outline;
+      background-color: $facet-btn-hover;
+      border-bottom-width: 2px;
+      outline: none;
+    }
+
+    &:active {
+      background-color: $facet-btn-active;
+      border-color: $facet-btn-active;
+    }
+
+    .ico-arrow-down {
+      fill: currentColor;
+      float: right;
+      height: 2rem;
+      margin: 1rem;
+      width: 2rem;
+      transition: transform .4s ease;
+    }
+
+    &.active .ico-arrow-down {
+      transform: rotate(270deg);
+    }
+  }
+
+  .facet {
+    &--dropdown-links {
+      margin: 1em 0;
+    }
+
+    &--title {
+      margin: 0;
+    }
+
+    &s-widget-links {
+      background-color: #f6f6f6;
+      box-shadow: 0 0 1px inset $charcoal;
+    }
+
+    &-list__links {
+      margin: 0;
+      list-style: none;
+    }
+
+    &-item,
+    &-summary-item--facet {
+      margin: 0;
+      padding: 0;
+
+      &__label {
+        line-height: 2.4rem;
+        padding: 1rem 0;
+
+        &::after {
+          content: ':';
         }
       }
 
-      &:focus,
-      &:hover {
-        background-color: $facet-btn-focus-outline;
-        color: #fff;
+      a,
+      &--link {
+        display: inline-flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        width: 100%;
+        line-height: 1.5;
+        padding: .6rem;
+        text-decoration: none;
+        border: 0;
+
+        &:hover {
+          .facet-item__value {
+            text-decoration: none;
+          }
+        }
+
+        &:focus,
+        &:hover {
+          background-color: $facet-btn-focus-outline;
+          color: #fff;
+        }
+
+        .facet-item__value {
+          text-decoration: underline;
+        }
       }
 
+      &-summary-item--facet a {
+        margin: 0 .4rem;
+      }
+
+      &__value {
+        display: inline-block;
+        padding: 0 .4rem;
+      }
+
+      &__count {
+        text-decoration: none;
+      }
+
+      &__status {
+        display: inline-block;
+        position: relative;
+        vertical-align: middle;
+        width: 2rem;
+        height: 2rem;
+        margin-right: .6rem;
+        padding: 0;
+        background-color: $ash-grey;
+        color: #fff;
+        text-decoration: none;
+
+        &::before,
+        &::after {
+          content: ' ';
+          display: block;
+          width: .2rem;
+          height: 1rem;
+          background-color: #fff;
+          transform: rotate(45deg);
+          position: absolute;
+          left: .9rem;
+          top: .5rem;
+        }
+
+        &::after {
+          transform: rotate(130deg);
+        }
+      }
+    }
+
+    &-item a.is-active,
+    &-summary-item--facet a {
+      //background-color: #cee4f6;
+      color: #333;
+
       .facet-item__value {
-        text-decoration: underline;
+        text-decoration: none;
+        padding-left: 0;
+      }
+
+      &:focus {
+        color: #fff;
+
+        .facet-item__status {
+          background-color: #fff;
+
+          &::before,
+          &::after {
+            background-color: $ash-grey;
+          }
+        }
+      }
+
+      &:hover .facet-item__status {
+        background-color: darkorange;
       }
     }
 
     &-summary-item--facet a {
-      margin: 0 .4rem;
+      margin: 0 .5em;
     }
 
-    &__value {
-      display: inline-block;
-      padding: 0 .4rem;
-    }
-
-    &__count {
-      text-decoration: none;
-    }
-
-    &__status {
-      display: inline-block;
-      position: relative;
-      vertical-align: middle;
-      width: 2rem;
-      height: 2rem;
-      margin-right: .6rem;
+    &-summary {
+      display: flex;
+      flex-flow: row nowrap;
+      align-items: center;
+      margin: 0;
       padding: 0;
-      background-color: $ash-grey;
-      color: #fff;
-      text-decoration: none;
 
-      &::before,
-      &::after {
-        content: ' ';
-        display: block;
-        width: .2rem;
-        height: 1rem;
-        background-color: #fff;
-        transform: rotate(45deg);
-        position: absolute;
-        left: .9rem;
-        top: .5rem;
+      &__label {
+        margin: 0;
+        padding: 0;
       }
 
-      &::after {
-        transform: rotate(130deg);
+      &__list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-flow: row wrap;
       }
     }
   }
 
-  &-item a.is-active,
-  &-summary-item--facet a {
-    //background-color: #cee4f6;
-    color: #333;
-
-    .facet-item__value {
-      text-decoration: none;
-      padding-left: 0;
-    }
-
-    &:focus {
-      color: #fff;
-
-      .facet-item__status {
-        background-color: #fff;
-
-        &::before,
-        &::after {
-          background-color: $ash-grey;
-        }
-      }
-    }
-
-    &:hover .facet-item__status {
-      background-color: darkorange;
-    }
-  }
-
-  &-summary-item--facet a {
-    margin: 0 .5em;
-  }
-
-  &-summary {
-    display: flex;
+  a.facets-soft-limit-link {
+    display: inline-flex;
     flex-flow: row nowrap;
     align-items: center;
-    margin: 0;
-    padding: 0;
+    width: 100%;
+    line-height: 1.5;
+    padding: .6rem 1rem;
 
-    &__label {
-      margin: 0;
-      padding: 0;
+    &:focus,
+    &:hover {
+      background-color: $facet-btn-focus-outline;
+      color: #fff;
     }
-
-    &__list {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-      display: flex;
-      flex-flow: row wrap;
-    }
-  }
-}
-
-a.facets-soft-limit-link {
-  display: inline-flex;
-  flex-flow: row nowrap;
-  align-items: center;
-  width: 100%;
-  line-height: 1.5;
-  padding: .6rem 1rem;
-
-  &:focus,
-  &:hover {
-    background-color: $facet-btn-focus-outline;
-    color: #fff;
   }
 }

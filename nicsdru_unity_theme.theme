@@ -84,10 +84,11 @@ function nicsdru_unity_theme_preprocess_html(&$variables) {
   }
 
   // Add information about the number of sidebars.
-  if (!empty($variables['page']['sidebar_first']) && !empty($variables['page']['sidebar_second'])) {
+  if ((!empty($variables['page']['sidebar_first']) || !empty($variables['page']['search_facets']))
+    && !empty($variables['page']['sidebar_second'])) {
     $variables['attributes']['class'][] = 'two-sidebars';
   }
-  elseif (!empty($variables['page']['sidebar_first'])) {
+  elseif (!empty($variables['page']['sidebar_first']) || !empty($variables['page']['search_facets'])) {
     $variables['attributes']['class'][] = 'one-sidebar';
     $variables['attributes']['class'][] = 'sidebar-first';
   }
@@ -122,6 +123,10 @@ function nicsdru_unity_theme_preprocess_views_view(&$variables) {
   if ($variables['id'] === 'search') {
     $variables['exposed']['#attributes']['class'][] = Html::cleanCssIdentifier('search-form');
     $variables['exposed']['#attributes']['class'][] = Html::cleanCssIdentifier('search-form--site');
+    // Make the site search required.
+    $variables['exposed']['query']['#required'] = TRUE;
+    // See nicsdru_unity_theme_form_alter for a required pattern on the input. The data-msg-pattern overrides the default error message.
+    $variables['exposed']['query']['#attributes']['data-msg-pattern'] = t('Query must begin with a letter or number.');
     // If a label for the search input is not defined in the view, set
     // default label text.
     $search_label =& $variables['exposed']['#info']['filter-search_api_fulltext']['label'];
@@ -228,5 +233,32 @@ function nicsdru_unity_theme_preprocess_media(&$variables) {
 function nicsdru_unity_theme_preprocess_slick(&$variables) {
   if (isset($variables['arrow_attributes']['role'])) {
     unset($variables['arrow_attributes']['role']);
+  }
+}
+
+/**
+ * Implements hook_preprocess_container().
+ *
+ * Adds a suffix to elements with id #edit-actions to stop duplication of ids
+ * on the same page.
+ */
+function nicsdru_unity_theme_preprocess_container(&$variables) {
+  if (isset($variables['element']['#id'])) {
+    $id = $variables['element']['#id'];
+    if (in_array($id, ['edit-actions'])) {
+      $id = Html::getUniqueId($id);
+    }
+    $variables['element']['#id'] = $id;
+    $variables['attributes']['id'] = $id;
+  }
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function nicsdru_unity_theme_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  if ($form['#id'] == 'views-exposed-form-search-site-search' || 'views-exposed-form-search-search-page') {
+    // Ensure the input field only accepts a letter or a number at the beginning of a search.
+    $form['query']['#pattern'] = '^[a-zA-Z0-9]+.*';
   }
 }

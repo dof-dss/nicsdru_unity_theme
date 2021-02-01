@@ -21,6 +21,7 @@
     border-radius: 3px;
     box-shadow: 4px 4px 9px 0 rgba(0, 0, 0, .3);
     opacity: 1;
+    margin-top: 1rem;
 
     &::after {
       content: '';
@@ -29,6 +30,28 @@
       position: absolute;
       top: -1.8rem;
       left: .9rem;
+    }
+  }
+}
+
+.search-form {
+  position: relative;
+
+  .form-item--error-message {
+    position: absolute;
+    top: 4.7rem;
+
+    @media screen and (min-width: $tab) {
+      top: 6rem;
+    }
+
+    .error {
+      margin-top: 0;
+      padding: .2rem;
+
+      @media screen and (max-width: $tab) {
+        font-size: 1.4rem;
+      }
     }
   }
 }
