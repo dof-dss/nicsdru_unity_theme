@@ -4,7 +4,7 @@
   -ms-grid-columns: calc(100% - 5.4rem) 5.4rem;
   grid-template-columns: auto 5.4rem;
   grid-template-areas: "form-item form-action";
-  align-items: center;
+  align-items: first baseline;
   margin-top: 40px;
 
   @media screen and (max-width: $tab) {
