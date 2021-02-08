@@ -82,8 +82,9 @@ $main-menu-span: container !default;
         }
 
         ul {
-          left: 151px;
+          left: 100%;
           top: 0;
+          margin-left: 1px;
 
           @media screen and (max-width: $tab) {
             margin: 0;
