@@ -207,8 +207,12 @@ $facet-text-color: null;
         }
       }
 
-      &:hover .facet-item__status {
-        background-color: darkorange;
+      &:hover {
+        color: #fff;
+
+        .facet-item__status {
+          background-color: darkorange;
+        }
       }
     }
 
