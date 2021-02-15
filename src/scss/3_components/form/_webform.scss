@@ -33,3 +33,12 @@
     }
   }
 }
+
+.search-form {
+  position: relative;
+
+  .required + label.error {
+    position: absolute;
+    margin-top: 0;
+  }
+}
