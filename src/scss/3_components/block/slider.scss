@@ -2,26 +2,18 @@
 
 .region-slideshow {
   max-width: $max-grid-width;
-  margin: auto;
+  margin: 0 auto;
   overflow: hidden;
 }
 
-#slick-views-slideshow-block-1-1 {
-  max-width: $max-grid-width;
-  margin: 0 auto;
-  position: relative;
-
-  .slick-dotted.slick-slider {
-    margin-bottom: 0;
-  }
-
+#slick-views-slideshow-slideshow-1 {
   .slide__caption {
     @include adjust-font-size-to(14px);
     background: rgba(0, 0, 0, .6);
     margin: 0;
     right: 0;
     padding: 1rem .4rem 1rem 0;
-    color: white;
+    color: $white;
     width: 355px;
     height: 100%;
     top: 0;
@@ -48,6 +40,11 @@
     }
 
     h2 {
+      @include adjust-font-size-to(20px);
+      padding: 1% 5% 1% 6%;
+      text-transform: uppercase;
+      text-shadow: 1px 1px 1px #414141;
+
       @media screen and (max-width: $tab) {
         @include adjust-font-size-to(16px);
       }
@@ -63,15 +60,20 @@
     a {
       @include adjust-font-size-to(20px);
       display: block;
+      padding: 0 6%;
+      color: $white;
+      text-decoration: underline;
 
       @media screen and (max-width: $lap) {
-        @include adjust-font-size-to(14px);
+        @include adjust-font-size-to(16px);
       }
 
       @media screen and (max-width: $tab) {
         padding: 6px 6%;
       }
+    }
 
+    a {
       &:hover,
       &:focus {
         color: $white;
@@ -82,166 +84,51 @@
         background: none;
       }
     }
+  }
 
-    .slick-arrow {
-      @media screen and (max-width: $lap) {
-        @include adjust-font-size-to(14px);
-        margin-top: 10px;
+  nav.slick__arrow {
+    position: absolute;
+    bottom: 26px;
+    right: 94px;
+    left: auto;
+    width: unset;
+    top: unset;
+
+    button {
+      display: block;
+      -webkit-transition: all 200ms ease-in-out;
+      -moz-transition: all 200ms ease-in-out;
+      -o-transition: all 200ms ease-in-out;
+      transition: all 200ms ease-in-out;
+
+      &.slick-prev {
+        left: 0px;
       }
 
-      @media screen and (max-width: $tab) {
-        margin: 5px 0;
-        display: block !important;
+      &.slick-next {
+        left: 44px;
       }
-    }
-  }
-}
 
-.slick--skin--fullwidth {
-  .slide__constrained {
-    width: 100%;
-    margin: 0;
-    left: unset;
-  }
-}
+      &:focus {
+        &::before {
+          color: $link-hover;
+        }
+      }
 
-.slider-wrapper {
-  background: transparent;
-  position: relative;
-  box-shadow: none;
-  overflow: visible;
-}
-
-
-.slide__caption {
-  //@include adjust-font-size-to(14px);
-  //background: rgba(0, 0, 0, .3);
-  //margin: 0;
-  //right: 0;
-  //padding: 1rem 0;
-  //color: white;
-  //width: 355px;
-  //height: 100%;
-  //top: 0;
-  //left: auto;
-  //position: absolute;
-
-  h2 {
-    @include adjust-font-size-to(20px);
-    padding: 1% 5% 1% 6%;
-    text-transform: uppercase;
-    text-shadow: 1px 1px 1px #414141;
-  }
-
-  p,
-  a {
-    padding: 0 6%;
-    color: $white;
-    text-decoration: underline;
-  }
-
-  .slick-arrow {
-    display: inline-block !important;
-  }
-}
-
-.slider-wrapper {
-  position: relative;
-  overflow: hidden;
-  margin: 0 auto;
-  z-index: 1;
-  width: 100%;
-  box-sizing: border-box;
-}
-
-.slick-dotted .slick-dots {
-  position: relative;
-  bottom: unset;
-  text-align: center;
-  padding: .5rem 0 0;
-
-  &.nivo-thumbs-enabled img {
-    width: 100px;
-  }
-
-  button {
-    background-image: resolve('bullets.png');
-    background-repeat: no-repeat;
-    width: 22px;
-    height: 22px;
-
-    &:before {
-      content: unset;
-    }
-  }
-
-  .slick-active button {
-    background-position: 0 -22px;
-  }
-
-  a {
-    text-indent: 9999px;
-    font-size: 0;
-
-    &:hover img {
-      background: #999;
-    }
-  }
-}
-
-nav.slick__arrow {
-  position: absolute;
-  bottom: 56px;
-  right: 90px;
-  left: auto;
-  width: unset;
-  top: unset;
-
-  button {
-    display: block;
-    width: 40px;
-    height: 40px;
-    //background: url(/sites/all/libraries/nivo-slider/themes/default/arrows.png) no-repeat;
-    //text-indent: -9999px;
-    background: none;
-    border: 0;
-    opacity: 9;
-    -webkit-transition: all 200ms ease-in-out;
-    -moz-transition: all 200ms ease-in-out;
-    -o-transition: all 200ms ease-in-out;
-    transition: all 200ms ease-in-out;
-
-    &.slick-prev {
-      left: 0px;
-    }
-
-    &.slick-next {
-      left: 40px;
-    }
-
-    &:hover,
-    &:focus {
-      color: transparent;
-      outline: none;
-      background: transparent;
-    }
-
-    &:hover {
       &::before {
         color: $white;
+        font-size: 44px;
       }
     }
+  }
 
-    &:focus {
+  .slick-dots {
+    bottom: -35px;
+
+    button {
       &::before {
-        color: #333;
+        font-size: 1rem;
       }
-    }
-
-    &::before {
-      color: $white;
-      font-size: 40px;
     }
   }
 }
-
