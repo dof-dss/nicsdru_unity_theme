@@ -2,15 +2,24 @@
 
 .region-slideshow {
   max-width: $max-grid-width;
-  margin: auto;
+  margin: 0 auto;
   overflow: hidden;
 }
 
-#block-nivo-slider-nivo-slider {
-  max-width: $max-grid-width;
-  margin: 0 auto;
+#slick-views-slideshow-slideshow-1 {
+  .slide__caption {
+    @include adjust-font-size-to(14px);
+    background: rgba(0, 0, 0, .6);
+    margin: 0;
+    right: 0;
+    padding: 1rem .4rem 1rem 0;
+    color: $white;
+    width: 355px;
+    height: 100%;
+    top: 0;
+    left: auto;
+    position: absolute;
 
-  .nivo-caption {
     @media screen and (max-width: $lap) {
       background: #6a6a6a;
       opacity: 1;
@@ -31,6 +40,11 @@
     }
 
     h2 {
+      @include adjust-font-size-to(20px);
+      padding: 1% 5% 1% 6%;
+      text-transform: uppercase;
+      text-shadow: 1px 1px 1px #414141;
+
       @media screen and (max-width: $tab) {
         @include adjust-font-size-to(16px);
       }
@@ -42,9 +56,16 @@
       }
     }
 
-    p {
+    p,
+    a {
+      @include adjust-font-size-to(20px);
+      display: block;
+      padding: 0 6%;
+      color: $white;
+      text-decoration: underline;
+
       @media screen and (max-width: $lap) {
-        @include adjust-font-size-to(14px);
+        @include adjust-font-size-to(16px);
       }
 
       @media screen and (max-width: $tab) {
@@ -52,85 +73,62 @@
       }
     }
 
-    .btn {
-      @media screen and (max-width: $lap) {
-        @include adjust-font-size-to(14px);
-        margin-top: 10px;
+    a {
+      &:hover,
+      &:focus {
+        color: $white;
+        text-decoration: none;
       }
 
-      @media screen and (max-width: $tab) {
-        margin: 5px 0;
-        display: block !important;
+      &:hover {
+        background: none;
       }
     }
   }
-}
 
-#slider {
-  background: transparent;
-  position: relative;
-  box-shadow: none;
-  overflow: visible;
-}
+  nav.slick__arrow {
+    position: absolute;
+    bottom: 26px;
+    right: 94px;
+    left: auto;
+    width: unset;
+    top: unset;
 
-.nivo-caption {
-  @include adjust-font-size-to(14px);
-  background: rgba(0, 0, 0, .3);
-  margin: 0;
-  right: 0;
-  padding: 1rem 0;
-  color: white;
-  width: 355px;
-  height: auto;
-  top: 0;
-  left: auto;
+    button {
+      display: block;
+      -webkit-transition: all 200ms ease-in-out;
+      -moz-transition: all 200ms ease-in-out;
+      -o-transition: all 200ms ease-in-out;
+      transition: all 200ms ease-in-out;
 
-  h2 {
-    @include adjust-font-size-to(20px);
-    padding: 1% 5% 1% 6%;
-    text-transform: uppercase;
-    text-shadow: 1px 1px 1px #414141;
-  }
+      &.slick-prev {
+        left: 0px;
+      }
 
-  p {
-    padding: 0 6%;
-  }
+      &.slick-next {
+        left: 44px;
+      }
 
-  .btn {
-    display: inline-block !important;
-  }
-}
+      &:focus {
+        &::before {
+          color: $link-hover;
+        }
+      }
 
-.slider-wrapper #slider {
-  position: relative;
-  overflow: hidden;
-  margin: 0 auto;
-  z-index: 1;
-  width: 100%;
-  box-sizing: border-box;
-}
-
-.theme-default .nivo-controlNav {
-  text-align: center;
-  padding: .5rem 0 0;
-
-  &.nivo-thumbs-enabled img {
-    width: 100px;
-  }
-
-  a {
-    text-indent: 9999px;
-    font-size: 0;
-
-    &:hover img {
-      background: #999;
+      &::before {
+        color: $white;
+        font-size: 44px;
+      }
     }
   }
-}
 
-.nivo-directionNav {
-  position: absolute;
-  bottom: 46px;
-  right: 90px;
-  left: auto;
+  .slick-dots {
+    bottom: -35px;
+
+    button {
+      &::before {
+        font-size: 1rem;
+      }
+    }
+  }
 }
