@@ -59,24 +59,14 @@ fontawesome:
           crossorigin: anonymous
           integrity: "sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
 
-# This library provides styling for an optional slider.
+# This library provides styling for an optional slider. Reference to this library should be added to the
+# subtheme's .info.yml file where required.
 unity-slider:
   version: VERSION
   css:
     #The SMACSS category, "component", is loaded after "base" and "layout" styles.
     component:
       css/3_components/block/slider.css: { minified: true }
-
-    #The SMACSS category, "state", is loaded after "base", "layout" and "component" styles.
-    state:
-      css/4_state/block/slider.css: { minified: true }
-
-slick-slider:
-  version: VERSION
-  css:
-    theme:
-      css/slick.css: {}
-      css/slick-theme.css: {}
 
 eu-cookie-compliance:
   version: VERSION

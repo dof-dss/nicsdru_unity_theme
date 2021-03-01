@@ -8,7 +8,6 @@ libraries:
   - nicsdru_unity_theme/unity-global-styling
   - nicsdru_unity_theme/unity-fonts
   - nicsdru_unity_theme/fontawesome
-  - nicsdru_unity_theme/slick-slider
   - nicsdru_unity_theme/eu-cookie-compliance
 
 ckeditor_stylesheets:
