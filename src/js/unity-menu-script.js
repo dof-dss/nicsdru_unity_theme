@@ -19,9 +19,12 @@
           return attr == 'true' ? 'false' : 'true'
         });
         $(this).parent('.expanded').toggleClass('open');
-        $(this).parent('.expanded').siblings().removeClass('open');
-        $(this).parent('.expanded').siblings().children('.menu-link').attr('aria-expanded', 'false');
-        $(this).parent('.expanded').siblings().children('ul').removeAttr('style');
+
+        var $sibling = $(this).parent('.expanded').siblings();
+
+        $sibling.removeClass('open');
+        $sibling.find('.expanded').removeClass('open');
+        $sibling.find('.menu-link').attr('aria-expanded', 'false');
       };
 
       $('#main-menu .menu-toggle-btn').once('open-submenu').on('click keypress', clickHandler);
