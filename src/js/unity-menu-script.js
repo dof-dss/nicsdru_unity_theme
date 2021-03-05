@@ -3,13 +3,25 @@
   Drupal.behaviors.nicsdruUnityMainMenu = {
     attach: function (context, settings) {
       $('#main-menu').find('.expanded .menu-link').once('has-submenu').each(function () {
-        if ($(this).next('.menu-main_sub').length == 1) {
+
+        var $submenu = $(this).next('.menu-main_sub');
+
+        if ($submenu.length == 1) {
+          var $content = $(this).text();
+          var $link = $(this).attr("href");
+
+          $submenu.prepend('<li class="menu-item leaf title"><a href="'+$link+'" class="menu-link">'+$content+'</a></li>')
           $(this).attr('aria-haspopup', 'true');
           $(this).attr('aria-expanded', 'false');
           $(this).addClass('menu-toggle-btn');
           $(this).attr("tabindex", "0");
           $(this).removeAttr('href');
           $(this).append('<svg aria-hidden="true" class="ico ico-arrow-down"><use xlink:href="#arrow"></use></svg>');
+
+          // if ($(this).hasClass('is-active')) {
+          //   $submenu.find('.title').children('a').addClass('is-active');
+          //   console.log('here');
+          // }
         }
       });
 
