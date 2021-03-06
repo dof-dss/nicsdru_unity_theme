@@ -17,11 +17,6 @@
           $(this).attr("tabindex", "0");
           $(this).removeAttr('href');
           $(this).append('<svg aria-hidden="true" class="ico ico-arrow-down"><use xlink:href="#arrow"></use></svg>');
-
-          // if ($(this).hasClass('is-active')) {
-          //   $submenu.find('.title').children('a').addClass('is-active');
-          //   console.log('here');
-          // }
         }
       });
 
