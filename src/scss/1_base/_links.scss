@@ -17,7 +17,7 @@
 //
 // Style guide: base.links
 $link: #0e6bb3 !default;
-$link-underline: #bbb !default;
+$link-underline: $charcoal !default;
 $link-active: #0e6bb3 !default;
 $link-hover: $link !default;
 $link-hover-background: rgba(75%, 75%, 75%, .25) !default;
@@ -36,17 +36,25 @@ a:not(.toolbar-icon) {
     padding: 0 1px;
   }
 
-  &:hover:not(.facet-item--link),
+  &:hover:not(.facet-item--link) {
+    #content &,
+    .content &,
+    #footer & {
+      border-bottom: 2px solid $link-underline;
+      margin-bottom: 0;
+    }
+  }
+
   &:focus:not(.facet-item--link) {
-    color: $link-hover;
-    background: $link-hover-background;
+    color: $white;
+    background: $link;
 
     #content &,
     .content &,
     #footer & {
-      border-bottom-width: 3px;
-      margin-bottom: -2px;
-      outline: 3px solid $link-hover-background;
+      border-bottom: 0;
+      outline: 2px solid $link;
+      outline-offset: 0;
     }
   }
 
