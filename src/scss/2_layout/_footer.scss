@@ -58,7 +58,7 @@
   //}
 }
 
-.footer-area {
+#footer-content {
   .column {
     float: left;
     width: 24.2%;
@@ -66,8 +66,8 @@
     padding: 1%;
 
     @media screen and (max-width: $tab) {
-      float: none !important;
-      width: auto !important;
+      float: none;
+      width: auto;
       margin: 1rem;
     }
 
@@ -77,10 +77,6 @@
       @media screen and (max-width: $tab) {
         margin: 1rem;
       }
-    }
-
-    &:last-child {
-      float: right;
     }
 
     &-title {
