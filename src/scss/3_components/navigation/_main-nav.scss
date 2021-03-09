@@ -167,6 +167,12 @@ $main-menu-span: container !default;
         > ul {
           display: block;
         }
+
+        .menu-toggle-btn {
+          background: $white;
+          color: $menu-background;
+          font-weight: bold;
+        }
       }
     }
 
@@ -195,7 +201,8 @@ $main-menu-span: container !default;
       }
     }
 
-    .is-active {
+    .is-active,
+    .is-active + .menu-main_sub .title a {
       background: rgba(191, 191, 191, .25);
       border-bottom-color: #cad400;
     }
