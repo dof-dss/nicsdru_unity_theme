@@ -35,11 +35,11 @@ $facet-text-color: null;
     text-decoration: none;
     vertical-align: middle;
     width: 100%;
-    font-size: 1.6rem;
+    @include adjust-font-size-to(16px);
 
     @include breakpoint($phab, $no-query: true) {
       min-width: 120px;
-      font-size: 1.8rem;
+      @include adjust-font-size-to(18px);
     }
 
     &:link,
@@ -120,7 +120,7 @@ $facet-text-color: null;
       padding: 0;
 
       &__label {
-        font-size: 1.6rem;
+        @include adjust-font-size-to(16px);
         line-height: 2.4rem;
         padding: 1rem 0;
 
@@ -135,7 +135,7 @@ $facet-text-color: null;
         flex-flow: row nowrap;
         align-items: center;
         width: auto;
-        font-size: 1.6rem;
+        @include adjust-font-size-to(16px);
         line-height: 2.4rem;
         padding: .4rem .6rem;
         margin: .6rem 0;
