@@ -98,7 +98,9 @@
     "build-js": "npm run js",
     "build-img": "npm-run-all --parallel imgmin svgmin icons",
     "build:docs": "npm run docs-build",
-    "lint": "npm-run-all --parallel css-lint js-lint"
+    "lint": "npm-run-all --parallel css-lint js-lint",
+    
+    "test": "echo \"No test specified\""
   },
   "config": {
     "//": "Some useful configuration we can use to pass back to scripts",
