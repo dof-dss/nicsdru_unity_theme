@@ -1,6 +1,6 @@
 {
   "name": "nicsdru_unity_theme",
-  "version": "0.1.13",
+  "version": "0.1.15",
   "description": "A package of utilities used to theme our site",
   "main": "index.js",
   "license": "MIT",
@@ -99,7 +99,6 @@
     "build-img": "npm-run-all --parallel imgmin svgmin icons",
     "build:docs": "npm run docs-build",
     "lint": "npm-run-all --parallel css-lint js-lint",
-
     "test": "echo \"No test specified\""
   },
   "config": {
