@@ -9,9 +9,9 @@
 //
 // Style guide: components.search-facets
 
-$facet-btn-color: #111 !default;
-$facet-btn-hover: #606060 !default;
-$facet-btn-focus-outline: $link-hover !default;
+$facet-btn-color: #333 !default;
+$facet-btn-hover: #111 !default;
+$facet-btn-focus-outline: #949494 !default;
 $facet-btn-active: #262626 !default;
 // Use the sass lightness function to determine whether to use a light / dark text color in the facet btn.
 $facet-text-color: null;
@@ -22,24 +22,25 @@ $facet-text-color: null;
   $facet-text-color: $text;
 }
 
-#search-facets {
+#search-facets,
+#content {
   .facet--title a.facet--btn {
     background-color: $facet-btn-color;
     // Touch target of 44px.
     display: block;
-    line-height: 3.8rem;
-    min-height: 4.4rem;
+    line-height: 4rem;
+    min-height: 4rem;
     min-width: 100px;
-    padding: 0 .3em;
+    padding: 0 .5em;
     text-align: left;
     text-decoration: none;
     vertical-align: middle;
     width: 100%;
-    border: 3px solid $facet-btn-color;
-    margin: 0;
+    @include adjust-font-size-to(16px);
 
     @include breakpoint($phab, $no-query: true) {
       min-width: 120px;
+      @include adjust-font-size-to(18px);
     }
 
     &:link,
@@ -49,24 +50,25 @@ $facet-text-color: null;
 
     &:hover {
       background-color: $facet-btn-hover;
-      border-color: $facet-btn-hover;
       text-decoration: none;
     }
 
     &:focus {
-      border-color: $facet-btn-focus-outline;
-      background-color: $facet-btn-hover;
+      outline: 3px solid $facet-btn-focus-outline;
+      outline-offset: -2px;
+      background-color: $facet-btn-color;
       border-bottom-width: 2px;
-      outline: none;
     }
 
-    &:active {
+    &:active,
+    &.active {
       background-color: $facet-btn-active;
       border-color: $facet-btn-active;
+      text-decoration: none;
     }
 
     .ico-arrow-down {
-      fill: currentColor;
+      fill: $facet-text-color;
       float: right;
       height: 2rem;
       margin: 1rem;
@@ -88,14 +90,29 @@ $facet-text-color: null;
       margin: 0;
     }
 
-    &s-widget-links {
-      background-color: #f6f6f6;
-      box-shadow: 0 0 1px inset $charcoal;
-    }
-
     &-list__links {
-      margin: 0;
+      margin: .1rem 0 .6rem;
       list-style: none;
+
+      // applied to nested list items.
+      .facet-item ul {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+
+        .facet-item {
+          position: relative;
+          padding: 0 0 0 1.2rem;
+          margin: 0;
+
+          &::before {
+            content: '-';
+            position: absolute;
+            left: .5em;
+            top: .5em;
+          }
+        }
+      }
     }
 
     &-item,
@@ -104,6 +121,7 @@ $facet-text-color: null;
       padding: 0;
 
       &__label {
+        @include adjust-font-size-to(16px);
         line-height: 2.4rem;
         padding: 1rem 0;
 
@@ -117,31 +135,41 @@ $facet-text-color: null;
         display: inline-flex;
         flex-flow: row nowrap;
         align-items: center;
-        width: 100%;
-        line-height: 1.5;
-        padding: .6rem;
+        width: auto;
+        @include adjust-font-size-to(16px);
+        line-height: 2.4rem;
+        padding: .4rem .6rem;
+        margin: .6rem 0;
         text-decoration: none;
-        border: 0;
+        color: $link;
 
         &:hover {
           .facet-item__value {
-            text-decoration: none;
+            text-decoration: 2px underline #333;
           }
-        }
-
-        &:focus,
-        &:hover {
-          background-color: $facet-btn-focus-outline;
-          color: #fff;
         }
 
         .facet-item__value {
           text-decoration: underline;
         }
-      }
 
-      &-summary-item--facet a {
-        margin: 0 .4rem;
+        .facet-item__status {
+          flex-shrink: 0;
+        }
+
+        &:visited {
+          color: $link;
+        }
+
+        &:focus {
+          background-color: $link;
+          color: #fff;
+          outline: 0;
+
+          > * {
+            text-decoration: none;
+          }
+        }
       }
 
       &__value {
@@ -151,6 +179,7 @@ $facet-text-color: null;
 
       &__count {
         text-decoration: none;
+        white-space: nowrap;
       }
 
       &__status {
@@ -159,7 +188,7 @@ $facet-text-color: null;
         vertical-align: middle;
         width: 2rem;
         height: 2rem;
-        margin-right: .6rem;
+        margin: 0;
         padding: 0;
         background-color: $ash-grey;
         color: #fff;
@@ -186,33 +215,26 @@ $facet-text-color: null;
 
     &-item a.is-active,
     &-summary-item--facet a {
-      //background-color: #cee4f6;
+      background-color: #cee4f6;
       color: #333;
+
+      &:visited {
+        color: #333;
+      }
+
+      &:focus {
+        outline: 3px solid #333;
+        outline-offset: -1px;
+      }
 
       .facet-item__value {
         text-decoration: none;
         padding-left: 0;
       }
 
-      &:focus {
-        color: #fff;
-
-        .facet-item__status {
-          background-color: #fff;
-
-          &::before,
-          &::after {
-            background-color: $ash-grey;
-          }
-        }
-      }
-
-      &:hover {
-        color: #fff;
-
-        .facet-item__status {
-          background-color: darkorange;
-        }
+      &:hover .facet-item__status,
+      &:focus .facet-item__status {
+        background-color: darkorange;
       }
     }
 
@@ -243,17 +265,56 @@ $facet-text-color: null;
   }
 
   a.facets-soft-limit-link {
-    display: inline-flex;
-    flex-flow: row nowrap;
-    align-items: center;
-    width: 100%;
-    line-height: 1.5;
-    padding: .6rem 1rem;
+    display: inline-block;
+    @include adjust-font-size-to(16px, 4);
+    padding: .4rem 4rem .4rem .8rem;
+    position: relative;
 
-    &:focus,
-    &:hover {
-      background-color: $facet-btn-focus-outline;
+    &:focus {
+      outline: 0;
+      background-color: $link;
       color: #fff;
+      text-decoration: none;
+    }
+
+    &::after {
+      content: '';
+      display: block;
+      position: absolute;
+      top: .4rem;
+      right: .4rem;
+      width: 2.4rem;
+      height: 2.4rem;
+      border: 1px solid $charcoal;
+      background: #fff url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2025%2015%22%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%20.st0%7Bfill%3A%23333333%3Bfill-rule%3Aevenodd%3Bclip-rule%3Aevenodd%3B%7D%20%3C%2Fstyle%3E%3Cpath%20class%3D%22st0%22%20d%3D%22M12.5%200L0%2012l3%203%209.5-10L22%2015l3-3L12.5%200z%22%2F%3E%3C%2Fsvg%3E%0A") no-repeat scroll center center/12px auto;
+      transform: rotate(180deg);
+    }
+
+    &:hover::after,
+    &:focus::after {
+      border-color: #fff;
+      background: $link url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2025%2015%22%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%20.st0%7Bfill%3A%23ffffff%3Bfill-rule%3Aevenodd%3Bclip-rule%3Aevenodd%3B%7D%20%3C%2Fstyle%3E%3Cpath%20class%3D%22st0%22%20d%3D%22M12.5%200L0%2012l3%203%209.5-10L22%2015l3-3L12.5%200z%22%2F%3E%3C%2Fsvg%3E%0A") no-repeat scroll center center/12px auto;
+    }
+
+    &.open {
+
+      &::after {
+        transform: rotate(0deg);
+      }
+    }
+  }
+  
+  #post-content .facet-summary-item--facet a {
+    margin: 0 .5em;
+    border-bottom: none;
+    padding: .4rem .6rem;
+
+    &:hover {
+      border-bottom: none;
+
+      .facet-item__value {
+        text-decoration: none;
+      }
     }
   }
 }

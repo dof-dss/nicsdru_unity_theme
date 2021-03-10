@@ -83,6 +83,10 @@
       &:hover {
         background: none;
       }
+
+      &:focus {
+        background: $charcoal;
+      }
     }
   }
 
