@@ -99,7 +99,7 @@
     "build-img": "npm-run-all --parallel imgmin svgmin icons",
     "build:docs": "npm run docs-build",
     "lint": "npm-run-all --parallel css-lint js-lint",
-    
+
     "test": "echo \"No test specified\""
   },
   "config": {
