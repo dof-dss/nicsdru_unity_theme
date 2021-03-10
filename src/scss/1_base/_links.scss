@@ -37,9 +37,6 @@ a:not(.toolbar-icon):not(.facet--btn):not(.facet-item--link) {
   }
 
   &:hover:not(.facet-item--link):not(.facet--btn) {
-    color: $link-hover;
-    background: $link-hover-background;
-
     #content &,
     .content &,
     #footer & {
