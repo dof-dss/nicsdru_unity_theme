@@ -22,7 +22,8 @@ $facet-text-color: null;
   $facet-text-color: $text;
 }
 
-#search-facets {
+#search-facets,
+#content {
   .facet--title a.facet--btn {
     background-color: $facet-btn-color;
     // Touch target of 44px.
@@ -267,8 +268,18 @@ $facet-text-color: null;
       color: #fff;
     }
   }
-}
 
-#content .facet-summary-item--facet a {
-  margin: 0 .5em;
+  #post-content .facet-summary-item--facet a {
+    margin: 0 .5em;
+    border-bottom: none;
+    padding: .4rem .6rem;
+
+    &:hover {
+      border-bottom: none;
+
+      .facet-item__value {
+        text-decoration: none;
+      }
+    }
+  }
 }
