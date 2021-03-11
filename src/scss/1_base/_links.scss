@@ -31,7 +31,7 @@ a:not(.toolbar-icon):not(.facet--btn):not(.facet-item--link):not(.btn) {
   #content &,
   .content &,
   #footer & {
-    border-bottom: 1px solid $link-underline;
+    border-bottom: 1px solid $link;
     margin: 0 -1px;
     padding: 0 1px;
   }
@@ -57,9 +57,10 @@ a:not(.toolbar-icon):not(.facet--btn):not(.facet-item--link):not(.btn) {
     }
   }
 
-  &:visited {
-    border-bottom-color: $link-visited-underline;
-  }
+  // This visited styling doesn't work well appearance wise and will need re-evaluated.
+  //&:visited {
+  //  border-bottom-color: $link-visited-underline;
+  //}
 }
 
 .skip-link,
