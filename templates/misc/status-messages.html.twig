@@ -19,7 +19,7 @@
  *   - class: HTML classes.
  */
 #}
-<div class="container status-msg" data-drupal-messages>
+<div class="container messages messages--status status-msg" data-drupal-messages>
   {% for type, messages in message_list %}
     <div role="contentinfo" aria-label="{{ status_headings[type] }}"{{ attributes|without('role', 'aria-label') }}>
       {% if type == 'error' %}
