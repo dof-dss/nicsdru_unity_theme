@@ -24,7 +24,7 @@ $link-hover-background: rgba(75%, 75%, 75%, .25) !default;
 $link-visited: #0d63a5 !default;
 $link-visited-underline: #707070 !default;
 
-a:not(.toolbar-icon):not(.facet--btn):not(.facet-item--link):not(.btn) {
+a:not(.toolbar-icon):not(.facet--btn):not(.facet-item--link):not(.btn):not(.ui-menu-item-wrapper) {
   color: $link;
   text-decoration: none;
 
