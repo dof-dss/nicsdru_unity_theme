@@ -75,7 +75,6 @@ eu-cookie-compliance:
       css/4_state/block/eu-cookie-compliance.css: { minified: true }
 
 autocomplete:
-  version: VERSION
   css:
     component:
       css/3_components/form/search_api_autocomplete.css: { minified: true }
