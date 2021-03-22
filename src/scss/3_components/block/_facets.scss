@@ -12,7 +12,7 @@
 $facet-btn-color: #333 !default;
 $facet-btn-hover: #111 !default;
 $facet-btn-focus-outline: #949494 !default;
-$facet-btn-active: #262626 !default;
+$facet-btn-active: #111 !default;
 // Use the sass lightness function to determine whether to use a light / dark text color in the facet btn.
 $facet-text-color: null;
 @if(lightness($facet-btn-color) < 50) {
@@ -56,7 +56,7 @@ $facet-text-color: null;
     &:focus {
       outline: 3px solid $facet-btn-focus-outline;
       outline-offset: -2px;
-      background-color: $facet-btn-color;
+      background-color: $facet-btn-hover;
       border-bottom-width: 2px;
     }
 
@@ -303,7 +303,7 @@ $facet-text-color: null;
       }
     }
   }
-  
+
   #post-content .facet-summary-item--facet a {
     margin: 0 .5em;
     border-bottom: none;
