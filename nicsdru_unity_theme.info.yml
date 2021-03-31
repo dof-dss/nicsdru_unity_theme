@@ -9,6 +9,7 @@ libraries:
   - nicsdru_unity_theme/unity-fonts
   - nicsdru_unity_theme/fontawesome
   - nicsdru_unity_theme/eu-cookie-compliance
+  - nicsdru_unity_theme/media_library_styles
 
 ckeditor_stylesheets:
   - css/styles.css
