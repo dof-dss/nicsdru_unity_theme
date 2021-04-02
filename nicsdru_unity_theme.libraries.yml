@@ -78,3 +78,8 @@ autocomplete:
   css:
     component:
       css/3_components/form/search_api_autocomplete.css: { minified: true }
+
+media_library_styles:
+  css:
+    component:
+      css/3_components/field/file-link.css: { minified: true }
