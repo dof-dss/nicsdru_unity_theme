@@ -47,12 +47,11 @@
 
   .popup-content {
     display: grid;
-    grid-gap: 24px;
+    //grid-gap: 24px;
     grid-template-columns: 1fr;
 
-    @include breakpoint($tab) {
-      justify-content: space-between;
-      grid-template-columns: auto 400px;
+    @media screen and (min-width: 1000px) {
+      grid-template-columns: 2fr 1fr;
     }
 
     .eu-cookie-compliance-message {
@@ -81,9 +80,16 @@
             //font-weight: bold;
           }
         }
+      }
 
-        &:last-of-type {
-          margin-bottom: 0;
+      a {
+        text-decoration: 1px underline;
+        text-underline-offset: 3px;
+        outline: 0;
+        outline-offset: 0;
+
+        &:hover {
+          text-decoration: 2px underline $white;
         }
       }
     }
