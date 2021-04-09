@@ -13,6 +13,19 @@
 //
 // Style guide: components.file-links
 
+a.file-link {
+  color: $link;
+  background-color: rgba(0, 0, 0, 0);
+  text-decoration: 1px underline;
+  text-underline-offset: 3px;
+  outline: 0;
+  outline-offset: 0;
+
+  &:hover {
+    text-decoration: 2px underline #333;
+  }
+}
+
 .file {
   &-link {
     @include adjust-font-size-to(21px, 4.5);
@@ -27,23 +40,31 @@
       min-height: 50px;
       padding-left: 65px;
       position: relative;
+      margin-left: 0.5rem;
 
       &::before {
         position: absolute;
         left: 0;
         top: 0;
       }
+
+      &:focus::before {
+        background-position-y: bottom;
+      }
     }
 
     .meta {
       @include adjust-font-size-to(14px, 3.5);
       display: block;
+      color: #4d4d4d;
+      margin-bottom: 0;
     }
 
     &:focus {
       background-color: $link;
       color: #fff;
       outline: 5px solid $link;
+      outline-offset: -1px;
       text-decoration: none;
 
       .meta {
@@ -202,7 +223,7 @@
     top: 50%;
     transform: translate(-50%, calc(-50% - 17px));
     color: #fff;
-    background: rgba(0,0,0,.5) url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" viewBox="0 0 24 24" fill="white" width="18px" height="18px"><g><rect fill="none" height="24" width="24"/></g><g><path d="M12,2C6.48,2,2,6.48,2,12s4.48,10,10,10s10-4.48,10-10S17.52,2,12,2z M9.5,16.5v-9l7,4.5L9.5,16.5z"/></g></svg>') center center no-repeat;
+    background: rgba(0, 0, 0, .5) url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" viewBox="0 0 24 24" fill="white" width="18px" height="18px"><g><rect fill="none" height="24" width="24"/></g><g><path d="M12,2C6.48,2,2,6.48,2,12s4.48,10,10,10s10-4.48,10-10S17.52,2,12,2z M9.5,16.5v-9l7,4.5L9.5,16.5z"/></g></svg>') center center no-repeat;
     background-size: 40px auto;
     border-radius: 20px;
     opacity: .75;
