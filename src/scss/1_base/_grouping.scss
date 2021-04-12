@@ -130,14 +130,19 @@ blockquote,
 q {
   quotes: none;
   border: 0;
-  background: transparent resolve('quote.png') no-repeat scroll 0 0;
-  padding: 1rem .5rem .5rem 4.7rem;
-  text-shadow: 1px 1px #fff;
-  margin: 5px 0;
-  border-radius: 7px;
+  display: flex;
 
   &::before,
   &::after {
     content: '';
+    padding: 1rem .5rem .5rem 4.7rem;
+    text-shadow: 1px 1px #fff;
+    margin: 5px 0;
+    border-radius: 7px;
+    background: transparent resolve('quote.png') no-repeat scroll 0 0;
+  }
+
+  &::after {
+    transform: rotate(180deg);
   }
 }
