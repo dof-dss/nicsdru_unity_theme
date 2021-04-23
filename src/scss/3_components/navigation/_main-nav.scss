@@ -120,6 +120,10 @@ $main-menu-span: container !default;
               background: lighten($menu-background, 12%);
             }
           }
+
+          span.active {
+            font-weight: bold;
+          }
         }
 
         .menu-link {
@@ -132,10 +136,6 @@ $main-menu-span: container !default;
           padding: .8rem 1.1rem;
           border-radius: 0;
           color: $white;
-
-          &.is-active {
-            font-weight: bold;
-          }
 
           @media screen and (max-width: $tab) {
             border-top: 1px solid #fff;
@@ -176,7 +176,8 @@ $main-menu-span: container !default;
       }
     }
 
-    &-link {
+    &-link,
+    span.active {
       border-bottom: 5px solid transparent;
       padding: 1.1rem 0 .4rem;
       display: block;
@@ -201,8 +202,8 @@ $main-menu-span: container !default;
       }
     }
 
-    .is-active,
-    .is-active + .menu-main_sub .title a {
+    .active,
+    .active + .menu-main_sub .title a {
       background: rgba(191, 191, 191, .25);
       border-bottom-color: #cad400;
     }
