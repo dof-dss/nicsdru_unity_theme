@@ -120,10 +120,13 @@ $main-menu-span: container !default;
               background: lighten($menu-background, 12%);
             }
           }
+
+          span.active {
+            font-weight: bold;
+          }
         }
 
-        .menu-link,
-        span.active {
+        .menu-link {
           @include adjust-font-size-to(14px);
           min-width: 150px;
           margin: 0;
@@ -133,10 +136,6 @@ $main-menu-span: container !default;
           padding: .8rem 1.1rem;
           border-radius: 0;
           color: $white;
-
-          .active {
-            font-weight: bold;
-          }
 
           @media screen and (max-width: $tab) {
             border-top: 1px solid #fff;
