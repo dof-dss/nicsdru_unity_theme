@@ -122,7 +122,8 @@ $main-menu-span: container !default;
           }
         }
 
-        .menu-link {
+        .menu-link,
+        span.active {
           @include adjust-font-size-to(14px);
           min-width: 150px;
           margin: 0;
@@ -133,7 +134,7 @@ $main-menu-span: container !default;
           border-radius: 0;
           color: $white;
 
-          &.is-active {
+          .active {
             font-weight: bold;
           }
 
@@ -176,7 +177,8 @@ $main-menu-span: container !default;
       }
     }
 
-    &-link {
+    &-link,
+    span.active {
       border-bottom: 5px solid transparent;
       padding: 1.1rem 0 .4rem;
       display: block;
@@ -201,8 +203,8 @@ $main-menu-span: container !default;
       }
     }
 
-    .is-active,
-    .is-active + .menu-main_sub .title a {
+    .active,
+    .active + .menu-main_sub .title a {
       background: rgba(191, 191, 191, .25);
       border-bottom-color: #cad400;
     }
