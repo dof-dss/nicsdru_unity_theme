@@ -123,10 +123,13 @@ $main-menu-span: container !default;
 
           span.active {
             font-weight: bold;
+            text-align: left;
+            padding-left: 1.1rem
           }
         }
 
-        .menu-link {
+        .menu-link,
+        .active {
           @include adjust-font-size-to(14px);
           min-width: 150px;
           margin: 0;
@@ -177,7 +180,7 @@ $main-menu-span: container !default;
     }
 
     &-link,
-    span.active {
+    .active {
       border-bottom: 5px solid transparent;
       padding: 1.1rem 0 .4rem;
       display: block;
@@ -195,15 +198,17 @@ $main-menu-span: container !default;
         border-right: 0;
         text-align: left;
       }
+    }
 
+    &-link {
       &:hover,
       &:focus {
         background: $menu-item-hover;
       }
     }
 
-    .active,
-    .active + .menu-main_sub .title a {
+    .menu-item .active,
+    .menu-item .active + .menu-main_sub .title a {
       background: rgba(191, 191, 191, .25);
       border-bottom-color: #cad400;
     }
