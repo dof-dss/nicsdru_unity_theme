@@ -120,9 +120,16 @@ $main-menu-span: container !default;
               background: lighten($menu-background, 12%);
             }
           }
+
+          span.active {
+            font-weight: bold;
+            text-align: left;
+            padding-left: 1.1rem
+          }
         }
 
-        .menu-link {
+        .menu-link,
+        .active {
           @include adjust-font-size-to(14px);
           min-width: 150px;
           margin: 0;
@@ -132,10 +139,6 @@ $main-menu-span: container !default;
           padding: .8rem 1.1rem;
           border-radius: 0;
           color: $white;
-
-          &.is-active {
-            font-weight: bold;
-          }
 
           @media screen and (max-width: $tab) {
             border-top: 1px solid #fff;
@@ -176,7 +179,8 @@ $main-menu-span: container !default;
       }
     }
 
-    &-link {
+    &-link,
+    .active {
       border-bottom: 5px solid transparent;
       padding: 1.1rem 0 .4rem;
       display: block;
@@ -194,15 +198,17 @@ $main-menu-span: container !default;
         border-right: 0;
         text-align: left;
       }
+    }
 
+    &-link {
       &:hover,
       &:focus {
         background: $menu-item-hover;
       }
     }
 
-    .is-active,
-    .is-active + .menu-main_sub .title a {
+    .menu-item .active,
+    .menu-item .active + .menu-main_sub .title a {
       background: rgba(191, 191, 191, .25);
       border-bottom-color: #cad400;
     }
