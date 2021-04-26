@@ -215,8 +215,8 @@ function nicsdru_unity_theme_preprocess_media(&$variables) {
 
     if (!empty($file)) {
       $variables['file_size'] = format_size($file->getSize(), \Drupal::languageManager()->getCurrentLanguage()->getId());
-      $variables['file_url'] = $file->createFileUrl();
-      $variables['file_extension'] = pathinfo($file->createFileUrl(), PATHINFO_EXTENSION);
+      $variables['file_url'] = $file->getFileUri();;
+      $variables['file_extension'] = pathinfo($file->getFileUri(), PATHINFO_EXTENSION);
       $file_mimetype = $file->getMimeType();
       if (array_key_exists($file->getMimeType(), $pretty_mimes)) {
         $variables['file_type'] = $pretty_mimes[$file_mimetype];
