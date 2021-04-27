@@ -38,10 +38,12 @@
     <{{ list_type }}{{ attributes }}>
     {%- for item in items -%}
       {%- set facet_name = item.value['#title']['#facet'].name -%}
-      {% if 'date' in facet_name %}
-        {% set facet_name = ('Date') %}
-      {% endif %}
-      <li{{ item.attributes }}><span aria-label="Selected filter" class="facet-item__label">{{ facet_name|t }}</span>{{ item.value }}</li>
+      <li{{ item.attributes }}>
+          <span aria-label="Selected filter" class="facet-item__label">
+            {{ facet_name|t }}
+          </span>
+        {{ link(item.value['#title'], item.value["#url"], { 'data-self-ref': ['true']}) }}
+      </li>
     {%- endfor -%}
     </{{ list_type }}>
   {%- else -%}
