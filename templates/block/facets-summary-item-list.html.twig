@@ -42,7 +42,7 @@
           <span aria-label="Selected filter" class="facet-item__label">
             {{ facet_name|t }}
           </span>
-        {{ link(item.value['#title'], item.value["#url"], { 'data-self-ref': ['true']}, {'class': 'hello'}) }}
+        {{ link(item.value['#title'], item.value["#url"], { 'data-self-ref': ['true']}) }}
       </li>
     {%- endfor -%}
     </{{ list_type }}>
