@@ -52,8 +52,7 @@ a:not(.toolbar-icon):not(.file-link):not(.facet--btn):not(.facet-item--link):not
     .content &,
     #footer & {
       border-bottom: 0;
-      outline: 2px solid $link;
-      outline-offset: 0;
+      margin: 0;
     }
   }
 
