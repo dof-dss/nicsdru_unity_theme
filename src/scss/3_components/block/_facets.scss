@@ -222,6 +222,12 @@ $facet-text-color: null;
         color: #333;
       }
 
+      &:focus {
+        outline: 3px solid #333;
+        outline-offset: -1px;
+        background-color: #cee4f6;
+      }
+
       .facet-item__value {
         text-decoration: none;
         padding-left: 0;
