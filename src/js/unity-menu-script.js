@@ -5,12 +5,14 @@
       $('#main-menu').find('.expanded .menu-link').once('has-submenu').each(function () {
 
         var $submenu = $(this).next('.menu-main_sub');
+        var $sidemenu = $('#block-sidemenu').find('.menu');
 
         if ($submenu.length == 1) {
           var $content = $(this).text();
           var $link = $(this).attr("href");
 
-          $submenu.prepend('<li class="menu-item leaf title"><a href="'+$link+'" class="menu-link">'+$content+'</a></li>')
+          $submenu.prepend('<li class="menu-item leaf title"><a href="'+$link+'" class="menu-link">'+$content+'</a></li>');
+          $sidemenu.prepend('<li class="menu-item leaf title"><a href="'+$link+'" class="menu-link">'+$content+'</a></li>');
           $(this).attr('aria-haspopup', 'true');
           $(this).attr('aria-expanded', 'false');
           $(this).addClass('menu-toggle-btn');
