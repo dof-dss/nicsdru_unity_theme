@@ -21,29 +21,57 @@
       });
 
       var clickHandler = function (e) {
-        e.preventDefault();
-        $(this).attr('aria-expanded', function (i, attr) {
-          return attr == 'true' ? 'false' : 'true'
-        });
-        $(this).parent('.expanded').toggleClass('open');
+        if ((e.type == 'keypress') && (e.which != 13)) {
+          return;
+        } else {
+          e.preventDefault();
 
-        var $sibling = $(this).parent('.expanded').siblings();
+          $(this).attr('aria-expanded', function (i, attr) {
+            return attr == 'true' ? 'false' : 'true'
+          });
+          $(this).parent('.expanded').toggleClass('open');
 
-        $sibling.removeClass('open');
-        $sibling.find('.expanded').removeClass('open');
-        $sibling.find('.menu-link').attr('aria-expanded', 'false');
+          var $sibling = $(this).parent('.expanded').siblings();
+
+          $sibling.removeClass('open');
+          $sibling.find('.expanded').removeClass('open');
+          $sibling.find('.menu-link').attr('aria-expanded', 'false');
+        }
       };
 
       $('#main-menu .menu-toggle-btn').once('open-submenu').on('click keypress', clickHandler);
     }
   }
 
+  var escHandler = function (event) {
+    if ((event.type == 'keydown') && (event.which != 27)) {
+      return;
+    } else {
+      event.preventDefault();
+
+      var activeElement = document.activeElement;
+      var subLinkParent = $(activeElement).parents('.menu-main_sub');
+
+      if (subLinkParent.length) {
+        $(subLinkParent).siblings('a').focus();
+      }
+
+      closeMenu();
+    }
+  }
+  $(this).once('esc-close-submenu').on('keydown', escHandler);
+
   $(document).once('close-submenu').click(function (event) {
     var $trigger = $('#main-menu');
     if ($trigger !== event.target && !$trigger.has(event.target).length) {
-      $('#main-menu .menu-toggle-btn')
-        .attr('aria-expanded', 'false')
-        .parent('.expanded').removeClass('open')
+      closeMenu();
     }
   });
+
+  var closeMenu = function () {
+    console.log('Close Menu')
+    $('#main-menu .menu-toggle-btn')
+      .attr('aria-expanded', 'false')
+      .parent('.expanded').removeClass('open')
+  }
 })(jQuery, Drupal);
