@@ -23,12 +23,21 @@
 // Style guide: components.navigation.main-navigation
 
 $main-menu-span: container !default;
+$main-menu-border: false !default;
 
-.menu_wrapper {
+.region-primary-menu .menu_wrapper {
   width: 100%;
 
   @if $main-menu-span != 'container' {
     background-color: $menu-background;
+  }
+
+  @if $main-menu-border == true {
+    @include breakpoint($tab) {
+      border-top: 1px solid;
+      border-bottom: 1px solid;
+      border-color: $menu-borders;
+    }
   }
 
   @media screen and (max-width: $tab) {
