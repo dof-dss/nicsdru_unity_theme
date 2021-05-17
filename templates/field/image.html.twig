@@ -10,8 +10,4 @@
  * @see template_preprocess_image()
  */
 #}
-{% if attributes.alt is empty %}
-  <img{{ attributes.setAttribute('alt', '') }} />
-{% else %}
-  <img{{ attributes }} />
-{% endif %}
+<img{{ attributes|without('alt')|without('caption') }} alt="{{ alt }}" />
