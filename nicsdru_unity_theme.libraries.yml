@@ -9,6 +9,7 @@ unity-global-styling:
     js/ext-win-script.js: { minified: true }
     js/empty-tags-script.js: { minified: true }
     js/unity-facets.js: { minified: true }
+    js/thwoop-images.js: { minified: true }
   dependencies:
     - core/drupal
     - core/jquery
@@ -83,3 +84,10 @@ media_library_styles:
   css:
     component:
       css/3_components/field/file-link.css: { minified: true }
+
+responsive_images:
+  css:
+    component:
+      css/3_components/content/responsive-images.css: { minified: true }
+      css/3_components/content/responsive-images-ckeditor.css: { minified: true }
+
