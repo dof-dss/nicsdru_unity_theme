@@ -17,12 +17,19 @@ a {
     text-align: center;
     padding: .6rem 1.6rem;
     cursor: pointer;
-    background: $brand-primary;
+    background: $link;
     border-radius: 0;
+    border: 3px solid transparent;
+    text-decoration: underline;
+    text-underline-offset: .25em;
 
-    &:hover {
-      opacity: .7;
-      text-decoration: none;
+    &:hover,
+    &:focus {
+      background: $ash-grey;
+    }
+
+    &:focus {
+      border-color: $black;
     }
   }
 }
