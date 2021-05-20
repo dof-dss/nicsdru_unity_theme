@@ -75,6 +75,10 @@
     }
   }
 
+  &[data-picture-mapping='slideshow'] img {
+    margin: 0;
+  }
+
   // Floated styles.
   &[data-picture-mapping='inline'],
   &[data-picture-mapping='inline_expandable'],
