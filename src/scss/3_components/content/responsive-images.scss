@@ -75,6 +75,14 @@
     }
   }
 
+  &[data-picture-mapping='slideshow'],
+  &[data-picture-mapping='unity_3_col_images'],
+  &[data-picture-mapping='member_small_image'] {
+    img {
+      margin: 0;
+    }
+  }
+
   // Floated styles.
   &[data-picture-mapping='inline'],
   &[data-picture-mapping='inline_expandable'],
@@ -204,4 +212,8 @@ a.thwooper { // Added by JS after all expandable images - when clicked it adds "
       transform: rotate(-45deg);
     }
   }
+}
+
+.field-member-image {
+  width: 76%;
 }
