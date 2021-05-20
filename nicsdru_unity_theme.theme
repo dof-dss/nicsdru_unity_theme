@@ -295,7 +295,7 @@ function nicsdru_unity_theme_preprocess_responsive_image_formatter(array &$varia
   // well as safe Twig rendering in responsive-image.html.twig to cover
   // any content that is migrated in from the legacy db and could
   // potentially contain dodgy html.
-  $caption = $media_image->field_caption->value;
+  $caption = $media_image->field_caption->getString();
 
   if (!empty($caption)) {
     $variables['responsive_image']['#attributes']['caption'] = $caption;
