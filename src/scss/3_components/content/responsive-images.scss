@@ -77,7 +77,8 @@
 
   &[data-picture-mapping='slideshow'],
   &[data-picture-mapping='unity_3_col_images'],
-  &[data-picture-mapping='member_small_image'] {
+  &[data-picture-mapping='member_small_image'],
+  &[data-picture-mapping='narrow'] {
     img {
       margin: 0;
     }
@@ -212,8 +213,4 @@ a.thwooper { // Added by JS after all expandable images - when clicked it adds "
       transform: rotate(-45deg);
     }
   }
-}
-
-.field-member-image {
-  width: 76%;
 }
