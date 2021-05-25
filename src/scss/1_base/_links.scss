@@ -62,6 +62,10 @@ a:not(.toolbar-icon):not(.file-link):not(.facet--btn):not(.facet-item--link):not
   //}
 }
 
+#block-mainpagecontent .content a {
+  overflow-wrap: break-word;
+}
+
 .skip-link,
 .skip-link:visited {
   opacity: .75;
