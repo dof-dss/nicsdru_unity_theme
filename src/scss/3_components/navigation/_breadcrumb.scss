@@ -34,23 +34,22 @@ $breadcrumb-separator: '»' !default;
   @include adjust-font-size-to(13px);
   //margin: 1rem;
   border-bottom: 1px solid $breadcrumb-border-bottom;
-  line-height: 2.7rem;
-
-  @media screen and (min-width: $lap) {
-    //margin: 0;
-    line-height: 3.6rem;
-  }
+  line-height: 2.5rem;
 
   .breadcrumb {
     &--list {
       list-style: none;
       margin: 0;
+      display: inline-flex;
+      align-items: baseline;
+      padding: .5rem 0;
     }
 
     &--item {
-      display: inline-block;
+      display: contents;
       margin: $breadcrumb-margin;
       padding: 0;
+      line-height: 1.5;
 
       a {
         border: 0;
@@ -60,6 +59,7 @@ $breadcrumb-separator: '»' !default;
       &::after {
         content: $breadcrumb-separator;
         margin: $breadcrumb-margin;
+        padding: 0 .3rem;
       }
 
       &:last-child::after {
