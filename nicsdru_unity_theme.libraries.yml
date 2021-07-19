@@ -90,4 +90,7 @@ responsive_images:
     component:
       css/3_components/content/responsive-images.css: { minified: true }
       css/3_components/content/responsive-images-ckeditor.css: { minified: true }
-
+video:
+  css:
+    component:
+      css/3_components/content/video.css: { minified: true }
