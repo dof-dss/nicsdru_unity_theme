@@ -14,7 +14,9 @@ libraries:
   - nicsdru_unity_theme/video
 
 ckeditor_stylesheets:
-  - css/styles.css
+  - css/3_components/ckeditor.css
+  - css/3_components/content/responsive-images.css
+  - css/3_components/content/responsive-images-ckeditor.css
 
 #libraries-override:
 #  core/modernizr: nicsdru_unity_theme/nicsdru-modernizr
