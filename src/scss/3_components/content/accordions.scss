@@ -88,7 +88,7 @@
 
       &[aria-expanded='true']::after {
         transform: rotate(0deg);
-        background-color: lighten($link, 20%);
+        background-color: lighten($link, 40%);
         border-color: $link;
       }
 
