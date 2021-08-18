@@ -64,6 +64,7 @@
     "js-compile-menu-lib": "mkdir -p js && uglifyjs src/js/unity-menu-script.js -o js/unity-menu-script.js",
     "js-compile-facets-lib": "mkdir -p js && uglifyjs src/js/unity-facets.js -o js/unity-facets.js",
     "js-compile-thwoop-lib": "mkdir -p js && uglifyjs src/js/thwoop-images.js -o js/thwoop-images.js",
+    "js-compile-accordions": "mkdir -p js && uglifyjs src/js/accordions.js -o js/accordions.js",
     "––––––– CSS SCRIPTS": "–––––––––––––",
     "css": "npm-run-all --sequential scss-dev css-post",
     "css-lint": "sass-lint -c $npm_package_config_sasslintConfig $npm_package_config_scssfile -v -q",
