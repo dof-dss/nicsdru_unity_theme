@@ -94,3 +94,14 @@ video:
   css:
     component:
       css/3_components/content/video.css: { minified: true }
+
+accordions:
+  css:
+    component:
+      css/3_components/content/accordions.css: { minified: true }
+  js:
+    js/accordions.js: { minified: true }
+  dependencies:
+    - core/drupal
+    - core/jquery
+    - core/jquery.once
