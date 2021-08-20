@@ -74,6 +74,12 @@ label {
   max-width: 65rem;
 }
 
+input {
+  &[type="submit"] {
+    text-decoration: none;
+  }
+}
+
 [type='text'],
 [type='search'],
 [type='tel'],
@@ -101,3 +107,5 @@ textarea {
     color: $charcoal;
   }
 }
+
+

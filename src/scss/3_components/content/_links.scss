@@ -20,8 +20,7 @@ a {
     background: $link;
     border-radius: 0;
     border: 3px solid transparent;
-    text-decoration: underline;
-    text-underline-offset: .25em;
+    text-decoration: none;
 
     &:hover,
     &:focus {
