@@ -90,6 +90,10 @@
         &:hover {
           text-decoration: 2px underline $white;
         }
+
+        &:focus {
+          color: $white;
+        }
       }
     }
 
