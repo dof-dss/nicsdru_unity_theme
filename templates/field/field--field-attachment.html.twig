@@ -52,7 +52,7 @@
   </ul>
 {% else %}
   <div{{ attributes.addClass('content-field--label-inline').setAttribute('role', 'presentation') }}>
-    <h2{{ title_attributes.addClass(title_classes) }}>{{ label }}</h2>
+    <h2{{ title_attributes.addClass(title_classes) }}>{{ 'Documents'|t }}</h2>
     <div class="content-field__value">
       <ul class="list--no-bullet">
         {% for item in items %}
