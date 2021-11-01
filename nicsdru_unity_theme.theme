@@ -353,7 +353,6 @@ function nicsdru_unity_theme_preprocess_field(&$variables) {
     if (preg_match('/node\/(\d+)/', $path, $matches)) {
       $node = Node::load($matches[1]);
       $variables['node_id'] = $node->id();
-      //kint($variables);
     }
   }
 }
