@@ -105,3 +105,8 @@ accordions:
     - core/drupal
     - core/jquery
     - core/jquery.once
+
+field_label:
+  css:
+    component:
+      css/3_components/field/field-label.css: { minified: true }
