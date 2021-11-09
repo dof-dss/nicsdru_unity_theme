@@ -51,11 +51,11 @@ function nicsdru_unity_theme_form_system_theme_settings_alter(&$form, FormStateI
     }
   }
 
-  $form['social_links'] = array(
+  $form['social_links'] = [
     '#type' => 'details',
     '#title' => t('Social media links'),
     '#open' => TRUE,
-  );
+  ];
 
   $form['social_links']['twitter_profile_url'] = [
     '#type' => 'textfield',
