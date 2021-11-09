@@ -12,6 +12,7 @@ libraries:
   - nicsdru_unity_theme/media_library_styles
   - nicsdru_unity_theme/responsive_images
   - nicsdru_unity_theme/video
+  - nicsdru_unity_theme/social_links
 
 ckeditor_stylesheets:
   - css/3_components/ckeditor.css
