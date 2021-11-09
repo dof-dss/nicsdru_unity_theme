@@ -50,4 +50,41 @@ function nicsdru_unity_theme_form_system_theme_settings_alter(&$form, FormStateI
       }
     }
   }
+
+  $form['social_links'] = array(
+    '#type' => 'details',
+    '#title' => t('Social media links'),
+    '#open' => TRUE,
+  );
+
+  $form['social_links']['twitter_profile_url'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Twitter URL'),
+    '#default_value' => theme_get_setting('twitter_profile_url'),
+    '#description' => t("Enter your Twitter profile URL."),
+  );
+  $form['social_links']['facebook_profile_url'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Facebook URL'),
+    '#default_value' => theme_get_setting('facebook_profile_url'),
+    '#description' => t("Enter your Facebook profile URL."),
+  );
+  $form['social_links']['linkedin_profile_url'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Linkedin URL'),
+    '#default_value' => theme_get_setting('linkedin_profile_url'),
+    '#description' => t("Enter your Linkedin profile URL."),
+  );
+  $form['social_links']['pinterest_profile_url'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Pinterest URL'),
+    '#default_value' => theme_get_setting('pinterest_profile_url'),
+    '#description' => t("Enter your Linkedin Pinterest URL."),
+  );
+  $form['social_links']['youtube_profile_url'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Youtube URL'),
+    '#default_value' => theme_get_setting('youtube_profile_url'),
+    '#description' => t("Enter your Youtube profile URL."),
+  );
 }
