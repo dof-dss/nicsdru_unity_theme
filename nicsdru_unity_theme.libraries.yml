@@ -110,3 +110,8 @@ field_label:
   css:
     component:
       css/3_components/field/field-label.css: { minified: true }
+
+social_links:
+  css:
+    component:
+      css/3_components/block/social-links.css: { minified: true }
