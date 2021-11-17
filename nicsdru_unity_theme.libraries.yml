@@ -115,3 +115,8 @@ social_links:
   css:
     component:
       css/3_components/block/social-links.css: { minified: true }
+
+sidebar_menu:
+  css:
+    component:
+      css/3_components/navigation/sidebar-menu.css: { minified: true }
