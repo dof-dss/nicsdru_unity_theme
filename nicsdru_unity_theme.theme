@@ -329,6 +329,13 @@ function nicsdru_unity_theme_preprocess_block(&$variables) {
       }
     }
   }
+
+  // Social media variables to be used in the theme-settings.php.
+  $variables['twitter_profile_url'] = theme_get_setting('twitter_profile_url');
+  $variables['facebook_profile_url'] = theme_get_setting('facebook_profile_url');
+  $variables['linkedin_profile_url'] = theme_get_setting('linkedin_profile_url');
+  $variables['pinterest_profile_url'] = theme_get_setting('pinterest_profile_url');
+  $variables['youtube_profile_url'] = theme_get_setting('youtube_profile_url');
 }
 
 /**
