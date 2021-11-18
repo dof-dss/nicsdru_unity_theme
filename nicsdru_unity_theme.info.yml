@@ -13,6 +13,8 @@ libraries:
   - nicsdru_unity_theme/responsive_images
   - nicsdru_unity_theme/video
   - nicsdru_unity_theme/social_links
+  - nicsdru_unity_theme/sidebar_menu
+  - nicsdru_unity_theme/field_label
 
 ckeditor_stylesheets:
   - css/3_components/ckeditor.css
