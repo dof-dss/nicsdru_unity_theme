@@ -120,3 +120,7 @@ sidebar_menu:
   css:
     component:
       css/3_components/navigation/sidebar-menu.css: { minified: true }
+search_result:
+  css:
+    component:
+      css/3_components/content/search-results.css: { minified: true }
