@@ -1,1 +1,1 @@
-ol.search-results{padding-left:0}.search-results li{border-bottom:1px solid #d3d7d9;padding-bottom:.4285em;margin-bottom:.5em}.search-results li:last-child{border-bottom:0;padding-bottom:0;margin-bottom:1em}.search-results .search-snippet-info{padding-left:0}
+.search-result{border-bottom:1px solid #d3d7d9;padding-bottom:1.5rem}.search-result:last-of-type{border-bottom:0;padding-bottom:0;margin-bottom:1em}.search-result p{margin-bottom:0}
