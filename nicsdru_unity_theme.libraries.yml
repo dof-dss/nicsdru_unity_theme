@@ -124,3 +124,7 @@ search_result:
   css:
     component:
       css/3_components/content/search-results.css: { minified: true }
+board_member:
+  css:
+    component:
+      css/3_components/view/board-member.css: { minified: true }
