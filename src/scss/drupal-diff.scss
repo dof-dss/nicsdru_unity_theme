@@ -4,6 +4,26 @@
  */
 @import 'init/index';
 
+@include breakpoint($tab) {
+
+  body[class*="-revisions-view-"] {
+    .block-system-main-block {
+      display: flex;
+      flex-wrap: wrap;
+    }
+  }
+
+  .diff-header,
+  .diff-controls {
+    flex-basis: 50%;
+    min-width: 292px;
+  }
+
+  .diff-responsive-table-wrapper {
+    width: 100%;
+  }
+}
+
 #content .diff-responsive-table-wrapper {
   h2 a {
     &:first-child {
@@ -12,7 +32,7 @@
   }
 }
 
-.diff-controls {
+#content #block-mainpagecontent .diff-controls {
   .dropbutton-multiple {
     .dropbutton-widget {
       overflow: hidden;
@@ -26,15 +46,28 @@
       background-image: linear-gradient(to bottom, #f3f3f3, #e8e8e8);
       padding: 0;
 
+      .dropbutton {
+        position: relative;
+        padding-right: 2em;
+      }
+
       li {
+        margin: 0;
         padding-bottom: 0;
 
-        a {
-          color: #3a3a3a;
-
-          &:hover {
+        &.dropbutton-action {
+          a {
+            color: #3a3a3a;
             border-bottom: 0 none;
-            background: #dedede;
+            margin: 0;
+            padding: .6rem 1.2rem;
+            text-decoration: underline;
+
+            &:hover {
+              border-bottom: 0 none;
+              background: #dedede;
+              text-decoration-thickness: 2px;
+            }
           }
         }
       }
@@ -69,6 +102,11 @@
     font-size: 14px;
   }
 
+  a,
+  a:link,
+  a:visited {
+    color: $link;
+  }
 }
 
 .diff-header {
@@ -127,16 +165,12 @@
 }
 
 .diff-revision__items {
-  padding-left: 2em;
+  padding-left: 1em;
 }
 
 .diff-revision__items-group {
   display: list-item;
   list-style: decimal;
-
-  &:first-child {
-    margin-bottom: 0;
-  }
 }
 
 .diff-revision__item {
@@ -157,21 +191,17 @@
 }
 
 .diff-controls__item {
-  position: absolute;
-  top: 0;
-  width: 49%;
-  padding-right: 0;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: baseline;
+  margin-bottom: .5em;
 
-  &:first-child {
-    left: 0;
-  }
-
-  &:last-child {
-    right: 0;
+  label {
+    flex: 6em 0 0;
   }
 }
 
-.diff-responsive-table-wrapper {
+#content #block-mainpagecontent .diff-responsive-table-wrapper {
   min-height: 10rem;
 
   // Make first h2 > a look like h1 (cause it is the h1!).
@@ -234,6 +264,12 @@
   .field__label {
     font-weight: bold;
     padding-right: 1em;
+  }
+
+  .list--no-bullet .file-link {
+    a[href] {
+      padding-left: 0;
+    }
   }
 }
 
