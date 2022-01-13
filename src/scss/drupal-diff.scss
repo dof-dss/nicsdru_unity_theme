@@ -166,6 +166,7 @@
 
 .diff-revision__items {
   padding-left: 1em;
+  margin-left: 0;
 }
 
 .diff-revision__items-group {
@@ -176,6 +177,7 @@
 .diff-revision__item {
   display: inline-block;
   padding-right: .5em;
+  padding-left: 0;
 
   &:last-child {
     padding-right: 0;
