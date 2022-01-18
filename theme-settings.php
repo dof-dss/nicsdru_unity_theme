@@ -87,4 +87,10 @@ function nicsdru_unity_theme_form_system_theme_settings_alter(&$form, FormStateI
     '#default_value' => theme_get_setting('youtube_profile_url'),
     '#description' => t("Enter your Youtube profile URL."),
   ];
+  $form['social_links']['instagram_profile_url'] = [
+    '#type' => 'textfield',
+    '#title' => t('Instagram URL'),
+    '#default_value' => theme_get_setting('instagram_profile_url'),
+    '#description' => t("Enter your Instagram profile URL."),
+  ];
 }
