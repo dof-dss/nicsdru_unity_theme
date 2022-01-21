@@ -337,6 +337,7 @@ function nicsdru_unity_theme_preprocess_block(&$variables) {
   $variables['linkedin_profile_url'] = theme_get_setting('linkedin_profile_url');
   $variables['pinterest_profile_url'] = theme_get_setting('pinterest_profile_url');
   $variables['youtube_profile_url'] = theme_get_setting('youtube_profile_url');
+  $variables['instagram_profile_url'] = theme_get_setting('instagram_profile_url');
 }
 
 /**
