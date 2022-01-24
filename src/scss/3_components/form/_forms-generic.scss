@@ -101,6 +101,14 @@ input[type="checkbox"] {
   }
 }
 
+.js-form-type-checkbox {
+  display: flex;
+
+  label.option {
+    margin-left: 1rem;
+  }
+}
+
 [type='text'],
 [type='search'],
 [type='tel'],
