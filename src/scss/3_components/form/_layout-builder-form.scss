@@ -9,7 +9,7 @@
 .media-library-wrapper form,
 .js-media-library-add-form {
   label {
-    display: inline;
+    display: inline-block;
   }
   input:not(input[type='radio']) {
     -webkit-appearance: auto;
