@@ -1,0 +1,17 @@
+/*
+ * @file
+ * Provides reset form styles for forms in layout builder.
+ */
+
+.layout-builder-form,
+.layout-builder-update-block,
+.layout-builder-configure-block,
+.media-library-wrapper form,
+.js-media-library-add-form {
+  label {
+    display: inline-block;
+  }
+  input:not(input[type='radio']) {
+    -webkit-appearance: auto;
+  }
+}
