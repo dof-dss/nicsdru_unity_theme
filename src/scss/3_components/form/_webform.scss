@@ -1,4 +1,5 @@
 /* Error Tool Tip Styles*/
+.checkboxes--wrapper.required input + label,
 .required + label {
   position: relative;
   top: 100%;
@@ -32,6 +33,10 @@
       left: .9rem;
     }
   }
+}
+
+.checkboxes--wrapper.required input + label.error {
+  margin-left: 1rem;
 }
 
 .search-form {
