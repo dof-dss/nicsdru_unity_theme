@@ -14,5 +14,8 @@
             "name": "David Corbett",
             "role": "Maintainer"
         }
-    ]
+    ],
+    "require-dev": {
+        "slevomat/coding-standard": "7.x-dev"
+    }
 }
