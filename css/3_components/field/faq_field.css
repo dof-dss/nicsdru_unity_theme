@@ -1,14 +1,1 @@
-/* line 8, src/scss/3_components/field/faq_field.scss */
-.field-faq {
-  font-family: inherit;
-  font-size: inherit;
-}
-
-/* line 12, src/scss/3_components/field/faq_field.scss */
-.field-faq__question {
-  background: none;
-  border: 0;
-  font-weight: 600;
-}
-
-/*# sourceMappingURL=faq_field.css.map */
+.field-faq{font-family:inherit;font-size:inherit}.field-faq__question{background:none;border:0;font-weight:600}
