@@ -53,12 +53,13 @@ jobs:
           name: Fetch phpcs and dependencies
           command: |
             composer require drupal/coder:^8.3 --prefer-stable --prefer-dist
+            composer require slevomat/coding-standard --prefer-stable --no-interaction --optimize-autoloader
             # Move vendor directory up a level as we don't want to code-check all of that.
             mv vendor ../
       - run:
           name: Fetch phpcs convenience script
           command: |
-            curl https://raw.githubusercontent.com/dof-dss/nidirect-drupal/master/phpcs.sh -o /home/circleci/project/phpcs.sh
+            curl https://raw.githubusercontent.com/dof-dss/nidirect-drupal/development/phpcs.sh -o /home/circleci/project/phpcs.sh
             chmod +x /home/circleci/project/phpcs.sh
       - run:
           name: PHPCS static analysis
