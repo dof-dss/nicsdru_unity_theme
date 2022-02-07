@@ -7,7 +7,10 @@
 
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Component\Utility\Html;
+use Drupal\file\FileInterface;
 use Drupal\media\MediaInterface;
+use Drupal\block\Entity\Block;
+use Drupal\node\Entity\Node;
 
 /**
  * Implements hook_preprocess().
@@ -300,4 +303,98 @@ function nicsdru_unity_theme_preprocess_responsive_image_formatter(array &$varia
   if (!empty($caption)) {
     $variables['responsive_image']['#attributes']['caption'] = $caption;
   }
+}
+
+/**
+ * Implements hook_preprocess_block().
+ */
+function nicsdru_unity_theme_preprocess_block(&$variables) {
+  // Pass block region value to content so this can be used in nicsdru_unity_theme_theme_suggestions_menu_alter.
+  if (!empty($variables['elements']['#id'])) {
+    $region = Block::load($variables['elements']['#id'])->getRegion();
+    $variables['content']['#attributes']['region'] = $region;
+  }
+
+  // Check the 'In This Section' block to see if there are any
+  // entries in it. If there are no entries then set the
+  // 'block_is_empty' flag to hide the block.
+  if ($variables['plugin_id'] == 'system_menu_block:main') {
+    if ($variables['elements']['#id'] == 'sidemenu') {
+      $variables['block_is_empty'] = TRUE;
+      foreach ($variables['content']['#items'] as $menu_item) {
+        if ($menu_item['is_expanded']) {
+          if (count($menu_item['below']) > 0) {
+            $variables['block_is_empty'] = FALSE;
+          }
+        }
+      }
+    }
+  }
+
+  // Social media variables to be used in the theme-settings.php.
+  $variables['twitter_profile_url'] = theme_get_setting('twitter_profile_url');
+  $variables['facebook_profile_url'] = theme_get_setting('facebook_profile_url');
+  $variables['linkedin_profile_url'] = theme_get_setting('linkedin_profile_url');
+  $variables['pinterest_profile_url'] = theme_get_setting('pinterest_profile_url');
+  $variables['youtube_profile_url'] = theme_get_setting('youtube_profile_url');
+  $variables['instagram_profile_url'] = theme_get_setting('instagram_profile_url');
+}
+
+/**
+ * Implements hook_theme_suggestions_menu_alter().
+ *
+ * Provide region based menu suggestions.
+ */
+function nicsdru_unity_theme_theme_suggestions_menu_alter(&$suggestions, array $variables) {
+  if (!empty($variables['attributes']['region'])) {
+    $suggestions[] = 'menu__' . $variables['menu_name'] . '__' . $variables['attributes']['region'];
+  }
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function nicsdru_unity_theme_preprocess_field(&$variables) {
+
+  if ($variables['field_name'] == 'field_attachment') {
+    $path = \Drupal::service('path_alias.manager')
+      ->getPathByAlias('/help-viewing-documents');
+    if (preg_match('/node\/(\d+)/', $path, $matches)) {
+      $node = Node::load($matches[1]);
+      $variables['node_id'] = $node->id();
+    }
+  }
+}
+
+/**
+ * Implements hook_theme_suggestions_field_alter().
+ */
+function nicsdru_unity_theme_theme_suggestions_field_alter(array &$suggestions, array $variables) {
+  // Add view mode to node field theme suggestions.
+  $element = $variables['element'];
+
+  $suggestions[] = 'field__node__' .
+    $element['#field_name'] . '__' .
+    $element['#view_mode'];
+
+  $suggestions[] = 'field__node__' .
+    $element['#field_name'] . '__' .
+    $element['#view_mode'] . '__' .
+    $element['#bundle'];
+}
+
+/**
+ * Implements template_preprocess_file_link().
+ */
+function nicsdru_unity_theme_preprocess_file_link(array &$variables) {
+  if (!$variables['file'] instanceof FileInterface) {
+    return;
+  }
+
+  $file_extension = pathinfo($variables['file']->getFilename(), PATHINFO_EXTENSION);
+  $variables['attributes']->addClass([
+    'file-link',
+    'file--ico',
+    'file--ico__' . $file_extension,
+  ]);
 }

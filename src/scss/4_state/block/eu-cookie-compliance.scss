@@ -85,9 +85,14 @@
         text-underline-offset: 3px;
         outline: 0;
         outline-offset: 0;
+        color: #1180d4;
 
         &:hover {
           text-decoration: 2px underline $white;
+        }
+
+        &:focus {
+          color: $white;
         }
       }
     }
@@ -152,4 +157,11 @@
 
 .eu-cookie-withdraw-wrapper.sliding-popup-top .eu-cookie-withdraw-tab {
   transform: translate(-50%, -100%) scaleY(-1);
+}
+
+// The EU cookie compliance diff https://git.drupalcode.org/project/eu-cookie-compliance/-/merge_requests/43.diff we have
+// applied adds an inline negative margin based on the banner height. This hides the menu and log in form with the banner at the top.
+// This rule is needed to overwrite that negative margin.
+.eu-cookie-compliance-popup-open #sliding-popup {
+  margin-bottom: 0 !important;
 }

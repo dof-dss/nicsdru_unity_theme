@@ -41,7 +41,7 @@ fieldset {
     border: solid #ccc;
     border-width: 1px 1px 0;
     display: block;
-    height: 2em;
+    height: auto;
     left: -1px;
     line-height: 2;
     padding: 0;
@@ -106,7 +106,7 @@ select.form-select {
   border: 1px solid #555;
 }
 
-button:not(.toolbar-icon):not(.ui-button):not(.trigger):not(.slick-arrow):not([id^=slick-slide-control]),
+button:not(.toolbar-icon):not(.ui-button):not(.trigger):not(.slick-arrow):not([id^=slick-slide-control]):not([id^=accordion]),
 input[type='submit'],
 input[type='reset'],
 input[type='button'] {

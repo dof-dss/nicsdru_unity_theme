@@ -40,8 +40,14 @@ fieldset {
   border: none;
 
   .fieldset-wrapper {
-    margin-top: 2.5rem;
+    margin-top: 0;
     padding-left: 0.3rem;
+  }
+
+  legend {
+    position: relative;
+    text-indent: 0;
+    padding-left: 1rem;
   }
 }
 
@@ -74,6 +80,42 @@ label {
   max-width: 65rem;
 }
 
+input {
+  &[type="submit"] {
+    text-decoration: none;
+  }
+}
+
+input[type="checkbox"] {
+  display: inline-block;
+  position: relative;
+  top: 3px;
+  margin-right: 0.25em;
+  padding: 0;
+  background: #fff;
+  border: 1px solid $charcoal;
+  width: 1.6rem;
+  height: 1.6rem;
+  -webkit-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: background 0.5s ease;
+  outline: none;
+
+  &:checked {
+    background: $link;
+    box-shadow: inset 0 0 0 3px $white;
+  }
+}
+
+.js-form-type-checkbox,
+.js-form-type-radio {
+  display: flex;
+
+  label.option {
+    margin-left: 1rem;
+  }
+}
+
 [type='text'],
 [type='search'],
 [type='tel'],
@@ -101,3 +143,5 @@ textarea {
     color: $charcoal;
   }
 }
+
+

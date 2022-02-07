@@ -94,3 +94,37 @@ video:
   css:
     component:
       css/3_components/content/video.css: { minified: true }
+
+accordions:
+  css:
+    component:
+      css/3_components/content/accordions.css: { minified: true }
+  js:
+    js/accordions.js: { minified: true }
+  dependencies:
+    - core/drupal
+    - core/jquery
+    - core/jquery.once
+
+field_label:
+  css:
+    component:
+      css/3_components/field/field-label.css: { minified: true }
+
+social_links:
+  css:
+    component:
+      css/3_components/block/social-links.css: { minified: true }
+
+sidebar_menu:
+  css:
+    component:
+      css/3_components/navigation/sidebar-menu.css: { minified: true }
+search_result:
+  css:
+    component:
+      css/3_components/content/search-results.css: { minified: true }
+board_member:
+  css:
+    component:
+      css/3_components/view/board-member.css: { minified: true }

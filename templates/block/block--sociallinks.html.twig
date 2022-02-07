@@ -1,0 +1,40 @@
+<div class="social-icons">
+  <ul>
+    {% if twitter_profile_url is not empty %}
+    <li><a href="{{ twitter_profile_url }}" rel="noopener noreferrer">
+        <i class="fab fa-twitter"><span class="visually-hidden">Follow us on Twitter</span></i>
+      </a>
+    </li>
+    {% endif %}
+    {% if facebook_profile_url is not empty %}
+      <li><a href="{{ facebook_profile_url }}" rel="noopener noreferrer">
+          <i class="fab fa-facebook-square"><span class="visually-hidden">Follow us on Facebook</span></i>
+        </a>
+      </li>
+    {% endif %}
+    {% if linkedin_profile_url is not empty %}
+    <li><a href="{{ linkedin_profile_url }}" rel="noopener noreferrer">
+        <i class="fab fa-linkedin"><span class="visually-hidden">Follow us on Linkedin</span></i>
+      </a>
+    </li>
+    {% endif %}
+    {% if pinterest_profile_url is not empty %}
+      <li><a href="{{ pinterest_profile_url }}" rel="noopener noreferrer">
+          <i class="fab fa-pinterest-square"><span class="visually-hidden">Follow us on Pinterest</span></i>
+        </a>
+      </li>
+    {% endif %}
+    {% if youtube_profile_url is not empty %}
+    <li><a href="{{ youtube_profile_url }}" rel="noopener noreferrer">
+        <i class="fab fa-youtube-square"><span class="visually-hidden">Follow us on Youtube</span></i>
+      </a>
+    </li>
+    {% endif %}
+    {% if instagram_profile_url is not empty %}
+      <li><a href="{{ instagram_profile_url }}" rel="noopener noreferrer">
+          <i class="fab fa-instagram"><span class="visually-hidden">Follow us on Instagram</span></i>
+        </a>
+      </li>
+    {% endif %}
+  </ul>
+</div>
