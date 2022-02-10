@@ -40,8 +40,14 @@ fieldset {
   border: none;
 
   .fieldset-wrapper {
-    margin-top: 6rem;
+    margin-top: 0;
     padding-left: 0.3rem;
+  }
+
+  legend {
+    position: relative;
+    text-indent: 0;
+    padding-left: 1rem;
   }
 }
 
