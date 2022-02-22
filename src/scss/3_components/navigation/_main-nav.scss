@@ -264,6 +264,11 @@ $main-menu-border: false !default;
     min-height: 5rem;
     display: none;
 
+    &:focus + .hamburger {
+      outline: 2px dotted $white;
+      outline-offset: -2px;
+    }
+
     @media screen and (max-width: $tab) {
       top: -5.2rem;
       left: .5rem;
