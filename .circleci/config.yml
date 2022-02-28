@@ -6,7 +6,7 @@ version: 2
 jobs:
   install:
     docker:
-      - image: circleci/node:13.14
+      - image: circleci/node:lts
     steps:
       - checkout
       - restore_cache:
@@ -25,7 +25,7 @@ jobs:
   # Code linting.
   lint:
     docker:
-      - image: circleci/node:13.14
+      - image: circleci/node:lts
     steps:
       - attach_workspace:
           at: ./
