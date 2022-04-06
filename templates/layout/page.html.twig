@@ -85,58 +85,59 @@
 {% if is_front %}
   {{ page.slideshow }}
 
-  {# If a basic page is used in the homepage structure then delete the if not is_front logic below, Lines 89-93. #}
-  {% if drupal_config('system.site', 'frontpage_title') %}
-    <h1 class="{{ drupal_config('system.site', 'frontpage_show_title') ? 'container-wrap' : 'visually-hidden' }}">
-      {{ drupal_config('system.site', 'frontpage_title') }}
-    </h1>
+  {% if basic_page_structure is empty %}
+    {% if drupal_config('system.site', 'frontpage_title') %}
+      <h1 class="{{ drupal_config('system.site', 'frontpage_show_title') ? 'container-wrap' : 'visually-hidden' }}">
+        {{ drupal_config('system.site', 'frontpage_title') }}
+      </h1>
+    {% endif %}
   {% endif %}
 
   {{ page.front_welcome }}
 
   {% if page.top_first or page.top_second or page.top_third %}
-    {# If a basic page is used in the homepage structure then delete the <div id="content"> below. #}
-    <div id="content">
-      <div id="top-area" class="clearfix">
-        {% if page.top_first %}
-          <div class="column">
-            {{ page.top_first }}
-          </div>
-        {% endif %}
-        {% if page.top_second %}
-          <div class="column">
-            {{ page.top_second }}
-          </div>
-        {% endif %}
-        {% if page.top_third %}
-          <div class="column">
-            {{ page.top_third }}
-          </div>
-        {% endif %}
-      </div>
-      {# If a basic page is used in the homepage structure then delete the </div> below. #}
+    {% if basic_page_structure is empty %}
+      <div id="content">
+    {% endif %}
+    <div id="top-area" class="clearfix">
+      {% if page.top_first %}
+        <div class="column">
+          {{ page.top_first }}
+        </div>
+      {% endif %}
+      {% if page.top_second %}
+        <div class="column">
+          {{ page.top_second }}
+        </div>
+      {% endif %}
+      {% if page.top_third %}
+        <div class="column">
+          {{ page.top_third }}
+        </div>
+      {% endif %}
     </div>
+    {% if basic_page_structure is empty %}
+      </div>
+    {% endif %}
   {% endif %}
 {% endif %}
 
 <div id="container">
   <div class="container-wrap">
-    {# If a basic page is used in the homepage structure then delete the if not is_front logic below. #}
-    {% if not is_front %}
 
+    {% if basic_page_structure is not empty or basic_page_structure is empty and not is_front %}
       <div class="content-sidebar-wrap{% if search_page %} search-page{% endif %}">
         {{ page.breadcrumb }}
 
-        {# If a basic page is used in the homepage structure then uncomment the code lines 128-135 below. #}
-        {# {% if is_front %} #}
-        {# {% if drupal_config('system.site', 'frontpage_title') %} #}
-        {# <div class="{{ drupal_config('system.site', 'frontpage_show_title') ? '' : 'visually-hidden' }}"> #}
-        {# <h1> #}
-        {# {{ drupal_config('system.site', 'frontpage_title') }} #}
-        {# </h1> #}
-        {# </div> #}
-        {# {% endif %} #}
-        {# {% endif %} #}
+        {% if basic_page_structure is not empty and is_front %}
+          {% if drupal_config('system.site', 'frontpage_title') %}
+            <div class="{{ drupal_config('system.site', 'frontpage_show_title') ? '' : 'visually-hidden' }}">
+              <h1>
+                {{ drupal_config('system.site', 'frontpage_title') }}
+              </h1>
+            </div>
+          {% endif %}
+        {% endif %}
 
         {% if search_page %}
           {{ drupal_block('page_title_block', wrapper=false) }}
@@ -170,7 +171,6 @@
           {{ page.sidebar_second }}
         </aside>
       {% endif %}
-      {# If a basic page is used in the homepage structure then delete the endif logic below. #}
     {% endif %}
 
     {% if is_front %}
@@ -202,7 +202,7 @@
 <footer id="footer">
   <div id="footer_wrapper">
     {% if page.footer_first or page.footer_second or page.footer_third or page.footer_fourth or page.footer %}
-      <div id="footer-area" class="footer-area clearfix">
+      <div id="footer-area" class="footer-area container-wrap clearfix">
         {% if page.footer_first %}
           <div class="column">
             {{ page.footer_first }}
