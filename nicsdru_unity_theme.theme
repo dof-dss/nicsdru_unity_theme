@@ -20,8 +20,7 @@ function nicsdru_unity_theme_preprocess(&$variables) {
   if (!isset($variables['is_front'])) {
     try {
       $variables['is_front'] = \Drupal::service('path.matcher')->isFrontPage();
-    }
-    catch (\Exception $e) {
+    } catch (\Exception $e) {
       $variables['is_front'] = FALSE;
     }
   }
@@ -213,12 +212,15 @@ function nicsdru_unity_theme_preprocess_media(&$variables) {
 
   if (!empty($variables['content']['field_media_file'])) {
     // Map file mimetypes to user friendly document types.
-    $pretty_mimes = \Drupal::service('origins_media.pretty_mime_types')->getMimeTypes();
+    $pretty_mimes = \Drupal::service('origins_media.pretty_mime_types')
+      ->getMimeTypes();
 
     $file = &$variables['content']['field_media_file'][0]['#file'];
 
     if (!empty($file)) {
-      $variables['file_size'] = format_size($file->getSize(), \Drupal::languageManager()->getCurrentLanguage()->getId());
+      $variables['file_size'] = format_size($file->getSize(), \Drupal::languageManager()
+        ->getCurrentLanguage()
+        ->getId());
       $variables['file_url'] = $file->createFileUrl();
       $variables['file_extension'] = pathinfo($file->createFileUrl(), PATHINFO_EXTENSION);
       $file_mimetype = $file->getMimeType();
@@ -300,8 +302,11 @@ function nicsdru_unity_theme_preprocess_responsive_image_formatter(array &$varia
   // potentially contain dodgy html.
   $caption = $media_image->field_caption->getString();
 
-  if (!empty($caption)) {
-    $variables['responsive_image']['#attributes']['caption'] = $caption;
+  // Don't show the caption on the slideshow images.
+  if ($variables['responsive_image_style_id'] != 'slideshow') {
+    if (!empty($caption)) {
+      $variables['responsive_image']['#attributes']['caption'] = $caption;
+    }
   }
 }
 
