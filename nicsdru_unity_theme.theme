@@ -20,7 +20,8 @@ function nicsdru_unity_theme_preprocess(&$variables) {
   if (!isset($variables['is_front'])) {
     try {
       $variables['is_front'] = \Drupal::service('path.matcher')->isFrontPage();
-    } catch (\Exception $e) {
+    }
+    catch (\Exception $e) {
       $variables['is_front'] = FALSE;
     }
   }
