@@ -1,0 +1,1 @@
+.card-deck{display:grid;grid-gap:1.5em 2rem}.card-deck--list-to-x2{grid-template-columns:1fr 1fr}.card-deck--list-to-x3{grid-template-columns:1fr 1fr 1fr}
