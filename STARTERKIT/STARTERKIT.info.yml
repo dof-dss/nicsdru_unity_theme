@@ -2,7 +2,7 @@ name: SITE_DIRECTORY_NAME Theme
 type: theme
 description: 'Base theme for Drupal 8 sites'
 package: NICS
-core: 8.x
+core_version_requirement: ^8.8 || ^9
 
 libraries:
   - STARTERKIT/site-styling
@@ -26,6 +26,7 @@ regions:
   top_second: 'Second top'
   top_third: 'Third top'
   breadcrumb: 'Breadcrumb'
+  search_facets: 'Search facets'
   sidebar_first: 'First sidebar'
   sidebar_second: 'Sidebar second'
   content: 'Content'
