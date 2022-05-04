@@ -6,6 +6,7 @@ unity-global-styling:
       css/styles.css: { minified: true }
   js:
     js/unity-menu-script.js: { minified: true }
+    js/main-menu-toggle.js: { minified: true }
     js/ext-win-script.js: { minified: true }
     js/empty-tags-script.js: { minified: true }
     js/unity-facets.js: { minified: true }

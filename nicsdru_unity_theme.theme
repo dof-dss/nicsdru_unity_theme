@@ -31,6 +31,16 @@ function nicsdru_unity_theme_preprocess(&$variables) {
 }
 
 /**
+ * Implements hook_preprocess_HOOK().
+ */
+function nicsdru_unity_theme_preprocess_page(&$variables) {
+  $variables['basic_page_structure'] = FALSE;
+  if (theme_get_setting('basic_page_structure')) {
+    $variables['basic_page_structure'] = TRUE;
+  }
+}
+
+/**
  * Implements hook_preprocess_page_attachments_alter().
  */
 function nicsdru_unity_theme_page_attachments_alter(array &$page) {

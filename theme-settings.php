@@ -51,6 +51,18 @@ function nicsdru_unity_theme_form_system_theme_settings_alter(&$form, FormStateI
     }
   }
 
+  $form['homepage_structure'] = [
+    '#type' => 'details',
+    '#title' => t('Homepage Structure'),
+    '#open' => TRUE,
+  ];
+
+  $form['homepage_structure']['basic_page_structure'] = [
+    '#type' => 'checkbox',
+    '#title' => t('Check this box if the homepage uses a basic page in it\'s structure'),
+    '#default_value' => theme_get_setting('basic_page_structure'),
+  ];
+
   $form['social_links'] = [
     '#type' => 'details',
     '#title' => t('Social media links'),
