@@ -107,11 +107,6 @@ accordions:
     - core/jquery
     - core/jquery.once
 
-cards:
-  css:
-    component:
-      css/3_components/content/cards.css: {minified: true }
-
 field_label:
   css:
     component:
@@ -134,3 +129,11 @@ board_member:
   css:
     component:
       css/3_components/view/board-member.css: { minified: true }
+landing:
+  css:
+    component:
+      css/3_components/content/landing.css: { minified: true }
+      css/3_components/form/layout-builder-form.css: { minified: true }
+      css/3_components/layout/layout-builder.css: { minified: true }
+      css/3_components/content/cards.css: {minified: true }
+      css/3_components/content/card-contact.css: {minified: true }
