@@ -1,6 +1,6 @@
 {
   "name": "nicsdru_unity_theme",
-  "version": "0.1.50",
+  "version": "0.1.51",
   "description": "A package of utilities used to theme our site",
   "main": "index.js",
   "license": "MIT",
@@ -66,6 +66,7 @@
     "js-compile-facets-lib": "mkdir -p js && uglifyjs src/js/unity-facets.js -o js/unity-facets.js",
     "js-compile-thwoop-lib": "mkdir -p js && uglifyjs src/js/thwoop-images.js -o js/thwoop-images.js",
     "js-compile-accordions": "mkdir -p js && uglifyjs src/js/accordions.js -o js/accordions.js",
+    "js-compile-layout-builder": "mkdir -p js && uglifyjs src/js/layout-builder.js -o js/layout-builder.js",
     "––––––– CSS SCRIPTS": "–––––––––––––",
     "css": "npm-run-all --sequential scss-dev css-post",
     "css-lint": "sass-lint -c $npm_package_config_sasslintConfig $npm_package_config_scssfile -v -q",

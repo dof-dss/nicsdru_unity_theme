@@ -137,3 +137,4 @@ landing:
       css/3_components/layout/layout-builder.css: { minified: true }
       css/3_components/content/cards.css: {minified: true }
       css/3_components/content/card-contact.css: {minified: true }
+      css/3_components/content/banners.css: {minified: true }
