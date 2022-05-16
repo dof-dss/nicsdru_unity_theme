@@ -16,7 +16,6 @@ use Drupal\node\Entity\Node;
  * Implements hook_preprocess().
  */
 function nicsdru_unity_theme_preprocess(&$variables) {
-  $x = 1;
   // Set a variable based on the path.matcher.
   if (!isset($variables['is_front'])) {
     try {
