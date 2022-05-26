@@ -63,3 +63,66 @@ $grid-breakpoints: (
 
 // Set the grid sizes with a default value that can be overwritten on a per theme basis.
 $max-grid-width: 1024px !default;
+
+$link-body-no-visited: (
+  color: (
+    default: $link,
+    focus: #fff,
+    active: $link-active
+  ),
+  background-color: (
+    default: transparent,
+    focus: $link,
+  ),
+  text-decoration: (
+    default: underline,
+    focus: none,
+  ),
+  text-decoration-color: (
+    hover: #{$charcoal},
+  ),
+  text-decoration-thickness: (
+    default: 1px,
+    hover: 2px,
+  ),
+  text-underline-offset: 3px,
+  outline: (
+    default: 0,
+    focus: '2px solid #{$link}',
+  ),
+  outline-offset: 0
+);
+
+$link-card--contact: (
+  color: (
+    default: #fff,
+    focus: $link,
+    hover: #fff,
+    active: #fff,
+  ),
+  background-color: (
+    default: transparent,
+    focus: #fff,
+    hover: transparent,
+    active: transparent,
+  ),
+  text-decoration: (
+    default: underline,
+    focus: none,
+    hover: underline,
+  ),
+  text-decoration-color: (
+    default: #fff,
+  ),
+  text-decoration-thickness: (
+    default: 1px,
+    hover: 2px,
+  ),
+  text-underline-offset: 3px,
+  outline: (
+    default: 0,
+    focus: '2px solid #fff',
+  ),
+  outline-offset: 0
+);
+
