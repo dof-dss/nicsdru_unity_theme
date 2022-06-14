@@ -66,11 +66,6 @@
       margin: 0;
       float: none;
     }
-
-    @media screen and (max-width: $tab) {
-      float: left;
-      width: auto;
-    }
   }
 
   .front & {
