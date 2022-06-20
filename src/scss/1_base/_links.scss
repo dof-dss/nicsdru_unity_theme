@@ -62,6 +62,13 @@ a:not(.toolbar-icon):not(.file-link):not(.facet--btn):not(.facet-item--link):not
   //}
 }
 
+#block-mainpagecontent {
+  a strong,
+  strong a {
+    font-weight: normal;
+  }
+}
+
 #block-mainpagecontent .content a {
   overflow-wrap: break-word;
 }
