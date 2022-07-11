@@ -49,6 +49,7 @@ regions:
   bottom_widget_1: 'Bottom widget 1'
   bottom_widget_2: 'Bottom widget 2'
   bottom_widget_3: 'Bottom widget 3'
+  translate: 'Translate'
   footer_first: 'Footer First'
   footer_second: 'Footer Second'
   footer_third: 'Footer Third'
