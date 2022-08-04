@@ -225,3 +225,7 @@ a.thwooper { // Added by JS after all expandable images - when clicked it adds "
     margin-left: 1em;
   }
 }
+
+.front .field-photo figcaption {
+  display: none;
+}
