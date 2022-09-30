@@ -1,1 +1,12 @@
-.search_block{margin:.9rem 0;overflow:hidden}.block-search.block .content{padding:0}
+/* line 1, src/scss/3_components/block/search.scss */
+.search_block {
+  margin: .9rem 0;
+  overflow: hidden;
+}
+
+/* line 6, src/scss/3_components/block/search.scss */
+.block-search.block .content {
+  padding: 0;
+}
+
+/*# sourceMappingURL=search.css.map */
