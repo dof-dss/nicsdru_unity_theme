@@ -1,1 +1,67 @@
-#footer .column .social-icons{margin-top:2.4rem}#footer .column .social-icons ul{display:-webkit-box;display:-ms-flexbox;display:flex}#footer .column .social-icons li{padding-right:.5rem;border-bottom:none}#footer .column .social-icons li a{border-bottom:none;color:#111;margin:0;padding:0}#footer .column .social-icons li a:hover,#footer .column .social-icons li a:focus{outline:0;background:none}#footer .column .social-icons li a:hover i,#footer .column .social-icons li a:focus i{background:#111;color:#e7e7e7}#footer .column .social-icons i{font-size:2.4rem;border:1px solid;padding:.5rem .9rem;width:4rem;height:4rem;border-radius:100%;line-height:3rem}#footer .column .social-icons i.fa-linkedin{padding:.5rem .8rem}#footer .column .social-icons i.fa-twitter{padding:.5rem .7rem}#footer #footer-area .column .social-icons li a{border-bottom:none;padding:0;margin:0}
+/* line 4, src/scss/3_components/block/social-links.scss */
+#footer .column .social-icons {
+  margin-top: 2.4rem;
+}
+
+/* line 7, src/scss/3_components/block/social-links.scss */
+#footer .column .social-icons ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+/* line 11, src/scss/3_components/block/social-links.scss */
+#footer .column .social-icons li {
+  padding-right: .5rem;
+  border-bottom: none;
+}
+
+/* line 15, src/scss/3_components/block/social-links.scss */
+#footer .column .social-icons li a {
+  border-bottom: none;
+  color: #111;
+  margin: 0;
+  padding: 0;
+}
+
+/* line 21, src/scss/3_components/block/social-links.scss */
+#footer .column .social-icons li a:hover, #footer .column .social-icons li a:focus {
+  outline: 0;
+  background: none;
+}
+
+/* line 26, src/scss/3_components/block/social-links.scss */
+#footer .column .social-icons li a:hover i, #footer .column .social-icons li a:focus i {
+  background: #111;
+  color: #e7e7e7;
+}
+
+/* line 34, src/scss/3_components/block/social-links.scss */
+#footer .column .social-icons i {
+  font-size: 2.4rem;
+  border: 1px solid;
+  padding: .5rem .9rem;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 100%;
+  line-height: 3rem;
+}
+
+/* line 43, src/scss/3_components/block/social-links.scss */
+#footer .column .social-icons i.fa-linkedin {
+  padding: .5rem .8rem;
+}
+
+/* line 47, src/scss/3_components/block/social-links.scss */
+#footer .column .social-icons i.fa-twitter {
+  padding: .5rem .7rem;
+}
+
+/* line 54, src/scss/3_components/block/social-links.scss */
+#footer #footer-area .column .social-icons li a {
+  border-bottom: none;
+  padding: 0;
+  margin: 0;
+}
+
+/*# sourceMappingURL=social-links.css.map */
