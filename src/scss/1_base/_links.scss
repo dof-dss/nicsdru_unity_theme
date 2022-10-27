@@ -24,7 +24,7 @@ $link-hover-background: rgba(75%, 75%, 75%, .25) !default;
 $link-visited: #0d63a5 !default;
 $link-visited-underline: #707070 !default;
 
-a:not(.toolbar-icon):not(.file-link):not(.facet--btn):not(.facet-item--link):not(.btn):not(.ui-menu-item-wrapper):not(.thwooper) {
+a:not(.toolbar-icon):not(.file-link):not(.facet--btn):not(.facet-item--link):not(.btn):not(.ui-menu-item-wrapper):not(.thwooper):not(.value):not(.card__title-link):not(.card):not(.layout-builder__link):not(.facets-soft-limit-link) {
   color: $link;
   text-decoration: none;
 
@@ -60,6 +60,13 @@ a:not(.toolbar-icon):not(.file-link):not(.facet--btn):not(.facet-item--link):not
   //&:visited {
   //  border-bottom-color: $link-visited-underline;
   //}
+}
+
+#block-mainpagecontent {
+  a strong,
+  strong a {
+    font-weight: normal;
+  }
 }
 
 #block-mainpagecontent .content a {

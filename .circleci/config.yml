@@ -1,12 +1,15 @@
-# PHP CircleCI 2.0 configuration file
-#
-# Check https://circleci.com/docs/2.0/language-php/ for more details
-version: 2
+version: 2.1
+
+default_docker_image: &docker_image
+  docker:
+    - image: thecodingmachine/php:8.0-v4-apache-node14
+      environment:
+        PHP_EXTENSION_GD: 1
+        PHP_INI_MEMORY_LIMIT: 1g
 
 jobs:
   install:
-    docker:
-      - image: circleci/node:13.14
+    <<: *docker_image
     steps:
       - checkout
       - restore_cache:
@@ -24,8 +27,7 @@ jobs:
             - ./
   # Code linting.
   lint:
-    docker:
-      - image: circleci/node:13.14
+    <<: *docker_image
     steps:
       - attach_workspace:
           at: ./
@@ -33,37 +35,27 @@ jobs:
           name: Lint all code
           command: |
             npm run lint
-  # Build front-end assets.
-#  build_assets:
-#    docker:
-#      - image: circleci/node:lts
-#    steps:
-#      - attach_workspace:
-#          at: ./
-#      - run:
-#          name: Fetch dependencies
-#          command: npm run build
   # Static analysis of any PHP/Drupal code.
   phpcs:
-    docker:
-      - image: circleci/php:7.3.14-apache-browsers
+    <<: *docker_image
+    environment:
+      PROJECT_ROOT: "/home/docker/project"
     steps:
       - checkout
       - run:
           name: Fetch phpcs and dependencies
           command: |
-            composer require drupal/coder:^8.3 --prefer-stable --prefer-dist
-            composer require slevomat/coding-standard --prefer-stable --no-interaction --optimize-autoloader
+            composer require drupal/coder
             # Move vendor directory up a level as we don't want to code-check all of that.
             mv vendor ../
       - run:
           name: Fetch phpcs convenience script
           command: |
-            curl https://raw.githubusercontent.com/dof-dss/nidirect-drupal/development/phpcs.sh -o /home/circleci/project/phpcs.sh
-            chmod +x /home/circleci/project/phpcs.sh
+            curl https://raw.githubusercontent.com/dof-dss/nidirect-drupal/development/phpcs.sh -o ${PROJECT_ROOT}/phpcs.sh
+            chmod +x ${PROJECT_ROOT}/phpcs.sh
       - run:
           name: PHPCS static analysis
-          command: /home/circleci/project/phpcs.sh /home/circleci "/home/circleci/project"
+          command: ${PROJECT_ROOT}/phpcs.sh ~/ "${PROJECT_ROOT}"
 
 workflows:
   version: 2
@@ -73,7 +65,4 @@ workflows:
       - lint:
           requires:
             - install
-#      - build_assets:
-#          requires:
-#            - install
       - phpcs

@@ -21,6 +21,10 @@
 #container {
   clear: both;
   overflow: hidden;
+
+  @media screen and (max-width: $lap) {
+    padding: 0 1rem;
+  }
 }
 
 .container-wrap {
@@ -61,11 +65,6 @@
     @media screen and (max-width: $lap) {
       margin: 0;
       float: none;
-    }
-
-    @media screen and (max-width: $tab) {
-      float: left;
-      width: auto;
     }
   }
 

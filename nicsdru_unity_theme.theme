@@ -31,6 +31,16 @@ function nicsdru_unity_theme_preprocess(&$variables) {
 }
 
 /**
+ * Implements hook_preprocess_HOOK().
+ */
+function nicsdru_unity_theme_preprocess_page(&$variables) {
+  $variables['basic_page_structure'] = FALSE;
+  if (theme_get_setting('basic_page_structure')) {
+    $variables['basic_page_structure'] = TRUE;
+  }
+}
+
+/**
  * Implements hook_preprocess_page_attachments_alter().
  */
 function nicsdru_unity_theme_page_attachments_alter(array &$page) {
@@ -213,12 +223,15 @@ function nicsdru_unity_theme_preprocess_media(&$variables) {
 
   if (!empty($variables['content']['field_media_file'])) {
     // Map file mimetypes to user friendly document types.
-    $pretty_mimes = \Drupal::service('origins_media.pretty_mime_types')->getMimeTypes();
+    $pretty_mimes = \Drupal::service('origins_media.pretty_mime_types')
+      ->getMimeTypes();
 
     $file = &$variables['content']['field_media_file'][0]['#file'];
 
     if (!empty($file)) {
-      $variables['file_size'] = format_size($file->getSize(), \Drupal::languageManager()->getCurrentLanguage()->getId());
+      $variables['file_size'] = format_size($file->getSize(), \Drupal::languageManager()
+        ->getCurrentLanguage()
+        ->getId());
       $variables['file_url'] = $file->createFileUrl();
       $variables['file_extension'] = pathinfo($file->createFileUrl(), PATHINFO_EXTENSION);
       $file_mimetype = $file->getMimeType();
@@ -300,8 +313,11 @@ function nicsdru_unity_theme_preprocess_responsive_image_formatter(array &$varia
   // potentially contain dodgy html.
   $caption = $media_image->field_caption->getString();
 
-  if (!empty($caption)) {
-    $variables['responsive_image']['#attributes']['caption'] = $caption;
+  // Don't show the caption on the slideshow images.
+  if ($variables['responsive_image_style_id'] != 'slideshow') {
+    if (!empty($caption)) {
+      $variables['responsive_image']['#attributes']['caption'] = $caption;
+    }
   }
 }
 
@@ -397,4 +413,25 @@ function nicsdru_unity_theme_preprocess_file_link(array &$variables) {
     'file--ico',
     'file--ico__' . $file_extension,
   ]);
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function nicsdru_unity_theme_form_node_landing_page_layout_builder_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  // Hide revision information section.
+  $form['revision_information']['#access'] = FALSE;
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter().
+ */
+function nicsdru_unity_theme_theme_suggestions_block_alter(array &$suggestions, array $variables) {
+  $plugin_id = $variables['elements']['#plugin_id'];
+
+  // Update Layout Builder Standard and Wide inline card blocks to use
+  // templates/block/block--inline-block--card.html.twig.
+  if ($plugin_id === 'inline_block:card_wide' || $plugin_id === 'inline_block:card_standard') {
+    $suggestions[] = 'block__inline_block__card';
+  }
 }

@@ -1,5 +1,9 @@
 @import '../../init/index';
 
+.current-search-item-results-count {
+  margin: 0 0 1.8rem;
+}
+
 .search-result {
   border-bottom: 1px solid #d3d7d9;
   padding-bottom: 1.5rem;
@@ -8,6 +12,11 @@
     border-bottom: 0;
     padding-bottom: 0;
     margin-bottom: 1em;
+  }
+
+  h3 {
+    font-size: 2rem;
+    margin: 2.4rem 0 1.2rem;
   }
 
   p {

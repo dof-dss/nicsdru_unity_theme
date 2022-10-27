@@ -142,8 +142,7 @@
 
     figcaption {
       display: block;
-      font-style: italic;
-      text-align: center;
+      @include adjust-font-size-to(16px);
       padding: .5em;
       background-color: $grey-lightest;
       color: $text;
@@ -225,4 +224,8 @@ a.thwooper { // Added by JS after all expandable images - when clicked it adds "
     max-width: 300px;
     margin-left: 1em;
   }
+}
+
+.front .field-photo figcaption {
+  display: none;
 }

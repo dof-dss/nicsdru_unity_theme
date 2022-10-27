@@ -6,6 +6,7 @@ unity-global-styling:
       css/styles.css: { minified: true }
   js:
     js/unity-menu-script.js: { minified: true }
+    js/main-menu-toggle.js: { minified: true }
     js/ext-win-script.js: { minified: true }
     js/empty-tags-script.js: { minified: true }
     js/unity-facets.js: { minified: true }
@@ -128,3 +129,18 @@ board_member:
   css:
     component:
       css/3_components/view/board-member.css: { minified: true }
+landing:
+  css:
+    component:
+      css/3_components/content/landing.css: { minified: true }
+      css/3_components/form/layout-builder-form.css: { minified: true }
+      css/3_components/layout/layout-builder.css: { minified: true }
+      css/3_components/content/cards.css: {minified: true }
+      css/3_components/content/card-contact.css: {minified: true }
+      css/3_components/content/banners.css: {minified: true }
+  js:
+    js/layout-builder.js: { minified: false }
+    dependencies:
+      - core/drupal
+      - core/jquery
+      - core/jquery.once
