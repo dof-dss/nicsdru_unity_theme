@@ -41,7 +41,7 @@
 }
 
 .top_left {
-  min-height: 90px;
+  min-height: 100px;
   padding: 0;
   position: relative;
   -ms-grid-column: 1;
@@ -61,6 +61,41 @@
     position: absolute;
     left: 0;
     top: 0;
+    float: left;
+    margin: .8rem 1rem .8rem 0;
+
+    @media screen and (max-width: $tab) {
+      text-align: center;
+      width: 100%;
+      margin: .8rem 0 0;
+    }
+
+    img {
+      display: block;
+      height: 80px;
+
+      @media screen and (max-width: $tab) {
+        text-align: center;
+        display: inline-block;
+      }
+    }
+
+    @media screen and (max-width: $tab) {
+      padding: 0 1rem;
+    }
+
+    a {
+      display: inline-block;
+
+      &:focus {
+        color: rgba(0, 0, 0, 0);
+        background-color: rgba(0, 0, 0, 0);
+        text-decoration: none;
+        outline: .3rem dashed #949494;
+        font-size: 0;
+        outline-offset: .4rem;
+      }
+    }
   }
 
   #site-title {
@@ -108,26 +143,6 @@
 .search_block {
   @media screen and (max-width: $tab) {
     width: 100%;
-  }
-}
-
-#logo {
-  float: left;
-  margin: .8rem 1rem .8rem 0;
-
-  @media screen and (max-width: $tab) {
-    text-align: center;
-    width: 100%;
-    margin: .8rem 0 0;
-  }
-
-  img {
-    display: block;
-
-    @media screen and (max-width: $tab) {
-      text-align: center;
-      display: inline-block;
-    }
   }
 }
 
