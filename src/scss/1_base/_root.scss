@@ -31,10 +31,13 @@ html {
   font-size: 100% * $base-font-size / 16px;
 }
 
+$body-background-colour: #fff !default;
+
 body {
   @include responsive-typo-map($normal-text);
   margin: 0;
   font-family: $base-font-family;
   color: $text;
+  background-color: $body-background-colour;
   //line-height: 160%;
 }
