@@ -84,29 +84,33 @@
 
 {% if is_front %}
   {{ page.slideshow }}
-
+{% if basic_page_structure is empty %}
+<main id="content">
+  {% if drupal_config('system.site', 'frontpage_title') %}
+    <h1 class="{{ drupal_config('system.site', 'frontpage_show_title') ? '' : 'visually-hidden' }}">
+      {{ drupal_config('system.site', 'frontpage_title') }}
+    </h1>
+  {% endif %}
+  {% endif %}
   {{ page.front_welcome }}
 
   {% if page.top_first or page.top_second or page.top_third %}
-    {% if basic_page_structure is empty %}
-<main id="content">
-  {% endif %}
   <div id="top-area" class="clearfix">
-      {% if page.top_first %}
-        <div class="column">
-          {{ page.top_first }}
-        </div>
-      {% endif %}
-      {% if page.top_second %}
-        <div class="column">
-          {{ page.top_second }}
-        </div>
-      {% endif %}
-      {% if page.top_third %}
-        <div class="column">
-          {{ page.top_third }}
-        </div>
-      {% endif %}
+    {% if page.top_first %}
+      <div class="column">
+        {{ page.top_first }}
+      </div>
+    {% endif %}
+    {% if page.top_second %}
+      <div class="column">
+        {{ page.top_second }}
+      </div>
+    {% endif %}
+    {% if page.top_third %}
+      <div class="column">
+        {{ page.top_third }}
+      </div>
+    {% endif %}
   </div>
   {% endif %}
   {% endif %}
