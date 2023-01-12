@@ -13,8 +13,8 @@ table {
   background: $table-background;
   border-collapse: collapse;
   border-spacing: 0;
-  border: 1px solid $table-border;
-  word-break: break-word;
+  display: block;
+  overflow-x: auto;
 }
 
 th,
