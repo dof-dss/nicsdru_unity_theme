@@ -2,43 +2,55 @@
 
 .board-members {
   display: flex;
-  flex-flow: column;
+  flex-flow: row wrap;
+  justify-content: space-between;
 
-  @include breakpoint($mob) {
-    flex-flow: wrap;
-    justify-content: space-between;
-  }
-
-  .views-row {
+  .views-row.card {
+    padding: 0;
     display: flex;
-    background: #e6e6e6;
     margin-bottom: 2%;
-    padding: 1rem;
 
     @include breakpoint($mob) {
-      flex-basis: 49%;
+      flex-basis: 32.6rem;
+    }
 
-      @media screen and (-ms-high-contrast: active), screen and (-ms-high-contrast: none) {
-        /* IE10+ specific styles go here */
-        flex-basis: 46%;
+    h2 {
+      color: $link;
+      @include adjust-font-size-to(21px);
+      margin-top: 0;
+
+      @include breakpoint($mob) {
+        @include responsive-typo-map($h3-text);
+        margin-top: 0;
       }
     }
 
-    .group-left {
-      flex-basis: 40%;
-
-      .field-member-image {
-        max-width: 10rem;
-      }
+    .card__image {
+      max-width: 10rem;
     }
 
-    .group-right {
-      flex-basis: 60%;
+    a {
+      display: flex;
+      justify-content: space-between;
+      background: $grey-light;
+      column-gap: 2rem;
     }
   }
+}
 
-  h3 {
-    margin-top: 0;
-    padding-top: 3rem;
+#content #block-views-block-board-members-board-members-block .board-members .views-row a {
+  padding: 1rem;
+  margin: 0;
+  border: none;
+
+  &:hover,
+  &:focus {
+    border: none;
+    background: #e4f0fa;
+  }
+
+  &:focus {
+    outline: 2px solid $black;
+    outline-offset: -2px;
   }
 }
