@@ -61,7 +61,7 @@
 
       &:hover .board-member--role:after,
       &:focus .board-member--role:after {
-        background-color: $ash-grey;
+        background-color: $charcoal;
         background-image: resolve('arrow_forward_white.svg');
       }
     }
