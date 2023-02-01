@@ -5,13 +5,14 @@
   flex-flow: row wrap;
   justify-content: space-between;
 
-  .views-row.card {
+  .views-row.board-card {
     padding: 0;
     display: flex;
     margin-bottom: 2%;
+    flex-basis: 100%;
 
-    @include breakpoint($mob) {
-      flex-basis: 32.6rem;
+    @include breakpoint($phab) {
+      flex-basis: 49%;
     }
 
     h2 {
@@ -25,44 +26,50 @@
       }
     }
 
-    .card__image {
+    .board__image {
       max-width: 10rem;
+    }
+
+    .board__body {
+      flex: auto;
     }
 
     .board-member--role {
       position: relative;
+      padding-right: 2rem;
 
       &:after {
         content: '';
         display: inline-block;
         position: absolute;
-        top: .3rem;
+        top: 0;
         right: -.6rem;
         width: 3rem;
-        height: 2.4rem;
-        background-image: resolve('arrow_forward_black.svg');
+        height: 3rem;
+        background-image: resolve('arrow_forward_link_blue.svg');
         background-position: center center;
-        background-size: 2.2rem auto;
+        background-size: 2.4rem auto;
         background-repeat: no-repeat;
       }
     }
 
     a {
       display: flex;
-      justify-content: space-between;
       background: $grey-light;
       column-gap: 2rem;
+      flex-basis: 100%;
 
       &:hover .board-member--role:after,
       &:focus .board-member--role:after {
-        background-color: $black;
+        background-color: $charcoal;
         background-image: resolve('arrow_forward_white.svg');
       }
     }
   }
 }
 
-#content #block-views-block-board-members-board-members-block .board-members .views-row a {
+#content #block-views-block-board-members-board-members-block .board-members .views-row a,
+#content #block-views-block-board-member-board-members-block .board-members .views-row a {
   padding: 1rem;
   margin: 0;
   border: none;
