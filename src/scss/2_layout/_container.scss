@@ -146,14 +146,14 @@ $three-col-layout: (19%, 60%, 19%) !default;
   @include unity-layout($three-col-layout);
 }
 
-$two-col-layout-sidebar-first: (19%, 80%) !default;
+$two-col-layout-sidebar-first: (30%, 65%) !default;
 
 /* 2 columns: sidebar-first */
 .sidebar-first {
   @include unity-layout($two-col-layout-sidebar-first);
 }
 
-$two-col-layout-sidebar-second: (75%, 22%) !default;
+$two-col-layout-sidebar-second: (65%, 30%) !default;
 
 /* 2 columns: sidebar-second */
 .sidebar-second {
@@ -173,6 +173,15 @@ $two-col-layout-sidebar-second: (75%, 22%) !default;
     width: 100% !important;
   }
 } // not sure where this comes from?
+
+// Content areas with no sidebars should be the same width as those with sidebars.
+.no-sidebars {
+  .content-sidebar-wrap {
+    @include breakpoint($tab) {
+      width: 65%;
+    }
+  }
+}
 
 //#head,
 //#foot {
