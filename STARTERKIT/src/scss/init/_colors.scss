@@ -73,6 +73,8 @@ $chroma: add-colors('functional', (
   footer-border:          'brand-primary',
   footer-text:            'text',
   footer-headings:        'text',
+
+  search-submit: #0e6bb3,
 ));
 
 $chroma-active-scheme: 'functional';
@@ -136,4 +138,4 @@ $footer-border: color(footer-border);
 $footer-text: color(footer-text);
 $footer-headings: color(footer-headings);
 
-$search-submit: #0e6bb3;
+$search-submit: color(search-submit);
