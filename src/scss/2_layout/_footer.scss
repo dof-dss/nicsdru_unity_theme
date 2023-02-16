@@ -22,11 +22,35 @@
 #footer {
   @include responsive-typo-map($normal-text);
   overflow: auto;
-  padding: 1% 2% 2%;
+  padding: 2rem;
   background: $footer-background;
   border-top: 9px solid $footer-border;
-  max-width: $max-grid-width;
+  max-width: 1060px;
   margin: 0 auto;
+
+  @include breakpoint($tab) {
+    padding: 2%;
+  }
+
+
+  .footer-menu li {
+    padding-left: 0;
+    font-size: 1.6rem;
+
+    @include breakpoint($mob) {
+      display: inline-block;
+      padding: 0 .8rem 0 0;
+      line-height: 1.8rem;
+      margin-right: .5rem;
+    }
+
+    a {
+      @media screen and (min-width: $mob) {
+        display: block;
+      }
+    }
+  }
+
 
   p {
     //color: $footer-text;
