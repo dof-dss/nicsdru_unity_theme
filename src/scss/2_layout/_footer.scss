@@ -22,10 +22,10 @@
 #footer {
   @include responsive-typo-map($normal-text);
   overflow: auto;
-  padding: 2rem;
+  padding: 1% 2% 2%;
   background: $footer-background;
   border-top: 9px solid $footer-border;
-  max-width: 1060px;
+  max-width: 100%;
   margin: 0 auto;
 
   @include breakpoint($tab) {
