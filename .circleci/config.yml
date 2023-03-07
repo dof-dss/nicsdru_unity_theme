@@ -45,7 +45,7 @@ jobs:
       - run:
           name: Fetch phpcs and dependencies
           command: |
-            composer require drupal/coder:8.3.16 squizlabs/php_codesniffer:3.7.0
+            composer require drupal/coder:8.3.16 squizlabs/php_codesniffer:3.7.1
             # Move vendor directory up a level as we don't want to code-check all of that.
             mv vendor ../
       - run:
