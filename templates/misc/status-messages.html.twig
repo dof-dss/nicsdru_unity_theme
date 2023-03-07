@@ -19,12 +19,12 @@
  *   - class: HTML classes.
  */
 #}
-<div class="container messages messages--status status-msg" data-drupal-messages>
-  {% for type, messages in message_list %}
+{% for type, messages in message_list %}
+<div class="container messages messages--{{ type }} {{ type }}-msg" data-drupal-messages>
     <div role="contentinfo" aria-label="{{ status_headings[type] }}"{{ attributes|without('role', 'aria-label') }}>
       {% if type == 'error' %}
-      <div role="alert">
-        {% endif %}
+        <div role="alert">
+      {% endif %}
         {% if status_headings[type] %}
           <h2 class="visually-hidden">{{ status_headings[type] }}</h2>
         {% endif %}
@@ -37,9 +37,9 @@
         {% else %}
           {{ messages|first|raw }}
         {% endif %}
-        {% if type == 'error' %}
-      </div>
+      {% if type == 'error' %}
+        </div>
       {% endif %}
     </div>
-  {% endfor %}
 </div>
+{% endfor %}
