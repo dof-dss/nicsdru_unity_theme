@@ -144,3 +144,7 @@ landing:
       - core/drupal
       - core/jquery
       - core/jquery.once
+book:
+  css:
+    component:
+      css/3_components/navigation/book.css: { minified: true }
