@@ -361,7 +361,7 @@ $main-menu-border: false !default;
     // Show main nav when the hamburger aria-expanded attribute is true.
     &[aria-expanded='true'] ~ .nav-main {
       display: flex;
-      max-height: 60rem;
+      max-height: 100%;
     }
   }
 }
