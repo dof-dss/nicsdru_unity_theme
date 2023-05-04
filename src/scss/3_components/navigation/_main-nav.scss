@@ -356,7 +356,7 @@ $main-menu-border: false !default;
         display: none;
         max-height: 6rem;
       }
-      @media (min-width: $tab + 1px) {
+      @include breakpoint($tab + 1px) {
         display: flex;
       }
     }
