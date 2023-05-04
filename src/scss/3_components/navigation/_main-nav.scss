@@ -294,7 +294,7 @@ $main-menu-border: false !default;
     }
 
     // Don't display the hamburger on larger screens.
-    @include breakpoint($tab) {
+    @include breakpoint($tab + 1px) {
       display: none;
     }
 
@@ -353,8 +353,11 @@ $main-menu-border: false !default;
 
       // Except on larger screens - the main nav must be shown.
       @include breakpoint($tab) {
-        display: flex;
+        display: none;
         max-height: 6rem;
+      }
+      @media (min-width: $tab + 1px) {
+        display: flex;
       }
     }
 
