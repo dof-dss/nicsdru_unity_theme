@@ -34,23 +34,21 @@
  * - method: Chosen consent method.
  */
 #}
-{% set btn_attributes = create_attribute() %}
-{% set btn_classes = ['btn', 'btn--primary'] %}
-{% set btn_attributes = btn_attributes.addClass(btn_classes).setAttribute('type', 'button') %}
 {% if privacy_settings_tab_label %}
   <button type="button" class="eu-cookie-withdraw-tab">{{ privacy_settings_tab_label }}</button>
 {% endif %}
 {% set classes = [
   'eu-cookie-compliance-banner',
 ] %}
-<div{{ attributes.addClass(classes).setAttribute('role', 'region').setAttribute('aria-label', 'cookie banner'|t) }}>
+<div{{ attributes.addClass(classes).setAttribute('role', 'alertdialog').setAttribute('aria-label', 'cookie preferences'|t) }}>
   <div class="container popup-content" role="presentation">
     <div id="popup-text" class="eu-cookie-compliance-message" role="presentation">
       {{ message }}
-      {% if disagree_button %}
-        <a href="#" class="find-more-button">{{ disagree_button }}</a>
+      {% if more_info_button %}
+        <a href="#" class="find-more-button eu-cookie-compliance-more-button">{{ more_info_button }}</a>
       {% endif %}
     </div>
+
     {% if cookie_categories %}
       <div id="eu-cookie-compliance-categories" class="eu-cookie-compliance-categories" role="presentation">
         {% for key, category in cookie_categories %}
@@ -74,10 +72,12 @@
       </div>
     {% endif %}
 
-    <div id="popup-buttons" class="eu-cookie-compliance-buttons{% if cookie_categories %} eu-cookie-compliance-has-categories{% endif %}" role="presentation">
-      <button{{ btn_attributes.addClass(primary_button_class) }}>{{ agree_button }}</button>
+    <div id="popup-buttons"
+         class="eu-cookie-compliance-buttons{% if cookie_categories %} eu-cookie-compliance-has-categories{% endif %}"
+         role="presentation">
+      <button class="btn btn--primary {{ primary_button_class }}">{{ agree_button }}</button>
       {% if secondary_button_label %}
-        <button{{ btn_attributes.addClass(secondary_button_class) }}>{{ secondary_button_label }}</button>
+        <button class="btn btn--primary {{ secondary_button_class }}">{{ secondary_button_label }}</button>
       {% endif %}
     </div>
   </div>

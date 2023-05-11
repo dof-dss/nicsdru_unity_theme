@@ -294,7 +294,7 @@ $main-menu-border: false !default;
     }
 
     // Don't display the hamburger on larger screens.
-    @include breakpoint($tab) {
+    @include breakpoint($tab + 1px) {
       display: none;
     }
 
@@ -353,15 +353,18 @@ $main-menu-border: false !default;
 
       // Except on larger screens - the main nav must be shown.
       @include breakpoint($tab) {
-        display: flex;
+        display: none;
         max-height: 6rem;
+      }
+      @include breakpoint($tab + 1px) {
+        display: flex;
       }
     }
 
     // Show main nav when the hamburger aria-expanded attribute is true.
     &[aria-expanded='true'] ~ .nav-main {
       display: flex;
-      max-height: 60rem;
+      max-height: 100%;
     }
   }
 }
