@@ -130,9 +130,17 @@
   .slick-dots {
     bottom: -35px;
 
-    button {
-      &::before {
+    li {
+      button::before {
         font-size: 1rem;
+        color: #919191;
+        opacity: 1;
+      }
+
+      &.slick-active {
+        button::before {
+          color: #000;
+        }
       }
     }
   }
