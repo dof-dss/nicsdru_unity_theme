@@ -8,85 +8,111 @@
 
 #slick-views-slideshow-slideshow-1,
 #slick-views-slideshow-block-slideshow-1 {
-  .slide__caption {
-    @include adjust-font-size-to(14px);
-    background: rgba(0, 0, 0, .85);
-    margin: 0;
-    right: 0;
-    padding: 1rem .4rem 1rem 0;
-    color: $white;
-    width: 355px;
-    height: 100%;
-    top: 0;
-    left: auto;
-    position: absolute;
-
-    @media screen and (max-width: $lap) {
-      background: #6a6a6a;
-      opacity: 1;
-    }
-
-    @media screen and (max-width: $tab) {
-      width: 100%;
-      position: relative;
-      padding: 1rem 0;
-    }
-
-    h2,
-    h3 {
-      @media screen and (max-width: $lap) {
-        @include adjust-font-size-to(18px);
-        margin: 0;
-      }
-    }
-
-    h2 {
+  .slick__slide {
+    .slide__caption {
       @include adjust-font-size-to(20px);
-      padding: 1% 5% 1% 6%;
-      text-transform: uppercase;
-      text-shadow: 1px 1px 1px #414141;
-
-      @media screen and (max-width: $tab) {
-        @include adjust-font-size-to(16px);
-      }
-    }
-
-    h3 {
-      @media screen and (max-width: $tab) {
-        margin: 5px 0;
-      }
-    }
-
-    p,
-    a {
-      @include adjust-font-size-to(20px);
-      display: block;
-      padding: 0 6%;
+      background: rgba(0, 0, 0, .85);
+      margin: 0;
+      right: 0;
+      padding: 2%;
       color: $white;
-      text-decoration: underline;
-
-      @media screen and (max-width: $lap) {
+      width: 355px;
+      height: 100%;
+      top: 0;
+      left: auto;
+      position: absolute;
+      @media screen and (max-width: $tab) {
         @include adjust-font-size-to(16px);
       }
 
-      @media screen and (max-width: $tab) {
-        padding: 6px 6%;
-      }
-    }
-
-    a {
-      &:hover,
-      &:focus {
-        color: $white;
+      a {
         text-decoration: none;
-      }
-
-      &:hover {
         background: none;
       }
 
+      @media screen and (max-width: $lap) {
+        background: #6a6a6a;
+        opacity: 1;
+      }
+
+      @media screen and (max-width: $tab) {
+        width: 100%;
+        position: relative;
+        padding: 2%;
+      }
+
+      h2,
+      h3 {
+        @media screen and (max-width: $lap) {
+          @include adjust-font-size-to(18px);
+          margin: 0;
+        }
+      }
+
+      h2 {
+        @include adjust-font-size-to(20px);
+        padding: 1% 5% 1% 6%;
+        text-transform: uppercase;
+        text-shadow: 1px 1px 1px #414141;
+
+        @media screen and (max-width: $tab) {
+          @include adjust-font-size-to(16px);
+        }
+      }
+
+      h3 {
+        @media screen and (max-width: $tab) {
+          margin: 5px 0;
+        }
+      }
+
+      p,
+      a {
+        @include adjust-font-size-to(20px);
+        display: block;
+        padding: 0 6%;
+        color: $white;
+        text-decoration: underline;
+
+        @media screen and (max-width: $lap) {
+          @include adjust-font-size-to(16px);
+        }
+
+        @media screen and (max-width: $tab) {
+          padding: 6px 6%;
+        }
+      }
+    }
+
+    &:hover {
+      a {
+        .slide__caption {
+          text-decoration: underline;
+          cursor: pointer;
+        }
+
+        img {
+          filter: grayscale(100%);
+        }
+      }
+    }
+
+    a.slider_link {
       &:focus {
-        background: $charcoal;
+        border: 4px solid #0e6bb3;
+        display: flex;
+        position: relative;
+        @media screen and (max-width: $tab) {
+          flex-direction: column;
+        }
+
+        img {
+          filter: grayscale(100%);
+        }
+
+        .slide__caption {
+          text-decoration: underline;
+        }
       }
     }
   }
@@ -130,9 +156,17 @@
   .slick-dots {
     bottom: -35px;
 
-    button {
-      &::before {
+    li {
+      button::before {
         font-size: 1rem;
+        color: #919191;
+        opacity: 1;
+      }
+
+      &.slick-active {
+        button::before {
+          color: #000;
+        }
       }
     }
   }
