@@ -15,8 +15,8 @@
         $intLinkText = Drupal.t('opens in a new window / tab');
 
       // External links - add identifiers.
-      $("#container a[href*='http://'], #container a[href*='https://'], #container a[href^='//'], #bottom a[href*='http://'], #bottom a[href*='https://'], #footer a[href*='http://'], #footer a[href*='https://']", context)
-        .once('elink').each(function () {
+      $(once('elink', "#container a[href*='http://'], #container a[href*='https://'], #container a[href^='//'], #bottom a[href*='http://'], #bottom a[href*='https://'], #footer a[href*='http://'], #footer a[href*='https://']", context))
+        .each(function () {
         $(this).not('a.no-ext-icon, a.btn, a:has(img), .social-links a, .social-icons a')
           .filter(function () {
             return this.hostname && this.hostname !== location.hostname;
@@ -28,7 +28,7 @@
       });
 
       // Internal links with data-ext-url - turn them into external links.
-      $("#container a[data-ext-type^='External']", context).once('elink').each(function () {
+      $(once('elink', "#container a[data-ext-type^='External']", context)).each(function () {
         $(this).attr('href', $(this).attr('data-ext-url'));
       });
 

@@ -2,7 +2,7 @@
 (function ($, Drupal) {
   Drupal.behaviors.nicsdruUnityMainMenu = {
     attach: function (context, settings) {
-      $('#main-menu').find('.expanded .menu-link').once('has-submenu').each(function () {
+      $(once('has-submenu', '#main-menu')).find('.expanded .menu-link').each(function () {
 
         var $submenu = $(this).next('.menu-main_sub');
 
