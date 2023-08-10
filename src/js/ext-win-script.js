@@ -33,7 +33,7 @@
       });
 
       // Internal links in content that open new windows (should be very rare).
-      $("#container a[target='_blank']", context).once('elink').each(function () {
+      $(once('elink', "#container a[target='_blank']", context)).each(function () {
         $(this).not("a.no-ext-icon, a:has(img), #main-content a[href*='http://'], #main-content a[href*='https://'], #main-content a[href^='//']")
           .append('<span class="visually-hidden">(' + $intLinkText + ')</span><svg aria-hidden="true" class="ico ico-elink"><title>' + $intLinkText + '</title><use xlink:href="#elink"></use></svg>')
           .attr('title', $intLinkText)
