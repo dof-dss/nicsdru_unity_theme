@@ -14,7 +14,7 @@ unity-global-styling:
   dependencies:
     - core/drupal
     - core/jquery
-    - core/jquery.once
+    - core/once
 
 # This library provides styling for common admin interface components - the library is only loaded for
 # authenticated users and on the user login form - @see nicsdru_origins_theme.theme for processing functions
@@ -105,7 +105,7 @@ accordions:
   dependencies:
     - core/drupal
     - core/jquery
-    - core/jquery.once
+    - core/once
 
 field_label:
   css:
@@ -143,7 +143,7 @@ landing:
     dependencies:
       - core/drupal
       - core/jquery
-      - core/jquery.once
+      - core/once
 book:
   css:
     component:

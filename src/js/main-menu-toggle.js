@@ -11,7 +11,7 @@
   Drupal.behaviors.nicsdruUnityMainMenuToggle = {
     attach: function attach (context) {
 
-      $('.nav-main', context).once('mainMenuToggle').each(function () {
+      $(once('mainMenuToggle', '.nav-main', context)).each(function () {
 
         // Unhide the burger toggle and set aria attributes when the burger button is clicked.
         var $burger = $('#nav-main-toggle');
