@@ -61,7 +61,7 @@
   }
   $(once('esc-close-submenu', $(this))).on('keydown', escHandler);
 
-  $(once('close-submenu', $(document))).click(function (event) {
+  $(once('close-submenu', document)).click(function (event) {
     var $trigger = $('#main-menu');
     if ($trigger !== event.target && !$trigger.has(event.target).length) {
       closeMenu();
