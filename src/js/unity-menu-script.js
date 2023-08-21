@@ -2,7 +2,7 @@
 (function ($, Drupal) {
   Drupal.behaviors.nicsdruUnityMainMenu = {
     attach: function (context, settings) {
-      $('#main-menu').find('.expanded .menu-link').once('has-submenu').each(function () {
+      $(once('has-submenu', '#main-menu')).find('.expanded .menu-link').each(function () {
 
         var $submenu = $(this).next('.menu-main_sub');
 
@@ -39,7 +39,7 @@
         }
       };
 
-      $('#main-menu .menu-toggle-btn').once('open-submenu').on('click keypress', clickHandler);
+      $(once('open-submenu', '#main-menu .menu-toggle-btn')).on('click keypress', clickHandler);
     }
   }
 
@@ -59,9 +59,9 @@
       closeMenu();
     }
   }
-  $(this).once('esc-close-submenu').on('keydown', escHandler);
+  $(once('esc-close-submenu', this)).on('keydown', escHandler);
 
-  $(document).once('close-submenu').click(function (event) {
+  $(once('close-submenu', document)).click(function (event) {
     var $trigger = $('#main-menu');
     if ($trigger !== event.target && !$trigger.has(event.target).length) {
       closeMenu();
