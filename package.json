@@ -67,6 +67,7 @@
     "js-compile-thwoop-lib": "mkdir -p js && uglifyjs src/js/thwoop-images.js -o js/thwoop-images.js",
     "js-compile-accordions": "mkdir -p js && uglifyjs src/js/accordions.js -o js/accordions.js",
     "js-compile-layout-builder": "mkdir -p js && uglifyjs src/js/layout-builder.js -o js/layout-builder.js",
+    "js-compile-empty-tags": "mkdir -p js && uglifyjs src/js/empty-tags-script.js -o js/empty-tags-script.js",
     "––––––– CSS SCRIPTS": "–––––––––––––",
     "css": "npm-run-all --sequential scss-dev css-post",
     "css-lint": "sass-lint -c $npm_package_config_sasslintConfig $npm_package_config_scssfile -v -q",
@@ -100,7 +101,7 @@
     "build": "npm-run-all --parallel build-*",
     "build-css": "npm-run-all --parallel css-lint* scss-prod --sequential css-post",
     "build-js": "npm run js",
-    "build-img": "npm-run-all --parallel imgmin svgmin icons",
+    "_build-img": "npm-run-all --parallel imgmin svgmin icons",
     "build:docs": "npm run docs-build",
     "lint": "npm-run-all --parallel css-lint js-lint",
     "test": "echo \"No test specified\""
