@@ -2,7 +2,6 @@
  * Styling unique to CKEditor
  * =====================================================*/
 @import '../init/index';
-@import 'index';
 @import '../1_base/tables';
 @import '../1_base/grouping';
 
@@ -113,3 +112,29 @@ address {
     font-size: 14px;
   }
 }
+
+a {
+  &.btn {
+    display: inline-block;
+    color: #fff;
+    margin: 1rem 0 0;
+    text-align: center;
+    padding: .6rem 1.6rem;
+    cursor: pointer;
+    background: $link;
+    border-radius: 0;
+    border: 3px solid transparent;
+    text-decoration: underline;
+    //text-underline-offset: .25em;
+
+    &:hover,
+    &:focus {
+      background: $ash-grey;
+    }
+
+    &:focus {
+      border-color: $black;
+    }
+  }
+}
+
