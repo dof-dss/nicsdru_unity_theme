@@ -59,7 +59,7 @@
       closeMenu();
     }
   }
-  $(once('esc-close-submenu', this)).on('keydown', escHandler);
+  $(once('esc-close-submenu', document)).on('keydown', escHandler);
 
   $(once('close-submenu', document)).click(function (event) {
     var $trigger = $('#main-menu');
