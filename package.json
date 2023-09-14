@@ -1,6 +1,6 @@
 {
   "name": "nicsdru_unity_theme",
-  "version": "0.1.59",
+  "version": "0.1.81",
   "description": "A package of utilities used to theme our site",
   "main": "index.js",
   "license": "MIT",
