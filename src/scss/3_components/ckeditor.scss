@@ -12,7 +12,8 @@ body {
 // 70% of the $max-grid-width is the maximum width of a content region in Uregni
 $max-editable-width: ($max-grid-width * .7);
 
-.cke_editable {
+//.cke_editable {
+.ck-editor__editable {
 
   // applied to body in ckeditor
   max-width: $max-editable-width;
