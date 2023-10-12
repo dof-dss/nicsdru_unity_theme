@@ -13,7 +13,7 @@ body {
 $max-editable-width: ($max-grid-width * .7);
 
 //.cke_editable {
-.ck-editor__editable {
+.ck-editor__editable.ck-editor__editable_inline {
 
   // applied to body in ckeditor
   max-width: $max-editable-width;
