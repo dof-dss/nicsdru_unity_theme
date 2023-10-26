@@ -12,6 +12,137 @@ body {
 // 70% of the $max-grid-width is the maximum width of a content region in Uregni
 $max-editable-width: ($max-grid-width * .7);
 
+.ck-content {
+
+  // applied to body in ckeditor
+  max-width: $max-editable-width;
+  margin: 18px;
+
+  // Create a semi-transparent out-of-bounds area.
+  &::before {
+    content: '';
+    display: block;
+    box-sizing: content-box;
+    width: 130px;
+    height: 100%;
+    padding: 15px 100% 15px 15px;
+    text-align: center;
+    position: fixed;
+    top: 0;
+    left: $max-editable-width + 36px;
+    z-index: 1;
+    background-color: rgba(#000, .5);
+    background-clip: padding-box;
+    border-left: 18px solid rgba(255, 255, 255, .5);
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 1.5;
+    color: #eee;
+  }
+
+  // Create message vertically centered in out-of-bounds area.
+  &::after {
+    content: 'Content must not cross the margin into this area.';
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: content-box;
+    width: 120px;
+    height: 100%;
+    padding: 0 100% 0 15px;
+    text-align: center;
+    position: fixed;
+    top: 0;
+    left: $max-editable-width + 54px;
+    z-index: 2;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 1.5;
+    color: #fff;
+  }
+
+  // Make sure ckeditor magicline does not cross into out-of-bounds.
+  //span[data-cke-magic-line] {
+  //  max-width: $max-grid-width + 36px;
+  //}
+
+  .table table {
+    &,
+    & > tr > td,
+    & > tr > th,
+    & > tbody > tr > td,
+    & > tbody > tr > th,
+    & > thead > tr > td,
+    & > thead > tr > th,
+    & > tfoot > tr > td,
+    & > tfoot > tr > th {
+      border: 1px solid $table-border !important; // Makes table visible in the editor interface.
+  }
+}
+
+address {
+  font-style: normal;
+}
+
+.media-image,
+.media-video,
+.media-audio {
+  display: block;
+  position: relative;
+
+  img {
+    width: 100%;
+    height: auto;
+    margin: 0;
+  }
+
+  // Styling for the Edit media button
+  .media-library-item__edit {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 1000;
+    margin: 0;
+    min-height: 30px;
+    border: 0;
+    border-radius: 0;
+    -webkit-appearance: none;
+    cursor: pointer;
+    background-color: $button-action;
+    color: #fff;
+    font-size: 14px;
+  }
+}
+
+a {
+  &.btn {
+    display: inline-block;
+    color: #fff;
+    margin: 1rem 0 0;
+    text-align: center;
+    padding: .6rem 1.6rem;
+    cursor: pointer;
+    background: $link;
+    border-radius: 0;
+    border: 3px solid transparent;
+    text-decoration: underline;
+    //text-underline-offset: .25em;
+
+    &:hover,
+    &:focus {
+      background: $ash-grey;
+    }
+
+    &:focus {
+      border-color: $black;
+    }
+  }
+}
+
+/*
+ * CK Editor styling specific to version 4 of the tool
+ * code below this comment is to be removed when all sites are live on D10 / ckeditor 5
+ */
 .cke_editable {
 
   // applied to body in ckeditor
@@ -78,63 +209,3 @@ $max-editable-width: ($max-grid-width * .7);
 .cke_show_borders > table.cke_show_border > tfoot > tr > th {
   border: 1px solid $table-border !important; // Overrides inline style sheet ckeditor adds.
 }
-
-address {
-  font-style: normal;
-}
-
-.media-image,
-.media-video,
-.media-audio {
-  display: block;
-  position: relative;
-
-  img {
-    width: 100%;
-    height: auto;
-    margin: 0;
-  }
-
-  // Styling for the Edit media button
-  .media-library-item__edit {
-    position: absolute;
-    top: 0;
-    right: 0;
-    z-index: 1000;
-    margin: 0;
-    min-height: 30px;
-    border: 0;
-    border-radius: 0;
-    -webkit-appearance: none;
-    cursor: pointer;
-    background-color: $button-action;
-    color: #fff;
-    font-size: 14px;
-  }
-}
-
-a {
-  &.btn {
-    display: inline-block;
-    color: #fff;
-    margin: 1rem 0 0;
-    text-align: center;
-    padding: .6rem 1.6rem;
-    cursor: pointer;
-    background: $link;
-    border-radius: 0;
-    border: 3px solid transparent;
-    text-decoration: underline;
-    //text-underline-offset: .25em;
-
-    &:hover,
-    &:focus {
-      background: $ash-grey;
-    }
-
-    &:focus {
-      border-color: $black;
-    }
-  }
-}
-
