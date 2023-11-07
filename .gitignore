@@ -1,4 +1,6 @@
 css/kss-chroma-markup.css
 css/**/*.css.map
+.idea
+.lando.yml
 node_modules
 styleguide
