@@ -17,7 +17,7 @@ libraries:
   - nicsdru_unity_theme/field_label
   - nicsdru_unity_theme/search_result
 
-ckeditor_stylesheets:
+ckeditor5-stylesheets:
   - css/3_components/ckeditor.css
   - css/3_components/content/responsive-images.css
   - css/3_components/content/responsive-images-ckeditor.css
