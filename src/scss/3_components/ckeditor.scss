@@ -13,7 +13,6 @@ body {
 $max-editable-width: ($max-grid-width * .7);
 
 .ck-content {
-
   // applied to body in ckeditor
   max-width: $max-editable-width;
   margin: 18px;
@@ -61,11 +60,6 @@ $max-editable-width: ($max-grid-width * .7);
     color: #fff;
   }
 
-  // Make sure ckeditor magicline does not cross into out-of-bounds.
-  //span[data-cke-magic-line] {
-  //  max-width: $max-grid-width + 36px;
-  //}
-
   .table table {
     &,
     & > tr > td,
@@ -77,6 +71,7 @@ $max-editable-width: ($max-grid-width * .7);
     & > tfoot > tr > td,
     & > tfoot > tr > th {
       border: 1px solid $table-border !important; // Makes table visible in the editor interface.
+    }
   }
 }
 
