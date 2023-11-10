@@ -8,6 +8,8 @@
 use Drupal\block\Entity\Block;
 use Drupal\Component\Utility\Html;
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Render\Element;
+use Drupal\Core\Render\Markup;
 use Drupal\file\FileInterface;
 use Drupal\media\MediaInterface;
 use Drupal\node\Entity\Node;
@@ -442,5 +444,38 @@ function nicsdru_unity_theme_theme_suggestions_block_alter(array &$suggestions, 
 function nicsdru_unity_theme_theme_suggestions_views_view_unformatted_alter(array &$suggestions, array $variables) {
   if (!empty($variables['view']->element['#display_id'])) {
     $suggestions[] = 'views_view_unformatted__' . $variables['view']->element['#display_id'];
+  }
+}
+
+/**
+ * Implements template_preprocess_field_group_html_element().
+ * Preprocessing the Additional content details field group used in the
+ * revision
+ * comparison view mode to remove the need to the contrib classy theme Drupal
+ * 10.
+ */
+function nicsdru_unity_theme_preprocess_field_group_html_element(&$variables) {
+  $element = $variables['element'];
+  if ($element['#group_name'] === 'group_additional_content_details') {
+    // Get group element children.
+    $children = Element::children($element);
+
+    if (!empty($children)) {
+      $new_children_output = '';
+      foreach ($children as $child) {
+        if (!empty($element[$child]['#object']) && !empty($variables['element'][$child]['#title'])) {
+          $child_title = $element[$child]['#title'];
+          $child_object = $element[$child]['#object'];
+
+          // Build new HTML to add the required classes to make the revision comparison styling to work.
+          $new_children_output .= '<div class="field field--label-inline">';
+          $new_children_output .= '<div class="field__label">' . $child_title . '</div>';
+          $new_children_output .= '<div class="field__item">' . current($child_object->get($child)
+              ->getValue()[0]) . '</div>';
+          $new_children_output .= '</div>';
+        }
+      }
+      $variables['children'] = Markup::create($new_children_output);
+    }
   }
 }
