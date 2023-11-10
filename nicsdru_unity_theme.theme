@@ -13,6 +13,7 @@ use Drupal\Core\Render\Markup;
 use Drupal\file\FileInterface;
 use Drupal\media\MediaInterface;
 use Drupal\node\Entity\Node;
+use Drupal\taxonomy\Entity\Term;
 
 /**
  * Implements hook_preprocess().
@@ -468,7 +469,20 @@ function nicsdru_unity_theme_preprocess_field_group_html_element(&$variables) {
           // Build new HTML to add the required classes to make the revision comparison styling to work.
           $new_children_output .= '<div class="field field--label-inline">';
           $new_children_output .= '<div class="field__label">' . $child_title . '</div>';
-          $new_children_output .= '<div class="field__item">' . current($child_object->get($child)->getValue()[0]) . '</div>';
+          // If value is a number load the taxonomy term.
+          if (is_numeric(current($child_object->get($child)->getValue()[0]))) {
+            $term = Term::load(current($child_object->get($child)->getValue()[0]));
+            // Check the term exists.
+            if (!empty($term)) {
+              $new_children_output .= '<div class="field__item">' . $term->getName() . '</div>';
+            }
+            else {
+              $new_children_output .= '<div class="field__item">' . current($child_object->get($child)->getValue()[0]) . '</div>';
+            }
+          }
+          else {
+            $new_children_output .= '<div class="field__item">' . current($child_object->get($child)->getValue()[0]) . '</div>';
+          }
           $new_children_output .= '</div>';
         }
       }
