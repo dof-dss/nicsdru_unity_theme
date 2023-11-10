@@ -468,8 +468,7 @@ function nicsdru_unity_theme_preprocess_field_group_html_element(&$variables) {
           // Build new HTML to add the required classes to make the revision comparison styling to work.
           $new_children_output .= '<div class="field field--label-inline">';
           $new_children_output .= '<div class="field__label">' . $child_title . '</div>';
-          $new_children_output .= '<div class="field__item">' . current($child_object->get($child)
-              ->getValue()[0]) . '</div>';
+          $new_children_output .= '<div class="field__item">' . current($child_object->get($child)->getValue()[0]) . '</div>';
           $new_children_output .= '</div>';
         }
       }
