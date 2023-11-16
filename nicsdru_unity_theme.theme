@@ -18,13 +18,13 @@ use Drupal\taxonomy\Entity\Term;
 /**
  * Implements hook_preprocess().
  */
-function nicsdru_unity_theme_preprocess(&$variables) {
+function nicsdru_unity_theme_preprocess(&$variables)
+{
   // Set a variable based on the path.matcher.
   if (!isset($variables['is_front'])) {
     try {
       $variables['is_front'] = \Drupal::service('path.matcher')->isFrontPage();
-    }
-    catch (\Exception $e) {
+    } catch (\Exception $e) {
       $variables['is_front'] = FALSE;
     }
   }
@@ -36,7 +36,8 @@ function nicsdru_unity_theme_preprocess(&$variables) {
 /**
  * Implements hook_preprocess_HOOK().
  */
-function nicsdru_unity_theme_preprocess_page(&$variables) {
+function nicsdru_unity_theme_preprocess_page(&$variables)
+{
   $variables['basic_page_structure'] = FALSE;
   if (theme_get_setting('basic_page_structure')) {
     $variables['basic_page_structure'] = TRUE;
@@ -46,7 +47,8 @@ function nicsdru_unity_theme_preprocess_page(&$variables) {
 /**
  * Implements hook_preprocess_page_attachments_alter().
  */
-function nicsdru_unity_theme_page_attachments_alter(array &$page) {
+function nicsdru_unity_theme_page_attachments_alter(array &$page)
+{
   /*
    * Tell IE to use latest rendering engine (not to use compatibility mode).
    * /*$ie_edge = [
@@ -87,8 +89,7 @@ function nicsdru_unity_theme_page_attachments_alter(array &$page) {
       if (theme_get_setting('ga_tracking_disabled_eu')) {
         $script = "if(document.cookie.valueOf('cookie-agreed') != 'cookie-agreed=2') {
           window['ga-disable-" . $ga_account . "'] = true; console.log('block')}";
-      }
-      else {
+      } else {
         // By default block Google Analytics.
         $script = "window['ga-disable-" . $ga_account . "'] = true;";
       }
@@ -113,21 +114,24 @@ function nicsdru_unity_theme_page_attachments_alter(array &$page) {
 /**
  * Implements hook_form_FORM_ID_alter().
  */
-function nicsdru_unity_theme_form_user_login_form_alter(&$form, FormStateInterface $form_state, $form_id = NULL) {
+function nicsdru_unity_theme_form_user_login_form_alter(&$form, FormStateInterface $form_state, $form_id = NULL)
+{
   $form['#attached']['library'][] = 'nicsdru_unity_theme/nicsdru-authenticated-styles';
 }
 
 /**
  * Implements hook_form_FORM_ID_alter().
  */
-function nicsdru_unity_theme_form_user_pass_alter(&$form, FormStateInterface $form_state, $form_id = NULL) {
+function nicsdru_unity_theme_form_user_pass_alter(&$form, FormStateInterface $form_state, $form_id = NULL)
+{
   $form['#attached']['library'][] = 'nicsdru_unity_theme/nicsdru-authenticated-styles';
 }
 
 /**
  * Implements hook_form_FORM_ID_alter().
  */
-function nicsdru_unity_theme_form_node_preview_form_select_alter(&$form, FormStateInterface $form_state, $form_id) {
+function nicsdru_unity_theme_form_node_preview_form_select_alter(&$form, FormStateInterface $form_state, $form_id)
+{
   // Remove view mode selector from preview.
   unset($form['view_mode']);
 }
@@ -135,7 +139,8 @@ function nicsdru_unity_theme_form_node_preview_form_select_alter(&$form, FormSta
 /**
  * Implements hook_preprocess_html().
  */
-function nicsdru_unity_theme_preprocess_html(&$variables) {
+function nicsdru_unity_theme_preprocess_html(&$variables)
+{
   $variables['path_info']['args'] = FALSE;
   $path = \Drupal::request()->getPathInfo();
   $path_args = explode('/', $path);
@@ -147,16 +152,13 @@ function nicsdru_unity_theme_preprocess_html(&$variables) {
   if ((!empty($variables['page']['sidebar_first']) || !empty($variables['page']['search_facets']))
     && !empty($variables['page']['sidebar_second'])) {
     $variables['attributes']['class'][] = 'two-sidebars';
-  }
-  elseif (!empty($variables['page']['sidebar_first']) || !empty($variables['page']['search_facets'])) {
+  } elseif (!empty($variables['page']['sidebar_first']) || !empty($variables['page']['search_facets'])) {
     $variables['attributes']['class'][] = 'one-sidebar';
     $variables['attributes']['class'][] = 'sidebar-first';
-  }
-  elseif (!empty($variables['page']['sidebar_second'])) {
+  } elseif (!empty($variables['page']['sidebar_second'])) {
     $variables['attributes']['class'][] = 'one-sidebar';
     $variables['attributes']['class'][] = 'sidebar-second';
-  }
-  else {
+  } else {
     $variables['attributes']['class'][] = 'no-sidebars';
   }
 }
@@ -164,7 +166,8 @@ function nicsdru_unity_theme_preprocess_html(&$variables) {
 /**
  * Implements hook_preprocess_form().
  */
-function nicsdru_unity_theme_preprocess_form(array &$variables) {
+function nicsdru_unity_theme_preprocess_form(array &$variables)
+{
   switch ($variables['element']['#id']) {
     case "block-exposedformnewsnews-search-api":
     case "block-exposedformpublication-search-api":
@@ -177,7 +180,8 @@ function nicsdru_unity_theme_preprocess_form(array &$variables) {
 /**
  * Implements hook_preprocess_views_view().
  */
-function nicsdru_unity_theme_preprocess_views_view(&$variables) {
+function nicsdru_unity_theme_preprocess_views_view(&$variables)
+{
   $variables['attributes']['role'] = 'presentation';
 
   if ($variables['id'] === 'search') {
@@ -201,14 +205,14 @@ function nicsdru_unity_theme_preprocess_views_view(&$variables) {
 /**
  * Implements hook_preprocess_facets_item_list().
  */
-function nicsdru_unity_theme_preprocess_facets_item_list(array &$variables) {
+function nicsdru_unity_theme_preprocess_facets_item_list(array &$variables)
+{
   if (!empty($variables["facet"])) {
     if (!empty($variables["facet"]->getWidget()) && $variables["facet"]->getWidget()["type"] == 'links') {
       foreach ($variables["items"] as $key => $item) {
         if (array_key_exists('class', $item["value"]["#attributes"])) {
           $variables["items"][$key]["value"]["#attributes"]["class"][] = 'facet-item--link';
-        }
-        else {
+        } else {
           $variables["items"][$key]["value"]["#attributes"]["class"] = ['facet-item--link'];
         }
       }
@@ -219,7 +223,8 @@ function nicsdru_unity_theme_preprocess_facets_item_list(array &$variables) {
 /**
  * Implements hook_preprocess_media().
  */
-function nicsdru_unity_theme_preprocess_media(&$variables) {
+function nicsdru_unity_theme_preprocess_media(&$variables)
+{
   if (empty($variables['media']) || $variables['media']->bundle() != 'document') {
     return;
   }
@@ -240,8 +245,7 @@ function nicsdru_unity_theme_preprocess_media(&$variables) {
       $file_mimetype = $file->getMimeType();
       if (array_key_exists($file->getMimeType(), $pretty_mimes)) {
         $variables['file_type'] = $pretty_mimes[$file_mimetype];
-      }
-      else {
+      } else {
         $variables['file_type'] = strtoupper(preg_replace('/^application\/(\w+)$/', '\1', $file_mimetype));
       }
     }
@@ -252,7 +256,8 @@ function nicsdru_unity_theme_preprocess_media(&$variables) {
 /**
  * Implements hook_preprocess_slick().
  */
-function nicsdru_unity_theme_preprocess_slick(&$variables) {
+function nicsdru_unity_theme_preprocess_slick(&$variables)
+{
   if (isset($variables['arrow_attributes']['role'])) {
     unset($variables['arrow_attributes']['role']);
   }
@@ -264,7 +269,8 @@ function nicsdru_unity_theme_preprocess_slick(&$variables) {
  * Adds a suffix to elements with id #edit-actions to stop duplication of ids
  * on the same page.
  */
-function nicsdru_unity_theme_preprocess_container(&$variables) {
+function nicsdru_unity_theme_preprocess_container(&$variables)
+{
   if (isset($variables['element']['#id'])) {
     $id = $variables['element']['#id'];
     if (in_array($id, ['edit-actions'])) {
@@ -278,7 +284,8 @@ function nicsdru_unity_theme_preprocess_container(&$variables) {
 /**
  * Implements hook_form_alter().
  */
-function nicsdru_unity_theme_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+function nicsdru_unity_theme_form_alter(&$form, FormStateInterface $form_state, $form_id)
+{
   if ($form['#id'] == 'views-exposed-form-search-site-search' || $form['#id'] == 'views-exposed-form-search-search-page') {
     // Ensure the input field only accepts a letter or a number at the beginning of a search.
     $form['query']['#pattern'] = '^[a-zA-Z0-9]+.*';
@@ -288,7 +295,8 @@ function nicsdru_unity_theme_form_alter(&$form, FormStateInterface $form_state, 
 /**
  * Implements hook_form_element_label().
  */
-function nicsdru_unity_theme_preprocess_form_element_label(&$variables) {
+function nicsdru_unity_theme_preprocess_form_element_label(&$variables)
+{
   // Search the exposed filter label for text: 'Search' any word e.g. Search consultations.
   if (preg_match('/Search\D[a-z]+/', $variables['title']['#markup'])) {
     // Make the label invisible.
@@ -299,7 +307,8 @@ function nicsdru_unity_theme_preprocess_form_element_label(&$variables) {
 /**
  * Implements hook_preprocess_responsive_image_formatter().
  */
-function nicsdru_unity_theme_preprocess_responsive_image_formatter(array &$variables) {
+function nicsdru_unity_theme_preprocess_responsive_image_formatter(array &$variables)
+{
   // Load the parent media entity that the responsive image is
   // or might be associated to.
   $media_image = $variables['item']->getEntity();
@@ -327,7 +336,8 @@ function nicsdru_unity_theme_preprocess_responsive_image_formatter(array &$varia
 /**
  * Implements hook_preprocess_block().
  */
-function nicsdru_unity_theme_preprocess_block(&$variables) {
+function nicsdru_unity_theme_preprocess_block(&$variables)
+{
   // Pass block region value to content so this can be used in nicsdru_unity_theme_theme_suggestions_menu_alter.
   if (!empty($variables['elements']['#id'])) {
     $region = Block::load($variables['elements']['#id'])->getRegion();
@@ -364,7 +374,8 @@ function nicsdru_unity_theme_preprocess_block(&$variables) {
  *
  * Provide region based menu suggestions.
  */
-function nicsdru_unity_theme_theme_suggestions_menu_alter(&$suggestions, array $variables) {
+function nicsdru_unity_theme_theme_suggestions_menu_alter(&$suggestions, array $variables)
+{
   if (!empty($variables['attributes']['region'])) {
     $suggestions[] = 'menu__' . $variables['menu_name'] . '__' . $variables['attributes']['region'];
   }
@@ -373,7 +384,8 @@ function nicsdru_unity_theme_theme_suggestions_menu_alter(&$suggestions, array $
 /**
  * Implements hook_preprocess_HOOK().
  */
-function nicsdru_unity_theme_preprocess_field(&$variables) {
+function nicsdru_unity_theme_preprocess_field(&$variables)
+{
 
   if ($variables['field_name'] == 'field_attachment') {
     $path = \Drupal::service('path_alias.manager')
@@ -388,7 +400,8 @@ function nicsdru_unity_theme_preprocess_field(&$variables) {
 /**
  * Implements hook_theme_suggestions_field_alter().
  */
-function nicsdru_unity_theme_theme_suggestions_field_alter(array &$suggestions, array $variables) {
+function nicsdru_unity_theme_theme_suggestions_field_alter(array &$suggestions, array $variables)
+{
   // Add view mode to node field theme suggestions.
   $element = $variables['element'];
 
@@ -405,7 +418,8 @@ function nicsdru_unity_theme_theme_suggestions_field_alter(array &$suggestions, 
 /**
  * Implements template_preprocess_file_link().
  */
-function nicsdru_unity_theme_preprocess_file_link(array &$variables) {
+function nicsdru_unity_theme_preprocess_file_link(array &$variables)
+{
   if (!$variables['file'] instanceof FileInterface) {
     return;
   }
@@ -421,7 +435,8 @@ function nicsdru_unity_theme_preprocess_file_link(array &$variables) {
 /**
  * Implements hook_form_FORM_ID_alter().
  */
-function nicsdru_unity_theme_form_node_landing_page_layout_builder_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+function nicsdru_unity_theme_form_node_landing_page_layout_builder_form_alter(&$form, FormStateInterface $form_state, $form_id)
+{
   // Hide revision information section.
   $form['revision_information']['#access'] = FALSE;
 }
@@ -429,7 +444,8 @@ function nicsdru_unity_theme_form_node_landing_page_layout_builder_form_alter(&$
 /**
  * Implements hook_theme_suggestions_HOOK_alter().
  */
-function nicsdru_unity_theme_theme_suggestions_block_alter(array &$suggestions, array $variables) {
+function nicsdru_unity_theme_theme_suggestions_block_alter(array &$suggestions, array $variables)
+{
   $plugin_id = $variables['elements']['#plugin_id'];
 
   // Update Layout Builder Standard and Wide inline card blocks to use
@@ -442,7 +458,8 @@ function nicsdru_unity_theme_theme_suggestions_block_alter(array &$suggestions, 
 /**
  * Implements hook_theme_suggestions_HOOK_alter().
  */
-function nicsdru_unity_theme_theme_suggestions_views_view_unformatted_alter(array &$suggestions, array $variables) {
+function nicsdru_unity_theme_theme_suggestions_views_view_unformatted_alter(array &$suggestions, array $variables)
+{
   if (!empty($variables['view']->element['#display_id'])) {
     $suggestions[] = 'views_view_unformatted__' . $variables['view']->element['#display_id'];
   }
@@ -469,19 +486,24 @@ function nicsdru_unity_theme_preprocess_field_group_html_element(&$variables) {
           // Build new HTML to add the required classes to make the revision comparison styling to work.
           $new_children_output .= '<div class="field field--label-inline">';
           $new_children_output .= '<div class="field__label">' . $child_title . '</div>';
-          // If value is a number load the taxonomy term.
+          // If value is a number either load the taxonomy term or node.
           if (is_numeric(current($child_object->get($child)->getValue()[0]))) {
-            $term = Term::load(current($child_object->get($child)->getValue()[0]));
+            $term = Term::load(current($child_object->get($child)
+              ->getValue()[0]));
             // Check the term exists.
             if (!empty($term)) {
               $new_children_output .= '<div class="field__item">' . $term->getName() . '</div>';
+            // If it isn't a term then check if it is a node.
+            } else {
+              $node = Node::load(current($child_object->get($child)
+                ->getValue()[0]));
+              if (!empty($node)) {
+                $new_children_output .= '<div class="field__item">' . $node->getTitle() . '</div>';
+              }
             }
-            else {
-              $new_children_output .= '<div class="field__item">' . current($child_object->get($child)->getValue()[0]) . '</div>';
-            }
-          }
-          else {
-            $new_children_output .= '<div class="field__item">' . current($child_object->get($child)->getValue()[0]) . '</div>';
+          } else {
+            $new_children_output .= '<div class="field__item">' . current($child_object->get($child)
+                ->getValue()[0]) . '</div>';
           }
           $new_children_output .= '</div>';
         }
