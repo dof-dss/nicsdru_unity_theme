@@ -469,15 +469,20 @@ function nicsdru_unity_theme_preprocess_field_group_html_element(&$variables) {
           // Build new HTML to add the required classes to make the revision comparison styling to work.
           $new_children_output .= '<div class="field field--label-inline">';
           $new_children_output .= '<div class="field__label">' . $child_title . '</div>';
-          // If value is a number load the taxonomy term.
+          // If value is a number load the taxonomy term or a node.
           if (is_numeric(current($child_object->get($child)->getValue()[0]))) {
-            $term = Term::load(current($child_object->get($child)->getValue()[0]));
+            $term = Term::load(current($child_object->get($child)
+              ->getValue()[0]));
             // Check the term exists.
             if (!empty($term)) {
               $new_children_output .= '<div class="field__item">' . $term->getName() . '</div>';
+              // If it isn't a term then check if it is a node.
             }
             else {
-              $new_children_output .= '<div class="field__item">' . current($child_object->get($child)->getValue()[0]) . '</div>';
+              $node = Node::load(current($child_object->get($child)->getValue()[0]));
+              if (!empty($node)) {
+                $new_children_output .= '<div class="field__item">' . $node->getTitle() . '</div>';
+              }
             }
           }
           else {
