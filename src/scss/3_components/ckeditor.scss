@@ -17,49 +17,6 @@ $max-editable-width: ($max-grid-width * .7);
   max-width: $max-editable-width;
   margin: 18px;
 
-  // Create a semi-transparent out-of-bounds area.
-  &::before {
-    content: '';
-    display: block;
-    box-sizing: content-box;
-    width: 130px;
-    height: 100%;
-    padding: 15px 100% 15px 15px;
-    text-align: center;
-    position: fixed;
-    top: 0;
-    left: $max-editable-width + 36px;
-    z-index: 1;
-    background-color: rgba(#000, .5);
-    background-clip: padding-box;
-    border-left: 18px solid rgba(255, 255, 255, .5);
-    font-size: 14px;
-    font-weight: normal;
-    line-height: 1.5;
-    color: #eee;
-  }
-
-  // Create message vertically centered in out-of-bounds area.
-  &::after {
-    content: 'Content must not cross the margin into this area.';
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-sizing: content-box;
-    width: 120px;
-    height: 100%;
-    padding: 0 100% 0 15px;
-    text-align: center;
-    position: fixed;
-    top: 0;
-    left: $max-editable-width + 54px;
-    z-index: 2;
-    font-size: 14px;
-    font-weight: normal;
-    line-height: 1.5;
-    color: #fff;
-  }
-
   .table table {
     &,
     & > tr > td,
