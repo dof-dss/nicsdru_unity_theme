@@ -131,6 +131,8 @@
 //}
 
 #footer_wrapper {
+  margin-bottom: 5rem;
+
   @media screen and (max-width: $lap) {
     padding: 0 1.5rem;
   }
