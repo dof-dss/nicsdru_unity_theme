@@ -15,7 +15,7 @@
 
 // The following Sass functions/mixins are required to generate some variables' values, so we load them first.
 // sass-lint:disable-all
-@import '../../../node_modules/breakpoint-sass/stylesheets/_breakpoint.scss';
+@import '../../../node_modules/breakpoint-sass/stylesheets/_breakpoint';
 // sass-lint:enable-all
 @import '../../../node_modules/chroma-sass/sass/chroma/functions';
 
