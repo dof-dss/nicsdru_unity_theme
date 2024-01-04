@@ -81,6 +81,7 @@ rules:
     - style: stroustrup
     - allow-single-line: false
   clean-import-paths: 2
+    - leading-underscore: true
   empty-args: 0
   hex-length: 2
   hex-notation: 2
@@ -109,6 +110,8 @@ rules:
   # Final Items
   trailing-semicolon: 2
   final-newline: 2
+
+
 
   # Work-around for sass-lint not having per-file/block/line rule config.
   # @TODO: Re-enable these disabled rules. See https://www.drupal.org/node/2717117
