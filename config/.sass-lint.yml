@@ -80,9 +80,6 @@ rules:
     - 2
     - style: stroustrup
     - allow-single-line: false
-  clean-import-paths:
-    - 2
-    - leading-underscore: true
   empty-args: 0
   hex-length: 2
   hex-notation: 2
