@@ -80,8 +80,7 @@ rules:
     - 2
     - style: stroustrup
     - allow-single-line: false
-  # Comment out clean-import-paths to allow breakpoint_sass import
-  # clean-import-paths: 2
+  clean-import-paths: 2
   empty-args: 0
   hex-length: 2
   hex-notation: 2
