@@ -161,3 +161,29 @@ a {
 .cke_show_borders > table.cke_show_border > tfoot > tr > th {
   border: 1px solid $table-border !important; // Overrides inline style sheet ckeditor adds.
 }
+
+.block-system-main-block .layout-node-form .layout-region__content {
+  .field--type {
+    &-entity-reference-revisions {
+      table {
+        th,
+        td {
+          border-color: $grey-medium;
+          height: unset;
+          padding-left: var(--space-m);
+        }
+
+        td:first-child ~ td,
+        th:first-child ~ th {
+          padding-right: var(--space-m);
+          max-width: 790px;
+        }
+
+        th,
+        h4 {
+          font-size: var(--font-size-base);
+        }
+      }
+    }
+  }
+}
