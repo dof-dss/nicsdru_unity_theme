@@ -8,6 +8,7 @@
 use Drupal\block\Entity\Block;
 use Drupal\Component\Utility\Html;
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\StringTranslation\ByteSizeMarkup;
 use Drupal\file\FileInterface;
 use Drupal\media\MediaInterface;
 use Drupal\node\Entity\Node;
@@ -229,7 +230,7 @@ function nicsdru_unity_theme_preprocess_media(&$variables) {
     $file = &$variables['content']['field_media_file'][0]['#file'];
 
     if (!empty($file)) {
-      $variables['file_size'] = format_size($file->getSize(), \Drupal::languageManager()
+      $variables['file_size'] = ByteSizeMarkup::create($file->getSize(), \Drupal::languageManager()
         ->getCurrentLanguage()
         ->getId());
       $variables['file_url'] = $file->createFileUrl();
@@ -311,7 +312,7 @@ function nicsdru_unity_theme_preprocess_responsive_image_formatter(array &$varia
   // well as safe Twig rendering in responsive-image.html.twig to cover
   // any content that is migrated in from the legacy db and could
   // potentially contain dodgy html.
-  $caption = $media_image->field_caption->getString();
+  $caption = $media_image->get('field_caption')->getString();
 
   // Don't show the caption on the slideshow images.
   if ($variables['responsive_image_style_id'] != 'slideshow') {
