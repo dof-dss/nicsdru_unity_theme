@@ -12,6 +12,152 @@ body {
 // 70% of the $max-grid-width is the maximum width of a content region in Uregni
 $max-editable-width: ($max-grid-width * .7);
 
+.ck-content {
+  // applied to body in ckeditor
+  max-width: $max-editable-width;
+  margin: 18px;
+
+  figure.table {
+    margin: 0;
+  }
+
+  .table table {
+      &,
+      & > tr > td,
+      & > tr > th,
+      & > tbody > tr > td,
+      & > tbody > tr > th,
+      & > thead > tr > td,
+      & > thead > tr > th,
+      & > tfoot > tr > td,
+      & > tfoot > tr > th {
+        border: 1px solid $table-border !important; // Makes table visible in the editor interface.
+      }
+
+      & > tbody > tr > th {
+        background: $table-header-cell-background;
+        color: $white;
+      }
+    }
+
+  .ck-widget.table th.ck-editor__nested-editable:focus {
+    background: lighten($table-header-cell-background, 10%);
+  }
+
+  %notice-builder {
+    border: 2px solid;
+    margin: 1.5em 0;
+    padding: 1rem 1rem 1rem 4rem;
+
+    @include breakpoint($phab, $no-query: true) {
+      padding: 1.4rem 1.4rem 1.4rem 6rem;
+    }
+
+    & >  *:first-child {
+      margin-top: 0;
+    }
+
+    & > *:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .info-notice {
+    @extend %notice-builder;
+    border-color: $info-notice; // was $brand-primary-light in nicsdru_nidriect_theme
+    background: #fff resolve('i.svg') no-repeat .9rem .9rem / 24px 24px;
+    overflow: hidden;
+
+    @include breakpoint($phab, $no-query: true) {
+      background: #fff resolve('i.svg') no-repeat 1.4rem 1.4rem / 30px 30px;
+    }
+
+    .no-svg & {
+      background-image: resolve('i.png');
+    }
+  }
+
+  ul.info-notice {
+    padding: 1rem 1rem 1rem 4rem;
+
+    @include breakpoint($phab) {
+      padding: 1.4rem 1.4rem 1.4rem 7rem;
+    }
+  }
+
+  blockquote {
+    border-left: 0 !important;
+
+    &:before {
+      position: relative;
+      left: 0;
+    }
+  }
+}
+
+address {
+  font-style: normal;
+}
+
+.media-image,
+.media-video,
+.media-audio {
+  display: block;
+  position: relative;
+
+  img {
+    width: 100%;
+    height: auto;
+    margin: 0;
+  }
+
+  // Styling for the Edit media button
+  .media-library-item__edit {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 1000;
+    margin: 0;
+    min-height: 30px;
+    border: 0;
+    border-radius: 0;
+    -webkit-appearance: none;
+    cursor: pointer;
+    background-color: $button-action;
+    color: #fff;
+    font-size: 14px;
+  }
+}
+
+a {
+  &.btn {
+    display: inline-block;
+    color: #fff;
+    margin: 1rem 0 0;
+    text-align: center;
+    padding: .6rem 1.6rem;
+    cursor: pointer;
+    background: $link;
+    border-radius: 0;
+    border: 3px solid transparent;
+    text-decoration: underline;
+    //text-underline-offset: .25em;
+
+    &:hover,
+    &:focus {
+      background: $ash-grey;
+    }
+
+    &:focus {
+      border-color: $black;
+    }
+  }
+}
+
+/*
+ * CK Editor styling specific to version 4 of the tool
+ * code below this comment is to be removed when all sites are live on D10 / ckeditor 5
+ */
 .cke_editable {
 
   // applied to body in ckeditor
@@ -79,62 +225,45 @@ $max-editable-width: ($max-grid-width * .7);
   border: 1px solid $table-border !important; // Overrides inline style sheet ckeditor adds.
 }
 
-address {
-  font-style: normal;
+.block-system-main-block .layout-node-form .layout-region__content {
+  .field--type {
+    &-entity-reference-revisions {
+      table {
+        th,
+        td {
+          border-color: $grey-medium;
+          height: unset;
+          padding-left: var(--space-m);
+        }
+
+        td:first-child ~ td,
+        th:first-child ~ th {
+          padding-right: var(--space-m);
+          max-width: 790px;
+        }
+
+        th,
+        h4 {
+          font-size: var(--font-size-base);
+        }
+      }
+    }
+  }
 }
 
-.media-image,
-.media-video,
-.media-audio {
+.node-form .layout-node-form {
   display: block;
-  position: relative;
 
-  img {
-    width: 100%;
-    height: auto;
-    margin: 0;
-  }
+  @include breakpoint($desk) {
+    display: grid;
+    grid-template-columns: minmax(45rem, 55rem) minmax(22.5rem, 1fr);
 
-  // Styling for the Edit media button
-  .media-library-item__edit {
-    position: absolute;
-    top: 0;
-    right: 0;
-    z-index: 1000;
-    margin: 0;
-    min-height: 30px;
-    border: 0;
-    border-radius: 0;
-    -webkit-appearance: none;
-    cursor: pointer;
-    background-color: $button-action;
-    color: #fff;
-    font-size: 14px;
-  }
-}
-
-a {
-  &.btn {
-    display: inline-block;
-    color: #fff;
-    margin: 1rem 0 0;
-    text-align: center;
-    padding: .6rem 1.6rem;
-    cursor: pointer;
-    background: $link;
-    border-radius: 0;
-    border: 3px solid transparent;
-    text-decoration: underline;
-    //text-underline-offset: .25em;
-
-    &:hover,
-    &:focus {
-      background: $ash-grey;
-    }
-
-    &:focus {
-      border-color: $black;
+    .layout-region--node-secondary {
+      max-width: 30rem;
     }
   }
-}
 
+  .layout-region--node-main {
+     margin-inline: unset;
+  }
+}

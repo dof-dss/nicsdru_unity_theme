@@ -106,7 +106,7 @@ select.form-select {
   border: 1px solid #555;
 }
 
-button:not(.toolbar-icon):not(.ui-button):not(.trigger):not(.slick-arrow):not([id^=slick-slide-control]):not([id^=accordion]):not(.hamburger):not(.eu-cookie-withdraw-tab):not(.eu-cookie-withdraw-button),
+button:not(.toolbar-icon):not(.ui-button):not(.trigger):not(.slick-arrow):not([id^='slick-slide-control']):not([id^='accordion']):not(.hamburger):not(.eu-cookie-withdraw-tab):not(.eu-cookie-withdraw-button),
 input[type='submit'],
 input[type='reset'],
 input[type='button'] {
