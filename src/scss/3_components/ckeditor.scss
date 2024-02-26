@@ -17,17 +17,80 @@ $max-editable-width: ($max-grid-width * .7);
   max-width: $max-editable-width;
   margin: 18px;
 
+  figure.table {
+    margin: 0;
+  }
+
   .table table {
-    &,
-    & > tr > td,
-    & > tr > th,
-    & > tbody > tr > td,
-    & > tbody > tr > th,
-    & > thead > tr > td,
-    & > thead > tr > th,
-    & > tfoot > tr > td,
-    & > tfoot > tr > th {
-      border: 1px solid $table-border !important; // Makes table visible in the editor interface.
+      &,
+      & > tr > td,
+      & > tr > th,
+      & > tbody > tr > td,
+      & > tbody > tr > th,
+      & > thead > tr > td,
+      & > thead > tr > th,
+      & > tfoot > tr > td,
+      & > tfoot > tr > th {
+        border: 1px solid $table-border !important; // Makes table visible in the editor interface.
+      }
+
+      & > tbody > tr > th {
+        background: $table-header-cell-background;
+        color: $white;
+      }
+    }
+
+  .ck-widget.table th.ck-editor__nested-editable:focus {
+    background: lighten($table-header-cell-background, 10%);
+  }
+
+  %notice-builder {
+    border: 2px solid;
+    margin: 1.5em 0;
+    padding: 1rem 1rem 1rem 4rem;
+
+    @include breakpoint($phab, $no-query: true) {
+      padding: 1.4rem 1.4rem 1.4rem 6rem;
+    }
+
+    & >  *:first-child {
+      margin-top: 0;
+    }
+
+    & > *:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .info-notice {
+    @extend %notice-builder;
+    border-color: $info-notice; // was $brand-primary-light in nicsdru_nidriect_theme
+    background: #fff resolve('i.svg') no-repeat .9rem .9rem / 24px 24px;
+    overflow: hidden;
+
+    @include breakpoint($phab, $no-query: true) {
+      background: #fff resolve('i.svg') no-repeat 1.4rem 1.4rem / 30px 30px;
+    }
+
+    .no-svg & {
+      background-image: resolve('i.png');
+    }
+  }
+
+  ul.info-notice {
+    padding: 1rem 1rem 1rem 4rem;
+
+    @include breakpoint($phab) {
+      padding: 1.4rem 1.4rem 1.4rem 7rem;
+    }
+  }
+
+  blockquote {
+    border-left: 0 !important;
+
+    &:before {
+      position: relative;
+      left: 0;
     }
   }
 }
@@ -185,5 +248,22 @@ a {
         }
       }
     }
+  }
+}
+
+.node-form .layout-node-form {
+  display: block;
+
+  @include breakpoint($desk) {
+    display: grid;
+    grid-template-columns: minmax(45rem, 55rem) minmax(22.5rem, 1fr);
+
+    .layout-region--node-secondary {
+      max-width: 30rem;
+    }
+  }
+
+  .layout-region--node-main {
+     margin-inline: unset;
   }
 }
