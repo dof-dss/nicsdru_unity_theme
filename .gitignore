@@ -4,3 +4,4 @@ css/**/*.css.map
 .lando.yml
 node_modules
 styleguide
+.idea
