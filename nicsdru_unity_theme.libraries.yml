@@ -77,26 +77,31 @@ eu-cookie-compliance:
       css/4_state/block/eu-cookie-compliance.css: { minified: true }
 
 autocomplete:
+  version: VERSION
   css:
     component:
       css/3_components/form/search_api_autocomplete.css: { minified: true }
 
 media_library_styles:
+  version: VERSION
   css:
     component:
       css/3_components/field/file-link.css: { minified: true }
 
 responsive_images:
+  version: VERSION
   css:
     component:
       css/3_components/content/responsive-images.css: { minified: true }
       css/3_components/content/responsive-images-ckeditor.css: { minified: true }
 video:
+  version: VERSION
   css:
     component:
       css/3_components/content/video.css: { minified: true }
 
 accordions:
+  version: VERSION
   css:
     component:
       css/3_components/content/accordions.css: { minified: true }
@@ -108,28 +113,37 @@ accordions:
     - core/once
 
 field_label:
+  version: VERSION
   css:
     component:
       css/3_components/field/field-label.css: { minified: true }
 
 social_links:
+  version: VERSION
   css:
     component:
       css/3_components/block/social-links.css: { minified: true }
 
 sidebar_menu:
+  version: VERSION
   css:
     component:
       css/3_components/navigation/sidebar-menu.css: { minified: true }
+
 search_result:
+  version: VERSION
   css:
     component:
       css/3_components/content/search-results.css: { minified: true }
+
 board_member:
+  version: VERSION
   css:
     component:
       css/3_components/view/board-member.css: { minified: true }
+      
 landing:
+  version: VERSION
   css:
     component:
       css/3_components/content/landing.css: { minified: true }
@@ -140,11 +154,13 @@ landing:
       css/3_components/content/banners.css: {minified: true }
   js:
     js/layout-builder.js: { minified: false }
-    dependencies:
-      - core/drupal
-      - core/jquery
-      - core/once
+  dependencies:
+    - core/drupal
+    - core/jquery
+    - core/once
+
 book:
+  version: VERSION
   css:
     component:
       css/3_components/navigation/book.css: { minified: true }
