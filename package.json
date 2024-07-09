@@ -8,8 +8,8 @@
     "type": "git",
     "url": "https://github.com/dof-dss/nicsdru_unity_theme"
   },
-  "__engines": {
-    "node": "14.x"
+  "engines": {
+    "node": ">=14.x"
   },
   "files": [
     "src/scss/"
