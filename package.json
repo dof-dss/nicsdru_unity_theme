@@ -42,7 +42,7 @@
     "kss": "^3.1.0",
     "modernizr": "^3.13.0",
     "nicsdru_origins_theme": "^0.3.11",
-    "nightwatch": "^1.7.13",
+    "nightwatch": "^3.6.4",
     "nightwatch-accessibility": "^1.11.3",
     "npm-run-all": "^4.1.5",
     "onchange": "^7.0.2",
