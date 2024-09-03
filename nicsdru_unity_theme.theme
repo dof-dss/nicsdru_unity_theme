@@ -10,10 +10,11 @@ use Drupal\file\FileInterface;
 use Drupal\media\MediaInterface;
 use Drupal\node\Entity\Node;
 use Drupal\taxonomy\Entity\Term;
-use Drupal\Core\Form\FormStateInterface;
-use Drupal\Core\Render\Element;
-use Drupal\Core\Render\Markup;
-use Drupal\Component\Utility\Html;
+use Drupal\component\Utility\Html;
+use Drupal\core\Form\FormStateInterface;
+use Drupal\core\Render\Element;
+use Drupal\core\Render\Markup;
+
 
 /**
  * Implements hook_preprocess().
