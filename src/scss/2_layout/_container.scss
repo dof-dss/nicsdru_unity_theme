@@ -66,6 +66,11 @@
       margin: 0;
       float: none;
     }
+
+    /* Ensure word-wrap applies to all direct children */
+    > * {
+      word-wrap: break-word;
+    }
   }
 
   .front & {
