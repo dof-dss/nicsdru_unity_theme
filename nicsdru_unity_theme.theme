@@ -15,7 +15,6 @@ use Drupal\core\Form\FormStateInterface;
 use Drupal\core\Render\Element;
 use Drupal\core\Render\Markup;
 
-
 /**
  * Implements hook_preprocess().
  */
