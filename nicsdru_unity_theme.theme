@@ -5,15 +5,15 @@
  * Functions to support theming in the nicsdru_unity_theme.
  */
 
-use drupal\block\entity\Block;
-use drupal\component\utility\Html;
-use drupal\core\form\FormStateInterface;
-use drupal\core\render\Element;
-use drupal\core\render\Markup;
-use drupal\file\FileInterface;
-use drupal\media\MediaInterface;
-use drupal\node\entity\Node;
-use drupal\taxonomy\entity\Term;
+use Drupal\block\Entity\Block;
+use Drupal\file\FileInterface;
+use Drupal\media\MediaInterface;
+use Drupal\node\Entity\Node;
+use Drupal\taxonomy\Entity\Term;
+use Drupal\Component\Utility\Html;
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Render\Element;
+use Drupal\Core\Render\Markup;
 
 /**
  * Implements hook_preprocess().
