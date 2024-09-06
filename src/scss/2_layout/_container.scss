@@ -66,11 +66,6 @@
       margin: 0;
       float: none;
     }
-
-    /* Ensure word-wrap applies to all direct children */
-    > * {
-      word-wrap: break-word;
-    }
   }
 
   .front & {
@@ -173,6 +168,11 @@ $two-col-layout-sidebar-second: (65%, 30%) !default;
 }
 
 .main-content {
+  /* Ensure word-wrap applies to all direct children */
+  > * {
+    word-wrap: break-word;
+  }
+
   @media screen and (max-width: $lap) {
     float: none;
     width: 100% !important;
