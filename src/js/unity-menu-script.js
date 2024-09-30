@@ -11,7 +11,6 @@
           var $link = $(this).attr("href");
 
           // If menu item has link then duplicate link as a sub menu item.
-          console.log($link);
           if ($link !== '') {
             $submenu.prepend('<li class="menu-item leaf title"><a href="' + $link + '" class="menu-link">' + $content + '</a></li>')
           }
