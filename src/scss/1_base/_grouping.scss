@@ -129,11 +129,14 @@ li {
 blockquote,
 q {
   quotes: none;
-  border: 0;
-  display: flex;
+  display: block;
+  padding: 0 6rem;
+  position: relative;
 
   &::before,
   &::after {
+    position: absolute;
+    height: 2rem;
     content: '';
     padding: 1rem .5rem .5rem 4.7rem;
     text-shadow: 1px 1px #fff;
@@ -142,7 +145,13 @@ q {
     background: transparent resolve('quote.png') no-repeat scroll 0 0;
   }
 
+  &::before {
+    left: 0;
+  }
+
   &::after {
     transform: rotate(180deg);
+    bottom: 0;
+    right: 0;
   }
 }
