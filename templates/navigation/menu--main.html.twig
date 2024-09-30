@@ -28,30 +28,30 @@ We call a macro which calls itself to render the full tree.
 
 {% macro menu_links(items, attributes, menu_level) %}
   {% import _self as menus %}
+
   {% if items %}
-    {% if menu_level == 0 %}
-<ul id="menu-main" class="menu menu-main">
-  {% else %}
-  {# Add parent link and text to its child menu list #}
-  <ul class="menu-main_sub">
-    {% endif %}
-    {% for item in items %}
-      {%
-        set classes = [
-        'menu-item',
-        item.is_expanded ? 'expanded' : 'leaf',
-        item.is_collapsed ? 'collapsed',
-        item.in_active_trail ? 'active-trail',
-        loop.last ? 'last',
-      ]
-      %}
-      <li{{ item.attributes.addClass(classes) }}>
-        {{ link(item.title, item.url, { 'class':['menu-link'] }) }}
-        {% if item.is_expanded %}
-          {{ menus.menu_links(item.below, attributes, menu_level + 1) }}
-        {% endif %}
-      </li>
-    {% endfor %}
-  </ul>
+    <ul class="{{ menu_level == 0 ? 'menu menu-main' : 'menu-main_sub' }}">
+
+      {% for item in items %}
+        {% set classes = [
+          'menu-item',
+          item.is_expanded ? 'expanded' : 'leaf',
+          item.is_collapsed ? 'collapsed',
+          item.in_active_trail ? 'active-trail',
+          loop.last ? 'last',
+        ] %}
+
+        <li{{ item.attributes.addClass(classes) }}>
+          {% if item.url is not empty %}
+            <a href="{{ item.url }}" class="menu-link">{{ item.title }}</a>
+          {% else %}
+            <a class="menu-link menu-toggle-btn">{{ item.title }}</a>
+          {% endif %}
+          {% if item.is_expanded and item.below is not empty %}
+            {{ menus.menu_links(item.below, attributes, menu_level + 1) }}
+          {% endif %}
+        </li>
+      {% endfor %}
+    </ul>
   {% endif %}
 {% endmacro %}
