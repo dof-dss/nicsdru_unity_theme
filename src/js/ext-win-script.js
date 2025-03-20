@@ -22,7 +22,6 @@
             return this.hostname && this.hostname !== location.hostname;
           })
           .append('<span class="visually-hidden">(' + $extLinkText + ')</span><svg aria-hidden="true" class="ico ico-elink"><title>' + $extLinkText + '</title><use xlink:href="#elink"></use></svg>')
-          .attr('title', $extLinkText)
           .attr('target', '_blank')
           .attr('rel', 'noopener noreferrer');
       });
