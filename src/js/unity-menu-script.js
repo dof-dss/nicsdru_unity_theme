@@ -10,8 +10,6 @@
           var $content = $(this).text();
           var $link = $(this).attr("href");
 
-          console.log($submenu[0]);
-
           $submenu[0].setAttribute('id', 'submenu-' + $link.replace('/', ''));
 
           // If menu item has link then duplicate link as a sub menu item.
