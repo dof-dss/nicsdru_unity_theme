@@ -16,18 +16,18 @@ jobs:
 #      - run:
 #          name: Delete node_modules
 #          command: rm -r node_modules
-#      - restore_cache:
-#          key: node_modules-{{ checksum "package.json" }}
+      - restore_cache:
+          key: node_modules-{{ checksum "package-lock.json" }}
       - run:
           name: Fetch dependencies
           command: npm install -f node-sass
       - run:
           name: Install node sass
           command: npm install
-#      - save_cache:
-#          key: node_modules-{{ checksum "package.json" }}
-#          paths:
-#            - node_modules
+      - save_cache:
+          key: node_modules-{{ checksum "package-lock.json" }}
+          paths:
+            - node_modules
       - persist_to_workspace:
           root: ./
           paths:
