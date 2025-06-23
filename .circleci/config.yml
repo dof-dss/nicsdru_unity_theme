@@ -13,18 +13,21 @@ jobs:
     <<: *docker_image
     steps:
       - checkout
-      - restore_cache:
-          key: node_modules-{{ checksum "package.json" }}
+      - run:
+          name: Delete node_modules
+          command: rm -r node_modules
+#      - restore_cache:
+#          key: node_modules-{{ checksum "package.json" }}
       - run:
           name: Fetch dependencies
           command: npm install
       - run:
           name: Install node sass
           command: npm install -f node-sass
-      - save_cache:
-          key: node_modules-{{ checksum "package.json" }}
-          paths:
-            - node_modules
+#      - save_cache:
+#          key: node_modules-{{ checksum "package.json" }}
+#          paths:
+#            - node_modules
       - persist_to_workspace:
           root: ./
           paths:
