@@ -2,11 +2,12 @@ version: 2.1
 
 default_docker_image: &docker_image
   docker:
-    - image: thecodingmachine/php:8.2-v4-apache-node14
+    - image: thecodingmachine/php:8.3-v4-apache-node18
       environment:
         PROJECT_ROOT: "/home/docker/project"
         PHP_EXTENSION_GD: 1
         PHP_INI_MEMORY_LIMIT: 1g
+        CPPFLAGS: "-DPNG_ARM_NEON_OPT=0"
 
 jobs:
   install:
@@ -14,12 +15,12 @@ jobs:
     steps:
       - checkout
       - restore_cache:
-          key: node_modules-{{ checksum "package.json" }}
+          key: node_modules-{{ .Branch }}-{{ checksum "package.json" }}
       - run:
           name: Fetch dependencies
           command: npm install
       - save_cache:
-          key: node_modules-{{ checksum "package.json" }}
+          key: node_modules-{{ .Branch }}-{{ checksum "package.json" }}
           paths:
             - node_modules
       - persist_to_workspace:
@@ -78,7 +79,7 @@ jobs:
           name: Fetch latest Drupal version
           command: |
             cd $PROJECT_ROOT
-            composer create-project drupal/recommended-project:10.1 $PROJECT_ROOT --no-interaction
+            composer create-project drupal/recommended-project:10.4 $PROJECT_ROOT --no-interaction
       - run:
           name: Download dependent contrib modules.
           command: |
@@ -102,7 +103,7 @@ jobs:
           name: Fetch latest Drupal core and other misc composer tools.
           command: |
             cd $PROJECT_ROOT
-            composer create-project drupal/recommended-project:10.1 $PROJECT_ROOT --no-interaction
+            composer create-project drupal/recommended-project:10.4 $PROJECT_ROOT --no-interaction
             composer require --dev phpstan/extension-installer spaze/phpstan-disallowed-calls
       - run:
           name: Move custom code into position
