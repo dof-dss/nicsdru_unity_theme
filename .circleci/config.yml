@@ -18,6 +18,9 @@ jobs:
       - run:
           name: Fetch dependencies
           command: npm install
+      - run:
+          name: Install node sass
+          command: npm install -f node-sass
       - save_cache:
           key: node_modules-{{ checksum "package.json" }}
           paths:
