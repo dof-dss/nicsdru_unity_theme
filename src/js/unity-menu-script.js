@@ -10,13 +10,17 @@
           var $content = $(this).text();
           var $link = $(this).attr("href");
 
+          $submenu[0].setAttribute('id', 'submenu-' + $link.replace('/', ''));
+
           // If menu item has link then duplicate link as a sub menu item.
           if ($link) {
             $submenu.prepend('<li class="menu-item leaf title"><a href="' + $link + '" class="menu-link">' + $content + '</a></li>')
           }
 
+          $(this).attr('role', 'button');
           $(this).attr('aria-haspopup', 'true');
           $(this).attr('aria-expanded', 'false');
+          $(this).attr('aria-controls', 'submenu-' + $link.replace('/', ''));
           $(this).addClass('menu-toggle-btn');
           $(this).attr("tabindex", "0");
           $(this).removeAttr('href');
