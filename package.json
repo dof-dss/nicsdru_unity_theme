@@ -12,7 +12,7 @@
     "src/scss/"
   ],
   "devDependencies": {
-    "autoprefixer": "^9.7.6",
+    "autoprefixer": "^10.4.21",
     "breakpoint-sass": "^2.7.1",
     "chroma-sass": "^1.2.6",
     "cli-real-favicon": "^0.0.8",
@@ -30,11 +30,13 @@
     "imagemin": "^7.0.1",
     "imagemin-cli": "^5.1.0",
     "imagemin-gifsicle": "^7.0.0",
+    "imagemin-jpegoptim": "^8.0.0",
     "imagemin-jpegtran": "^6.0.0",
     "imagemin-optipng": "^7.1.0",
     "imagemin-pngcrush": "^6.0.0",
     "imagemin-pngout": "^4.0.0",
     "imagemin-zopfli": "^6.0.0",
+    "jpegoptim-bin": "^7.1.0",
     "kss": "^3.1.0",
     "modernizr": "^3.13.0",
     "nicsdru_origins_theme": "^0.3.11",
