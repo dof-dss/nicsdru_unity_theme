@@ -15,7 +15,7 @@ module.exports = (ctx) => ({
       cachebuster: true,
       relative: true,
       loadPaths: ['images'],
-      baseUrl: '/themes/nicertoffice_theme/'
+      baseUrl: '/themes/custom/nicsdru_unity_theme/'
     }
   }
 })
