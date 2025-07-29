@@ -95,14 +95,14 @@
 .info-notice {
   @extend %notice-builder;
   border-color: $brand-primary; // was $brand-primary-light in nicsdru_nidriect_theme
-  background: #fff resolve('i.svg') no-repeat .9rem .9rem / 24px 24px;
+  background: #fff url("/themes/custom/nicsdru_unity_theme/images/i.svg") no-repeat .9rem .9rem / 24px 24px;
 
   @include breakpoint($phab, $no-query: true) {
-    background: #fff resolve('i.svg') no-repeat 1.4rem 1.4rem / 30px 30px;
+    background: #fff url("/themes/custom/nicsdru_unity_theme/images/i.svg") no-repeat 1.4rem 1.4rem / 30px 30px;
   }
 
   .no-svg & {
-    background-image: resolve('i.png');
+    background-image: url("/themes/custom/nicsdru_unity_theme/images/i.png");
   }
 }
 
@@ -134,40 +134,40 @@ ul.info-notice {
 
   &--error {
     border-color: #e34f4f;
-    background: #fff resolve('wrong.svg') no-repeat .9rem .9rem / 24px 24px;
+    background: #fff url("/themes/custom/nicsdru_unity_theme/images/wrong.svg") no-repeat .9rem .9rem / 24px 24px;
 
     @include breakpoint($phab, $no-query: true) {
-      background: #fff resolve('wrong.svg') no-repeat 1.4rem 1.4rem / 30px 30px;
+      background: #fff url("/themes/custom/nicsdru_unity_theme/images/wrong.svg") no-repeat 1.4rem 1.4rem / 30px 30px;
     }
 
     .no-svg & {
-      background-image: resolve('wrong.png');
+      background-image: url("/themes/custom/nicsdru_unity_theme/images/wrong.png");
     }
   }
 
   &--status {
     border-color: $button-action;
-    background: #fff resolve('status.svg') no-repeat .9rem .9rem / 24px 24px;
+    background: #fff url("/themes/custom/nicsdru_unity_theme/images/status.svg") no-repeat .9rem .9rem / 24px 24px;
 
     @include breakpoint($phab, $no-query: true) {
-      background: #fff resolve('status.svg') no-repeat 1.4rem 1.4rem / 30px 30px;
+      background: #fff url("/themes/custom/nicsdru_unity_theme/images/status.svg") no-repeat 1.4rem 1.4rem / 30px 30px;
     }
 
     .no-svg & {
-      background-image: resolve('status.png');
+      background-image: url("/themes/custom/nicsdru_unity_theme/images/status.png");
     }
   }
 
   &--warning {
     border-color: #db6304;
-    background: #fff resolve('warning.svg') no-repeat .9rem .9rem / 24px 24px;
+    background: #fff url("/themes/custom/nicsdru_unity_theme/images/warning.svg") no-repeat .9rem .9rem / 24px 24px;
 
     @include breakpoint($phab, $no-query: true) {
-      background: #fff resolve('warning.svg') no-repeat 1.4rem 1.4rem / 30px 30px;
+      background: #fff url("/themes/custom/nicsdru_unity_theme/images/warning.svg") no-repeat 1.4rem 1.4rem / 30px 30px;
     }
 
     .no-svg & {
-      background-image: resolve('warning.png');
+      background-image: url("/themes/custom/nicsdru_unity_theme/images/warning.png");
     }
   }
 

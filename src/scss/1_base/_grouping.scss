@@ -142,7 +142,7 @@ q {
     text-shadow: 1px 1px #fff;
     margin: 5px 0;
     border-radius: 7px;
-    background: transparent resolve('quote.png') no-repeat scroll 0 0;
+    background: transparent url('/themes/custom/nicsdru_unity_theme/images/quote.png') no-repeat scroll 0 0;
   }
 
   &::before {

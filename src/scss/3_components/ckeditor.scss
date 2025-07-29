@@ -65,15 +65,15 @@ $max-editable-width: ($max-grid-width * .65);
   .info-notice {
     @extend %notice-builder;
     border-color: $info-notice; // was $brand-primary-light in nicsdru_nidriect_theme
-    background: #fff resolve('i.svg') no-repeat .9rem .9rem / 24px 24px;
+    background: #fff url('/themes/custom/nicsdru_unity_theme/images/i.svg') no-repeat .9rem .9rem / 24px 24px;
     overflow: hidden;
 
     @include breakpoint($phab, $no-query: true) {
-      background: #fff resolve('i.svg') no-repeat 1.4rem 1.4rem / 30px 30px;
+      background: #fff url('/themes/custom/nicsdru_unity_theme/images/i.svg') no-repeat 1.4rem 1.4rem / 30px 30px;
     }
 
     .no-svg & {
-      background-image: resolve('i.png');
+      background-image: url('/themes/custom/nicsdru_unity_theme/images/i.png');
     }
   }
 

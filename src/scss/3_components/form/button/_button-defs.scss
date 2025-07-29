@@ -42,18 +42,18 @@
   @if $arrow-direction {
     @if $arrow-direction == right {
       @if $arrow-colour == black {
-        background-image: resolve('arrow_forward_black.svg');
+        background-image: url("/themes/custom/nicsdru_unity_theme/images/arrow_forward_black.svg");
       }
       @else {
-        background-image: resolve('arrow_forward_white.svg');
+        background-image: url("/themes/custom/nicsdru_unity_theme/images/arrow_forward_white.svg");
       }
     }
     @else if $arrow-direction == left {
       @if $arrow-colour == black {
-        background-image: resolve('arrow_back_black.svg');
+        background-image: url("/themes/custom/nicsdru_unity_theme/images/arrow_back_black.svg");
       }
       @else {
-        background-image: resolve('arrow_back_white.svg');
+        background-image: url("/themes/custom/nicsdru_unity_theme/images/arrow_back_white.svg");
       }
     }
   }

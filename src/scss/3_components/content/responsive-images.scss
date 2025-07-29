@@ -180,7 +180,7 @@ a.thwooper { // Added by JS after all expandable images - when clicked it adds "
     right: 5px;
     top: 5px;
     z-index: 10;
-    background: rgba(0, 0, 0, .75) resolve('img-expand-icon-x2.png') 50% 50% no-repeat;
+    background: rgba(0, 0, 0, .75) url('/themes/custom/nicsdru_unity_theme/images/img-expand-icon-x2.png') 50% 50% no-repeat;
     background-size: 24px 24px;
     transition: top .5s, filter .5s;
   }
@@ -193,7 +193,7 @@ a.thwooper { // Added by JS after all expandable images - when clicked it adds "
 
   // Swap to a shrink image when img is 'thwooped'.
   &.thwooped::before {
-    background-image: resolve('img-shrink-icon-x2.png');
+    background-image: url("/themes/custom/nicsdru_unity_theme/images/img-shrink-icon-x2.png");
     background-color: #ff4da9;
   }
 }

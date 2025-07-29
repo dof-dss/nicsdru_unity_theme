@@ -80,7 +80,7 @@ a.file-link {
   $icon-width: 35px * $icon-scale;
   $icon-height: 50px * $icon-scale;
   $icon-margin: $margin;
-  $icons: resolve('nigov-file-icons.svg');
+  $icons: url('/themes/custom/nicsdru_unity_theme/images/nigov-file-icons.svg');
   $icon-size-x: 785px * $icon-scale;
   $icon-size-y: 105px * $icon-scale;
   $icon-column-size: 75px * $icon-scale;

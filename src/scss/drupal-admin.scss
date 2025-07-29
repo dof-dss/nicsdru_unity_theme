@@ -244,3 +244,7 @@ a.tabs-secondary--tab-link.is-active {
     }
   }
 }
+
+#drupal-modal .ui-dialog > .ui-dialog-buttonpane .ui-dialog-buttonset .button--primary {
+  background-color: var(--button-bg-color--primary);
+}
