@@ -14,7 +14,7 @@
           'aria-expanded' : 'false',
           'aria-controls' : $facetId,
         });
-        $widget.append('<svg aria-hidden="true" class="ico ico-arrow-down"><use xlink:href="#arrow"></use></svg>');
+        $widget.append('<svg aria-hidden="true" class="ico ico-arrow-down"><use href="/themes/custom/nicsdru_unity_theme/images/icons.svg#arrow" xlink:href="/themes/custom/nicsdru_unity_theme/images/icons.svg#arrow"></use></svg>');
         $widget.wrapInner($wrapper);
 
         $widgetLinks.toggle();

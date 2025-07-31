@@ -21,7 +21,7 @@
           .filter(function () {
             return this.hostname && this.hostname !== location.hostname;
           })
-          .append('<span class="visually-hidden">(' + $extLinkText + ')</span><svg aria-hidden="true" class="ico ico-elink"><title>' + $extLinkText + '</title><use xlink:href="#elink"></use></svg>')
+          .append('<span class="visually-hidden">(' + $extLinkText + ')</span><svg aria-hidden="true" class="ico ico-elink"><title>' + $extLinkText + '</title><use href="/themes/custom/nicsdru_unity_theme/images/icons.svg#elink" xlink:href="/themes/custom/nicsdru_unity_theme/images/icons.svg#elink"></use></svg>')
           .attr('target', '_blank')
           .attr('rel', 'noopener noreferrer');
       });
@@ -34,7 +34,7 @@
       // Internal links in content that open new windows (should be very rare).
       $(once('elink', "#container a[target='_blank']", context)).each(function () {
         $(this).not("a.no-ext-icon, a:has(img), #main-content a[href*='http://'], #main-content a[href*='https://'], #main-content a[href^='//']")
-          .append('<span class="visually-hidden">(' + $intLinkText + ')</span><svg aria-hidden="true" class="ico ico-elink"><title>' + $intLinkText + '</title><use xlink:href="#elink"></use></svg>')
+          .append('<span class="visually-hidden">(' + $intLinkText + ')</span><svg aria-hidden="true" class="ico ico-elink"><title>' + $intLinkText + '</title><use href="/themes/custom/nicsdru_unity_theme/images/icons.svg#elink" xlink:href="/themes/custom/nicsdru_unity_theme/images/icons.svg#elink"></use></svg>')
           .attr('title', $intLinkText)
           .attr('rel', 'noopener noreferrer');
       });
