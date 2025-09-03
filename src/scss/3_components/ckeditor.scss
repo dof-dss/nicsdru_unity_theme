@@ -35,8 +35,7 @@ $max-editable-width: ($max-grid-width * .65);
       }
 
       & > tbody > tr > th {
-        background: $table-header-cell-background;
-        color: $white;
+        background-color: #cee4f6;
       }
     }
 
