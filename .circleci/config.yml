@@ -22,7 +22,7 @@ jobs:
             wget \
               --header="Cache-Control: no-cache" \
               --header="Pragma: no-cache" \
-              "https://raw.githubusercontent.com/dof-dss/webdev-ci/main/shared-config.yml?nocache=$(date +%s)" \
+              "https://raw.githubusercontent.com/dof-dss/webdev-ci/development/shared-config.yml?nocache=$(date +%s)" \
               -O shared-config.yml
 
       - run:
@@ -37,10 +37,10 @@ jobs:
           configuration_path: full-config.yml
           parameters: |
             {
-              "php_version": "8.3",
+              "php_version": "8.4",
               "node_version": "18",
-              "drupal_core_version": "10.4",
+              "drupal_core_version": "11.2",
               "custom_code_dirs": "${PROJECT_ROOT}/web/themes/unity",
               "deprecated_code_dirs": "${PROJECT_ROOT}/web/themes/unity",
-              "supporting_repo_dependent_packages": "mglaman/drupal-check"
+              "supporting_repo_dependent_packages": "drush/drush"
             }
