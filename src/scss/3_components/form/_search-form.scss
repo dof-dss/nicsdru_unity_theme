@@ -78,7 +78,7 @@
       filter: none;
 
       &:focus {
-        outline: 3px solid #333;
+        outline: 3px solid #111;
         outline-offset: -2px;
         overflow: hidden;
       }
@@ -96,7 +96,7 @@
       width: 100%;
 
       &:focus {
-        outline: 3px solid #333;
+        outline: 3px solid #111;
         outline-offset: -2px;
         position: relative;
         z-index: 101;
