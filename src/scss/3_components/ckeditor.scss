@@ -10,73 +10,88 @@ body {
 }
 
 // 70% of the $max-grid-width is the maximum width of a content region in Uregni
-$max-editable-width: ($max-grid-width * .7);
+$max-editable-width: ($max-grid-width * .65);
 
-.cke_editable {
-
+.ck-content {
   // applied to body in ckeditor
   max-width: $max-editable-width;
   margin: 18px;
 
-  // Create a semi-transparent out-of-bounds area.
-  &::before {
-    content: '';
-    display: block;
-    box-sizing: content-box;
-    width: 130px;
-    height: 100%;
-    padding: 15px 100% 15px 15px;
-    text-align: center;
-    position: fixed;
-    top: 0;
-    left: $max-editable-width + 36px;
-    z-index: 1;
-    background-color: rgba(#000, .5);
-    background-clip: padding-box;
-    border-left: 18px solid rgba(255, 255, 255, .5);
-    font-size: 14px;
-    font-weight: normal;
-    line-height: 1.5;
-    color: #eee;
+  figure.table {
+    margin: 0;
   }
 
-  // Create message vertically centered in out-of-bounds area.
-  &::after {
-    content: 'Content must not cross the margin into this area.';
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-sizing: content-box;
-    width: 120px;
-    height: 100%;
-    padding: 0 100% 0 15px;
-    text-align: center;
-    position: fixed;
-    top: 0;
-    left: $max-editable-width + 54px;
-    z-index: 2;
-    font-size: 14px;
-    font-weight: normal;
-    line-height: 1.5;
-    color: #fff;
+  .table table {
+      &,
+      & > tr > td,
+      & > tr > th,
+      & > tbody > tr > td,
+      & > tbody > tr > th,
+      & > thead > tr > td,
+      & > thead > tr > th,
+      & > tfoot > tr > td,
+      & > tfoot > tr > th {
+        border: 1px solid $table-border !important; // Makes table visible in the editor interface.
+      }
+
+      & > tbody > tr > th {
+        background-color: #cee4f6;
+      }
+    }
+
+  .ck-widget.table th.ck-editor__nested-editable:focus {
+    background: lighten($table-header-cell-background, 10%);
   }
 
-  // Make sure ckeditor magicline does not cross into out-of-bounds.
-  span[data-cke-magic-line] {
-    max-width: $max-grid-width + 36px;
-  }
-}
+  %notice-builder {
+    border: 2px solid;
+    margin: 1.5em 0;
+    padding: 1rem 1rem 1rem 4rem;
 
-.cke_show_borders > table.cke_show_border,
-.cke_show_borders > table.cke_show_border > tr > td,
-.cke_show_borders > table.cke_show_border > tr > th,
-.cke_show_borders > table.cke_show_border > tbody > tr > td,
-.cke_show_borders > table.cke_show_border > tbody > tr > th,
-.cke_show_borders > table.cke_show_border > thead > tr > td,
-.cke_show_borders > table.cke_show_border > thead > tr > th,
-.cke_show_borders > table.cke_show_border > tfoot > tr > td,
-.cke_show_borders > table.cke_show_border > tfoot > tr > th {
-  border: 1px solid $table-border !important; // Overrides inline style sheet ckeditor adds.
+    @include breakpoint($phab, $no-query: true) {
+      padding: 1.4rem 1.4rem 1.4rem 6rem;
+    }
+
+    & >  *:first-child {
+      margin-top: 0;
+    }
+
+    & > *:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .info-notice {
+    @extend %notice-builder;
+    border-color: $info-notice; // was $brand-primary-light in nicsdru_nidriect_theme
+    background: #fff resolve('i.svg') no-repeat .9rem .9rem / 24px 24px;
+    overflow: hidden;
+
+    @include breakpoint($phab, $no-query: true) {
+      background: #fff resolve('i.svg') no-repeat 1.4rem 1.4rem / 30px 30px;
+    }
+
+    .no-svg & {
+      background-image: resolve('i.png');
+    }
+  }
+
+  ul.info-notice {
+    padding: 1rem 1rem 1rem 4rem;
+
+    @include breakpoint($phab) {
+      padding: 1.4rem 1.4rem 1.4rem 7rem;
+    }
+  }
+
+  blockquote {
+    border-left: 0 !important;
+
+    &:before {
+      position: relative;
+      left: 0;
+    }
+  }
 }
 
 address {
@@ -130,6 +145,7 @@ a {
     &:hover,
     &:focus {
       background: $ash-grey;
+      color: $white;
     }
 
     &:focus {
@@ -138,3 +154,85 @@ a {
   }
 }
 
+@mixin ckeditor-base($base-font-size) {
+  .ck .ck-editor__main {
+    border: 1px solid transparent;
+    background: var(--ck-color-base-background);
+    position: relative;
+    overflow: hidden;
+    font-size: $base-font-size;
+
+    &:has(.ck-rounded-corners) {
+      border-radius: var(--ck-border-radius);
+      border-top-right-radius: 0;
+      border-top-left-radius: 0;
+    }
+
+    &:has(.ck.ck-editor__editable.ck-focused) {
+      border: var(--ck-focus-ring);
+      box-shadow: var(--ck-inner-shadow), 0 0;
+      outline: none;
+    }
+
+    &:not(:has(.ck-content.ck-focused)) {
+      border-color: var(--ck-color-base-border);
+    }
+
+    > .ck-content.ck-editor__editable {
+      border: 0;
+
+      &.ck-focused {
+        border: 0;
+        box-shadow: none;
+      }
+    }
+
+    &::before {
+      content: '';
+      display: block;
+      width: 130px;
+      height: 100%;
+      padding: 15px 100% 15px 15px;
+      text-align: center;
+      position: absolute;
+      top: 0;
+      left: $max-editable-width + 36px;
+      z-index: 1;
+      background-color: rgba($black, .5);
+      background-clip: padding-box;
+      border-left: 18px solid rgba(255, 255, 255, .5);
+
+    }
+
+    &::after {
+      @include responsive-typo-map($normal-text);
+      content: 'Content must not cross the margin into this area';
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-sizing: content-box;
+      width: 130px;
+      height: 100%;
+      padding: 0 100% 0 30px;
+      text-align: center;
+      position: absolute;
+      top: 0;
+      left: $max-editable-width + 54px;
+      z-index: 2;
+      color: $white;
+      font-size: 16px !important;
+    }
+  }
+}
+
+@include ckeditor-base(18px);
+
+.ui-front .ui-dialog-content {
+  $base-font-size: 10px;
+
+  @include ckeditor-base(10px);
+}
+
+.ui-dialog--narrow.media-library-widget-modal {
+  z-index: 10001;
+}

@@ -1,69 +1,46 @@
 version: 2.1
 
-default_docker_image: &docker_image
-  docker:
-    - image: thecodingmachine/php:8.0-v4-apache-node14
-      environment:
-        PHP_EXTENSION_GD: 1
-        PHP_INI_MEMORY_LIMIT: 1g
+setup: true
 
-jobs:
-  install:
-    <<: *docker_image
-    steps:
-      - checkout
-      - restore_cache:
-          key: node_modules-{{ checksum "package.json" }}
-      - run:
-          name: Fetch dependencies
-          command: npm install
-      - save_cache:
-          key: node_modules-{{ checksum "package.json" }}
-          paths:
-            - node_modules
-      - persist_to_workspace:
-          root: ./
-          paths:
-            - ./
-  # Code linting.
-  lint:
-    <<: *docker_image
-    steps:
-      - attach_workspace:
-          at: ./
-      - run:
-          name: Lint all code
-          command: |
-            npm run lint
-  # Static analysis of any PHP/Drupal code.
-  phpcs:
-    <<: *docker_image
-    environment:
-      PROJECT_ROOT: "/home/docker/project"
-    steps:
-      - checkout
-      - run:
-          name: Fetch phpcs and dependencies
-          command: |
-            composer config --no-plugins allow-plugins.dealerdirect/phpcodesniffer-composer-installer true
-            composer require drupal/coder
-            # Move vendor directory up a level as we don't want to code-check all of that.
-            mv vendor ../
-      - run:
-          name: Fetch phpcs convenience script
-          command: |
-            curl https://raw.githubusercontent.com/dof-dss/nidirect-drupal/development/phpcs.sh -o ${PROJECT_ROOT}/phpcs.sh
-            chmod +x ${PROJECT_ROOT}/phpcs.sh
-      - run:
-          name: PHPCS static analysis
-          command: ${PROJECT_ROOT}/phpcs.sh ~/ "${PROJECT_ROOT}"
+orbs:
+  continuation: circleci/continuation@0.4.0
 
 workflows:
-  version: 2
-  build-static-analysis:
+  setup:
     jobs:
-      - install
-      - lint:
-          requires:
-            - install
-      - phpcs
+      - fetch-and-continue
+
+jobs:
+  fetch-and-continue:
+    docker:
+      - image: cimg/base:stable
+    steps:
+      - checkout
+      - run:
+          name: Download shared config (cache-busting).
+          command: |
+            wget \
+              --header="Cache-Control: no-cache" \
+              --header="Pragma: no-cache" \
+              "https://raw.githubusercontent.com/dof-dss/webdev-ci/development/shared-config.yml?nocache=$(date +%s)" \
+              -O shared-config.yml
+
+      - run:
+          name: Combine shared jobs and local workflows.
+          command: |
+            # Remove the 'version: 2.1' from workflows config (since it's in shared config)
+            tail -n +2 .circleci/workflow-config.yml > workflows-only.yml
+            # Concatenate shared jobs+commands with repo workflows
+            cat shared-config.yml workflows-only.yml > full-config.yml
+
+      - continuation/continue:
+          configuration_path: full-config.yml
+          parameters: |
+            {
+              "php_version": "8.4",
+              "node_version": "18",
+              "drupal_core_version": "11.2",
+              "custom_code_dirs": "${PROJECT_ROOT}/web/themes/unity",
+              "deprecated_code_dirs": "${PROJECT_ROOT}/web/themes/unity",
+              "supporting_repo_dependent_packages": "drush/drush"
+            }

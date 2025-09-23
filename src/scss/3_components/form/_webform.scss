@@ -1,6 +1,5 @@
 /* Error Tool Tip Styles*/
-.checkboxes--wrapper.required input + p,
-.required + p {
+.form-item--error-message {
   position: relative;
   top: 100%;
   left: -1px;
@@ -9,7 +8,8 @@
   width: fit-content;
   max-width: 56rem;
 
-  &.error {
+  &.error,
+  .error {
     @include responsive-typo-map($normal-text);
     font-weight: bold;
     display: block;
@@ -35,16 +35,9 @@
   }
 }
 
-.checkboxes--wrapper.required input + p.error {
-  margin-left: 1rem;
-}
-
 .search-form {
-  position: relative;
-
-  .required + p.error {
-    position: absolute;
-    margin-top: 0;
+  .form-item--error-message .error {
+    margin-bottom: 0;
   }
 }
 
