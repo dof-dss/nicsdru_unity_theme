@@ -143,7 +143,7 @@
         background: $white;
         opacity: .75;
         border: 1px solid transparent;
-        padding-top: 1.1rem;
+        padding-top: 1rem;
 
         &.slick-prev,
         &.slick-next {
@@ -172,20 +172,10 @@
 
         &.slick-prev {
           left: -54px;
-
-          &:before {
-            content: '\2B05';
-            font-family: "slick", serif;
-          }
         }
 
         &.slick-next {
           left: 47px;
-
-          &:before {
-            content: '\2B95';
-            font-family: "slick", serif;
-          }
         }
       }
 
@@ -209,13 +199,6 @@
       }
 
       button {
-        background: none !important;
-        border: none !important;
-        box-shadow: none !important;
-        text-shadow: none !important;
-        position: unset !important;
-        padding: 0 !important;
-
         &:focus {
           outline: 3px solid #333;
           outline-offset: 0;
@@ -257,24 +240,16 @@
 }
 
 button.slick-autoplay-toggle-button {
-  background: $white !important;
-  border: none !important;
-  box-shadow: none !important;
-  text-shadow: none !important;
-  position: absolute !important;
-  padding: .9rem .3rem !important;
+  background: $white;
+  padding: .9rem .3rem;
   bottom: 7px;
   right: 56px;
   left: auto;
-  top: unset;
   width: 42px;
   height: 42px;
   pointer-events: auto;
   border: 0;
-  border-radius: 50% !important;
-  font-size: 0;
-  color: #252525 !important;
-  font-weight: normal !important;
+  border-radius: 50%;
 
   &:focus {
     color: #ff6d2c !important;
