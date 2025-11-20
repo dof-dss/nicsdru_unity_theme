@@ -241,8 +241,8 @@
 
 button.slick-autoplay-toggle-button {
   background: $white;
-  padding: .9rem .3rem;
   bottom: 7px;
+  padding-top: .7rem;
   right: 56px;
   left: auto;
   width: 42px;
@@ -251,38 +251,20 @@ button.slick-autoplay-toggle-button {
   border: 0;
   border-radius: 50%;
 
+  .slick-play-icon {
+    padding-left: .5rem;
+  }
+
   &:focus {
     color: #ff6d2c !important;
   }
 
-  .slick-sr-only {
-    overflow: visible !important;
-    position: relative !important;
-    height: 36px !important;
-    width: 36px !important;
-    display: block;
-    clip-path: none !important;
-    clip: unset !important;
-    margin: 0 !important;
-  }
-  .slick-pause-text {
-    font-size: 0;
+  .slick-play-icon,
+  .slick-pause-icon {
 
     &:before {
-      content: "\23f8";
       font-size: 25px;
-      font-family: "slick", serif;
     }
-  }
 
-  .slick-play-text {
-    font-size: 0;
-    left: 2px;
-
-    &:before {
-      content: "\25b6";
-      font-size: 25px;
-      font-family: "slick", serif;
-    }
   }
 }
