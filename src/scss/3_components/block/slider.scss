@@ -8,7 +8,8 @@
 
 .slick--view--slideshow {
   .slick__slider,
-  .slick-slide {
+  .slick-slide,
+  .slider_link {
     .slide__caption {
       @include adjust-font-size-to(20px);
       background: rgba(0, 0, 0, .85);
@@ -38,7 +39,7 @@
       @media screen and (max-width: $tab) {
         width: 100%;
         position: relative;
-        padding: 2% 2% 8rem 2%;
+        padding: 2%;
       }
 
       h2,
@@ -119,30 +120,45 @@
 
   nav.slick__arrow {
     position: absolute;
-    bottom: 26px;
-    right: 94px;
+    bottom: -31px;
+    right: 10%;
     left: auto;
     width: unset;
     top: unset;
 
-    .slick-arrow::before {
-      top: 1px;
-      color: $black;
-      font-size: 3.2rem;
+    @media screen and (min-width: $mob) {
+      right: 15%;
+    }
+
+    @media screen and (min-width: $phab) {
+      right: 20%;
+    }
+
+    @media screen and (min-width: $tab) {
+      right: 30%;
+    }
+
+    .slick-arrow {
+      border-radius: 0;
+
+      &:hover,
+      &:focus {
+        outline: 3px solid #333;
+        outline-offset: 0;
+      }
+
+      &:before {
+        top: 1px;
+        color: $black;
+        font-size: 3.2rem;
+      }
     }
 
     button {
       display: block;
-      -webkit-transition: all 200ms ease-in-out;
-      -moz-transition: all 200ms ease-in-out;
-      -o-transition: all 200ms ease-in-out;
-      transition: all 200ms ease-in-out;
 
       &.slick-prev,
       &.slick-next {
-        background: $white;
-        opacity: .75;
-        border: 1px solid transparent;
         padding-top: 1rem;
 
         &.slick-prev,
@@ -150,14 +166,6 @@
           &:before {
             display: inline-block;
             opacity: .85;
-          }
-
-          &:hover {
-            opacity: 1;
-
-            &:before {
-              opacity: 1;
-            }
           }
 
           &:focus {
@@ -175,7 +183,7 @@
         }
 
         &.slick-next {
-          left: 47px;
+          left: 10px;
         }
       }
 
@@ -188,10 +196,10 @@
   }
 
   ul.slick-dots {
-    bottom: -35px;
+    bottom: -50px;
 
     li {
-      margin-bottom: 0;
+      margin: 0;
       vertical-align: bottom;
 
       &.slick-active button:focus {
@@ -199,12 +207,17 @@
       }
 
       button {
+        height: 4.2rem;
+        width: 4.2rem;
+        margin: 0;
+
         &:focus {
           outline: 3px solid #333;
           outline-offset: 0;
         }
 
         .slick-dot-icon::before {
+          position: relative;
           left: -.5px
         }
       }
@@ -233,27 +246,45 @@
   position: unset !important;
   padding: 0 !important;
 
-  &:focus {
+  &:focus,
+  &:hover {
     outline: 3px solid #333;
     outline-offset: 0;
   }
 }
 
 button.slick-autoplay-toggle-button {
-  background: $white;
-  bottom: 7px;
-  padding-top: .7rem;
-  right: 56px;
-  left: auto;
+  background: none;
+  bottom: -50px;
+  right: auto;
+  left: 10%;
   width: 42px;
   height: 42px;
   pointer-events: auto;
   border: 0;
-  border-radius: 50%;
 
-  .slick-play-icon {
-    padding-left: .5rem;
+  @media screen and (min-width: $mob) {
+    left: 15%;
   }
+
+  @media screen and (min-width: $phab) {
+    left: 20%;
+  }
+
+  @media screen and (min-width: $tab) {
+    left: 30%;
+  }
+
+  // To be removed after a Unity theme release 10.2.24.
+  background: none !important;
+  position: absolute !important;
+  border: none !important;
+  color: $black !important;
+  box-shadow: none !important;
+  font-weight: normal !important;
+  text-shadow: none !important;
+  border-radius: unset !important;
+  padding: 0 !important;
 
   &:focus {
     color: #ff6d2c !important;
@@ -262,8 +293,20 @@ button.slick-autoplay-toggle-button {
   .slick-play-icon,
   .slick-pause-icon {
 
+    &:hover,
+    &:focus {
+      &:before {
+        outline: 3px solid #333;
+        outline-offset: 0;
+      }
+    }
+
     &:before {
       font-size: 25px;
+      display: block;
+      height: 42px;
+      width: 42px;
+      padding: 1.2rem 1.1rem .85rem .85rem;
     }
 
   }
