@@ -121,17 +121,17 @@
   nav.slick__arrow {
     position: absolute;
     bottom: -31px;
-    right: 10%;
+    right: 3%;
     left: auto;
     width: unset;
     top: unset;
 
     @media screen and (min-width: $mob) {
-      right: 15%;
+      right: 12%;
     }
 
     @media screen and (min-width: $phab) {
-      right: 20%;
+      right: 17%;
     }
 
     @media screen and (min-width: $tab) {
@@ -179,11 +179,19 @@
         }
 
         &.slick-prev {
-          left: -54px;
+          left: -75px;
+          
+          @media screen and (min-width: $mob) {
+            left: -54px;
+          }
         }
 
         &.slick-next {
-          left: 10px;
+          right: -10px;
+
+          @media screen and (min-width: $mob) {
+            left: 10px;
+          }
         }
       }
 
@@ -257,18 +265,18 @@ button.slick-autoplay-toggle-button {
   background: none;
   bottom: -50px;
   right: auto;
-  left: 10%;
+  left: 7%;
   width: 42px;
   height: 42px;
   pointer-events: auto;
   border: 0;
 
   @media screen and (min-width: $mob) {
-    left: 15%;
+    left: 12%;
   }
 
   @media screen and (min-width: $phab) {
-    left: 20%;
+    left: 17%;
   }
 
   @media screen and (min-width: $tab) {
