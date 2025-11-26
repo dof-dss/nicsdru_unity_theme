@@ -6,9 +6,10 @@
   overflow: hidden;
 }
 
-#slick-views-slideshow-slideshow-1,
-#slick-views-slideshow-block-slideshow-1 {
-  .slick__slide {
+.slick--view--slideshow {
+  .slick__slider,
+  .slick-slide,
+  .slider_link {
     .slide__caption {
       @include adjust-font-size-to(20px);
       background: rgba(0, 0, 0, .85);
@@ -119,44 +120,116 @@
 
   nav.slick__arrow {
     position: absolute;
-    bottom: 26px;
-    right: 94px;
+    bottom: -31px;
+    right: 3%;
     left: auto;
     width: unset;
     top: unset;
 
+    @media screen and (min-width: $mob) {
+      right: 12%;
+    }
+
+    @media screen and (min-width: $phab) {
+      right: 17%;
+    }
+
+    @media screen and (min-width: $tab) {
+      right: 30%;
+    }
+
+    .slick-arrow {
+      border-radius: 0;
+
+      &:hover,
+      &:focus {
+        outline: 3px solid #333;
+        outline-offset: 0;
+      }
+
+      &:before {
+        top: 1px;
+        color: $black;
+        font-size: 3.2rem;
+      }
+    }
+
     button {
       display: block;
-      -webkit-transition: all 200ms ease-in-out;
-      -moz-transition: all 200ms ease-in-out;
-      -o-transition: all 200ms ease-in-out;
-      transition: all 200ms ease-in-out;
 
-      &.slick-prev {
-        left: 0px;
-      }
-
+      &.slick-prev,
       &.slick-next {
-        left: 44px;
-      }
+        padding-top: 1rem;
 
-      &:focus {
-        &::before {
-          color: #0f6fb8;
+        &.slick-prev,
+        &.slick-next {
+          &:before {
+            display: inline-block;
+            opacity: .85;
+          }
+
+          &:focus {
+            opacity: 1;
+            top: 1px;
+
+            &:before {
+              color: #ff6d2c;
+            }
+          }
+        }
+
+        &.slick-prev {
+          left: -75px;
+          
+          @media screen and (min-width: $mob) {
+            left: -54px;
+          }
+        }
+
+        &.slick-next {
+          right: -10px;
+
+          @media screen and (min-width: $mob) {
+            left: 10px;
+          }
         }
       }
 
-      &::before {
-        color: $white;
-        font-size: 44px;
+      &:hover {
+        &:before {
+          opacity: 1;
+        }
       }
     }
   }
 
-  .slick-dots {
-    bottom: -35px;
+  ul.slick-dots {
+    bottom: -50px;
 
     li {
+      margin: 0;
+      vertical-align: bottom;
+
+      &.slick-active button:focus {
+        outline: none;
+      }
+
+      button {
+        height: 4.2rem;
+        width: 4.2rem;
+        margin: 0;
+
+        &:focus {
+          outline: 3px solid #333;
+          outline-offset: 0;
+        }
+
+        .slick-dot-icon::before {
+          position: relative;
+          left: -.5px
+        }
+      }
+
       button::before {
         font-size: 1rem;
         color: #919191;
@@ -164,10 +237,85 @@
       }
 
       &.slick-active {
-        button::before {
-          color: #000;
+        button .slick-dot-icon::before {
+          font-size: 12px;
+          margin: 0;
         }
       }
     }
+  }
+}
+
+.slick--view--slideshow .slick__slider ul.slick-dots li button {
+  background: none !important;
+  border: none !important;
+  box-shadow: none !important;
+  text-shadow: none !important;
+  position: unset !important;
+  padding: 0 !important;
+
+  &:focus,
+  &:hover {
+    outline: 3px solid #333;
+    outline-offset: 0;
+  }
+}
+
+button.slick-autoplay-toggle-button {
+  background: none;
+  bottom: -50px;
+  right: auto;
+  left: 7%;
+  width: 42px;
+  height: 42px;
+  pointer-events: auto;
+  border: 0;
+
+  @media screen and (min-width: $mob) {
+    left: 12%;
+  }
+
+  @media screen and (min-width: $phab) {
+    left: 17%;
+  }
+
+  @media screen and (min-width: $tab) {
+    left: 30%;
+  }
+
+  // To be removed after a Unity theme release 10.2.24.
+  background: none !important;
+  position: absolute !important;
+  border: none !important;
+  color: $black !important;
+  box-shadow: none !important;
+  font-weight: normal !important;
+  text-shadow: none !important;
+  border-radius: unset !important;
+  padding: 0 !important;
+
+  &:focus {
+    color: #ff6d2c !important;
+  }
+
+  .slick-play-icon,
+  .slick-pause-icon {
+
+    &:hover,
+    &:focus {
+      &:before {
+        outline: 3px solid #333;
+        outline-offset: 0;
+      }
+    }
+
+    &:before {
+      font-size: 25px;
+      display: block;
+      height: 42px;
+      width: 42px;
+      padding: 1.2rem 1.1rem .85rem .85rem;
+    }
+
   }
 }
