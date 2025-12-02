@@ -157,41 +157,38 @@
     button {
       display: block;
 
-      &.slick-prev,
-      &.slick-next {
+      &.slick-prev.slick-arrow,
+      &.slick-next.slick-arrow {
         padding-top: 1rem;
 
-        &.slick-prev,
-        &.slick-next {
+        &:before {
+          display: inline-block;
+          opacity: .85;
+        }
+
+        &:focus {
+          opacity: 1;
+          top: 1px;
+
           &:before {
-            display: inline-block;
-            opacity: .85;
-          }
-
-          &:focus {
-            opacity: 1;
-            top: 1px;
-
-            &:before {
-              color: #ff6d2c;
-            }
+            color: #ff6d2c;
           }
         }
+      }
 
-        &.slick-prev {
-          left: -75px;
-          
-          @media screen and (min-width: $mob) {
-            left: -54px;
-          }
+      &.slick-prev.slick-arrow {
+        left: -75px;
+
+        @media screen and (min-width: $mob) {
+          left: -54px;
         }
+      }
 
-        &.slick-next {
-          right: -10px;
+      &.slick-next.slick-arrow {
+        right: -10px;
 
-          @media screen and (min-width: $mob) {
-            left: 10px;
-          }
+        @media screen and (min-width: $mob) {
+          left: 10px;
         }
       }
 
