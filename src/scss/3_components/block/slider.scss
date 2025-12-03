@@ -179,6 +179,11 @@
       &.slick-prev.slick-arrow {
         left: -75px;
 
+        &:before {
+          content: "\276E";
+          right: 2px;
+        }
+
         @media screen and (min-width: $mob) {
           left: -54px;
         }
@@ -186,6 +191,11 @@
 
       &.slick-next.slick-arrow {
         right: -10px;
+
+        &:before {
+          content: "\276F";
+          left: 2px;
+        }
 
         @media screen and (min-width: $mob) {
           left: 10px;
