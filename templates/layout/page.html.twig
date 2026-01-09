@@ -84,14 +84,12 @@
 
 {{ page.highlighted }}
 {% if is_front %}
-
-{{ page.slideshow }}
+  {{ page.slideshow }}
 {# If the homepage has no basic page then make the content the Main section and add the h1. #}
 {% if basic_page_structure is empty %}
 <main id="content">
   {% if drupal_config('system.site', 'frontpage_title') %}
-    <h1
-      class="{{ drupal_config('system.site', 'frontpage_show_title') ? '' : 'visually-hidden' }}">
+    <h1 class="{{ drupal_config('system.site', 'frontpage_show_title') ? '' : 'visually-hidden' }}">
       {{ drupal_config('system.site', 'frontpage_title') }}
     </h1>
   {% endif %}
@@ -135,8 +133,7 @@
 
             {% if is_front %}
               {% if drupal_config('system.site', 'frontpage_title') %}
-                <h1
-                  class="{{ drupal_config('system.site', 'frontpage_show_title') ? '' : 'visually-hidden' }}">
+                <h1 class="{{ drupal_config('system.site', 'frontpage_show_title') ? '' : 'visually-hidden' }}">
                   {{ drupal_config('system.site', 'frontpage_title') }}
                 </h1>
               {% endif %}
@@ -146,13 +143,11 @@
               {{ drupal_block('page_title_block', wrapper=false) }}
             {% endif %}
 
-            <div
-              id="content" {{ page.search_facets ? '' : 'class="main-content"' }}>
+            <div id="content" {{ page.search_facets ? '' : 'class="main-content"' }}>
               {% if page.search_facets %}
                 <header id="search-facets" class="sidebar-first-layout">
                   <nav aria-label="Skip links">
-                    <a href="#post-content"
-                       class="skip-link visually-hidden focusable">
+                    <a href="#post-content" class="skip-link visually-hidden focusable">
                       {{- 'Skip to results'|t -}}
                     </a>
                   </nav>
@@ -160,8 +155,7 @@
                 </header>
               {% endif %}
               {% if page.content %}
-                <div
-                  id="post-content" {{ page.search_facets ? 'class="main-content" role="main"' : '' }}>
+                <div id="post-content" {{ page.search_facets ? 'class="main-content" role="main"' : '' }}>
                   {{ page.content }}
                 </div>
               {% endif %}
