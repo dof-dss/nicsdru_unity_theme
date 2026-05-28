@@ -305,7 +305,7 @@ $main-menu-border: false !default;
       width: 100%;
       max-width: 3rem;
       height: .3rem;
-      background: #fff;
+      background: #000 !important;
       transition: transform .4s ease;
 
       /* Hamburger Lines - Top & Bottom */

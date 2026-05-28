@@ -205,7 +205,7 @@
   @media screen and (max-width: $tab) {
     padding: .5rem 0 .5rem 10rem;
     min-height: 54px;
-    background-color: $menu-background;
+    background-color: #fff;
     position: relative;
 
     &.no-menu {
@@ -222,7 +222,7 @@
       input[type='text'],
       input[type='search'] {
         max-width: 100%;
-        border: 0;
+        border: 1px solid #000;
         margin: .5em 0;
         float: none;
         border-radius: 0;
