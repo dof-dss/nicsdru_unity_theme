@@ -19,7 +19,7 @@
       $(once('elink', "#container a[href*='http://'], #container a[href*='https://'], #container a[href^='//'], #bottom a[href*='http://'], #bottom a[href*='https://'], #footer a[href*='http://'], #footer a[href*='https://'], #top-area a[href*='http://'], #top-area a[href*='https://']", context))
         .filter(function () {
           return this.hostname && this.hostname !== location.hostname;
-        }).not('a.no-ext-icon, .social-links a, .social-icons a').each(function () {
+        }).not('a.no-ext-icon, a:has(img, i)').each(function () {
             $(this)
               .attr('target', '_blank')
               .attr('rel', 'noopener noreferrer');
