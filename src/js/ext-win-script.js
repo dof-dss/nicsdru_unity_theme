@@ -13,18 +13,26 @@
     attach: function attach (context) {
       var $extLinkText = Drupal.t('external link opens in a new window / tab'),
         $intLinkText = Drupal.t('opens in a new window / tab');
+      var $extLinkMarkup = '<span class="visually-hidden">(' + $extLinkText + ')</span><svg aria-hidden="true" class="ico ico-elink"><title>' + $extLinkText + '</title><use xlink:href="#elink"></use></svg>';
 
       // External links - add identifiers.
-      $(once('elink', "#container a[href*='http://'], #container a[href*='https://'], #container a[href^='//'], #bottom a[href*='http://'], #bottom a[href*='https://'], #footer a[href*='http://'], #footer a[href*='https://']", context))
-        .each(function () {
-        $(this).not('a.no-ext-icon, a:has(img), .social-links a, .social-icons a')
-          .filter(function () {
-            return this.hostname && this.hostname !== location.hostname;
-          })
-          .append('<span class="visually-hidden">(' + $extLinkText + ')</span><svg aria-hidden="true" class="ico ico-elink"><title>' + $extLinkText + '</title><use xlink:href="#elink"></use></svg>')
-          .attr('target', '_blank')
-          .attr('rel', 'noopener noreferrer');
+      $(once('elink', "#container a[href*='http://'], #container a[href*='https://'], #container a[href^='//'], #bottom a[href*='http://'], #bottom a[href*='https://'], #footer a[href*='http://'], #footer a[href*='https://'], #top-area a[href*='http://'], #top-area a[href*='https://']", context))
+        .filter(function () {
+          return this.hostname && this.hostname !== location.hostname;
+        }).not('a.no-ext-icon, .social-links a, .social-icons a').each(function () {
+            $(this)
+              .attr('target', '_blank')
+              .attr('rel', 'noopener noreferrer');
+
+        // Add the icon.
+        // If the link is a card, append the icon to the .card__title.
+        if ($(this).find('.card__title').length) {
+          $(this).find('.card__title').append($extLinkMarkup);
+        } else {
+          $(this).append($extLinkMarkup);
+        }
       });
+
 
       // Internal links with data-ext-url - turn them into external links.
       $(once('elink', "#container a[data-ext-type^='External']", context)).each(function () {
