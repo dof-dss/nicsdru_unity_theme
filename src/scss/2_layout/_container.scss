@@ -168,9 +168,9 @@ $two-col-layout-sidebar-second: (65%, 30%) !default;
 }
 
 .main-content {
-  /* Ensure word-wrap applies to all direct children */
+  /* Ensure overflow-wrap applies to all direct children */
   > * {
-    word-wrap: break-word;
+    overflow-wrap: anywhere;
   }
 
   @media screen and (max-width: $lap) {
