@@ -5,6 +5,7 @@
  * Theme settings file for nicsdru_unity_theme.
  */
 
+use Drupal\Core\Extension\ThemeSettingsProvider;
 use Drupal\Core\Form\FormStateInterface;
 
 /**
@@ -32,13 +33,13 @@ function nicsdru_unity_theme_form_system_theme_settings_alter(&$form, FormStateI
       $form['ga_tracking_options']['ga_tracking_disabled'] = [
         '#type' => 'checkbox',
         '#title' => t('Disable Google Analytics tracking'),
-        '#default_value' => theme_get_setting('ga_tracking_disabled'),
+        '#default_value' => \Drupal::service(ThemeSettingsProvider::class)->getSetting('ga_tracking_disabled'),
       ];
 
       $form['ga_tracking_options']['ga_tracking_disabled_eu'] = [
         '#type' => 'checkbox',
         '#title' => t('Only disable if EU Cookie Compliance consent is not given'),
-        '#default_value' => theme_get_setting('ga_tracking_disabled_eu'),
+        '#default_value' => \Drupal::service(ThemeSettingsProvider::class)->getSetting('ga_tracking_disabled_eu'),
       ];
 
       // Prevent the setting of the EU Cookie Compliance option if that module
@@ -60,7 +61,7 @@ function nicsdru_unity_theme_form_system_theme_settings_alter(&$form, FormStateI
   $form['homepage_structure']['basic_page_structure'] = [
     '#type' => 'checkbox',
     '#title' => t('Check this box if the homepage uses a basic page in it\'s structure'),
-    '#default_value' => theme_get_setting('basic_page_structure'),
+    '#default_value' => \Drupal::service(ThemeSettingsProvider::class)->getSetting('basic_page_structure'),
   ];
 
   $form['social_links'] = [
@@ -72,37 +73,37 @@ function nicsdru_unity_theme_form_system_theme_settings_alter(&$form, FormStateI
   $form['social_links']['twitter_profile_url'] = [
     '#type' => 'textfield',
     '#title' => t('Twitter URL'),
-    '#default_value' => theme_get_setting('twitter_profile_url'),
+    '#default_value' => \Drupal::service(ThemeSettingsProvider::class)->getSetting('twitter_profile_url'),
     '#description' => t("Enter your Twitter profile URL."),
   ];
   $form['social_links']['facebook_profile_url'] = [
     '#type' => 'textfield',
     '#title' => t('Facebook URL'),
-    '#default_value' => theme_get_setting('facebook_profile_url'),
+    '#default_value' => \Drupal::service(ThemeSettingsProvider::class)->getSetting('facebook_profile_url'),
     '#description' => t("Enter your Facebook profile URL."),
   ];
   $form['social_links']['linkedin_profile_url'] = [
     '#type' => 'textfield',
     '#title' => t('Linkedin URL'),
-    '#default_value' => theme_get_setting('linkedin_profile_url'),
+    '#default_value' => \Drupal::service(ThemeSettingsProvider::class)->getSetting('linkedin_profile_url'),
     '#description' => t("Enter your Linkedin profile URL."),
   ];
   $form['social_links']['pinterest_profile_url'] = [
     '#type' => 'textfield',
     '#title' => t('Pinterest URL'),
-    '#default_value' => theme_get_setting('pinterest_profile_url'),
+    '#default_value' => \Drupal::service(ThemeSettingsProvider::class)->getSetting('pinterest_profile_url'),
     '#description' => t("Enter your Linkedin Pinterest URL."),
   ];
   $form['social_links']['youtube_profile_url'] = [
     '#type' => 'textfield',
     '#title' => t('Youtube URL'),
-    '#default_value' => theme_get_setting('youtube_profile_url'),
+    '#default_value' => \Drupal::service(ThemeSettingsProvider::class)->getSetting('youtube_profile_url'),
     '#description' => t("Enter your Youtube profile URL."),
   ];
   $form['social_links']['instagram_profile_url'] = [
     '#type' => 'textfield',
     '#title' => t('Instagram URL'),
-    '#default_value' => theme_get_setting('instagram_profile_url'),
+    '#default_value' => \Drupal::service(ThemeSettingsProvider::class)->getSetting('instagram_profile_url'),
     '#description' => t("Enter your Instagram profile URL."),
   ];
 }

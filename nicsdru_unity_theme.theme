@@ -6,6 +6,7 @@
  */
 
 use Drupal\Component\Utility\Html;
+use Drupal\Core\Extension\ThemeSettingsProvider;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Render\Element;
 use Drupal\Core\Render\Markup;
@@ -39,7 +40,7 @@ function nicsdru_unity_theme_preprocess(&$variables) {
  */
 function nicsdru_unity_theme_preprocess_page(&$variables) {
   $variables['basic_page_structure'] = FALSE;
-  if (theme_get_setting('basic_page_structure')) {
+  if (\Drupal::service(ThemeSettingsProvider::class)->getSetting('basic_page_structure')) {
     $variables['basic_page_structure'] = TRUE;
   }
 }
@@ -76,7 +77,7 @@ function nicsdru_unity_theme_page_attachments_alter(array &$page) {
   // Disable Google Analytics tracking if option is set in the theme, an
   // analytics ID is present and optionally if the EU Cookie Compliance module
   // is installed and options set in the theme.
-  if (theme_get_setting('ga_tracking_disabled')) {
+  if (\Drupal::service(ThemeSettingsProvider::class)->getSetting('ga_tracking_disabled')) {
     // Fetch the account id from the Google Analytics module config.
     $ga_account = \Drupal::config('google_analytics.settings')->get('account');
 
@@ -85,7 +86,7 @@ function nicsdru_unity_theme_page_attachments_alter(array &$page) {
     // analytics.
     // See https://developers.google.com/analytics/devguides/collection/analyticsjs/user-opt-out.
     if ($ga_account) {
-      if (theme_get_setting('ga_tracking_disabled_eu')) {
+      if (\Drupal::service(ThemeSettingsProvider::class)->getSetting('ga_tracking_disabled_eu')) {
         $script = "if(document.cookie.valueOf('cookie-agreed') != 'cookie-agreed=2') {
           window['ga-disable-" . $ga_account . "'] = true; console.log('block')}";
       }
@@ -350,12 +351,12 @@ function nicsdru_unity_theme_preprocess_block(&$variables) {
   }
 
   // Social media variables to be used in the theme-settings.php.
-  $variables['twitter_profile_url'] = theme_get_setting('twitter_profile_url');
-  $variables['facebook_profile_url'] = theme_get_setting('facebook_profile_url');
-  $variables['linkedin_profile_url'] = theme_get_setting('linkedin_profile_url');
-  $variables['pinterest_profile_url'] = theme_get_setting('pinterest_profile_url');
-  $variables['youtube_profile_url'] = theme_get_setting('youtube_profile_url');
-  $variables['instagram_profile_url'] = theme_get_setting('instagram_profile_url');
+  $variables['twitter_profile_url'] = \Drupal::service(ThemeSettingsProvider::class)->getSetting('twitter_profile_url');
+  $variables['facebook_profile_url'] = \Drupal::service(ThemeSettingsProvider::class)->getSetting('facebook_profile_url');
+  $variables['linkedin_profile_url'] = \Drupal::service(ThemeSettingsProvider::class)->getSetting('linkedin_profile_url');
+  $variables['pinterest_profile_url'] = \Drupal::service(ThemeSettingsProvider::class)->getSetting('pinterest_profile_url');
+  $variables['youtube_profile_url'] = \Drupal::service(ThemeSettingsProvider::class)->getSetting('youtube_profile_url');
+  $variables['instagram_profile_url'] = \Drupal::service(ThemeSettingsProvider::class)->getSetting('instagram_profile_url');
 }
 
 /**
