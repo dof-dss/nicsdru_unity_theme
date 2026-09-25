@@ -1,6 +1,7 @@
 # NICS Unity theme
 
-This repository contains code for a Drupal 8 theme from which NICS sites could be sub-themed from.
+This repository contains the base theme used to build NICS sub-themes for
+Drupal 11.3 and later.
 
 ## Table of contents
 
@@ -83,5 +84,3 @@ Run `npm run` to see all the npm scripts.
 [Guidance on styling and developer helpers on how to use this theme is available here](https://dof-dss.github.io/nicsdru_unity_theme/).
 
 [autoprefixer]: https://github.com/postcss/autoprefixer
-
-

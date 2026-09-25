@@ -18,9 +18,10 @@
   </a>
   <ul class="nav-menu">
     {% for item in toc %}
-    <li class="nav-item">
-      <a href="{{ item.url }}" tabindex="-1">{{ item.text }}</a>
-    </li>
+      <li class="nav-item">
+        <a href="{{ item.url }}" tabindex="-1">{{ item.text }}</a>
+      </li>
+    {% endfor %}
   </ul>
 </nav>
 <a id="toc-main-skip" tabindex="-1" class="visually-hidden" aria-hidden="true"></a>

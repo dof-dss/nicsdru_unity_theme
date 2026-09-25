@@ -25,7 +25,8 @@ nicsdru-authenticated-styles:
       css/drupal-admin.css: { minified: true, weight: -5 }
       css/drupal-diff.css: { minified: true, weight: -6 }
 
-# Provide a custom modernizer script
+# Provide the theme's own Modernizr build. Drupal 11 no longer supplies
+# core/modernizr.
 nicsdru-modernizr:
   # Block the page from being loaded until Modernizr is initialized.
   header: true
@@ -37,8 +38,6 @@ nicsdru-modernizr:
   version: "v3.6.0"
   js:
     js/modernizr.min.js: { preprocess: 0, weight: -21, minified: true }
-  dependencies:
-    - core/modernizr
 
 unity-fonts:
   css:

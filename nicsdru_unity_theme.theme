@@ -187,7 +187,8 @@ function nicsdru_unity_theme_preprocess_views_view(&$variables) {
     $variables['exposed']['#attributes']['class'][] = Html::cleanCssIdentifier('search-form--site');
     // Make the site search required.
     $variables['exposed']['query']['#required'] = TRUE;
-    // See nicsdru_unity_theme_form_alter for a required pattern on the input. The data-msg-pattern overrides the default error message.
+    // See nicsdru_unity_theme_form_alter for a required pattern on the input.
+    // The data-msg-pattern overrides the default error message.
     $variables['exposed']['query']['#attributes']['data-msg-pattern'] = t('Query must begin with a letter or number.');
     // If a label for the search input is not defined in the view, set
     // default label text.
@@ -279,8 +280,10 @@ function nicsdru_unity_theme_preprocess_container(&$variables) {
  * Implements hook_form_alter().
  */
 function nicsdru_unity_theme_form_alter(&$form, FormStateInterface $form_state, $form_id) {
-  if ($form['#id'] == 'views-exposed-form-search-site-search' || $form['#id'] == 'views-exposed-form-search-search-page') {
-    // Ensure the input field only accepts a letter or a number at the beginning of a search.
+  if ($form['#id'] == 'views-exposed-form-search-site-search'
+    || $form['#id'] == 'views-exposed-form-search-search-page') {
+    // Ensure the input field only accepts a letter or a number at the
+    // beginning of a search.
     $form['query']['#pattern'] = '^[a-zA-Z0-9]+.*';
   }
 }
@@ -289,7 +292,8 @@ function nicsdru_unity_theme_form_alter(&$form, FormStateInterface $form_state, 
  * Implements hook_form_element_label().
  */
 function nicsdru_unity_theme_preprocess_form_element_label(&$variables) {
-  // Search the exposed filter label for text: 'Search' any word e.g. Search consultations.
+  // Search the exposed filter label for text: 'Search' any word, for example
+  // Search consultations.
   if (preg_match('/Search\D[a-z]+/', $variables['title']['#markup'])) {
     // Make the label invisible.
     $variables['title_display'] = "invisible";
@@ -328,7 +332,8 @@ function nicsdru_unity_theme_preprocess_responsive_image_formatter(array &$varia
  * Implements hook_preprocess_block().
  */
 function nicsdru_unity_theme_preprocess_block(&$variables) {
-  // Pass block region value to content so this can be used in nicsdru_unity_theme_theme_suggestions_menu_alter.
+  // Pass the block region to content for use in
+  // nicsdru_unity_theme_theme_suggestions_menu_alter().
   if (!empty($variables['elements']['#id'])) {
     $region = Block::load($variables['elements']['#id'])->getRegion();
     $variables['content']['#attributes']['region'] = $region;
@@ -450,8 +455,9 @@ function nicsdru_unity_theme_theme_suggestions_views_view_unformatted_alter(arra
 
 /**
  * Implements template_preprocess_field_group_html_element().
- * Preprocessing the Additional content details field group used in the
- * revision comparison view mode to remove the need to the contrib classy theme Drupal 10.
+ *
+ * Preprocesses the Additional content details field group used in the revision
+ * comparison view mode without relying on the contrib Classy theme.
  */
 function nicsdru_unity_theme_preprocess_field_group_html_element(&$variables) {
   $element = $variables['element'];
@@ -462,11 +468,12 @@ function nicsdru_unity_theme_preprocess_field_group_html_element(&$variables) {
     if (!empty($children)) {
       $new_children_output = '';
       foreach ($children as $child) {
-        if (!empty($element[$child]['#object']) && !empty($variables['element'][$child]['#title'])) {
+        if (!empty($element[$child]['#object'])
+          && !empty($variables['element'][$child]['#title'])) {
           $child_title = $element[$child]['#title'];
           $child_object = $element[$child]['#object'];
 
-          // Build new HTML to add the required classes to make the revision comparison styling to work.
+          // Build HTML with the classes required by revision comparison styles.
           $new_children_output .= '<div class="field field--label-inline">';
           $new_children_output .= '<div class="field__label">' . $child_title . '</div>';
           // If value is a number load the taxonomy term or a node.

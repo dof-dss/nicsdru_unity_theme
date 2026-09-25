@@ -47,7 +47,7 @@ function nicsdru_unity_theme_form_system_theme_settings_alter(&$form, FormStateI
       if (\Drupal::moduleHandler()->moduleExists('eu_cookie_compliance') === FALSE) {
         $form['ga_tracking_options']['ga_tracking_disabled_eu']['#disabled'] = TRUE;
         $form['ga_tracking_options']['ga_tracking_disabled_eu']['#default_value'] = FALSE;
-        $form['ga_tracking_options']['ga_tracking_disabled_eu']['#title'] .= t(' (EU Cookie Compliance module is NOT installed)');
+        $form['ga_tracking_options']['ga_tracking_disabled_eu']['#title'] = t('Only disable if EU Cookie Compliance consent is not given (EU Cookie Compliance module is NOT installed)');
       }
     }
   }
@@ -60,7 +60,7 @@ function nicsdru_unity_theme_form_system_theme_settings_alter(&$form, FormStateI
 
   $form['homepage_structure']['basic_page_structure'] = [
     '#type' => 'checkbox',
-    '#title' => t('Check this box if the homepage uses a basic page in it\'s structure'),
+    '#title' => t('Check this box if the homepage uses a basic page in its structure'),
     '#default_value' => \Drupal::service(ThemeSettingsProvider::class)->getSetting('basic_page_structure'),
   ];
 
