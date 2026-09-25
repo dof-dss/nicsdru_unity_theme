@@ -181,6 +181,11 @@ a {
     > .ck-content.ck-editor__editable {
       border: 0;
 
+      span,
+      p {
+        font-size: $base-font-size;
+      }
+
       &.ck-focused {
         border: 0;
         box-shadow: none;
